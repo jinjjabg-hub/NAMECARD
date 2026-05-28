@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCHWEISS | 이지수 대표</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1B3A6B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SCHWEISS">
+
+  <meta property="og:title" content="SCHWEISS | 이지수 대표 · 용접전문회사">
+  <meta property="og:description" content="검증된 기술력과 책임감으로, 가치를 증명해드립니다. 반도체 설비·H빔·특수구조물 | 토파즈 챕터">
+  <meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/이지수/og_final.jpg">
+  <meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/이지수/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SCHWEISS · 스바이즈">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jinjjabg-hub.github.io/NAMECARD/이지수/og_final.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+  <style>
+    :root {
+      --dark:   #060e1e;
+      --dark2:  #0d1f3c;
+      --dark3:  #152a50;
+      --blue:   #1B3A6B;
+      --blue2:  #2E6DA4;
+      --blue3:  #4A90D9;
+      --cream:  #f0f6ff;
+      --pale:   #d4e8f7;
+      --red:    #C8102E;
+      --white:  #ffffff;
+      --gray:   #8099bb;
+      --line:   rgba(255,255,255,0.07);
+      --font:   'Pretendard', 'Noto Sans KR', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--dark);
+      color: var(--white);
+      max-width: 480px;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+
+    /* ── 언어바 ── */
+    .lang-bar {
+      position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+      width: 100%; max-width: 480px;
+      display: flex; justify-content: flex-end;
+      padding: 10px 16px; gap: 6px;
+      background: linear-gradient(to bottom, rgba(6,14,30,0.92) 0%, transparent 100%);
+      z-index: 100; backdrop-filter: blur(4px);
+    }
+    .lang-btn {
+      padding: 5px 13px; border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7);
+      border-radius: 20px; font-size: 11px; font-family: var(--font);
+      font-weight: 700; cursor: pointer; transition: all 0.2s;
+    }
+    .lang-btn.on { background: var(--white); color: var(--blue); border-color: var(--white); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; height: 92svh; min-height: 580px; max-height: 780px;
+      overflow: hidden; background: var(--dark2);
+    }
+    .hero-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center top; display: block;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(6,14,30,0.25) 0%,
+        rgba(6,14,30,0.0)  30%,
+        rgba(6,14,30,0.0)  50%,
+        rgba(6,14,30,0.88) 82%,
+        rgba(6,14,30,1.0)  100%
+      );
+    }
+    .bni-badge-top {
+      position: absolute; top: 14px; left: 20px;
+      display: flex; align-items: center; gap: 8px;
+      padding: 7px 16px 7px 12px;
+      background: var(--red); border-radius: 30px;
+      z-index: 10;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .bni-badge-top span { font-size: 12px; font-weight: 800; color: #fff; letter-spacing: 1px; }
+    .bni-dot-badge { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.7); flex-shrink: 0; }
+    .hero-logo-wrap {
+      position: absolute; top: 46%; left: 22px; transform: translateY(-50%);
+    }
+    .hero-logo-wrap img {
+      width: 130px; opacity: 0.9; filter: brightness(1.3) contrast(1.05);
+    }
+    .hero-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 0 24px 36px;
+    }
+    .hero-tag {
+      display: inline-block; margin-bottom: 10px;
+      padding: 4px 12px; border: 1px solid rgba(255,255,255,0.38);
+      border-radius: 20px; font-size: 10px; color: rgba(255,255,255,0.78);
+      font-weight: 600; letter-spacing: 1px;
+    }
+    .hero-company {
+      font-size: 28px; font-weight: 900; letter-spacing: 5px;
+      color: #fff; margin-bottom: 5px;
+    }
+    .hero-name {
+      font-size: 42px; font-weight: 900; color: #fff;
+      line-height: 1.05; margin-bottom: 14px; letter-spacing: -0.5px;
+    }
+    .hero-name small { font-size: 18px; font-weight: 500; opacity: 0.6; margin-left: 8px; }
+    .hero-slogan { font-size: 14px; color: rgba(255,255,255,0.72); font-weight: 400; line-height: 1.65; }
+    .scroll-hint {
+      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+      font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 2px;
+    }
+    .scroll-arrow { display: block; animation: bob 1.6s infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+    /* ── ABOUT ── */
+    .about-sec { background: var(--cream); padding: 52px 20px 44px; }
+    .sec-label { font-size: 9px; font-weight: 800; letter-spacing: 3px; color: var(--blue2); text-transform: uppercase; margin-bottom: 10px; }
+    .sec-title { font-size: 22px; font-weight: 900; color: var(--dark2); line-height: 1.4; margin-bottom: 28px; }
+    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 28px; }
+    .why-card { background: var(--blue); border-radius: 18px; padding: 18px 12px 16px; text-align: center; }
+    .why-icon { font-size: 24px; margin-bottom: 10px; }
+    .why-title { font-size: 11px; font-weight: 800; color: #fff; line-height: 1.5; }
+    .quote-box { border-left: 3px solid var(--blue2); padding: 14px 18px; background: rgba(27,58,107,0.06); border-radius: 0 12px 12px 0; }
+    .quote-text { font-size: 14px; font-weight: 700; color: var(--dark2); line-height: 1.7; }
+
+    /* ── 통계 ── */
+    .stat-sec { background: var(--dark2); padding: 48px 20px; }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+    .stat-item { background: var(--dark2); padding: 28px 20px; text-align: center; }
+    .stat-num { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 900; color: var(--blue3); line-height: 1; margin-bottom: 6px; }
+    .stat-unit { font-size: 16px; font-weight: 700; color: var(--pale); }
+    .stat-label { font-size: 11px; color: var(--gray); margin-top: 6px; font-weight: 500; }
+
+    /* ── DIFFERENCE ── */
+    .diff-sec { background: var(--cream); padding: 52px 20px 44px; }
+    .diff-list { display: flex; flex-direction: column; gap: 22px; }
+    .diff-item { display: flex; gap: 18px; align-items: flex-start; }
+    .diff-num { font-family: 'Montserrat',sans-serif; font-size: 28px; font-weight: 900; color: var(--pale); min-width: 42px; line-height: 1; padding-top: 2px; }
+    .diff-title { font-size: 14px; font-weight: 800; color: var(--dark2); margin-bottom: 6px; }
+    .diff-desc { font-size: 12.5px; color: #556; line-height: 1.7; }
+
+    /* ── BNI ── */
+    .bni-sec { background: var(--dark3); padding: 48px 20px; }
+    .bni-profile-row { display: flex; gap: 20px; align-items: center; margin-bottom: 24px; }
+    .bni-avatar {
+      width: 96px; height: 96px; border-radius: 50%;
+      border: 2px solid var(--blue2); overflow: hidden; flex-shrink: 0;
+    }
+    .bni-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .bni-name { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 4px; }
+    .bni-role-txt { font-size: 12px; color: var(--gray); font-weight: 500; margin-bottom: 10px; }
+    .bni-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .bni-tag { padding: 4px 12px; border: 1px solid var(--blue2); border-radius: 20px; font-size: 10px; color: var(--pale); font-weight: 700; }
+    .bni-timeline { display: flex; margin-bottom: 20px; }
+    .tl-node { flex:1; display:flex; flex-direction:column; align-items:center; position:relative; }
+    .tl-node:not(:last-child)::after { content:''; position:absolute; top:14px; left:50%; right:-50%; height:1px; background:linear-gradient(to right, var(--blue2), var(--blue3)); }
+    .tl-dot { width:28px; height:28px; border-radius:50%; background:var(--blue); color:#fff; font-size:10px; font-weight:800; display:flex; align-items:center; justify-content:center; position:relative; z-index:1; margin-bottom:8px; }
+    .tl-dot.now { background:linear-gradient(135deg, var(--blue3), var(--blue2)); box-shadow:0 0 0 3px rgba(74,144,217,0.3); }
+    .tl-label { font-size:10px; font-weight:700; color:rgba(255,255,255,0.7); text-align:center; line-height:1.4; }
+    .bni-history { padding:16px 18px; background:rgba(27,58,107,0.3); border-radius:14px; border-left:3px solid var(--blue2); font-size:12px; color:rgba(255,255,255,0.72); line-height:1.7; }
+
+    /* ── 철학 ── */
+    .philo-sec { background: var(--dark); padding: 48px 24px; text-align: center; }
+    .philo-text { font-size: 19px; font-weight: 800; color: #fff; line-height: 1.7; letter-spacing: -0.3px; }
+    .philo-sub { font-size: 12px; color: var(--gray); margin-top: 14px; font-weight: 400; }
+
+    /* ── 리퍼럴 ── */
+    .ref-sec { background: var(--cream); padding: 48px 20px; }
+    .ref-list { display: flex; flex-direction: column; gap: 12px; }
+    .ref-item { background: #fff; border-radius: 16px; padding: 16px 18px; border-left: 4px solid var(--blue); box-shadow: 0 2px 12px rgba(27,58,107,0.08); }
+    .ref-header { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+    .ref-icon { font-size: 18px; }
+    .ref-title { font-size: 13px; font-weight: 800; color: var(--blue); }
+    .ref-desc { font-size: 12px; color: #667; line-height: 1.65; }
+
+    /* ══ 저장 버튼 섹션 (업그레이드 스킬 v1.1) ══ */
+    .save-sec {
+      background: var(--dark3);
+      padding: 20px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .save-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .save-btn {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(46,109,164,0.12);
+      border: 1.5px solid rgba(74,144,217,0.35);
+      border-radius: 14px; padding: 14px 16px;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.2s; width: 100%;
+      font-family: var(--font);
+    }
+    .save-btn:hover { background: rgba(46,109,164,0.22); transform: translateY(-2px); }
+    .save-icon { font-size: 22px; flex-shrink: 0; }
+    .save-info strong {
+      display: block; font-size: 13px; font-weight: 800;
+      color: var(--blue3); margin-bottom: 2px;
+    }
+    .save-info span { font-size: 11px; color: rgba(255,255,255,0.35); }
+
+    /* ── CONNECT ── */
+    .connect-sec { background: var(--dark); padding: 44px 20px 52px; }
+    .connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .connect-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 16px 10px; border-radius: 16px;
+      font-size: 13px; font-weight: 700; text-decoration: none;
+      transition: all 0.2s; font-family: var(--font); color: #fff;
+    }
+    .connect-btn.main-call { background: var(--blue); grid-column: 1 / -1; font-size: 15px; font-weight: 900; padding: 20px; }
+    .connect-btn.sub { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); }
+    .connect-btn:hover { opacity: 0.82; transform: translateY(-2px); }
+    .c-icon { font-size: 18px; }
+    .qr-wrap { margin-top: 36px; padding: 24px 20px; background: var(--cream); border-radius: 20px; text-align: center; }
+    .qr-wrap img { width: 140px; height: 140px; border-radius: 8px; }
+    .qr-label { font-size: 11px; color: var(--blue); font-weight: 700; margin-top: 10px; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--dark); border-top: 1px solid var(--line); padding: 24px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-co { font-size: 16px; font-weight: 900; letter-spacing: 2px; color: #fff; }
+    .footer-sub { font-size: 10px; color: var(--gray); margin-top: 3px; }
+    .footer-bni { padding: 5px 12px; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7); }
+
+    /* ── 플로팅 CTA ── */
+
+
+    /* ── 페이드인 ── */
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.55s, transform 0.55s; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    [data-lang]:not(.on) { display: none; }
+  </style>
+</head>
+<body>
+
+<!-- 언어바 -->
+<div class="lang-bar">
+  <button class="lang-btn on"  onclick="setLang('kr',this)">KR</button>
+  <button class="lang-btn"     onclick="setLang('en',this)">EN</button>
+  <button class="lang-btn"     onclick="setLang('jp',this)">JP</button>
+  <button class="lang-btn"     onclick="setLang('cn',this)">CN</button>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <img class="hero-bg" src="hero.jpg" alt="SCHWEISS 이지수 대표">
+  <div class="hero-overlay"></div>
+
+  <div class="bni-badge-top">
+    <div class="bni-dot-badge"></div>
+    <span>TOPAZ CHAPTER</span>
+  </div>
+
+
+
+  <div class="hero-label">
+    <div class="hero-tag">
+      <span data-lang="kr" class="on">용접전문회사</span>
+      <span data-lang="en">WELDING SPECIALIST</span>
+      <span data-lang="jp">溶接専門会社</span>
+      <span data-lang="cn">焊接专业公司</span>
+    </div>
+    <div class="hero-company">SCHWEISS</div>
+    <div class="hero-name">
+      <span data-lang="kr" class="on">이지수</span>
+      <span data-lang="en">Jisu Lee</span>
+      <span data-lang="jp">イ・ジス</span>
+      <span data-lang="cn">李智秀</span>
+      <small><span data-lang="kr" class="on">대표</span><span data-lang="en">CEO</span><span data-lang="jp">代表</span><span data-lang="cn">代表</span></small>
+    </div>
+    <div class="hero-slogan">
+      <span data-lang="kr" class="on">검증된 기술력과 책임감으로,<br>가치를 증명해드립니다.</span>
+      <span data-lang="en">Proving value through verified expertise and accountability.</span>
+      <span data-lang="jp">実証された技術力と責任感で、価値を証明します。</span>
+      <span data-lang="cn">凭借经过验证的技术实力与责任感，为您证明价值。</span>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="scroll-arrow">↓</span></div>
+</section>
+
+<!-- ═══ ABOUT / WHY ═══ -->
+<section class="about-sec fade-in">
+  <div class="sec-label">About</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="on">세상을 잇다.<br>기술의 기준을 세우다.</span>
+    <span data-lang="en">Connecting the World.<br>Setting the Standard.</span>
+    <span data-lang="jp">世界をつなぐ。技術の基準を打ち立てる。</span>
+    <span data-lang="cn">连接世界。树立技术标准。</span>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">
+        <span data-lang="kr" class="on">결과 중심<br>전문성</span>
+        <span data-lang="en">Results-Driven<br>Expertise</span>
+        <span data-lang="jp">成果重視の<br>専門性</span>
+        <span data-lang="cn">以结果为中心<br>的专业性</span>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔩</div>
+      <div class="why-title">
+        <span data-lang="kr" class="on">맞춤형<br>솔루션</span>
+        <span data-lang="en">Tailored<br>Solutions</span>
+        <span data-lang="jp">差別化された<br>カスタム対応</span>
+        <span data-lang="cn">差异化<br>定制解决方案</span>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <div class="why-title">
+        <span data-lang="kr" class="on">신뢰 기반<br>지속 케어</span>
+        <span data-lang="en">Trust &<br>Ongoing Care</span>
+        <span data-lang="jp">信頼を築く<br>継続ケア</span>
+        <span data-lang="cn">建立信任的<br>持续关怀</span>
+      </div>
+    </div>
+  </div>
+  <div class="quote-box">
+    <div class="quote-text">
+      <span data-lang="kr" class="on">"단순 용접이 아닙니다.<br>기능선수 출신 전문가가 직접 설계하고 시공하는<br><strong>기술 기반 솔루션</strong>입니다."</span>
+      <span data-lang="en">"Not just welding — a <strong>technology-driven solution</strong> designed and built by a skilled craftsman."</span>
+      <span data-lang="jp">"単なる溶接ではありません。技能選手出身の専門家による<strong>技術ベースのソリューション</strong>です。"</span>
+      <span data-lang="cn">"不仅仅是焊接，而是由技能竞赛出身专家亲自设计施工的<strong>技术驱动解决方案</strong>。"</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 통계 ═══ -->
+<section class="stat-sec fade-in">
+  <div class="sec-label" style="color:var(--blue3);margin-bottom:24px;">Numbers</div>
+  <div class="stat-grid">
+    <div class="stat-item">
+      <div class="stat-num">10<span class="stat-unit">+</span></div>
+      <div class="stat-label"><span data-lang="kr" class="on">업력 (년)</span><span data-lang="en">Years</span><span data-lang="jp">業歴（年）</span><span data-lang="cn">从业年限</span></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5<span class="stat-unit">개</span></div>
+      <div class="stat-label"><span data-lang="kr" class="on">전문 분야</span><span data-lang="en">Specialties</span><span data-lang="jp">専門分野</span><span data-lang="cn">专业领域</span></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2<span class="stat-unit">기</span></div>
+      <div class="stat-label"><span data-lang="kr" class="on">BNI 부의장</span><span data-lang="en">VP</span><span data-lang="jp">BNI 副議長</span><span data-lang="cn">BNI副主席</span></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100<span class="stat-unit">%</span></div>
+      <div class="stat-label"><span data-lang="kr" class="on">현장 책임 완료</span><span data-lang="en">Completion</span><span data-lang="jp">現場責任完了</span><span data-lang="cn">现场完成率</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIFFERENCE ═══ -->
+<section class="diff-sec fade-in">
+  <div class="sec-label">Difference</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="on">스바이즈만의 차별점</span>
+    <span data-lang="en">What Sets Us Apart</span>
+    <span data-lang="jp">スバイズだけの差別化</span>
+    <span data-lang="cn">斯拜兹的独特优势</span>
+  </div>
+  <div class="diff-list">
+    <div class="diff-item">
+      <div class="diff-num">01</div>
+      <div>
+        <div class="diff-title"><span data-lang="kr" class="on">기술 중심 솔루션 제안</span><span data-lang="en">Technology-Centered Proposals</span><span data-lang="jp">技術中心のソリューション提案</span><span data-lang="cn">以技术为核心的方案提案</span></div>
+        <div class="diff-desc"><span data-lang="kr" class="on">단순 납품이 아닌, 현장 환경과 목적에 맞는 최적의 기술 방향을 함께 제안합니다.</span><span data-lang="en">Beyond simple supply — we co-develop the optimal technical direction for your site.</span><span data-lang="jp">単なる納品ではなく、現場環境と目的に合った最適な技術方向を共に提案します。</span><span data-lang="cn">不只是简单供货，而是根据现场环境与目的共同提出最优技术方向。</span></div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">02</div>
+      <div>
+        <div class="diff-title"><span data-lang="kr" class="on">품질과 안정성 우선 제작</span><span data-lang="en">Quality & Durability First</span><span data-lang="jp">品質と安定性を最優先に</span><span data-lang="cn">以质量与稳定性为优先</span></div>
+        <div class="diff-desc"><span data-lang="kr" class="on">가격이 아닌 내구성·완성도 중심의 품질 프로세스로 고객 신뢰를 만듭니다.</span><span data-lang="en">Trust built on durability and craftsmanship — not on price competition.</span><span data-lang="jp">価格ではなく耐久性・完成度中心の品質プロセスで顧客信頼を築きます。</span><span data-lang="cn">以耐久性和完成度为核心的品质流程构建客户信任。</span></div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">03</div>
+      <div>
+        <div class="diff-title"><span data-lang="kr" class="on">빠른 대응 & 사후관리</span><span data-lang="en">Rapid Response & After-Service</span><span data-lang="jp">迅速対応とアフターサービス</span><span data-lang="cn">快速响应与完善售后管理</span></div>
+        <div class="diff-desc"><span data-lang="kr" class="on">진행부터 납품 후까지 지속적인 소통·대응으로 고객 불편을 최소화합니다.</span><span data-lang="en">From kickoff to post-delivery, continuous communication keeps you worry-free.</span><span data-lang="jp">進行中から納品後まで継続的なコミュニケーションで不便を最小化します。</span><span data-lang="cn">从启动到交付后，持续沟通响应，将客户不便降至最低。</span></div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">04</div>
+      <div>
+        <div class="diff-title"><span data-lang="kr" class="on">기능선수 출신 기능장 보유</span><span data-lang="en">Skilled-Craftsman Background</span><span data-lang="jp">技能選手出身の専門家</span><span data-lang="cn">技能竞赛出身的专家</span></div>
+        <div class="diff-desc"><span data-lang="kr" class="on">기능선수 출신으로 기능장 자격을 보유한 대표가 직접 품질을 관리합니다. 현장 기술부터 교육 콘텐츠까지, 검증된 경험이 표준입니다.</span><span data-lang="en">The CEO, a former skilled craftsman with a master craftsman license, personally oversees quality. Proven expertise from field to training content.</span><span data-lang="jp">技能選手出身で技能士資格を持つ代表が直接品質管理します。現場技術から教育まで実証された経験が標準です。</span><span data-lang="cn">拥有技能竞赛背景及技能师资格的代表亲自管控质量，从现场技术到教育内容，经验即标准。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BNI ═══ -->
+<section class="bni-sec fade-in">
+  <div class="sec-label" style="color:var(--blue3);">Topaz Chapter</div>
+  <div class="bni-profile-row">
+    <div class="bni-avatar">
+      <img src="이지수.png" alt="이지수 대표">
+    </div>
+    <div>
+      <div class="bni-name"><span data-lang="kr" class="on">이지수</span><span data-lang="en">Jisu Lee</span><span data-lang="jp">イ・ジス</span><span data-lang="cn">李智秀</span></div>
+      <div class="bni-role-txt"><span data-lang="kr" class="on">SCHWEISS 대표 · 토파즈 챕터</span><span data-lang="en">CEO, SCHWEISS · Topaz Chapter</span><span data-lang="jp">SCHWEISS 代表 · トパーズ支部</span><span data-lang="cn">SCHWEISS 代表 · 托帕兹分会</span></div>
+      <div class="bni-tags">
+        <span class="bni-tag"><span data-lang="kr" class="on">🏆 2기 부의장</span><span data-lang="en">🏆 2nd VP</span><span data-lang="jp">🏆 2期 副議長</span><span data-lang="cn">🏆 2期 副主席</span></span>
+        <span class="bni-tag"><span data-lang="kr" class="on">용접전문</span><span data-lang="en">Welding Expert</span><span data-lang="jp">溶接専門</span><span data-lang="cn">焊接专家</span></span>
+      </div>
+    </div>
+  </div>
+  <div class="bni-timeline">
+    <div class="tl-node">
+      <div class="tl-dot">1기</div>
+      <div class="tl-label"><span data-lang="kr" class="on">비지터호스트<br>리더</span><span data-lang="en">Visitor Host<br>Leader</span><span data-lang="jp">ビジターホスト<br>リーダー</span><span data-lang="cn">访客主持<br>领袖</span></div>
+    </div>
+    <div class="tl-node">
+      <div class="tl-dot now">2기</div>
+      <div class="tl-label"><span data-lang="kr" class="on">부의장 ⭐<br>현재</span><span data-lang="en">VP ⭐<br>Current</span><span data-lang="jp">副議長 ⭐<br>現職</span><span data-lang="cn">副主席 ⭐<br>现任</span></div>
+    </div>
+  </div>
+  <div class="bni-history">
+    <span data-lang="kr" class="on">🏆 Givers Gain — 먼저 주는 사람이 결국 얻는다.<br>토파즈 챕터에서 꾸준한 신뢰와 레퍼럴로 함께 성장하고 있습니다.</span>
+    <span data-lang="en">🏆 Givers Gain — Those who give first ultimately receive.<br>Growing through consistent trust and referrals in Topaz Chapter.</span>
+    <span data-lang="jp">🏆 Givers Gain — 先に与える者が最終的に得る。<br>トパーズ支部で継続的な信頼とリファーラルを通じて共に成長しています。</span>
+    <span data-lang="cn">🏆 Givers Gain — 先给予者终将获得。<br>在托帕兹分会通过持续的信任与推介共同成长。</span>
+  </div>
+</section>
+
+<!-- ═══ 철학 ═══ -->
+<section class="philo-sec fade-in">
+  <div class="philo-text">
+    <span data-lang="kr" class="on">"세상을 잇고,<br>기술의 기준을 세운다"</span>
+    <span data-lang="en">"Connecting the World,<br>Setting the Standard"</span>
+    <span data-lang="jp">"世界をつなぎ、<br>技術の基準を打ち立てる"</span>
+    <span data-lang="cn">"连接世界，<br>树立技术标准"</span>
+  </div>
+  <div class="philo-sub">SCHWEISS · Schweiss is Special Skills</div>
+</section>
+
+<!-- ═══ 리퍼럴 ═══ -->
+<section class="ref-sec fade-in">
+  <div class="sec-label">Ideal Referrals</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="on">이런 분을 소개해주세요</span>
+    <span data-lang="en">Who to Refer</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">欢迎介绍以下类型客户</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-header"><span class="ref-icon">🏭</span><span class="ref-title"><span data-lang="kr" class="on">공장 증축·신축 제조업체</span><span data-lang="en">Factory Expansion Manufacturers</span><span data-lang="jp">工場増設・新築の製造業者</span><span data-lang="cn">工厂扩建·新建制造商</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="on">공장 내부 계단·난간·H빔·작업대·구조물 제작. 철골 구조 신축 또는 증설을 검토 중인 제조사.</span><span data-lang="en">Stairs, railings, H-beams, workbenches, and structures. Manufacturers planning new or expanded steel-frame buildings.</span><span data-lang="jp">工場内部の階段・手すり・H鋼・作業台・構造物製作。鉄骨構造の新築または増設を検討中の製造業者。</span><span data-lang="cn">制作工厂内部楼梯、栏杆、H型钢、工作台、结构件，适合考虑新建或扩建钢结构的制造商。</span></div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-header"><span class="ref-icon">📦</span><span class="ref-title"><span data-lang="kr" class="on">물류창고·공장 시공사</span><span data-lang="en">Warehouse & Factory Contractors</span><span data-lang="jp">物流倉庫・工場施工会社</span><span data-lang="cn">物流仓库·工厂施工商</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="on">철골 구조·보강·캐노피·안전구조물 제작. 대형 물류센터 또는 창고 신축·리모델링이 필요한 업체.</span><span data-lang="en">Steel structures, reinforcements, canopies, and safety frames. Logistics companies needing new or renovated warehouses.</span><span data-lang="jp">鉄骨構造・補強・キャノピー・安全構造物製作。大型物流センターや倉庫の新築・リモデリングが必要な企業。</span><span data-lang="cn">钢结构、加固件、雨篷及安全构件，适合需要新建或改造大型仓储设施的物流企业。</span></div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-header"><span class="ref-icon">🏗️</span><span class="ref-title"><span data-lang="kr" class="on">건설사 및 전문건설업체</span><span data-lang="en">Construction & Specialty Firms</span><span data-lang="jp">建設会社・専門建設業者</span><span data-lang="cn">建设公司及专业施工企业</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="on">철골·계단·난간·데크·구조 보강. 도면 기반 정밀 제작과 현장 설치를 외주로 필요로 하는 건설사.</span><span data-lang="en">Steel, stairs, railings, decks, structural reinforcement. General contractors needing outsourced precision fabrication and on-site installation.</span><span data-lang="jp">鉄骨・階段・手すり・デッキ・構造補強。図面ベースの精密製作と現場設置を外注する建設会社。</span><span data-lang="cn">钢结构、楼梯、栏杆、甲板及结构加固，适合需要外包精密制造和现场安装的建设公司。</span></div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-header"><span class="ref-icon">🔬</span><span class="ref-title"><span data-lang="kr" class="on">식품·제약·반도체 공장</span><span data-lang="en">Food / Pharma / Semiconductor</span><span data-lang="jp">食品・製薬・半導体工場</span><span data-lang="cn">食品·制药·半导体工厂</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="on">스테인리스 작업대·구조물·설비 보강. 위생 기준이 엄격한 공장이나 반도체 장비 프레임 제작이 필요한 업체.</span><span data-lang="en">Stainless workbenches, structures, equipment reinforcement. Facilities with strict hygiene standards or needing semiconductor equipment frames.</span><span data-lang="jp">ステンレス作業台・構造物・設備補強。衛生基準が厳しい工場や半導体装置フレームが必要な企業。</span><span data-lang="cn">不锈钢工作台、结构件及设备加固，适合卫生标准严格的工厂或需要半导体设备框架的企业。</span></div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-header"><span class="ref-icon">🏛️</span><span class="ref-title"><span data-lang="kr" class="on">군부대·관공서·학교 유지보수</span><span data-lang="en">Gov / Military / School Maintenance</span><span data-lang="jp">軍・官公庁・学校メンテナンス</span><span data-lang="cn">军队·政府·学校维保</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="on">울타리·캐노피·계단·안전시설 보수. 공공기관 철제 구조물의 교체·보수 담당자. 공공 입찰 경험 보유.</span><span data-lang="en">Fences, canopies, stairs, safety facility repairs. Public institution managers handling steel structure maintenance. Experienced in public procurement.</span><span data-lang="jp">フェンス・キャノピー・階段・安全施設補修。公共機関の鉄製構造物担当者。公共入札の経験あり。</span><span data-lang="cn">围栏、雨篷、楼梯及安全设施修缮，适合公共机构构造物负责人，具有公共招标经验。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 저장 버튼 (업그레이드 스킬 v1.1) ══ -->
+<section class="save-sec fade-in">
+  <div class="save-wrap">
+    <a class="save-btn" onclick="saveContact(); return false;" href="#">
+      <span class="save-icon">👤</span>
+      <div class="save-info">
+        <strong><span data-lang="kr" class="on">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先保存</span><span data-lang="cn">保存联系人</span></strong>
+        <span><span data-lang="kr" class="on">이름·상호·전화번호</span><span data-lang="en">Name · Company · Tel</span><span data-lang="jp">名前・商号・電話番号</span><span data-lang="cn">姓名·公司·电话</span></span>
+      </div>
+    </a>
+    <button class="save-btn" onclick="saveToCardHolder()">
+      <span class="save-icon">📋</span>
+      <div class="save-info">
+        <strong><span data-lang="kr" class="on">명함첩에 저장</span><span data-lang="en">Save to Holder</span><span data-lang="jp">名刺帳に保存</span><span data-lang="cn">保存至名片夹</span></strong>
+        <span><span data-lang="kr" class="on">내 명함첩에 보관하기</span><span data-lang="en">Add to my card holder</span><span data-lang="jp">名刺帳に保管する</span><span data-lang="cn">保存到我的名片夹</span></span>
+      </div>
+    </button>
+  </div>
+</section>
+
+<!-- ═══ CONNECT ═══ -->
+<section class="connect-sec fade-in">
+  <div class="sec-label" style="color:var(--blue3);margin-bottom:20px;">Connect</div>
+  <div class="connect-grid">
+    <a href="tel:01021697247" class="connect-btn main-call">
+      <span class="c-icon" style="filter:brightness(0) invert(1);">📞</span>
+      <span data-lang="kr" class="on">010-2169-7247</span><span data-lang="en">Call Now</span><span data-lang="jp">電話する</span><span data-lang="cn">立即致电</span>
+    </a>
+    <a href="mailto:schweiss0510@naver.com" class="connect-btn sub">
+      <span class="c-icon">✉️</span>
+      <span data-lang="kr" class="on">이메일</span><span data-lang="en">Email</span><span data-lang="jp">メール</span><span data-lang="cn">邮件</span>
+    </a>
+    <a href="http://weld001.iptime.org/schweiss/" target="_blank" class="connect-btn sub">
+      <span class="c-icon">🌐</span>
+      <span data-lang="kr" class="on">홈페이지</span><span data-lang="en">Website</span><span data-lang="jp">サイト</span><span data-lang="cn">官网</span>
+    </a>
+    <a href="https://www.instagram.com/en_schweiss0510/" target="_blank" class="connect-btn sub">
+      <span class="c-icon">📸</span>
+      <span data-lang="kr" class="on">인스타그램</span><span data-lang="en">Instagram</span><span data-lang="jp">インスタ</span><span data-lang="cn">Instagram</span>
+    </a>
+    <a href="https://www.youtube.com/@%EC%8A%A4%EB%B0%94%EC%9D%B4%EC%A6%88_%EC%BD%94%EB%A6%AC%EC%95%84" target="_blank" class="connect-btn sub">
+      <span class="c-icon">▶️</span>
+      <span data-lang="kr" class="on">유튜브</span><span data-lang="en">YouTube</span><span data-lang="jp">YouTube</span><span data-lang="cn">YouTube</span>
+    </a>
+    <a href="tel:05071322-2169" class="connect-btn sub">
+      <span class="c-icon">📟</span>
+      <span data-lang="kr" class="on">대표번호</span><span data-lang="en">Office</span><span data-lang="jp">代表番号</span><span data-lang="cn">总机</span>
+    </a>
+  </div>
+  <div class="qr-wrap">
+    <img src="qr.png" alt="QR코드">
+    <div class="qr-label"><span data-lang="kr" class="on">📱 QR 스캔으로 이 명함 바로 열기</span><span data-lang="en">📱 Scan QR to open this card</span><span data-lang="jp">📱 QRスキャンでこの名刺を開く</span><span data-lang="cn">📱 扫描QR码直接打开此名片</span></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <div class="footer-co">SCHWEISS</div>
+    <div class="footer-sub">
+      <span data-lang="kr" class="on">금속임가공 · 반도체 · 건설 | 경기도 화성시</span>
+      <span data-lang="en">Metal Fab · Semiconductor · Construction</span>
+      <span data-lang="jp">金属加工 · 半導体 · 建設 | 京畿道 華城市</span>
+      <span data-lang="cn">金属加工 · 半导体 · 建设 | 京畿道 华城市</span>
+    </div>
+  </div>
+  <div class="footer-bni">Topaz</div>
+</footer>
+
+
+
+<script>
+/* ── 언어 전환 ── */
+function setLang(lang, btn) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('on', el.getAttribute('data-lang') === lang);
+  });
+}
+
+/* ── 연락처 저장 (vCard) ── */
+function saveContact() {
+  const vcard = [
+    'BEGIN:VCARD', 'VERSION:3.0',
+    'FN:이지수',
+    'N:이;지수;;;',
+    'ORG:SCHWEISS (스바이즈)',
+    'TITLE:대표',
+    'TEL;TYPE=CELL:010-2169-7247',
+    'TEL;TYPE=WORK:0507-1322-2169',
+    'EMAIL:schweiss0510@naver.com',
+    'URL:https://jinjjabg-hub.github.io/NAMECARD/이지수/',
+    'ADR:;;경기도 화성시 장안면 장안로 227번길 8;;;;',
+    'NOTE:금속임가공·반도체장비프레임·건설 | 토파즈 챕터 2기 부의장',
+    'END:VCARD'
+  ].join('\r\n');
+  const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = '이지수_SCHWEISS.vcf';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
+/* ── 명함첩 저장 ── */
+function saveToCardHolder() {
+  const card = {
+    id:      'lee-jisu-schweiss',
+    name:    '이지수',
+    company: 'SCHWEISS',
+    role:    '대표',
+    phone:   '010-2169-7247',
+    field:   '금속임가공·반도체·건설',
+    chapter: '토파즈 챕터',
+    url:     window.location.href,
+    photo:   'profile.jpg',
+    savedAt: new Date().toLocaleDateString('ko-KR')
+  };
+  let cards = JSON.parse(localStorage.getItem('bni_cards') || '[]');
+  if (cards.find(c => c.id === card.id)) {
+    window.location.href = '/';
+    return;
+  }
+  cards.push(card);
+  localStorage.setItem('bni_cards', JSON.stringify(cards));
+  sessionStorage.setItem('auto_install', '1');
+  if (confirm('✅ 명함첩에 저장되었습니다!\n명함첩 앱도 설치할까요?')) {
+    window.location.href = '/';
+  }
+}
+
+/* ── 스크롤 페이드인 ── */
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: 0.12 }
+);
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
