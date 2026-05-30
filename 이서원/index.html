@@ -629,30 +629,30 @@ footer{
   </div>
 </section>
 
-<!-- service (가로 스크롤) -->
-<section class="section service-section">
-  <div class="section-label">service</div>
+<!-- PORTFOLIO (가로 스크롤) -->
+<section class="section portfolio-section">
+  <div class="section-label">PORTFOLIO</div>
   <div class="section-title">
-    <span class="lang-inline active" data-lang="ko">자산 솔루션 포트폴리오 : 웰슨트서원 서비스</span>
-    <span class="lang-inline" data-lang="en">Asset Solution service</span>
+    <span class="lang-inline active" data-lang="ko">자산 솔루션 포트폴리오</span>
+    <span class="lang-inline" data-lang="en">Asset Solution Portfolio</span>
     <span class="lang-inline" data-lang="ja">資産ソリューション ポートフォリオ</span>
     <span class="lang-inline" data-lang="zh">资产解决方案作品集</span>
   </div>
-  <div class="service-scroll-wrap" id="serviceWrap">
-    <div class="service-scroll-track">
-      <div class="service-slide"><img src="./slide1.png" alt="Portfolio 1"></div>
-      <div class="service-slide"><img src="./slide2.png" alt="Portfolio 2"></div>
-      <div class="service-slide"><img src="./slide3.png" alt="Portfolio 3"></div>
-      <div class="service-slide"><img src="./slide4.png" alt="Portfolio 4"></div>
-      <div class="service-slide"><img src="./slide5.png" alt="Portfolio 5"></div>
+  <div class="portfolio-scroll-wrap" id="portfolioWrap">
+    <div class="portfolio-scroll-track">
+      <div class="portfolio-slide"><img src="./slide1.png" alt="Portfolio 1"></div>
+      <div class="portfolio-slide"><img src="./slide2.png" alt="Portfolio 2"></div>
+      <div class="portfolio-slide"><img src="./slide3.png" alt="Portfolio 3"></div>
+      <div class="portfolio-slide"><img src="./slide4.png" alt="Portfolio 4"></div>
+      <div class="portfolio-slide"><img src="./slide5.png" alt="Portfolio 5"></div>
     </div>
   </div>
-  <div class="service-dots" id="serviceDots">
-    <div class="service-dot active" onclick="scrollToSlide(0)"></div>
-    <div class="service-dot" onclick="scrollToSlide(1)"></div>
-    <div class="service-dot" onclick="scrollToSlide(2)"></div>
-    <div class="service-dot" onclick="scrollToSlide(3)"></div>
-    <div class="service-dot" onclick="scrollToSlide(4)"></div>
+  <div class="portfolio-dots" id="portfolioDots">
+    <div class="portfolio-dot active" onclick="scrollToSlide(0)"></div>
+    <div class="portfolio-dot" onclick="scrollToSlide(1)"></div>
+    <div class="portfolio-dot" onclick="scrollToSlide(2)"></div>
+    <div class="portfolio-dot" onclick="scrollToSlide(3)"></div>
+    <div class="portfolio-dot" onclick="scrollToSlide(4)"></div>
   </div>
 </section>
 
@@ -886,12 +886,12 @@ document.getElementById('storyModal').addEventListener('click', function(e){
   if(e.target === this) closeStory();
 });
 
-// service 가로 스크롤 dots
-const wrap = document.getElementById('serviceoWrap');
-const dots = document.querySelectorAll('.service-dot');
+// Portfolio 가로 스크롤 dots
+const wrap = document.getElementById('portfolioWrap');
+const dots = document.querySelectorAll('.portfolio-dot');
 
 function scrollToSlide(idx) {
-  const slides = wrap.querySelectorAll('.service-slide');
+  const slides = wrap.querySelectorAll('.portfolio-slide');
   if(slides[idx]) {
     const trackLeft = slides[idx].offsetLeft - 28;
     wrap.scrollTo({left: trackLeft, behavior:'smooth'});
@@ -899,7 +899,7 @@ function scrollToSlide(idx) {
 }
 
 wrap.addEventListener('scroll', () => {
-  const slides = wrap.querySelectorAll('.service-slide');
+  const slides = wrap.querySelectorAll('.portfolio-slide');
   let closest = 0, minDist = Infinity;
   slides.forEach((s, i) => {
     const dist = Math.abs(s.getBoundingClientRect().left - wrap.getBoundingClientRect().left);
