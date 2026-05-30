@@ -269,9 +269,9 @@ body{
 .diff-text{font-size:13px;color:rgba(240,234,216,0.8);line-height:1.75;font-weight:300}
 .diff-text strong{color:var(--gold);font-weight:500;display:block;margin-bottom:3px;font-size:14px}
 
-/* ── PORTFOLIO (가로 스크롤) ── */
-.portfolio-section{background:var(--dark2)}
-.portfolio-scroll-wrap{
+/* ── SERVICE (가로 스크롤) ── */
+.SERVICE-section{background:var(--dark2)}
+.SERVICE-scroll-wrap{
   margin:0 -28px;
   padding:0 28px;
   overflow-x:auto;
@@ -279,33 +279,32 @@ body{
   -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
 }
-.portfolio-scroll-wrap::-webkit-scrollbar{display:none}
-.portfolio-scroll-track{
+.SERVICE-scroll-wrap::-webkit-scrollbar{display:none}
+.SERVICE-scroll-track{
   display:flex;gap:14px;
   padding-right:28px;
 }
-.portfolio-slide{
+.SERVICE-slide{
   flex:0 0 82%;
   scroll-snap-align:start;
   border-radius:14px;overflow:hidden;
   border:1px solid rgba(186,153,99,0.12);
   background:var(--dark3);
 }
-.portfolio-slide img{
+.SERVICE-slide img{
   width:100%;
   height:auto;
   display:block;
 }
-.portfolio-dots{
+.SERVICE-dots{
   display:flex;justify-content:center;gap:7px;margin-top:16px;
 }
-.portfolio-dot{
+.SERVICE-dot{
   width:6px;height:6px;border-radius:50%;
   background:rgba(186,153,99,0.25);
   transition:all .3s;cursor:pointer;
 }
-.portfolio-dot.active{background:var(--gold);width:18px;border-radius:3px}
-
+.SERVICE-dot.active{background:var(--gold);width:18px;border-radius:3px}
 /* ── BNI ── */
 .bni-section{
   background:linear-gradient(135deg,rgba(186,153,99,0.07),rgba(16,31,22,0.6));
