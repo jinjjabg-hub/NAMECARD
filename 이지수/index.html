@@ -240,9 +240,6 @@
     .footer-sub { font-size: 10px; color: var(--gray); margin-top: 3px; }
     .footer-bni { padding: 5px 12px; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7); }
 
-    /* ── 플로팅 CTA ── */
-
-
     /* ── 페이드인 ── */
     .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.55s, transform 0.55s; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -487,22 +484,24 @@
   </div>
 </section>
 
-<!-- ══ 저장 버튼 (업그레이드 스킬 v1.1) ══ -->
+<!-- ══ 저장 버튼 (수정됨: vcf + saveToCardbook) ══ -->
 <section class="save-sec fade-in">
   <div class="save-wrap">
-    <a class="save-btn" onclick="saveContact(); return false;" href="#">
-      <span class="save-icon">👤</span>
-      <div class="save-info">
-        <strong><span data-lang="kr" class="on">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先保存</span><span data-lang="cn">保存联系人</span></strong>
-        <span><span data-lang="kr" class="on">이름·상호·전화번호</span><span data-lang="en">Name · Company · Tel</span><span data-lang="jp">名前・商号・電話番号</span><span data-lang="cn">姓名·公司·电话</span></span>
-      </div>
-    </a>
-    <button class="save-btn" onclick="saveToCardHolder()">
-      <span class="save-icon">📋</span>
-      <div class="save-info">
-        <strong><span data-lang="kr" class="on">명함첩에 저장</span><span data-lang="en">Save to Holder</span><span data-lang="jp">名刺帳に保存</span><span data-lang="cn">保存至名片夹</span></strong>
-        <span><span data-lang="kr" class="on">내 명함첩에 보관하기</span><span data-lang="en">Add to my card holder</span><span data-lang="jp">名刺帳に保管する</span><span data-lang="cn">保存到我的名片夹</span></span>
-      </div>
+    <!-- vcf 다운로드 버튼 (savePhone 스타일) -->
+    <button onclick="savePhone({name:'이지수',company:'SCHWEISS (스바이즈)',title:'대표',phone:'010-2169-7247',email:'schweiss0510@naver.com'})" class="save-btn btn-primary" style="background: var(--blue2); color:#fff;">
+      <span>📞</span>
+      <span class="lang-inline active" data-lang="kr">전화번호 저장하기</span>
+      <span class="lang-inline" data-lang="en">Save Contact</span>
+      <span class="lang-inline" data-lang="jp">連絡先を保存</span>
+      <span class="lang-inline" data-lang="cn">保存联系人</span>
+    </button>
+    <!-- saveToCardbook 버튼 (외부 스크립트 사용) -->
+    <button onclick="saveToCardbook({id:'lee-jisu-schweiss',name:'이지수',nameEn:'Jisu Lee',company:'SCHWEISS (스바이즈)',title:'대표',phone:'010-2169-7247',email:'schweiss0510@naver.com',chapter:'토파즈',bni:'BNI 토파즈 챕터 2기 부의장',url:'https://jinjjabg-hub.github.io/NAMECARD/이지수/'})" class="save-btn btn-secondary" style="background: transparent; border-color: var(--blue2); color: var(--blue3);">
+      <span>🗂️</span>
+      <span class="lang-inline active" data-lang="kr">명함 저장하기</span>
+      <span class="lang-inline" data-lang="en">Save to Cardbook</span>
+      <span class="lang-inline" data-lang="jp">名刺帳に保存</span>
+      <span class="lang-inline" data-lang="cn">保存到名片册</span>
     </button>
   </div>
 </section>
@@ -556,8 +555,6 @@
   <div class="footer-bni">Topaz</div>
 </footer>
 
-
-
 <script>
 /* ── 언어 전환 ── */
 function setLang(lang, btn) {
@@ -568,56 +565,28 @@ function setLang(lang, btn) {
   });
 }
 
-/* ── 연락처 저장 (vCard) ── */
-function saveContact() {
+/* ── savePhone (vCard 다운로드) ── */
+function savePhone({name, company, title, phone, email}) {
   const vcard = [
     'BEGIN:VCARD', 'VERSION:3.0',
-    'FN:이지수',
-    'N:이;지수;;;',
-    'ORG:SCHWEISS (스바이즈)',
-    'TITLE:대표',
-    'TEL;TYPE=CELL:010-2169-7247',
-    'TEL;TYPE=WORK:0507-1322-2169',
-    'EMAIL:schweiss0510@naver.com',
-    'URL:https://jinjjabg-hub.github.io/NAMECARD/이지수/',
-    'ADR:;;경기도 화성시 장안면 장안로 227번길 8;;;;',
-    'NOTE:금속임가공·반도체장비프레임·건설 | 토파즈 챕터 2기 부의장',
+    `FN:${name}`,
+    `N:${name};;;`,
+    `ORG:${company}`,
+    `TITLE:${title}`,
+    `TEL;TYPE=CELL:${phone}`,
+    `EMAIL:${email}`,
     'END:VCARD'
   ].join('\r\n');
   const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
-  a.href = url; a.download = '이지수_SCHWEISS.vcf';
+  a.href = url; a.download = `${name}_${company}.vcf`;
   document.body.appendChild(a); a.click();
   document.body.removeChild(a); URL.revokeObjectURL(url);
 }
 
-/* ── 명함첩 저장 ── */
-function saveToCardHolder() {
-  const card = {
-    id:      'lee-jisu-schweiss',
-    name:    '이지수',
-    company: 'SCHWEISS',
-    role:    '대표',
-    phone:   '010-2169-7247',
-    field:   '금속임가공·반도체·건설',
-    chapter: '토파즈 챕터',
-    url:     window.location.href,
-    photo:   'profile.jpg',
-    savedAt: new Date().toLocaleDateString('ko-KR')
-  };
-  let cards = JSON.parse(localStorage.getItem('bni_cards') || '[]');
-  if (cards.find(c => c.id === card.id)) {
-    window.location.href = '/';
-    return;
-  }
-  cards.push(card);
-  localStorage.setItem('bni_cards', JSON.stringify(cards));
-  sessionStorage.setItem('auto_install', '1');
-  if (confirm('✅ 명함첩에 저장되었습니다!\n명함첩 앱도 설치할까요?')) {
-    window.location.href = '/';
-  }
-}
+// 기존 saveToCardHolder 함수 삭제됨 (localStorage)
+// 외부 스크립트에서 saveToCardbook 함수 제공
 
 /* ── 스크롤 페이드인 ── */
 const observer = new IntersectionObserver(
@@ -626,5 +595,9 @@ const observer = new IntersectionObserver(
 );
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
+
+<!-- ═══ 외부 스크립트 추가 (명함첩 연동) ═══ -->
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+
 </body>
 </html>
