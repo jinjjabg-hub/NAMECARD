@@ -574,7 +574,7 @@ footer{
   <div class="stats-grid">
     <div class="stat-card">
       <div class="stat-num">∞</div>
-      <div class="stat-label"><span class="lang-inline active" data-lang="ko">MGF<br>스토리 큐레이터</span><span class="lang-inline" data-lang="en">34th MGF<br>Story Curator</span><span class="lang-inline" data-lang="ja">第34回MGF<br>ストーリーキュレーター</span><span class="lang-inline" data-lang="zh">第34届MGF<br>故事策展人</span></div>
+      <div class="stat-label"><span class="lang-inline active" data-lang="ko">34차 MGF<br>스토리 큐레이터</span><span class="lang-inline" data-lang="en">34th MGF<br>Story Curator</span><span class="lang-inline" data-lang="ja">第34回MGF<br>ストーリーキュレーター</span><span class="lang-inline" data-lang="zh">第34届MGF<br>故事策展人</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-num">77</div>
@@ -633,7 +633,6 @@ footer{
   </div>
   <div class="portfolio-scroll-wrap" id="portfolioWrap">
     <div class="portfolio-scroll-track">
-      <div class="portfolio-slide"><img src="./slide.png" alt="Slide "></div>
       <div class="portfolio-slide"><img src="./slide1.png" alt="Slide 1"></div>
       <div class="portfolio-slide"><img src="./slide2.png" alt="Slide 2"></div>
       <div class="portfolio-slide"><img src="./slide3.png" alt="Slide 3"></div>
@@ -761,7 +760,17 @@ footer{
       <span class="lang-inline" data-lang="zh">保存联系人</span>
     </span>
   </a>
-  <button class="save-btn btn-secondary" onclick="saveToCardbook()">
+  <button class="save-btn btn-secondary" onclick="saveToCardbook({
+    id:'seowon-lee',
+    name:'이서원',
+    company:'웰슨트서원 (Wealthent Seowon)',
+    role:'CEO',
+    phone:'010-4732-5452',
+    field:'스토리 자산 솔루션',
+    chapter:'플러스',
+    url:window.location.href,
+    photo:'./hero.jpg'
+  })">
     <span>🗂️</span>
     <span>
       <span class="lang-inline active" data-lang="ko">명함첩에 저장</span>
@@ -865,39 +874,6 @@ wrap.addEventListener('scroll', () => {
   dots.forEach((d,i) => d.classList.toggle('active', i === idx));
 });
 
-// 명함첩 저장
-function saveToCardbook() {
-  const card = {
-    id: 'wealthent-seowon',
-    name: '이서원',
-    nameEn: 'Lee Seo Won',
-    title: 'CEO',
-    company: '웰슨트서원 (Wealthent Seowon)',
-    phone: '010-4732-5452',
-    email: 'wealthent.seowon@gmail.com',
-    url: window.location.href,
-    bni: 'BNI 플러스 챕터 부의장',
-    savedAt: new Date().toLocaleDateString('ko-KR')
-  };
-  try {
-    const cards = JSON.parse(localStorage.getItem('bni_cards') || '[]');
-    const exists = cards.find(c => c.id === card.id);
-    if (exists) {
-      if (confirm('✅ 이미 명함첩에 저장되어 있어요!\n명함첩 바로 보기?')) {
-        window.location.href = '/명함첩.html';
-      }
-      return;
-    }
-    cards.push(card);
-    localStorage.setItem('bni_cards', JSON.stringify(cards));
-    if (confirm('✅ 명함첩에 저장되었습니다!\n명함첩 바로 보기?')) {
-      window.location.href = '/명함첩.html';
-    }
-  } catch(e) {
-    showToast('저장 완료 ✓');
-  }
-}
-
 function showToast(msg) {
   const t = document.createElement('div');
   t.textContent = msg;
@@ -912,5 +888,6 @@ function showToast(msg) {
   setTimeout(()=>t.remove(), 2500);
 }
 </script>
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 </body>
 </html>
