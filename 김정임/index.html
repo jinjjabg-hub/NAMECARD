@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>김정임 | 이음</title>
+<meta property="og:title" content="김정임 | 대표 · CEO · 이음">
+<meta property="og:description" content="Not a diet. A lifestyle. 건강과 행복을 요리하는 라이프 디자이너.">
+<meta property="og:image" content="og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/BNI-PIONEER-cards/kimjungim/">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark:   #1a3330;
+  --bg-dark2:  #22403c;
+  --bg-dark3:  #2a4f4a;
+  --bg-light:  #ffffff;
+  --bg-light2: #f7faf9;
+  --bg-light3: #eef7f4;
+  --mint:      #3abfa0;
+  --mint2:     #5dd4b8;
+  --mint3:     #e8f7f2;
+  --pink:      #f4849e;
+  --pink2:     #f9a8be;
+  --pink3:     #fdeef3;
+  --text-dark: #1a3330;
+  --text-light: #e8f7f2;
+  --muted-dark: #5a7a75;
+  --muted-light: #8fcfc4;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+body {
+  font-family:'Noto Sans KR',sans-serif;
+  background:#f0f0f0;
+  display:flex; justify-content:center;
+}
+
+/* 모바일 컨테이너 - 최대 430px */
+.app {
+  width:100%;
+  max-width:430px;
+  min-height:100vh;
+  background:var(--bg-light);
+  position:relative;
+  overflow-x:hidden;
+}
+
+[data-lang]        { display:none; }
+[data-lang].active { display:block; }
+span[data-lang]        { display:none; }
+span[data-lang].active { display:inline; }
+
+/* ── NAV ── */
+nav {
+  position:sticky; top:0; z-index:100;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  padding:12px 16px;
+  display:flex; justify-content:space-between; align-items:center;
+  border-bottom:1px solid rgba(58,191,160,0.2);
+  box-shadow:0 2px 12px rgba(58,191,160,0.08);
+}
+.nav-brand {
+  font-family:'Outfit',sans-serif;
+  font-size:14px; font-weight:700;
+  color:var(--mint); letter-spacing:2px;
+}
+.lang-btns { display:flex; gap:5px; }
+.lang-btn {
+  padding:5px 9px; border-radius:20px;
+  font-size:11px; font-weight:600;
+  border:1.5px solid rgba(58,191,160,0.3);
+  background:transparent; color:var(--muted-dark);
+  cursor:pointer; transition:all 0.18s;
+  min-width:36px; min-height:30px;
+}
+.lang-btn.active { background:var(--mint); color:#fff; border-color:var(--mint); }
+
+/* ── HERO ── */
+.hero {
+  position:relative; width:100%;
+  aspect-ratio:3/4; overflow:hidden;
+}
+.hero img {
+  width:100%; height:100%;
+  object-fit:cover; object-position:center top;
+  display:block;
+}
+.hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(20,15,12,0.08) 0%, rgba(20,15,12,0.72) 100%);
+}
+.hero-logo {
+  position:absolute; top:14px; left:16px;
+  font-family:'Outfit',sans-serif;
+  font-size:12px; font-weight:700;
+  color:#fff; letter-spacing:2px; opacity:0.9;
+}
+.hero-slogan {
+  position:absolute; top:14px; right:14px;
+  font-size:10px; font-style:italic;
+  color:rgba(255,255,255,0.8); letter-spacing:0.3px;
+  font-family:'Outfit',sans-serif;
+}
+.hero-badge {
+  position:absolute; bottom:56px; left:16px;
+  background:linear-gradient(135deg,var(--mint),var(--pink));
+  color:#fff; font-size:10px; font-weight:700;
+  padding:3px 10px; border-radius:20px;
+}
+.hero-name {
+  position:absolute; bottom:22px; left:16px;
+  font-family:'Outfit',sans-serif;
+  font-size:28px; font-weight:700;
+  color:#fff; letter-spacing:1px; line-height:1;
+}
+.hero-title {
+  position:absolute; bottom:8px; left:18px;
+  font-size:11px; color:rgba(255,255,255,0.75);
+  letter-spacing:0.8px;
+}
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background:var(--bg-light);
+  padding:18px 16px;
+  display:flex; align-items:center; gap:14px;
+  border-bottom:1px solid rgba(58,191,160,0.12);
+  box-shadow:0 2px 10px rgba(58,191,160,0.06);
+}
+.profile-img {
+  width:72px; height:72px; border-radius:50%;
+  object-fit:cover; object-position:center top;
+  border:2.5px solid var(--mint); flex-shrink:0;
+}
+.p-name {
+  font-size:18px; font-weight:700; color:var(--text-dark);
+  display:flex; align-items:baseline; gap:6px; flex-wrap:wrap;
+}
+.p-name-sub { font-size:12px; font-weight:500; color:var(--mint); }
+.p-sub { font-size:12px; color:var(--muted-dark); margin-top:3px; }
+
+/* ── 공통 섹션 ── */
+.sec { padding:36px 16px; }
+.sec-light  { background:var(--bg-light);  color:var(--text-dark); }
+.sec-light2 { background:var(--bg-light2); color:var(--text-dark); }
+.sec-light3 { background:var(--bg-light3); color:var(--text-dark); }
+.sec-dark   { background:var(--bg-dark);   color:var(--text-light); }
+.sec-dark2  { background:var(--bg-dark2);  color:var(--text-light); }
+
+.sec-label {
+  font-size:10px; font-weight:700;
+  letter-spacing:3px; text-transform:uppercase;
+  color:var(--mint); margin-bottom:4px;
+  font-family:'Outfit',sans-serif;
+}
+.sec-dark .sec-label,
+.sec-dark2 .sec-label { color:var(--mint2); }
+
+.sec-title {
+  font-family:'Outfit',sans-serif;
+  font-size:22px; font-weight:700;
+  margin-bottom:18px; line-height:1.3;
+}
+.sec-dark .sec-title,
+.sec-dark2 .sec-title { color:var(--text-light); }
+
+/* ── ABOUT ── */
+.about-text {
+  font-size:14px; line-height:1.9;
+  color:var(--muted-dark);
+}
+.slogan-box {
+  margin-top:18px; padding:14px 16px;
+  border-left:3px solid var(--mint);
+  background:var(--mint3);
+  border-radius:0 10px 10px 0;
+}
+.slogan-en {
+  font-family:'Outfit',sans-serif;
+  font-size:14px; font-weight:700; color:var(--mint);
+}
+.slogan-kr { font-size:12px; color:var(--muted-dark); margin-top:2px; }
+
+/* ── WHY ── */
+.why-cards { display:flex; flex-direction:column; gap:12px; }
+.why-card {
+  background:#fff; border-radius:14px; padding:18px;
+  border:1.5px solid rgba(58,191,160,0.15);
+  box-shadow:0 2px 12px rgba(58,191,160,0.07);
+}
+.why-icon  { font-size:22px; margin-bottom:7px; }
+.why-title { font-size:14px; font-weight:700; color:var(--text-dark); margin-bottom:5px; }
+.why-desc  { font-size:13px; line-height:1.85; color:var(--muted-dark); }
+.why-desc strong { color:var(--mint); font-weight:700; }
+
+/* ── DIFFERENCE ── */
+.diff-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+}
+.diff-card {
+  background:rgba(255,255,255,0.07);
+  border-radius:12px; padding:14px;
+  border:1px solid rgba(255,255,255,0.12);
+}
+.diff-icon  { font-size:18px; margin-bottom:6px; }
+.diff-title {
+  font-size:11px; font-weight:700;
+  color:var(--mint2); margin-bottom:5px; line-height:1.4;
+}
+.diff-desc  { font-size:11px; line-height:1.7; color:var(--muted-light); }
+.diff-desc strong { color:var(--pink2); }
+
+/* ── REFERRAL ── */
+.ref-list { display:flex; flex-direction:column; gap:10px; }
+.ref-item {
+  display:flex; align-items:flex-start; gap:12px;
+  padding:13px 14px; background:#fff;
+  border-radius:10px;
+  border:1.5px solid rgba(58,191,160,0.14);
+  box-shadow:0 1px 6px rgba(58,191,160,0.06);
+}
+.ref-num {
+  width:26px; height:26px; border-radius:50%;
+  flex-shrink:0;
+  background:linear-gradient(135deg,var(--mint),var(--pink));
+  color:#fff; font-size:12px; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+}
+.ref-text { font-size:13px; line-height:1.65; color:var(--text-dark); padding-top:2px; }
+
+/* ── BNI ── */
+.bni-history { display:flex; flex-direction:column; gap:14px; }
+.bni-item    { display:flex; gap:10px; align-items:flex-start; }
+.bni-badge {
+  background:linear-gradient(135deg,var(--mint),var(--pink));
+  color:#fff; font-size:10px; font-weight:700;
+  padding:3px 8px; border-radius:20px;
+  white-space:nowrap; flex-shrink:0; margin-top:2px;
+}
+.bni-item-title { font-size:14px; font-weight:600; color:var(--text-light); }
+.bni-item-desc  { font-size:12px; color:var(--muted-light); margin-top:2px; line-height:1.6; }
+
+/* ── CAREER ── */
+.career-list { display:flex; flex-direction:column; gap:14px; }
+.career-item { display:flex; gap:10px; align-items:flex-start; }
+.career-badge {
+  background:linear-gradient(135deg,var(--pink),var(--mint));
+  color:#fff; font-size:10px; font-weight:700;
+  padding:3px 8px; border-radius:20px;
+  white-space:nowrap; flex-shrink:0; margin-top:2px;
+}
+.career-title { font-size:13px; font-weight:600; color:var(--text-dark); }
+.career-desc  { font-size:11px; color:var(--muted-dark); margin-top:2px; }
+
+/* ── SLIDE ── */
+.slide-wrap { touch-action:pan-y; }
+.slide-track {
+  overflow:hidden; border-radius:14px;
+  aspect-ratio:3/4; margin-top:8px;
+  position:relative;
+}
+.slide-track img {
+  width:100%; height:100%;
+  object-fit:cover; display:none;
+  position:absolute; top:0; left:0;
+}
+.slide-track img.active { display:block; }
+.slide-arrows {
+  display:flex; justify-content:center; gap:12px; margin-top:12px;
+}
+.slide-arr {
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(255,255,255,0.12);
+  border:1.5px solid rgba(255,255,255,0.22);
+  color:#fff; font-size:20px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  min-width:44px; min-height:44px;
+}
+.slide-arr:active { background:var(--mint); }
+.slide-dots { display:flex; justify-content:center; gap:6px; margin-top:10px; }
+.dot {
+  width:6px; height:6px; border-radius:50%;
+  background:rgba(255,255,255,0.3); cursor:pointer;
+  transition:all 0.2s;
+}
+.dot.active { background:var(--mint2); width:18px; border-radius:3px; }
+
+/* ── CONTACT ── */
+.contact-list { display:flex; flex-direction:column; gap:14px; }
+.contact-item { display:flex; align-items:center; gap:13px; }
+.contact-icon {
+  width:44px; height:44px; border-radius:12px;
+  flex-shrink:0; background:var(--mint3);
+  border:1.5px solid rgba(58,191,160,0.2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px;
+}
+.contact-label { font-size:11px; color:var(--muted-dark); font-weight:500; }
+.contact-val   { font-size:14px; color:var(--text-dark); font-weight:600; margin-top:1px; }
+.contact-val a { color:var(--mint); text-decoration:none; }
+
+/* ── ACTION ── */
+.action-sec { background:var(--bg-dark); padding:28px 16px; }
+.action-btns { display:flex; flex-direction:column; gap:11px; }
+
+.btn {
+  width:100%; padding:16px; border-radius:14px;
+  font-size:15px; font-weight:700;
+  font-family:'DM Sans','Noto Sans KR',sans-serif;
+  border:none; cursor:pointer;
+  min-height:52px; transition:opacity 0.15s;
+  -webkit-appearance:none;
+}
+.btn:active { opacity:0.82; transform:scale(0.98); }
+.btn-mint {
+  background:linear-gradient(135deg,var(--mint),var(--mint2));
+  color:#fff; box-shadow:0 4px 16px rgba(58,191,160,0.3);
+}
+.btn-outline {
+  background:transparent;
+  border:2px solid var(--pink); color:var(--pink);
+}
+.btn-pink {
+  background:linear-gradient(135deg,var(--pink),var(--pink2));
+  color:#fff; box-shadow:0 4px 16px rgba(244,132,158,0.25);
+}
+
+/* ── FOOTER ── */
+footer {
+  background:var(--bg-dark);
+  padding:28px 16px; text-align:center;
+  border-top:1px solid rgba(58,191,160,0.15);
+}
+.footer-brand  { font-family:'Outfit',sans-serif; font-size:15px; font-weight:700; color:var(--mint2); }
+.footer-slogan { font-size:12px; color:var(--muted-light); font-style:italic; margin-top:4px; }
+.footer-copy   { font-size:10px; color:rgba(255,255,255,0.2); margin-top:14px; }
+
+.divider {
+  height:1px;
+  background:linear-gradient(to right,transparent,rgba(58,191,160,0.2),transparent);
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">이음 EUM</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">KR</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">JP</button>
+    <button class="lang-btn" onclick="setLang('cn')">CN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="hero.jpg" alt="히어로">
+  <div class="hero-overlay"></div>
+  <div class="hero-logo">이음 EUM</div>
+  <div class="hero-slogan">Not a diet. A lifestyle.</div>
+  <div class="hero-badge">웰니스 코치 · 라이프 디자이너</div>
+  <div class="hero-name">
+    <span data-lang="kr" class="active">김정임</span>
+    <span data-lang="en">KIM JUNG IM</span>
+    <span data-lang="jp">キム・ジョンイム</span>
+    <span data-lang="cn">金贞任</span>
+  </div>
+  <div class="hero-title">
+    <span data-lang="kr" class="active">대표 · CEO · 웰니스 코치</span>
+    <span data-lang="en">CEO · Wellness Coach</span>
+    <span data-lang="jp">代表 · ウェルネスコーチ</span>
+    <span data-lang="cn">代表 · 健康教练</span>
+  </div>
+</div>
+
+<!-- PROFILE ROW (다크) -->
+<div class="profile-row" style="background:var(--bg-dark2);">
+  <img class="profile-img" src="profile_circle.png" alt="프로필">
+  <div>
+    <div class="p-name" style="color:var(--text-light);">
+      <span data-lang="kr" class="active">김정임</span>
+      <span data-lang="en">KIM JUNG IM</span>
+      <span data-lang="jp">キム・ジョンイム</span>
+      <span data-lang="cn">金贞任</span>
+      <span class="p-name-sub">
+        <span data-lang="kr" class="active">대표</span>
+        <span data-lang="en">CEO</span>
+        <span data-lang="jp">代表</span>
+        <span data-lang="cn">代表</span>
+      </span>
+    </div>
+    <div class="p-sub" style="color:var(--muted-light);">
+      <span data-lang="kr" class="active">이음 · 웰니스 코치</span>
+      <span data-lang="en">EUM · Wellness Coach</span>
+      <span data-lang="jp">イウム · ウェルネスコーチ</span>
+      <span data-lang="cn">이음 · 健康教练</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT (다크) -->
+<div class="sec sec-dark">
+  <div class="sec-label">About</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">라이프 디자이너</span>
+    <span data-lang="en">Life Designer</span>
+    <span data-lang="jp">ライフデザイナー</span>
+    <span data-lang="cn">生活设计师</span>
+  </div>
+  <div class="about-text" style="color:var(--muted-light);">
+    <span data-lang="kr" class="active">건강과 행복을 요리하는 라이프 디자이너입니다.<br>단순한 다이어트를 넘어, 당신의 삶 전체를 설계합니다.</span>
+    <span data-lang="en">A life designer who cooks health and happiness.<br>Beyond dieting — I design your entire lifestyle.</span>
+    <span data-lang="jp">健康と幸せを料理するライフデザイナーです。<br>単なるダイエットを超え、人生全体を設計します。</span>
+    <span data-lang="cn">烹饪健康与幸福的生活设计师。<br>超越减肥，为您设计整体生活方式。</span>
+  </div>
+  <div class="slogan-box" style="background:rgba(58,191,160,0.1); border-left-color:var(--mint2);">
+    <div class="slogan-en">Not a diet. A lifestyle.</div>
+    <div class="slogan-kr" style="color:var(--muted-light);">다이어트가 아닌, 삶의 방식.</div>
+  </div>
+</div>
+
+<!-- WHY (라이트) -->
+<div class="sec sec-light">
+  <div class="sec-label">Why Me</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">왜 저와 함께해야 할까요?</span>
+    <span data-lang="en">Why Work With Me?</span>
+    <span data-lang="jp">なぜ私と一緒に？</span>
+    <span data-lang="cn">为什么选择我？</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <div class="why-icon">💪</div>
+      <div class="why-title"><span data-lang="kr" class="active">직접 해본 사람의 코칭</span><span data-lang="en">Coaching from Experience</span><span data-lang="jp">経験者によるコーチング</span><span data-lang="cn">亲身经历者的指导</span></div>
+      <div class="why-desc"><span data-lang="kr" class="active"><strong>초고도 비만을 직접 탈출한 당사자</strong>입니다. 실패의 좌절감도 성공의 기쁨도 모두 압니다. 그래서 당신의 상태와 마음을 누구보다 잘 압니다.</span><span data-lang="en"><strong>I personally escaped severe obesity.</strong> I know both the frustration of failure and the joy of success.</span><span data-lang="jp"><strong>超高度肥満を自ら脱出した当事者</strong>です。失敗も成功も全て知っています。</span><span data-lang="cn"><strong>我亲身摆脱了严重肥胖。</strong>深知失败的挫折和成功的喜悦。</span></div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📺</div>
+      <div class="why-title"><span data-lang="kr" class="active">방송이 검증한 전문성</span><span data-lang="en">TV-Verified Expertise</span><span data-lang="jp">テレビが証明した専門性</span><span data-lang="cn">媒体验证的专业性</span></div>
+      <div class="why-desc"><span data-lang="kr" class="active">MBN 매일아침, 건강의 기술, 천기누설 등 <strong>다수 TV에 다이어트 전문가로 출연</strong>한 검증된 코치입니다.</span><span data-lang="en">Appeared on MBN Morning and more as a <strong>verified diet expert on multiple TV programs.</strong></span><span data-lang="jp">MBN毎朝など<strong>多数のTV番組に専門家として出演</strong>した検証済みコーチです。</span><span data-lang="cn">在多个<strong>电视节目中作为减肥专家出镜</strong>的认证教练。</span></div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <div class="why-title"><span data-lang="kr" class="active">365일 곁에 있는 파트너</span><span data-lang="en">365-Day Partner</span><span data-lang="jp">365日そばにいるパートナー</span><span data-lang="cn">365天陪伴的伙伴</span></div>
+      <div class="why-desc"><span data-lang="kr" class="active">한번의 상담으로 끝나지 않습니다. <strong>매일 곁에서 응원하고, 같이 흔들리고, 같이 일어납니다.</strong></span><span data-lang="en">It doesn't end with one consultation. <strong>I cheer you on every day, fall together, and rise together.</strong></span><span data-lang="jp">一度の相談で終わりません。<strong>毎日そばで応援し、一緒に立ち上がります。</strong></span><span data-lang="cn">不只是一次咨询。<strong>每天陪伴鼓励，一起站起来。</strong></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- DIFFERENCE (다크) -->
+<div class="sec sec-dark">
+  <div class="sec-label">Difference</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">차별화된 접근</span>
+    <span data-lang="en">What Sets Me Apart</span>
+    <span data-lang="jp">差別化されたアプローチ</span>
+    <span data-lang="cn">差异化方法</span>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <div class="diff-icon">🧠</div>
+      <div class="diff-title"><span data-lang="kr" class="active">경험 디코딩</span><span data-lang="en">Experience Decoding</span><span data-lang="jp">経験デコーディング</span><span data-lang="cn">经验解码</span></div>
+      <div class="diff-desc"><span data-lang="kr" class="active"><strong>55KG 직접 감량</strong>한 당사자로서 현실적 솔루션을 설계합니다.</span><span data-lang="en"><strong>Lost 55KG myself</strong> — realistic solutions from real experience.</span><span data-lang="jp"><strong>55KG自ら減量</strong>した当事者として設計します。</span><span data-lang="cn">亲自<strong>减重55KG</strong>的当事人设计方案。</span></div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">📊</div>
+      <div class="diff-title"><span data-lang="kr" class="active">데이터 기반 맞춤 설계</span><span data-lang="en">Data-Driven Custom</span><span data-lang="jp">データ駆動型設計</span><span data-lang="cn">数据驱动定制</span></div>
+      <div class="diff-desc"><span data-lang="kr" class="active">장내미생물·InBody로 <strong>나에게 딱 맞게 설계</strong>합니다.</span><span data-lang="en">Gut microbiome, InBody — <strong>designed precisely for you.</strong></span><span data-lang="jp">腸内細菌・InBodyで<strong>最適設計</strong>します。</span><span data-lang="cn">肠道菌群、InBody<strong>量身定制</strong>。</span></div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🍽️</div>
+      <div class="diff-title"><span data-lang="kr" class="active">지속가능한 식단</span><span data-lang="en">Delicious Sustainability</span><span data-lang="jp">持続可能な食事</span><span data-lang="cn">可持续美味饮食</span></div>
+      <div class="diff-desc"><span data-lang="kr" class="active">전직 쉐프의 감각으로 <strong>맛있고 지속가능한 식단</strong>을 설계합니다.</span><span data-lang="en">Former chef's touch — <strong>delicious yet sustainable.</strong></span><span data-lang="jp">元シェフの感覚で<strong>美味しく続けられる食事</strong>を。</span><span data-lang="cn">前厨师设计<strong>美味可持续饮食</strong>。</span></div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🔬</div>
+      <div class="diff-title"><span data-lang="kr" class="active">과학적 영양 솔루션</span><span data-lang="en">Science-Based Nutrition</span><span data-lang="jp">科学的栄養ソリューション</span><span data-lang="cn">科学营养方案</span></div>
+      <div class="diff-desc"><span data-lang="kr" class="active">91년 역사 브랜드로 <strong>세포 수준의 영양 균형</strong>을 맞춥니다.</span><span data-lang="en">91-year brand for <strong>cellular-level nutrition balance.</strong></span><span data-lang="jp">91年ブランドで<strong>細胞レベルの栄養</strong>を整えます。</span><span data-lang="cn">91年品牌调整<strong>细胞层面营养平衡</strong>。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- REFERRAL (라이트) -->
+<div class="sec sec-light3">
+  <div class="sec-label">Referral</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please Refer Someone Who...</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的朋友</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item"><div class="ref-num">1</div><div class="ref-text"><span data-lang="kr" class="active">다이어트를 반복 실패한 분, 고도비만이신 분</span><span data-lang="en">Repeatedly failed dieting or with severe obesity</span><span data-lang="jp">ダイエットを繰り返し失敗した方・高度肥満の方</span><span data-lang="cn">反复减肥失败或严重肥胖的朋友</span></div></div>
+    <div class="ref-item"><div class="ref-num">2</div><div class="ref-text"><span data-lang="kr" class="active">맛없어서 못 버텼던 분, 요요 없는 식단을 원하시는 분</span><span data-lang="en">Couldn't stick to tasteless diets or want yo-yo free plans</span><span data-lang="jp">美味しくなくて続けられなかった方、リバウンドなし食事を望む方</span><span data-lang="cn">因饮食无味坚持不下去或想无反弹饮食的朋友</span></div></div>
+    <div class="ref-item"><div class="ref-num">3</div><div class="ref-text"><span data-lang="kr" class="active">40~50대 건강관리가 걱정인 분</span><span data-lang="en">In their 40s–50s concerned about health</span><span data-lang="jp">40〜50代で健康管理が心配な方</span><span data-lang="cn">40-50岁担心健康管理的朋友</span></div></div>
+    <div class="ref-item"><div class="ref-num">4</div><div class="ref-text"><span data-lang="kr" class="active">건강을 사업으로 연결하고 싶은 분</span><span data-lang="en">Want to connect health with business</span><span data-lang="jp">健康をビジネスにつなげたい方</span><span data-lang="cn">想将健康与事业联系起来的朋友</span></div></div>
+    <div class="ref-item"><div class="ref-num">5</div><div class="ref-text"><span data-lang="kr" class="active">의미 있는 부업을 찾으시는 분</span><span data-lang="en">Looking for meaningful side work</span><span data-lang="jp">意味のある副業を探している方</span><span data-lang="cn">寻找有意义副业的朋友</span></div></div>
+  </div>
+</div>
+
+<!-- CAREER (라이트) -->
+<div class="sec sec-light2">
+  <div class="sec-label">Career</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">경력 및 이력</span>
+    <span data-lang="en">Career History</span>
+    <span data-lang="jp">キャリア</span>
+    <span data-lang="cn">职业经历</span>
+  </div>
+  <div class="career-list">
+    <div class="career-item"><div class="career-badge">쉐프</div><div><div class="career-title"><span data-lang="kr" class="active">전직 쉐프 · 올리브 쿠킹 스튜디오 운영</span><span data-lang="en">Former Chef · Olive Cooking Studio</span><span data-lang="jp">元シェフ · オリーブクッキングスタジオ</span><span data-lang="cn">前厨师 · 橄榄烹饪工作室</span></div><div class="career-desc"><span data-lang="kr" class="active">다수 레스토랑 전직 쉐프</span><span data-lang="en">Former chef at multiple restaurants</span><span data-lang="jp">複数レストランで元シェフ</span><span data-lang="cn">多家餐厅前厨师</span></div></div></div>
+    <div class="career-item"><div class="career-badge">비만상담</div><div><div class="career-title"><span data-lang="kr" class="active">도레미의원 비만상담실장 (전)</span><span data-lang="en">Head of Obesity Consulting, Doremi Clinic</span><span data-lang="jp">ドレミ医院 肥満相談室長（前）</span><span data-lang="cn">哆来咪医院 肥胖咨询室长（前）</span></div></div></div>
+    <div class="career-item"><div class="career-badge">대표</div><div><div class="career-title"><span data-lang="kr" class="active">행복살림연구소 대표 (전)</span><span data-lang="en">CEO, Happy Living Research Institute</span><span data-lang="jp">幸福暮らし研究所 代表（前）</span><span data-lang="cn">幸福生活研究所 前代表</span></div></div></div>
+    <div class="career-item"><div class="career-badge">현재</div><div><div class="career-title"><span data-lang="kr" class="active">웰니스 코치 · 이음 대표</span><span data-lang="en">Wellness Coach · CEO of EUM</span><span data-lang="jp">ウェルネスコーチ · イウム代表</span><span data-lang="cn">健康教练 · 이음代表</span></div></div></div>
+  </div>
+</div>
+
+<!-- SLIDE (다크) -->
+<div class="sec sec-dark">
+  <div class="sec-label">Portfolio</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">활동 갤러리</span>
+    <span data-lang="en">Gallery</span>
+    <span data-lang="jp">ギャラリー</span>
+    <span data-lang="cn">活动照片</span>
+  </div>
+  <div class="slide-wrap" id="slideWrap">
+    <div class="slide-track" id="slideTrack">
+      <img src="portfolio1.jpg" class="active" alt="1">
+      <img src="portfolio2.jpg" alt="2">
+      <img src="portfolio3.jpg" alt="3">
+      <img src="portfolio4.jpg" alt="4">
+      <img src="portfolio5.jpg" alt="5">
+      <img src="portfolio6.jpg" alt="6">
+    </div>
+    <div class="slide-arrows">
+      <div class="slide-arr" onclick="slideMove(-1)">‹</div>
+      <div class="slide-arr" onclick="slideMove(1)">›</div>
+    </div>
+    <div class="slide-dots" id="dots"></div>
+  </div>
+</div>
+
+<!-- CONTACT (라이트) -->
+<div class="sec sec-light">
+  <div class="sec-label">Contact</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">연락처</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="contact-list">
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div><div class="contact-label">Phone</div><div class="contact-val"><a href="tel:01071015929">010-7101-5929</a></div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📸</div>
+      <div><div class="contact-label">Instagram</div><div class="contact-val"><a href="https://www.instagram.com/lucete_110" target="_blank">@lucete_110</a></div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🌿</div>
+      <div><div class="contact-label">Instagram (Wellness)</div><div class="contact-val"><a href="https://www.instagram.com/wellness_growth_" target="_blank">@wellness_growth_</a></div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🧵</div>
+      <div><div class="contact-label">Threads</div><div class="contact-val"><a href="https://www.threads.com/@lucete_110" target="_blank">@lucete_110</a></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ACTION (다크) -->
+<div class="action-sec">
+  <div class="action-btns">
+    <button class="btn btn-mint" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save Contact</span>
+      <span data-lang="jp">📞 連絡先保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-outline" onclick="saveToCardbook({id:'kimjungim',name:'김정임',nameEn:'KIM JUNG IM',title:'대표, CEO',company:'이음',phone:'010-7101-5929',email:'',chapter:'기타',bni:'이음 대표',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ CardBook에 명함 저장</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ CardBookに保存</span>
+      <span data-lang="cn">🗂️ 保存到CardBook</span>
+    </button>
+
+  </div>
+</div>
+
+<!-- FOOTER (다크) -->
+<footer>
+  <div class="footer-brand">이음 EUM</div>
+  <div class="footer-slogan">Not a diet. A lifestyle.</div>
+  <div class="footer-copy">© 2026 김정임 · 이음</div>
+</footer>
+
+</div><!-- .app -->
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+// 언어
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach((btn,i) => {
+    btn.classList.toggle('active', ['kr','en','jp','cn'][i] === lang);
+  });
+}
+
+// 연락처 저장
+function saveContact() {
+  const v = `BEGIN:VCARD\nVERSION:3.0\nFN:김정임\nORG:이음\nTITLE:대표 CEO\nTEL:010-7101-5929\nEND:VCARD`;
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([v],{type:'text/vcard'}));
+  a.download = 'KimJungIm_EUM.vcf';
+  a.click();
+}
+
+// 슬라이드
+let idx = 0, total = 6;
+function initSlide() {
+  const d = document.getElementById('dots');
+  for (let i=0;i<total;i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot'+(i===0?' active':'');
+    dot.onclick = ()=>goSlide(i);
+    d.appendChild(dot);
+  }
+}
+function goSlide(n) {
+  const imgs = document.querySelectorAll('.slide-track img');
+  const dots = document.querySelectorAll('.dot');
+  imgs[idx].classList.remove('active');
+  dots[idx].classList.remove('active');
+  idx = (n+total)%total;
+  imgs[idx].classList.add('active');
+  dots[idx].classList.add('active');
+}
+function slideMove(dir){goSlide(idx+dir);}
+
+// 터치 스와이프
+let tx = 0;
+const track = document.getElementById('slideTrack');
+track.addEventListener('touchstart', e=>{ tx=e.touches[0].clientX; }, {passive:true});
+track.addEventListener('touchend',   e=>{
+  const diff = tx - e.changedTouches[0].clientX;
+  if (Math.abs(diff)>40) slideMove(diff>0?1:-1);
+}, {passive:true});
+
+initSlide();
+</script>
+</body>
+</html>
