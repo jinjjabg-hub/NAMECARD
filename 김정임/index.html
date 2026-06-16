@@ -354,6 +354,21 @@ footer {
 <body>
 <div class="app">
 
+<!-- 카톡 인앱 감지 배너 -->
+<div id="kakaoBanner" style="display:none; position:sticky; top:0; z-index:200;
+  background:#FEE500; padding:12px 16px;
+  display:none; align-items:center; justify-content:space-between; gap:10px;">
+  <span style="font-size:13px; font-weight:600; color:#3a1d00; line-height:1.5;">
+    📤 공유하기는 외부 브라우저에서 가능해요.<br>
+    <span style="font-weight:400;">우측 상단 <b>···</b> → <b>다른 브라우저로 열기</b></span>
+  </span>
+  <button onclick="document.getElementById('kakaoBanner').style.display='none'"
+    style="background:rgba(0,0,0,0.12); border:none; border-radius:6px;
+    padding:4px 10px; font-size:12px; font-weight:700; color:#3a1d00; cursor:pointer; flex-shrink:0;">
+    닫기
+  </button>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-brand">이음 EUM</div>
@@ -686,6 +701,16 @@ function saveContact() {
   a.download = 'KimJungIm_EUM.vcf';
   a.click();
 }
+
+// 카카오 인앱브라우저 감지
+(function() {
+  const ua = navigator.userAgent.toLowerCase();
+  const isKakao = ua.includes('kakaotalk');
+  if (isKakao) {
+    const banner = document.getElementById('kakaoBanner');
+    banner.style.display = 'flex';
+  }
+})();
 
 // 공유하기 (Web Share API)
 function shareCard() {
