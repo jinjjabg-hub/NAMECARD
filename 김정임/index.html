@@ -17,22 +17,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg-dark:   #1a3330;
-  --bg-dark2:  #22403c;
-  --bg-dark3:  #2a4f4a;
-  --bg-light:  #ffffff;
-  --bg-light2: #f7faf9;
-  --bg-light3: #eef7f4;
-  --mint:      #3abfa0;
-  --mint2:     #5dd4b8;
-  --mint3:     #e8f7f2;
-  --pink:      #f4849e;
-  --pink2:     #f9a8be;
-  --pink3:     #fdeef3;
-  --text-dark: #1a3330;
-  --text-light: #e8f7f2;
-  --muted-dark: #5a7a75;
-  --muted-light: #8fcfc4;
+  --bg-dark:   #FF7F50;
+  --bg-dark2:  #FF7F50;
+  --bg-dark3:  #e86e40;
+  --bg-light:  #F8F8FF;
+  --bg-light2: #F8F8FF;
+  --bg-light3: #FFE135;
+  --coral:     #FF7F50;
+  --yellow:    #FFE135;
+  --white:     #F8F8FF;
+  --mint:      #FF7F50;
+  --mint2:     #FFE135;
+  --mint3:     #FFF8F0;
+  --pink:      #FF7F50;
+  --pink2:     #FFE135;
+  --pink3:     #F8F8FF;
+  --text-dark: #111111;
+  --text-light: #111111;
+  --muted-dark: #333333;
+  --muted-light: #444444;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -61,13 +64,13 @@ span[data-lang].active { display:inline; }
 /* ── NAV ── */
 nav {
   position:sticky; top:0; z-index:100;
-  background:rgba(255,255,255,0.96);
+  background:rgba(248,248,255,0.97);
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
   padding:12px 16px;
   display:flex; justify-content:space-between; align-items:center;
-  border-bottom:1px solid rgba(58,191,160,0.2);
-  box-shadow:0 2px 12px rgba(58,191,160,0.08);
+  border-bottom:1px solid rgba(255,127,80,0.25);
+  box-shadow:0 2px 12px rgba(255,127,80,0.1);
 }
 .nav-brand {
   font-family:'Outfit',sans-serif;
@@ -78,7 +81,7 @@ nav {
 .lang-btn {
   padding:5px 9px; border-radius:20px;
   font-size:11px; font-weight:600;
-  border:1.5px solid rgba(58,191,160,0.3);
+  border:1.5px solid rgba(255,127,80,0.3);
   background:transparent; color:var(--muted-dark);
   cursor:pointer; transition:all 0.18s;
   min-width:36px; min-height:30px;
@@ -97,7 +100,7 @@ nav {
 }
 .hero-overlay {
   position:absolute; inset:0;
-  background:linear-gradient(to bottom, rgba(20,15,12,0.08) 0%, rgba(20,15,12,0.72) 100%);
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%);
 }
 .hero-logo {
   position:absolute; top:14px; left:16px;
@@ -113,7 +116,7 @@ nav {
 }
 .hero-badge {
   position:absolute; bottom:56px; left:16px;
-  background:linear-gradient(135deg,var(--mint),var(--pink));
+  background:linear-gradient(135deg,#FF7F50,#FFE135);
   color:#fff; font-size:10px; font-weight:700;
   padding:3px 10px; border-radius:20px;
 }
@@ -134,13 +137,13 @@ nav {
   background:var(--bg-light);
   padding:18px 16px;
   display:flex; align-items:center; gap:14px;
-  border-bottom:1px solid rgba(58,191,160,0.12);
-  box-shadow:0 2px 10px rgba(58,191,160,0.06);
+  border-bottom:1px solid rgba(255,127,80,0.12);
+  box-shadow:0 2px 10px rgba(255,127,80,0.06);
 }
 .profile-img {
   width:72px; height:72px; border-radius:50%;
   object-fit:cover; object-position:center top;
-  border:2.5px solid var(--mint); flex-shrink:0;
+  border:2.5px solid #FF7F50; flex-shrink:0;
 }
 .p-name {
   font-size:18px; font-weight:700; color:var(--text-dark);
@@ -182,7 +185,7 @@ nav {
 .slogan-box {
   margin-top:18px; padding:14px 16px;
   border-left:3px solid var(--mint);
-  background:var(--mint3);
+  background:#FFE135;
   border-radius:0 10px 10px 0;
 }
 .slogan-en {
@@ -195,8 +198,8 @@ nav {
 .why-cards { display:flex; flex-direction:column; gap:12px; }
 .why-card {
   background:#fff; border-radius:14px; padding:18px;
-  border:1.5px solid rgba(58,191,160,0.15);
-  box-shadow:0 2px 12px rgba(58,191,160,0.07);
+  border:1.5px solid rgba(255,127,80,0.15);
+  box-shadow:0 2px 12px rgba(255,127,80,0.07);
 }
 .why-icon  { font-size:22px; margin-bottom:7px; }
 .why-title { font-size:14px; font-weight:700; color:var(--text-dark); margin-bottom:5px; }
@@ -226,13 +229,13 @@ nav {
   display:flex; align-items:flex-start; gap:12px;
   padding:13px 14px; background:#fff;
   border-radius:10px;
-  border:1.5px solid rgba(58,191,160,0.14);
-  box-shadow:0 1px 6px rgba(58,191,160,0.06);
+  border:1.5px solid rgba(255,127,80,0.14);
+  box-shadow:0 1px 6px rgba(255,127,80,0.06);
 }
 .ref-num {
   width:26px; height:26px; border-radius:50%;
   flex-shrink:0;
-  background:linear-gradient(135deg,var(--mint),var(--pink));
+  background:linear-gradient(135deg,#FF7F50,#FFE135);
   color:#fff; font-size:12px; font-weight:700;
   display:flex; align-items:center; justify-content:center;
 }
@@ -242,7 +245,7 @@ nav {
 .bni-history { display:flex; flex-direction:column; gap:14px; }
 .bni-item    { display:flex; gap:10px; align-items:flex-start; }
 .bni-badge {
-  background:linear-gradient(135deg,var(--mint),var(--pink));
+  background:linear-gradient(135deg,#FF7F50,#FFE135);
   color:#fff; font-size:10px; font-weight:700;
   padding:3px 8px; border-radius:20px;
   white-space:nowrap; flex-shrink:0; margin-top:2px;
@@ -290,7 +293,7 @@ nav {
 .slide-dots { display:flex; justify-content:center; gap:6px; margin-top:10px; }
 .dot {
   width:6px; height:6px; border-radius:50%;
-  background:rgba(255,255,255,0.3); cursor:pointer;
+  background:rgba(0,0,0,0.2); cursor:pointer;
   transition:all 0.2s;
 }
 .dot.active { background:var(--mint2); width:18px; border-radius:3px; }
@@ -300,8 +303,8 @@ nav {
 .contact-item { display:flex; align-items:center; gap:13px; }
 .contact-icon {
   width:44px; height:44px; border-radius:12px;
-  flex-shrink:0; background:var(--mint3);
-  border:1.5px solid rgba(58,191,160,0.2);
+  flex-shrink:0; background:#FFE135;
+  border:1.5px solid rgba(255,127,80,0.2);
   display:flex; align-items:center; justify-content:center;
   font-size:18px;
 }
@@ -324,7 +327,7 @@ nav {
 .btn:active { opacity:0.82; transform:scale(0.98); }
 .btn-mint {
   background:linear-gradient(135deg,var(--mint),var(--mint2));
-  color:#fff; box-shadow:0 4px 16px rgba(58,191,160,0.3);
+  color:#fff; box-shadow:0 4px 16px rgba(255,127,80,0.3);
 }
 .btn-outline {
   background:transparent;
@@ -332,14 +335,14 @@ nav {
 }
 .btn-pink {
   background:linear-gradient(135deg,var(--pink),var(--pink2));
-  color:#fff; box-shadow:0 4px 16px rgba(244,132,158,0.25);
+  color:#fff; box-shadow:0 4px 16px rgba(255,225,53,0.3);
 }
 
 /* ── FOOTER ── */
 footer {
   background:var(--bg-dark);
   padding:28px 16px; text-align:center;
-  border-top:1px solid rgba(58,191,160,0.15);
+  border-top:1px solid rgba(255,127,80,0.15);
 }
 .footer-brand  { font-family:'Outfit',sans-serif; font-size:15px; font-weight:700; color:var(--mint2); }
 .footer-slogan { font-size:12px; color:var(--muted-light); font-style:italic; margin-top:4px; }
@@ -347,7 +350,7 @@ footer {
 
 .divider {
   height:1px;
-  background:linear-gradient(to right,transparent,rgba(58,191,160,0.2),transparent);
+  background:linear-gradient(to right,transparent,rgba(255,127,80,0.2),transparent);
 }
 </style>
 </head>
@@ -418,7 +421,7 @@ footer {
       </span>
     </div>
     <div class="p-sub" style="color:var(--muted-light);">
-      <span data-lang="kr" class="active">이음 · 웰니스 코치</span>
+      <span data-lang="kr" class="active">이음 (건강과 성장을 연결하는) · 웰니스 코치</span>
       <span data-lang="en">EUM · Wellness Coach</span>
       <span data-lang="jp">イウム · ウェルネスコーチ</span>
       <span data-lang="cn">이음 · 健康教练</span>
@@ -436,12 +439,12 @@ footer {
     <span data-lang="cn">生活设计师</span>
   </div>
   <div class="about-text" style="color:var(--muted-light);">
-    <span data-lang="kr" class="active">건강과 행복을 요리하는 라이프 디자이너입니다.<br>단순한 다이어트를 넘어, 당신의 삶 전체를 설계합니다.</span>
+    <span data-lang="kr" class="active">건강과 행복을 요리하는 라이프 디자이너.</span>
     <span data-lang="en">A life designer who cooks health and happiness.<br>Beyond dieting — I design your entire lifestyle.</span>
     <span data-lang="jp">健康と幸せを料理するライフデザイナーです。<br>単なるダイエットを超え、人生全体を設計します。</span>
     <span data-lang="cn">烹饪健康与幸福的生活设计师。<br>超越减肥，为您设计整体生活方式。</span>
   </div>
-  <div class="slogan-box" style="background:rgba(58,191,160,0.1); border-left-color:var(--mint2);">
+  <div class="slogan-box" style="background:rgba(255,127,80,0.1); border-left-color:var(--mint2);">
     <div class="slogan-en">Not a diet. A lifestyle.</div>
     <div class="slogan-kr" style="color:var(--muted-light);">다이어트가 아닌, 삶의 방식.</div>
   </div>
@@ -460,17 +463,17 @@ footer {
     <div class="why-card">
       <div class="why-icon">💪</div>
       <div class="why-title"><span data-lang="kr" class="active">직접 해본 사람의 코칭</span><span data-lang="en">Coaching from Experience</span><span data-lang="jp">経験者によるコーチング</span><span data-lang="cn">亲身经历者的指导</span></div>
-      <div class="why-desc"><span data-lang="kr" class="active"><strong>초고도 비만을 직접 탈출한 당사자</strong>입니다. 실패의 좌절감도 성공의 기쁨도 모두 압니다. 그래서 당신의 상태와 마음을 누구보다 잘 압니다.</span><span data-lang="en"><strong>I personally escaped severe obesity.</strong> I know both the frustration of failure and the joy of success.</span><span data-lang="jp"><strong>超高度肥満を自ら脱出した当事者</strong>です。失敗も成功も全て知っています。</span><span data-lang="cn"><strong>我亲身摆脱了严重肥胖。</strong>深知失败的挫折和成功的喜悦。</span></div>
+      <div class="why-desc"><span data-lang="kr" class="active">초고도 비만을 직접 탈출한 당사자입니다. 실패의 좌절감도 성공의 기쁨도 모두 압니다. 그래서 당신의 상태와 마음을 <strong>누구보다 잘 압니다.</strong></span><span data-lang="en"><strong>I personally escaped severe obesity.</strong> I know both the frustration of failure and the joy of success.</span><span data-lang="jp"><strong>超高度肥満を自ら脱出した当事者</strong>です。失敗も成功も全て知っています。</span><span data-lang="cn"><strong>我亲身摆脱了严重肥胖。</strong>深知失败的挫折和成功的喜悦。</span></div>
     </div>
     <div class="why-card">
       <div class="why-icon">📺</div>
       <div class="why-title"><span data-lang="kr" class="active">방송이 검증한 전문성</span><span data-lang="en">TV-Verified Expertise</span><span data-lang="jp">テレビが証明した専門性</span><span data-lang="cn">媒体验证的专业性</span></div>
-      <div class="why-desc"><span data-lang="kr" class="active">MBN 매일아침, 건강의 기술, 천기누설 등 <strong>다수 TV에 다이어트 전문가로 출연</strong>한 검증된 코치입니다.</span><span data-lang="en">Appeared on MBN Morning and more as a <strong>verified diet expert on multiple TV programs.</strong></span><span data-lang="jp">MBN毎朝など<strong>多数のTV番組に専門家として出演</strong>した検証済みコーチです。</span><span data-lang="cn">在多个<strong>电视节目中作为减肥专家出镜</strong>的认证教练。</span></div>
+      <div class="why-desc"><span data-lang="kr" class="active">MBN매일아침 건강의 기술. 천기누설등 다수 TV에 <strong>다이어트 전문가로 출연한 검증된 코치</strong>입니다.</span><span data-lang="en">Appeared on MBN Morning and more as a <strong>verified diet expert on multiple TV programs.</strong></span><span data-lang="jp">MBN毎朝など<strong>多数のTV番組に専門家として出演</strong>した検証済みコーチです。</span><span data-lang="cn">在多个<strong>电视节目中作为减肥专家出镜</strong>的认证教练。</span></div>
     </div>
     <div class="why-card">
       <div class="why-icon">🤝</div>
       <div class="why-title"><span data-lang="kr" class="active">365일 곁에 있는 파트너</span><span data-lang="en">365-Day Partner</span><span data-lang="jp">365日そばにいるパートナー</span><span data-lang="cn">365天陪伴的伙伴</span></div>
-      <div class="why-desc"><span data-lang="kr" class="active">한번의 상담으로 끝나지 않습니다. <strong>매일 곁에서 응원하고, 같이 흔들리고, 같이 일어납니다.</strong></span><span data-lang="en">It doesn't end with one consultation. <strong>I cheer you on every day, fall together, and rise together.</strong></span><span data-lang="jp">一度の相談で終わりません。<strong>毎日そばで応援し、一緒に立ち上がります。</strong></span><span data-lang="cn">不只是一次咨询。<strong>每天陪伴鼓励，一起站起来。</strong></span></div>
+      <div class="why-desc"><span data-lang="kr" class="active">한번의 상담으로 끝나지 않습니다. 매일 곁에서 응원하고 같이 흔들리고. <strong>같이 일어납니다.</strong></span><span data-lang="en">It doesn't end with one consultation. <strong>I cheer you on every day, fall together, and rise together.</strong></span><span data-lang="jp">一度の相談で終わりません。<strong>毎日そばで応援し、一緒に立ち上がります。</strong></span><span data-lang="cn">不只是一次咨询。<strong>每天陪伴鼓励，一起站起来。</strong></span></div>
     </div>
   </div>
 </div>
@@ -488,22 +491,22 @@ footer {
     <div class="diff-card">
       <div class="diff-icon">🧠</div>
       <div class="diff-title"><span data-lang="kr" class="active">경험 디코딩</span><span data-lang="en">Experience Decoding</span><span data-lang="jp">経験デコーディング</span><span data-lang="cn">经验解码</span></div>
-      <div class="diff-desc"><span data-lang="kr" class="active"><strong>55KG 직접 감량</strong>한 당사자로서 현실적 솔루션을 설계합니다.</span><span data-lang="en"><strong>Lost 55KG myself</strong> — realistic solutions from real experience.</span><span data-lang="jp"><strong>55KG自ら減量</strong>した当事者として設計します。</span><span data-lang="cn">亲自<strong>减重55KG</strong>的当事人设计方案。</span></div>
+      <div class="diff-desc"><span data-lang="kr" class="active">이론만 아는 코치는 당신의 좌절을 이해하지 못합니다. 55KG을 직접 감량한 당사자로서 실패의 감정과 몸의 변화를 정확히 알기에 <strong>현실적인 솔루션을 설계합니다.</strong></span><span data-lang="en"><strong>Lost 55KG myself</strong> — realistic solutions from real experience.</span><span data-lang="jp"><strong>55KG自ら減量</strong>した当事者として設計します。</span><span data-lang="cn">亲自<strong>减重55KG</strong>的当事人设计方案。</span></div>
     </div>
     <div class="diff-card">
       <div class="diff-icon">📊</div>
       <div class="diff-title"><span data-lang="kr" class="active">데이터 기반 맞춤 설계</span><span data-lang="en">Data-Driven Custom</span><span data-lang="jp">データ駆動型設計</span><span data-lang="cn">数据驱动定制</span></div>
-      <div class="diff-desc"><span data-lang="kr" class="active">장내미생물·InBody로 <strong>나에게 딱 맞게 설계</strong>합니다.</span><span data-lang="en">Gut microbiome, InBody — <strong>designed precisely for you.</strong></span><span data-lang="jp">腸内細菌・InBodyで<strong>最適設計</strong>します。</span><span data-lang="cn">肠道菌群、InBody<strong>量身定制</strong>。</span></div>
+      <div class="diff-desc"><span data-lang="kr" class="active">감이 아닌 숫자로 시작합니다. 장내미생물검사. InBody. 마이웰니스 랩 프로그램등 개인데이터를 분석해 식단·운동·영양을 <strong>나에게 딱 맞게 설계합니다.</strong> 모두에게 같은 프로그램은 없습니다.</span><span data-lang="en">Gut microbiome, InBody — <strong>designed precisely for you.</strong></span><span data-lang="jp">腸内細菌・InBodyで<strong>最適設計</strong>します。</span><span data-lang="cn">肠道菌群、InBody<strong>量身定制</strong>。</span></div>
     </div>
     <div class="diff-card">
       <div class="diff-icon">🍽️</div>
       <div class="diff-title"><span data-lang="kr" class="active">지속가능한 식단</span><span data-lang="en">Delicious Sustainability</span><span data-lang="jp">持続可能な食事</span><span data-lang="cn">可持续美味饮食</span></div>
-      <div class="diff-desc"><span data-lang="kr" class="active">전직 쉐프의 감각으로 <strong>맛있고 지속가능한 식단</strong>을 설계합니다.</span><span data-lang="en">Former chef's touch — <strong>delicious yet sustainable.</strong></span><span data-lang="jp">元シェフの感覚で<strong>美味しく続けられる食事</strong>を。</span><span data-lang="cn">前厨师设计<strong>美味可持续饮食</strong>。</span></div>
+      <div class="diff-desc"><span data-lang="kr" class="active">맛없어서 포기하는 다이어트는 처음부터 실패입니다. 전직 쉐프의 감각으로 먹는 즐거움을 지키면서도 지속가능한 다이어트 식단을 설계합니다. <strong>맛있어야 오래하고 오래해야 바뀝니다.</strong></span><span data-lang="en">Former chef's touch — <strong>delicious yet sustainable.</strong></span><span data-lang="jp">元シェフの感覚で<strong>美味しく続けられる食事</strong>を。</span><span data-lang="cn">前厨师设计<strong>美味可持续饮食</strong>。</span></div>
     </div>
     <div class="diff-card">
       <div class="diff-icon">🔬</div>
       <div class="diff-title"><span data-lang="kr" class="active">과학적 영양 솔루션</span><span data-lang="en">Science-Based Nutrition</span><span data-lang="jp">科学的栄養ソリューション</span><span data-lang="cn">科学营养方案</span></div>
-      <div class="diff-desc"><span data-lang="kr" class="active">91년 역사 브랜드로 <strong>세포 수준의 영양 균형</strong>을 맞춥니다.</span><span data-lang="en">91-year brand for <strong>cellular-level nutrition balance.</strong></span><span data-lang="jp">91年ブランドで<strong>細胞レベルの栄養</strong>を整えます。</span><span data-lang="cn">91年品牌调整<strong>细胞层面营养平衡</strong>。</span></div>
+      <div class="diff-desc"><span data-lang="kr" class="active">91년 역사의 검증된 영양브랜드를 기반으로 단순한 식이제한이 아닌 세포수준의 영양 균형을 맞춥니다. <strong>좋은 영양이 있어야 몸이 바뀝니다.</strong></span><span data-lang="en">91-year brand for <strong>cellular-level nutrition balance.</strong></span><span data-lang="jp">91年ブランドで<strong>細胞レベルの栄養</strong>を整えます。</span><span data-lang="cn">91年品牌调整<strong>细胞层面营养平衡</strong>。</span></div>
     </div>
   </div>
 </div>
@@ -536,7 +539,7 @@ footer {
     <span data-lang="cn">数字看金贞任</span>
   </div>
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-    <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 14px; text-align:center;">
+    <div style="background:rgba(0,0,0,0.08); border:1px solid rgba(0,0,0,0.12); border-radius:14px; padding:20px 14px; text-align:center;">
       <div style="font-family:'Outfit',sans-serif; font-size:36px; font-weight:700; color:#ffffff;">55kg</div>
       <div style="font-size:11px; color:var(--muted-light); margin-top:6px; line-height:1.6;">
         <span data-lang="kr" class="active">직접 감량한<br>초고도 비만 탈출</span>
@@ -545,7 +548,7 @@ footer {
         <span data-lang="cn">亲自减重<br>摆脱严重肥胖</span>
       </div>
     </div>
-    <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 14px; text-align:center;">
+    <div style="background:rgba(0,0,0,0.08); border:1px solid rgba(0,0,0,0.12); border-radius:14px; padding:20px 14px; text-align:center;">
       <div style="font-family:'Outfit',sans-serif; font-size:36px; font-weight:700; color:#ffffff;">5년+</div>
       <div style="font-size:11px; color:var(--muted-light); margin-top:6px; line-height:1.6;">
         <span data-lang="kr" class="active">다이어트<br>웰니스 코칭</span>
@@ -554,16 +557,16 @@ footer {
         <span data-lang="cn">减肥<br>健康教练</span>
       </div>
     </div>
-    <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 14px; text-align:center;">
-      <div style="font-family:'Outfit',sans-serif; font-size:36px; font-weight:700; color:#ffffff;">2회</div>
+    <div style="background:rgba(0,0,0,0.08); border:1px solid rgba(0,0,0,0.12); border-radius:14px; padding:20px 14px; text-align:center;">
+      <div style="font-family:'Outfit',sans-serif; font-size:36px; font-weight:700; color:#ffffff;">500</div>
       <div style="font-size:11px; color:var(--muted-light); margin-top:6px; line-height:1.6;">
-        <span data-lang="kr" class="active">TV 방송<br>다이어트 전문가 출연</span>
-        <span data-lang="en">TV appearances as<br>diet expert</span>
-        <span data-lang="jp">TV放送<br>ダイエット専門家出演</span>
-        <span data-lang="cn">电视播出<br>减肥专家出镜</span>
+        <span data-lang="kr" class="active">누적<br>상담 기록</span>
+        <span data-lang="en">cumulative<br>consulting records</span>
+        <span data-lang="jp">累計<br>相談記録</span>
+        <span data-lang="cn">累计<br>咨询记录</span>
       </div>
     </div>
-    <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 14px; text-align:center;">
+    <div style="background:rgba(0,0,0,0.08); border:1px solid rgba(0,0,0,0.12); border-radius:14px; padding:20px 14px; text-align:center;">
       <div style="font-family:'Outfit',sans-serif; font-size:36px; font-weight:700; color:#ffffff;">50대</div>
       <div style="font-size:11px; color:var(--muted-light); margin-top:6px; line-height:1.6;">
         <span data-lang="kr" class="active">지금도<br>현재진행형</span>
@@ -588,7 +591,7 @@ footer {
     <div class="career-item"><div class="career-badge">쉐프</div><div><div class="career-title"><span data-lang="kr" class="active">전직 쉐프 · 올리브 쿠킹 스튜디오 운영</span><span data-lang="en">Former Chef · Olive Cooking Studio</span><span data-lang="jp">元シェフ · オリーブクッキングスタジオ</span><span data-lang="cn">前厨师 · 橄榄烹饪工作室</span></div><div class="career-desc"><span data-lang="kr" class="active">다수 레스토랑 전직 쉐프</span><span data-lang="en">Former chef at multiple restaurants</span><span data-lang="jp">複数レストランで元シェフ</span><span data-lang="cn">多家餐厅前厨师</span></div></div></div>
     <div class="career-item"><div class="career-badge">비만상담</div><div><div class="career-title"><span data-lang="kr" class="active">도레미의원 비만상담실장 (전)</span><span data-lang="en">Head of Obesity Consulting, Doremi Clinic</span><span data-lang="jp">ドレミ医院 肥満相談室長（前）</span><span data-lang="cn">哆来咪医院 肥胖咨询室长（前）</span></div></div></div>
     <div class="career-item"><div class="career-badge">대표</div><div><div class="career-title"><span data-lang="kr" class="active">행복살림연구소 대표 (전)</span><span data-lang="en">CEO, Happy Living Research Institute</span><span data-lang="jp">幸福暮らし研究所 代表（前）</span><span data-lang="cn">幸福生活研究所 前代表</span></div></div></div>
-    <div class="career-item"><div class="career-badge">현재</div><div><div class="career-title"><span data-lang="kr" class="active">웰니스 코치 · 이음 대표</span><span data-lang="en">Wellness Coach · CEO of EUM</span><span data-lang="jp">ウェルネスコーチ · イウム代表</span><span data-lang="cn">健康教练 · 이음代表</span></div></div></div>
+    <div class="career-item"><div class="career-badge">현재</div><div><div class="career-title"><span data-lang="kr" class="active">암웨이 다이어트 코치 현활동 · 웰니스 코치 · 이음 대표</span><span data-lang="en">Wellness Coach · CEO of EUM</span><span data-lang="jp">ウェルネスコーチ · イウム代表</span><span data-lang="cn">健康教练 · 이음代表</span></div></div></div>
   </div>
 </div>
 
