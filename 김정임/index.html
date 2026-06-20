@@ -680,12 +680,6 @@ footer {
       <span data-lang="jp">🗂️ CardBookに保存</span>
       <span data-lang="cn">🗂️ 保存到CardBook</span>
     </button>
-    <button class="btn btn-outline" onclick="shareCard()" style="border-color:var(--red); color:var(--red);">
-      <span data-lang="kr" class="active">📤 명함 공유하기</span>
-      <span data-lang="en">📤 Share Card</span>
-      <span data-lang="jp">📤 名刺をシェア</span>
-      <span data-lang="cn">📤 分享名片</span>
-    </button>
 
   </div>
 </div>
@@ -730,25 +724,7 @@ function saveContact() {
   }
 })();
 
-// 공유하기 (Web Share API)
-function shareCard() {
-  const data = {
-    title: '김정임 | 이음 대표 · 웰니스 코치',
-    text: 'Not a diet. A lifestyle. — 건강과 행복을 요리하는 라이프 디자이너',
-    url: 'https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%EC%A0%95%EC%9E%84/'
-  };
-  if (navigator.share) {
-    navigator.share(data).catch(() => {});
-  } else {
-    // 미지원 브라우저: URL 복사
-    navigator.clipboard.writeText(data.url).then(() => {
-      alert('링크가 복사되었습니다.\n카카오톡에 붙여넣기 하세요.');
-    }).catch(() => {
-      prompt('링크를 복사하세요:', data.url);
-    });
-  }
-}
-let idx = 0, total = 6;
+// 공유하기 (Web Share API)let idx = 0, total = 6;
 function initSlide() {
   const d = document.getElementById('dots');
   for (let i=0;i<total;i++) {
