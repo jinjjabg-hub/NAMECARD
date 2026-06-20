@@ -455,6 +455,9 @@ footer{
 
 <!-- 언어바 -->
 <div class="lang-bar">
+  <button class="btn btn-blue" onclick="shareCard()">
+  📤 <span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺を共有</span><span data-lang="cn">分享名片</span>
+</button>
   <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
   <button class="lang-btn" onclick="setLang('en')">English</button>
   <button class="lang-btn" onclick="setLang('ja')">日本語</button>
@@ -888,6 +891,19 @@ function showToast(msg) {
   setTimeout(()=>t.remove(), 2500);
 }
 </script>
-<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js">function shareCard() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      text: document.querySelector('meta[property="og:description"]')?.content || '',
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('링크가 복사되었습니다!');
+    });
+  }
+}
+</script>
 </body>
 </html>
