@@ -116,9 +116,6 @@ footer{background:var(--bg-dark);padding:28px 20px;text-align:center;border-top:
 <nav>
   <div class="nav-brand">ELROI MEDIA</div>
   <div class="lang-bar">
-    <button class="btn btn-blue" onclick="shareCard()">
-  📤 <span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺を共有</span><span data-lang="cn">分享名片</span>
-</button>
     <button class="lang-btn active" onclick="setLang('kr')">KR</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('jp')">JP</button>
@@ -327,19 +324,6 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 initSlide();
 </script>
-<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js">function shareCard() {
-  if (navigator.share) {
-    navigator.share({
-      title: document.title,
-      text: document.querySelector('meta[property="og:description"]')?.content || '',
-      url: window.location.href
-    });
-  } else {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      alert('링크가 복사되었습니다!');
-    });
-  }
-}
-</script>
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 </body>
 </html>
