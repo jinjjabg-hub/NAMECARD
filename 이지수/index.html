@@ -251,9 +251,6 @@
 
 <!-- 언어바 -->
 <div class="lang-bar">
-  <button class="btn btn-blue" onclick="shareCard()">
-  📤 <span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺を共有</span><span data-lang="cn">分享名片</span>
-</button>
   <button class="lang-btn on"  onclick="setLang('kr',this)">KR</button>
   <button class="lang-btn"     onclick="setLang('en',this)">EN</button>
   <button class="lang-btn"     onclick="setLang('jp',this)">JP</button>
@@ -600,20 +597,7 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
 <!-- ═══ 외부 스크립트 추가 (명함첩 연동) ═══ -->
-<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js">function shareCard() {
-  if (navigator.share) {
-    navigator.share({
-      title: document.title,
-      text: document.querySelector('meta[property="og:description"]')?.content || '',
-      url: window.location.href
-    });
-  } else {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      alert('링크가 복사되었습니다!');
-    });
-  }
-}
-</script>
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 
 </body>
 </html>
