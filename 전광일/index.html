@@ -28,9 +28,7 @@
 }
 
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
-
 html { font-size: 16px; }
-
 body {
   font-family: 'Noto Sans KR', sans-serif;
   background: var(--navy);
@@ -42,7 +40,6 @@ body {
 
 [data-lang="si"] { font-family: 'Noto Sans Sinhala', sans-serif; }
 [data-lang="ur"] { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
-
 [data-lang] { display: none; }
 [data-lang].active { display: block; }
 span[data-lang].active { display: inline; }
@@ -57,113 +54,82 @@ nav {
   display: flex; justify-content: space-between; align-items: center;
   border-bottom: 1px solid rgba(201,168,76,0.25);
 }
-.nav-brand {
-  font-size: 12px; font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
 .lang-btns { display:flex; gap:4px; }
 .lang-btn {
-  padding: 6px 9px;
+  padding: 5px 8px;
   border: 1px solid rgba(201,168,76,0.35);
   background: transparent;
   color: var(--muted-dark);
   font-size: 10px; font-weight: 700;
   cursor: pointer; border-radius: 5px;
   transition: all 0.2s;
-  min-width: 44px; min-height: 34px;
+  min-width: 40px; min-height: 32px;
   display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
 }
-.lang-btn.active {
-  background: var(--gold);
-  color: var(--navy);
-  border-color: var(--gold);
-}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 
 /* ── HERO ── */
 .hero {
   margin-top: 54px;
   position: relative;
-  min-height: 280px;
-  background: linear-gradient(160deg, var(--navy3) 0%, var(--navy) 100%);
+  width: 100%;
+  aspect-ratio: 3/4;
   overflow: hidden;
-  display: flex; align-items: flex-end;
 }
-.hero-pattern {
-  position: absolute; inset:0; opacity:0.04;
-  background-image: repeating-linear-gradient(
-    45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,27,62,0.1) 0%,
+    rgba(13,27,62,0.15) 40%,
+    rgba(13,27,62,0.75) 75%,
+    rgba(13,27,62,0.95) 100%
   );
-  background-size: 18px 18px;
-}
-.hero-glow {
-  position: absolute;
-  width: 200px; height: 200px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
-  top: 20px; right: -40px;
 }
 .hero-content {
-  position: relative; z-index:2;
-  padding: 28px 20px 24px;
-  width: 100%;
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
 }
 .hero-badge {
   display: inline-block;
   background: var(--gold);
   color: var(--navy);
   font-size: 10px; font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
 }
 .hero-name {
-  font-size: 36px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.15;
-  margin-bottom: 8px;
-  letter-spacing: -0.5px;
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
 }
-.hero-name [data-lang="ur"] {
-  font-size: 28px;
-}
-.hero-title {
-  font-size: 13px;
-  color: var(--gold);
-  font-weight: 400;
-  opacity: 0.9;
-  line-height: 1.5;
-}
+.hero-name [data-lang="ur"] { font-size: 26px; }
+.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
 
 /* ── PROFILE ROW ── */
 .profile-row {
   background: var(--navy2);
-  padding: 18px 20px;
+  padding: 16px 20px;
   display: flex; align-items: center; gap:14px;
   border-bottom: 1px solid rgba(201,168,76,0.12);
 }
 .profile-img {
-  width: 64px; height: 64px;
+  width: 64px; height: 64px; min-width:64px;
   border-radius: 50%;
   border: 2px solid var(--gold);
-  background: var(--navy3);
-  display: flex; align-items:center; justify-content:center;
-  font-size: 26px;
-  flex-shrink: 0;
-  overflow: hidden;
+  overflow: hidden; flex-shrink: 0;
 }
-.profile-img img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
-.profile-info h2 {
-  font-size: 16px; font-weight: 700; color: #fff;
-  margin-bottom: 4px; line-height: 1.3;
-}
-.profile-info p {
-  font-size: 12px; color: var(--muted-dark); line-height: 1.5;
-}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
 
 /* ── 공통 섹션 ── */
 section { padding: 40px 20px; }
@@ -172,11 +138,7 @@ section { padding: 40px 20px; }
   letter-spacing: 2.5px; text-transform: uppercase;
   color: var(--gold); margin-bottom: 6px;
 }
-.section-title {
-  font-size: 22px;
-  font-weight: 700; line-height: 1.35;
-  margin-bottom: 22px;
-}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
 
 /* ── ABOUT ── */
 .about { background: var(--navy); }
@@ -184,12 +146,9 @@ section { padding: 40px 20px; }
 .slogan {
   font-size: 15px; font-weight: 700;
   color: var(--gold); margin-bottom: 14px;
-  font-style: italic; line-height: 1.5;
+  font-style: italic; line-height: 1.6;
 }
-.about-text {
-  font-size: 14px; line-height: 1.9;
-  color: var(--text-dark); opacity: 0.85;
-}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
 .about-text [data-lang="ur"] { font-size: 15px; line-height: 2.2; }
 
 /* ── WHY ── */
@@ -201,45 +160,24 @@ section { padding: 40px 20px; }
   background: #fff;
   border: 1px solid rgba(201,168,76,0.18);
   border-left: 4px solid var(--gold);
-  border-radius: 10px;
-  padding: 18px 16px;
+  border-radius: 10px; padding: 18px 16px;
 }
-.why-card h3 {
-  font-size: 15px; font-weight: 700;
-  color: var(--text-light); margin-bottom: 8px;
-  line-height: 1.4;
-}
-.why-card h3 [data-lang="ur"] { font-size: 16px; }
-.why-card p {
-  font-size: 13px; line-height: 1.85;
-  color: #444;
-}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
 .why-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
 .why-card p strong { color: var(--navy); font-weight: 700; }
 
 /* ── DIFFERENCE ── */
 .difference { background: var(--navy2); }
 .difference .section-title { color: #fff; }
-.diff-grid {
-  display: flex; flex-direction: column;
-  gap: 12px;
-}
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
 .diff-card {
   background: var(--navy3);
   border: 1px solid rgba(201,168,76,0.12);
-  border-radius: 10px;
-  padding: 18px 16px;
+  border-radius: 10px; padding: 18px 16px;
 }
-.diff-card h3 {
-  font-size: 14px; font-weight: 700;
-  color: var(--gold); margin-bottom: 8px;
-  line-height: 1.4;
-}
-.diff-card h3 [data-lang="ur"] { font-size: 15px; }
-.diff-card p {
-  font-size: 13px; line-height: 1.8;
-  color: var(--text-dark); opacity: 0.8;
-}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.8; }
 .diff-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
 
 /* ── REFERRAL ── */
@@ -249,17 +187,13 @@ section { padding: 40px 20px; }
 .ref-list { display: flex; flex-direction: column; gap:10px; }
 .ref-item {
   display: flex; gap:12px; align-items:flex-start;
-  background: #fff;
-  border-radius: 10px;
-  padding: 15px 14px;
-  border: 1px solid rgba(0,0,0,0.05);
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
 }
 .ref-num {
   width: 26px; height: 26px; min-width:26px;
-  border-radius: 50%;
-  background: var(--gold);
-  color: var(--navy);
-  font-weight: 700; font-size: 12px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 12px;
   display: flex; align-items:center; justify-content:center;
   flex-shrink: 0; margin-top: 1px;
 }
@@ -269,34 +203,11 @@ section { padding: 40px 20px; }
 /* ── CAREER ── */
 .career {
   position: relative;
-  background-color: #f8f8f6;
-  background-image:
-    /* 굵은 대각선 결 - 짙은 회색 */
-    linear-gradient(
-      128deg,
-      transparent 0%, transparent 22%,
-      rgba(160,155,155,0.18) 22%, rgba(160,155,155,0.18) 22.5%,
-      transparent 22.5%, transparent 38%,
-      rgba(130,125,125,0.12) 38%, rgba(130,125,125,0.12) 38.8%,
-      transparent 38.8%, transparent 55%,
-      rgba(150,145,145,0.1) 55%, rgba(150,145,145,0.1) 55.3%,
-      transparent 55.3%, transparent 70%,
-      rgba(100,95,95,0.08) 70%, rgba(100,95,95,0.08) 71%,
-      transparent 71%, transparent 100%
-    ),
-    /* 가는 결 레이어 */
-    linear-gradient(
-      105deg,
-      transparent 0%, transparent 15%,
-      rgba(180,175,175,0.09) 15%, rgba(180,175,175,0.09) 15.4%,
-      transparent 15.4%, transparent 45%,
-      rgba(140,135,135,0.07) 45%, rgba(140,135,135,0.07) 45.6%,
-      transparent 45.6%, transparent 80%,
-      rgba(120,115,115,0.06) 80%, rgba(120,115,115,0.06) 80.5%,
-      transparent 80.5%
-    ),
-    /* 베이스: 살짝 따뜻한 흰색 */
-    radial-gradient(ellipse at 30% 20%, #ffffff 0%, #f2f1ef 60%, #ece9e6 100%);
+  background-color: #f0f4ff;
+  background-image: url('career-bg.png');
+  background-size: 150%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
 }
 .career .section-label { position: relative; z-index:1; color: var(--muted-light); }
 .career .section-title { color: var(--text-light); position: relative; z-index:1; }
@@ -308,21 +219,14 @@ section { padding: 40px 20px; }
 }
 .career-item:last-child { border-bottom: none; padding-bottom: 0; }
 .career-badge {
-  background: var(--navy);
-  color: #fff;
+  background: var(--navy); color: #fff;
   font-size: 10px; font-weight: 700;
   padding: 4px 10px; border-radius: 4px;
-  white-space: nowrap; flex-shrink: 0;
-  margin-top: 2px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
 }
-.career-item h3 {
-  font-size: 14px; font-weight: 700;
-  color: var(--text-light); margin-bottom: 7px; line-height: 1.4;
-}
-.career-item p {
-  font-size: 12px; line-height: 1.85;
-  color: #555; 
-}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
 
 /* ── CONTACT ── */
 .contact { background: var(--light); }
@@ -331,56 +235,44 @@ section { padding: 40px 20px; }
 .contact-list { display: flex; flex-direction: column; gap:10px; }
 .contact-item {
   display: flex; align-items:center; gap:12px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 14px 16px;
-  border: 1px solid rgba(0,0,0,0.05);
-  text-decoration: none;
-  min-height: 56px;
+  background: #fff; border-radius: 10px;
+  padding: 14px 16px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 56px;
 }
 .contact-icon {
   width: 40px; height: 40px; min-width:40px;
-  border-radius: 50%;
-  background: var(--navy);
+  border-radius: 50%; background: var(--navy);
   display: flex; align-items:center; justify-content:center;
   font-size: 17px; flex-shrink: 0;
 }
-.contact-label { font-size: 10px; color: #999; margin-bottom: 2px; letter-spacing: 0.5px; }
+.contact-label { font-size: 10px; color: #999; margin-bottom: 2px; }
 .contact-value { font-size: 14px; font-weight: 600; color: var(--text-light); line-height: 1.4; }
 
 /* ── ACTION ── */
 .action { background: var(--navy2); padding: 32px 20px; }
 .btn-group { display: flex; flex-direction: column; gap:12px; }
 .btn {
-  display: block; width: 100%;
-  padding: 17px 16px;
+  display: block; width: 100%; padding: 17px 16px;
   border: none; border-radius: 10px;
   font-size: 15px; font-weight: 700;
   cursor: pointer; text-align: center;
-  transition: all 0.15s;
-  font-family: 'Noto Sans KR', sans-serif;
-  min-height: 54px;
-  letter-spacing: 0.3px;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
 }
 .btn-primary { background: var(--gold); color: var(--navy); }
-.btn-secondary {
-  background: transparent;
-  border: 2px solid var(--gold);
-  color: var(--gold);
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-mandu {
+  background: linear-gradient(135deg, #1a3a6b, #0d5ca8);
+  color: #fff; border: none;
 }
 .btn:active { transform: scale(0.97); opacity: 0.9; }
 
 /* ── FOOTER ── */
 footer {
-  background: var(--navy);
-  padding: 24px 20px;
-  text-align: center;
-  border-top: 1px solid rgba(201,168,76,0.12);
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(201,168,76,0.12);
 }
-footer .company {
-  font-size: 13px; font-weight: 700;
-  color: var(--gold); margin-bottom: 5px;
-}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
 </style>
 </head>
@@ -399,8 +291,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-pattern"></div>
-  <div class="hero-glow"></div>
+  <img class="hero-img" src="hero.png" alt="전광일 행정사">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">
       <span data-lang="kr" class="active">행정사</span>
@@ -415,7 +307,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="si">ජොන් ක්වෑංගිල්</span>
     </div>
     <div class="hero-title">
-      <span data-lang="kr" class="active">대표 행정사 · 부경행정사사무소</span>
+      <span data-lang="kr" class="active">대표 · 부경행정사사무소</span>
       <span data-lang="vi">Giám đốc · BuGyeong Visa Servicing Office</span>
       <span data-lang="ur">سربراہ · بوگیونگ ویزا سروسنگ آفس</span>
       <span data-lang="si">CEO · BuGyeong Visa Servicing Office</span>
@@ -425,7 +317,9 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 
 <!-- PROFILE ROW -->
 <div class="profile-row">
-  <div class="profile-img">👤</div>
+  <div class="profile-img">
+    <img src="profil.png" alt="전광일">
+  </div>
   <div class="profile-info">
     <h2>전광일 · JEON KWANGIL</h2>
     <p>
@@ -447,10 +341,10 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="si">ලේඛන ඉක්මවා, විශ්වාසය ගොඩනඟමු.</span>
   </div>
   <p class="about-text">
-    <span data-lang="kr" class="active">복잡한 출입국·비자·국적·국제민원을 가장 정확하고 신속하게 해결하는 당신의 든든한 행정 파트너입니다.</span>
-    <span data-lang="vi">Chúng tôi là đối tác hành chính đáng tin cậy của bạn, giải quyết các vấn đề xuất nhập cảnh, visa, quốc tịch và khiếu nại quốc tế một cách chính xác và nhanh chóng nhất.</span>
-    <span data-lang="ur">ہم آپ کے قابل اعتماد انتظامی شراکت دار ہیں جو امیگریشن، ویزا، شہریت اور بین الاقوامی شکایات کو انتہائی درستگی اور تیزی سے حل کرتے ہیں۔</span>
-    <span data-lang="si">ඉමිග්‍රේෂන්, වීසා, ජාතිකත්වය සහ ජාත්‍යන්තර පැමිණිලි නිවැරදිව සහ ඉක්මනින් විසඳන ඔබේ විශ්වාසනීය පරිපාලන හවුල්කරු අපි වෙමු.</span>
+    <span data-lang="kr" class="active">복잡한 출입국행정·취업비자·투자비자·결혼비자·가족초청을 가장 정확하고 신속하게 해결하는 당신의 든든한 행정 파트너입니다.</span>
+    <span data-lang="vi">Chúng tôi là đối tác hành chính đáng tin cậy, giải quyết xuất nhập cảnh, visa việc làm, visa đầu tư, visa kết hôn và bảo lãnh gia đình một cách chính xác và nhanh chóng nhất.</span>
+    <span data-lang="ur">ہم آپ کے قابل اعتماد انتظامی شراکت دار ہیں جو ویزا، روزگار، سرمایہ کاری، شادی اور خاندانی دعوت کو انتہائی درستگی اور تیزی سے حل کرتے ہیں۔</span>
+    <span data-lang="si">ඉමිග්‍රේෂන්, රැකියා වීසා, ආයෝජන වීසා, විවාහ වීසා සහ පවුල් ආරාධනය නිවැරදිව සහ ඉක්මනින් විසඳන ඔබේ විශ්වාසනීය හවුල්කරු අපි වෙමු.</span>
   </p>
 </section>
 
@@ -466,44 +360,44 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="why-cards">
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">① 실무 중심 컨설팅</span>
-        <span data-lang="vi">① Tư vấn thực tiễn</span>
-        <span data-lang="ur">① عملی مشاورت</span>
-        <span data-lang="si">① ප්‍රායෝගික උපදේශනය</span>
+        <span data-lang="kr" class="active">① 풍부한 실제 사례</span>
+        <span data-lang="vi">① Kinh nghiệm thực tiễn phong phú</span>
+        <span data-lang="ur">① وسیع عملی تجربہ</span>
+        <span data-lang="si">① පුළුල් ප්‍රායෝගික අත්දැකීම්</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">법률 조항만 설명하는 것이 아닙니다. 수많은 실제 <strong>허가·불허 사례</strong>와 행정 경험을 바탕으로 가장 현실적인 해결책을 제시합니다.</span>
-        <span data-lang="vi">Không chỉ giải thích điều luật. Đề xuất giải pháp thực tế nhất dựa trên <strong>hàng nghìn ca thực tế</strong>.</span>
-        <span data-lang="ur"><strong>ہزاروں منظوری اور انکار کے معاملات</strong> کی بنیاد پر سب سے عملی حل پیش کرتے ہیں۔</span>
-        <span data-lang="si"><strong>සැබෑ අනුමත හා ප්‍රතික්ෂේප නිදර්ශන</strong> මත ප්‍රායෝගිකම විසඳුම ඉදිරිපත් කරමු.</span>
+        <span data-lang="kr" class="active">풍부한 실제 사례를 바탕으로 <strong>가장 빠르고 정확한 해결방안</strong>을 제시합니다.</span>
+        <span data-lang="vi">Dựa trên kinh nghiệm thực tiễn phong phú, đề xuất <strong>giải pháp nhanh nhất và chính xác nhất</strong>.</span>
+        <span data-lang="ur">وسیع عملی تجربے کی بنیاد پر <strong>سب سے تیز اور درست حل</strong> پیش کرتے ہیں۔</span>
+        <span data-lang="si">පුළුල් ප්‍රායෝගික අත්දැකීම් මත <strong>වේගවත්ම හා නිවැරදිම විසඳුම</strong> ඉදිරිපත් කරමු.</span>
       </p>
     </div>
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">② 원스톱 국제행정 서비스</span>
-        <span data-lang="vi">② Dịch vụ một cửa</span>
-        <span data-lang="ur">② ون اسٹاپ انتظامی سروس</span>
-        <span data-lang="si">② එකම ස්ථානයෙන් සේවා</span>
+        <span data-lang="kr" class="active">② 국제결혼비자 23개국+ 경험</span>
+        <span data-lang="vi">② Kinh nghiệm visa kết hôn 23+ quốc gia</span>
+        <span data-lang="ur">② 23 سے زائد ممالک کی شادی ویزا کا تجربہ</span>
+        <span data-lang="si">② රටවල් 23+ ජාත්‍යන්තර විවාහ වීසා අත්දැකීම්</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">출입국, 비자, 귀화, 외국인투자, 국제서류 인증까지 <strong>여러 기관을 따로 방문할 필요 없이</strong> 하나의 창구에서 통합 지원합니다.</span>
-        <span data-lang="vi">Từ xuất nhập cảnh đến công chứng quốc tế — <strong>tất cả tại một nơi</strong>, không cần đến nhiều cơ quan.</span>
-        <span data-lang="ur">امیگریشن سے بین الاقوامی دستاویز تک — <strong>سب ایک جگہ</strong>، متعدد دفاتر جانے کی ضرورت نہیں۔</span>
-        <span data-lang="si">ඉමිග්‍රේෂන් සිට ජාත්‍යන්තර ලේඛන දක්වා — <strong>සියල්ල එකම ස්ථානයෙන්</strong>.</span>
+        <span data-lang="kr" class="active">국제결혼(F-6) 비자는 <strong>23개국 이상</strong>의 외국인 배우자 비자 진행 경험을 보유하고 있습니다.</span>
+        <span data-lang="vi">Visa kết hôn quốc tế (F-6): kinh nghiệm xử lý visa cho vợ/chồng nước ngoài từ <strong>hơn 23 quốc gia</strong>.</span>
+        <span data-lang="ur">بین الاقوامی شادی (F-6) ویزا: <strong>23 سے زائد ممالک</strong> کے غیر ملکی شریک حیات کے ویزا کا تجربہ۔</span>
+        <span data-lang="si">ජාත්‍යන්තර විවාහ (F-6) වීසා: <strong>රටවල් 23 කට වැඩි</strong> විදේශ කලත්‍රයන්ගේ වීසා අත්දැකීම.</span>
       </p>
     </div>
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">③ 신속하고 정확한 진행</span>
-        <span data-lang="vi">③ Nhanh chóng và chính xác</span>
-        <span data-lang="ur">③ تیز اور درست عملدرآمد</span>
-        <span data-lang="si">③ ඉක්මන් හා නිවැරදි ක්‍රියාවලිය</span>
+        <span data-lang="kr" class="active">③ 취업비자 E-7 전문</span>
+        <span data-lang="vi">③ Chuyên gia visa việc làm E-7</span>
+        <span data-lang="ur">③ ملازمت ویزا E-7 کا ماہر</span>
+        <span data-lang="si">③ රැකියා වීසා E-7 විශේෂඥ</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">행정절차는 <strong>타이밍이 중요</strong>합니다. 서류와 절차를 체계적으로 관리하여 의뢰인의 시간을 아끼고 신속 정확하게 업무를 진행합니다.</span>
-        <span data-lang="vi">Trong hành chính, <strong>thời điểm là then chốt</strong>. Quản lý hồ sơ hệ thống để tiết kiệm thời gian cho khách hàng.</span>
-        <span data-lang="ur">انتظامی عمل میں <strong>وقت بہت اہم</strong> ہے۔ دستاویزات کو منظم طریقے سے سنبھال کر آپ کا وقت بچاتے ہیں۔</span>
-        <span data-lang="si">ක්‍රියාවලියේ <strong>කාලය ඉතා වැදගත්</strong>. ලේඛන ක්‍රමානුකූලව කළමනාකරණය කර ඔබේ කාලය ඉතිරි කරමු.</span>
+        <span data-lang="kr" class="active">취업비자는 <strong>E-7, E-7-4(E-7-4R 포함)</strong> 전문으로 정확한 직종코드 분석부터 허가까지 체계적으로 진행합니다.</span>
+        <span data-lang="vi">Chuyên về <strong>E-7, E-7-4 (kể cả E-7-4R)</strong>: phân tích mã nghề chính xác đến khi được chấp thuận.</span>
+        <span data-lang="ur"><strong>E-7، E-7-4 (E-7-4R سمیت)</strong> میں مہارت: درست پیشہ کوڈ تجزیہ سے منظوری تک منظم عملدرآمد۔</span>
+        <span data-lang="si"><strong>E-7, E-7-4 (E-7-4R ඇතුළු)</strong> විශේෂඥ: නිවැරදි රැකියා කේත විශ්ලේෂණයේ සිට අනුමැතිය දක්වා.</span>
       </p>
     </div>
   </div>
@@ -521,58 +415,44 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="diff-grid">
     <div class="diff-card">
       <h3>
-        <span data-lang="kr" class="active">📋 사례 기반 문제 해결</span>
-        <span data-lang="vi">📋 Giải quyết dựa trên thực tiễn</span>
-        <span data-lang="ur">📋 کیس پر مبنی حل</span>
-        <span data-lang="si">📋 නිදර්ශන මත විසඳුම්</span>
+        <span data-lang="kr" class="active">🏢 외국인투자(D-8) 원스톱</span>
+        <span data-lang="vi">🏢 D-8 Đầu tư nước ngoài một cửa</span>
+        <span data-lang="ur">🏢 D-8 غیر ملکی سرمایہ کاری ون اسٹاپ</span>
+        <span data-lang="si">🏢 D-8 විදේශ ආයෝජන එකම ස්ථානය</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">같은 비자라도 상황은 모두 다릅니다. 유사 사례와 실제 경험으로 맞춤 전략을 제안합니다.</span>
-        <span data-lang="vi">Cùng visa nhưng mỗi trường hợp khác nhau. Đề xuất chiến lược phù hợp từng người.</span>
-        <span data-lang="ur">ایک ہی ویزا کے لیے ہر صورتحال مختلف ہوتی ہے۔ ہر کیس کے مطابق حکمت عملی پیش کرتے ہیں۔</span>
-        <span data-lang="si">එකම වීසාවේදී සෑම අවස්ථාවක්ම වෙනස්. සෑම අයට ගැළපෙන ව්‍යූහය ඉදිරිපත් කරමු.</span>
+        <span data-lang="kr" class="active">외국인투자신고부터 법인설립, 비자신청까지 법무사·세무사와 협업하여 원스톱 서비스를 제공합니다.</span>
+        <span data-lang="vi">Từ báo cáo đầu tư đến thành lập công ty và xin visa — dịch vụ một cửa phối hợp với luật sư và kế toán.</span>
+        <span data-lang="ur">سرمایہ کاری اطلاع سے کمپنی قیام اور ویزا درخواست تک — قانونی و مالیاتی ماہرین کے ساتھ ون اسٹاپ سروس۔</span>
+        <span data-lang="si">ආයෝජන ලියාපදිංචියේ සිට සමාගම් ආරම්භය සහ වීසා ඉල්ලීම දක්වා — නීතිඥයින් සමඟ එකම ස්ථානයෙන්.</span>
       </p>
     </div>
     <div class="diff-card">
       <h3>
-        <span data-lang="kr" class="active">📄 정확한 서류 설계</span>
-        <span data-lang="vi">📄 Hồ sơ chính xác</span>
-        <span data-lang="ur">📄 درست دستاویز ڈیزائن</span>
-        <span data-lang="si">📄 නිවැරදි ලේඛන සැලසුම</span>
+        <span data-lang="kr" class="active">💑 가족·결혼비자 높은 허가율</span>
+        <span data-lang="vi">💑 Tỷ lệ chấp thuận visa gia đình cao</span>
+        <span data-lang="ur">💑 خاندانی ویزا کی بلند منظوری شرح</span>
+        <span data-lang="si">💑 පවුල් වීසා ඉහළ අනුමත අනුපාතය</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">행정의 성패는 서류에서 결정됩니다. 심사기관이 이해하기 쉬운 논리와 근거를 갖춘 문서를 설계합니다.</span>
-        <span data-lang="vi">Thành bại nằm ở tài liệu. Thiết kế tài liệu logic, dễ hiểu cho cơ quan thẩm định.</span>
-        <span data-lang="ur">انتظامی کامیابی دستاویزات میں ہے۔ جائزہ لینے والے ادارے کے لیے واضح دستاویزات تیار کرتے ہیں۔</span>
-        <span data-lang="si">සාර්ථකත්වය ලේඛනවලින් තීරණය වේ. සමාලෝචන ආයතනයට සරල ලේඛන සකස් කරමු.</span>
+        <span data-lang="kr" class="active">초청인 서류부터 해외 가족서류, 공증, 번역, 인증까지 체계적으로 지원하여 높은 허가율을 유지합니다.</span>
+        <span data-lang="vi">Hỗ trợ từ tài liệu người bảo lãnh đến hồ sơ gia đình nước ngoài, công chứng, dịch thuật — tỷ lệ chấp thuận cao.</span>
+        <span data-lang="ur">دعوت دینے والے سے غیر ملکی خاندانی دستاویزات، نوٹرائزیشن اور ترجمے تک مکمل تعاون — بلند منظوری شرح۔</span>
+        <span data-lang="si">ආරාධකයාගේ ලේඛනවල සිට විදේශ පවුල් ලේඛන, නොතාරිස්, පරිවර්තනය දක්වා — ඉහළ අනුමත අනුපාතය.</span>
       </p>
     </div>
     <div class="diff-card">
       <h3>
-        <span data-lang="kr" class="active">🤝 끝까지 함께하는 파트너</span>
-        <span data-lang="vi">🤝 Đồng hành đến cùng</span>
-        <span data-lang="ur">🤝 آخر تک ساتھ</span>
-        <span data-lang="si">🤝 අවසාන දක්වා හවුල්කරු</span>
+        <span data-lang="kr" class="active">🌏 영주권·귀화 전 분야 전문</span>
+        <span data-lang="vi">🌏 Chuyên gia thường trú & nhập tịch</span>
+        <span data-lang="ur">🌏 مستقل اقامت اور귀화 کے مکمل ماہر</span>
+        <span data-lang="si">🌏 ස්ථිර පදිංචිය සහ ජාතිකත්ව විශේෂඥ</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">접수만 하고 끝나는 업무가 아닙니다. 허가 완료까지 진행 상황을 함께 관리하고 지속적으로 소통합니다.</span>
-        <span data-lang="vi">Không chỉ nhận hồ sơ. Quản lý và liên lạc liên tục cho đến khi được chấp thuận.</span>
-        <span data-lang="ur">صرف درخواست جمع کروانا نہیں۔ منظوری تک ہر قدم پر ساتھ اور مسلسل رابطے میں رہتے ہیں۔</span>
-        <span data-lang="si">ඉල්ලීම ඉදිරිපත් කර ඉවර නොවෙමු. අනුමැතිය ලැබෙන තෙක් අඛණ්ඩව සන්නිවේදනය කරමු.</span>
-      </p>
-    </div>
-    <div class="diff-card">
-      <h3>
-        <span data-lang="kr" class="active">🌐 폭넓은 전문 분야</span>
-        <span data-lang="vi">🌐 Chuyên môn đa lĩnh vực</span>
-        <span data-lang="ur">🌐 وسیع تخصص</span>
-        <span data-lang="si">🌐 පුළුල් විශේෂ ක්ෂේත්‍ර</span>
-      </h3>
-      <p>
-        <span data-lang="kr" class="active">출입국·비자·귀화·국제결혼·행정심판까지 어떤 상황에서도 최적의 솔루션을 제공합니다.</span>
-        <span data-lang="vi">Từ visa đến kết hôn quốc tế và khiếu nại hành chính — giải pháp tối ưu mọi tình huống.</span>
-        <span data-lang="ur">ویزا سے بین الاقوامی شادی اور انتظامی اپیل تک — ہر صورتحال کے لیے بہترین حل۔</span>
-        <span data-lang="si">වීසා සිට ජාත්‍යන්තර විවාහ සහ අභියාචනා දක්වා — සෑම අවස්ථාකටම ශ්‍රේෂ්ඨ විසඳුම.</span>
+        <span data-lang="kr" class="active">영주권(F-5), 귀화, 특별귀화(인지·입양), 국적회복 등 출입국 전 분야 업무를 전문적으로 수행합니다.</span>
+        <span data-lang="vi">Thực hiện chuyên nghiệp F-5, nhập tịch, nhập tịch đặc biệt (công nhận con/nhận nuôi), phục hồi quốc tịch.</span>
+        <span data-lang="ur">F-5،귀화، خصوصی귀화 (تسلیم و گود لینا)، شہریت بحالی — تمام امیگریشن شعبوں میں مہارت۔</span>
+        <span data-lang="si">F-5, ජාතිකත්වය, විශේෂ ජාතිකත්වය (හඳුනාගැනීම/දරු සම්බන්ධය), ජාතිකත්ව ප්‍රතිෂ්ඨාපනය — සම්පූර්ණ ක්ෂේත්‍රය.</span>
       </p>
     </div>
   </div>
@@ -591,46 +471,19 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="ref-item">
       <div class="ref-num">1</div>
       <p>
-        <span data-lang="kr" class="active">취업(E-7), 결혼(F-6), 영주(F-5), 외국인투자(D-8), 가족초청(F-3) 등 비자가 필요한 외국인 및 가족</span>
-        <span data-lang="vi">Người nước ngoài cần visa E-7, F-6, F-5, D-8, F-3 và gia đình</span>
-        <span data-lang="ur">E-7, F-6, F-5, D-8, F-3 ویزا کی ضرورت والے غیر ملکی اور ان کے خاندان</span>
-        <span data-lang="si">E-7, F-6, F-5, D-8, F-3 වීසා අවශ්‍ය විදේශිකයන් සහ ඔවුන්ගේ පවුල්</span>
+        <span data-lang="kr" class="active">한국에서 체류할 수 있는 비자가 필요한 모든 외국인</span>
+        <span data-lang="vi">Tất cả người nước ngoài cần visa để cư trú tại Hàn Quốc</span>
+        <span data-lang="ur">کوریا میں قیام کے لیے ویزا کی ضرورت والے تمام غیر ملکی</span>
+        <span data-lang="si">කොරියාවේ නිත්‍ය පදිංචිය සඳහා වීසා අවශ්‍ය සියලුම විදේශිකයන්</span>
       </p>
     </div>
     <div class="ref-item">
       <div class="ref-num">2</div>
       <p>
-        <span data-lang="kr" class="active">외국인 전문직 채용 및 비자 변경, 외국인투자(D-8) 등 출입국 행정이 필요한 사업주</span>
-        <span data-lang="vi">Doanh nghiệp cần tuyển chuyên gia nước ngoài, thay đổi visa, đầu tư D-8</span>
-        <span data-lang="ur">غیر ملکی پیشہ ور افراد کی بھرتی اور D-8 سرمایہ کاری کی ضرورت والے کاروباری ادارے</span>
-        <span data-lang="si">විදේශ වෘත්තිකයන් බඳවා ගැනීම සහ D-8 ආයෝජන අවශ්‍ය ව්‍යාපාරිකයන්</span>
-      </p>
-    </div>
-    <div class="ref-item">
-      <div class="ref-num">3</div>
-      <p>
-        <span data-lang="kr" class="active">국제결혼, 특별귀화, 외국인자녀 가족관계등록 등 가족관계 행정이 필요한 분</span>
-        <span data-lang="vi">Người cần thủ tục kết hôn quốc tế, nhập tịch, đăng ký gia đình</span>
-        <span data-lang="ur">بین الاقوامی شادی، خصوصی귀화 اور خاندانی رجسٹریشن کی ضرورت والے افراد</span>
-        <span data-lang="si">ජාත්‍යන්තර විවාහ, ජාතිකත්වය, පවුල් ලියාපදිංචිය අවශ්‍ය අය</span>
-      </p>
-    </div>
-    <div class="ref-item">
-      <div class="ref-num">4</div>
-      <p>
-        <span data-lang="kr" class="active">아포스티유, 영사확인, 해외서류 번역·공증 등 국제민원이 필요한 개인 및 기업</span>
-        <span data-lang="vi">Cá nhân, doanh nghiệp cần Apostille, xác nhận lãnh sự, dịch thuật công chứng</span>
-        <span data-lang="ur">اپوسٹیل، قونصلر تصدیق اور بین الاقوامی دستاویز کی ضرورت والے افراد اور ادارے</span>
-        <span data-lang="si">Apostille, කොන්සියුලර් සහතිකය, ජාත්‍යන්තර ලේඛන පරිවර්තනය අවශ්‍ය අය</span>
-      </p>
-    </div>
-    <div class="ref-item">
-      <div class="ref-num">5</div>
-      <p>
-        <span data-lang="kr" class="active">기업, 법무사, 외국대사관 대행업체 등 협업 가능한 전문 파트너</span>
-        <span data-lang="vi">Đối tác chuyên nghiệp: doanh nghiệp, văn phòng pháp lý, đại diện đại sứ quán</span>
-        <span data-lang="ur">کاروباری ادارے، قانونی دفاتر اور سفارت خانوں کے نمائندے</span>
-        <span data-lang="si">ව්‍යාපාරික ආයතන, නීති කාර්යාල, දූත මණ්ඩල නියෝජිතයන්</span>
+        <span data-lang="kr" class="active">외국인을 초청할 한국인이나 한국 회사</span>
+        <span data-lang="vi">Người Hàn Quốc hoặc công ty Hàn Quốc muốn bảo lãnh người nước ngoài</span>
+        <span data-lang="ur">غیر ملکی کو مدعو کرنے کے خواہشمند کورین شہری یا کورین کمپنی</span>
+        <span data-lang="si">විදේශිකයෙකු ආරාධනා කිරීමට කැමති කොරියානු පුද්ගලයන් හෝ සමාගම්</span>
       </p>
     </div>
   </div>
@@ -648,11 +501,11 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="career-list">
     <div class="career-item">
       <div class="career-badge">현재</div>
-      <div>
+      <div class="career-content">
         <h3>
           <span data-lang="kr" class="active">부경행정사사무소 대표 행정사</span>
           <span data-lang="vi">Giám đốc — BuGyeong Visa Servicing Office</span>
-          <span data-lang="ur">بوگیونگ آفس کے سربراہ ایڈمنسٹریٹر</span>
+          <span data-lang="ur">بوگیونگ آفس — سربراہ ایڈمنسٹریٹر</span>
           <span data-lang="si">BuGyeong Visa Servicing Office — ප්‍රධාන නිලධාරී</span>
         </h3>
         <p>
@@ -665,7 +518,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     </div>
     <div class="career-item">
       <div class="career-badge">강점</div>
-      <div>
+      <div class="career-content">
         <h3>
           <span data-lang="kr" class="active">핵심 강점</span>
           <span data-lang="vi">Thế mạnh cốt lõi</span>
@@ -673,9 +526,9 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
           <span data-lang="si">මූලික ශක්තීන්</span>
         </h3>
         <p>
-          <span data-lang="kr" class="active">실제 사례 중심 컨설팅 · 신속한 처리 · 정확한 서류 작성 · 의뢰인 맞춤형 상담</span>
+          <span data-lang="kr" class="active">실제 사례 중심 컨설팅 · 신속한 민원 처리 · 정확한 서류 작성 · 의뢰인 맞춤형 상담</span>
           <span data-lang="vi">Tư vấn thực tiễn · Xử lý nhanh · Hồ sơ chính xác · Tư vấn cá nhân hóa</span>
-          <span data-lang="ur">عملی مشاورت · تیز عملدرآمد · درست دستاویزات · ذاتی نوعیت کی مشاورت</span>
+          <span data-lang="ur">عملی مشاورت · تیز عملدرآمد · درست دستاویزات · ذاتی مشاورت</span>
           <span data-lang="si">ප්‍රායෝගික උපදේශනය · ඉක්මන් ක්‍රියාදාමය · නිවැරදි ලේඛන · ශ්‍රේෂ්ඨ උපදේශනය</span>
         </p>
       </div>
@@ -724,6 +577,19 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <div class="contact-value">전광일</div>
       </div>
     </a>
+    <!-- MANDU 링크: 전광일 대표님 MANDU 로그인 후 manduid 확인하여 아래 YOUR_MANDU_ID 교체 -->
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?uid=YOUR_MANDU_ID" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div>
+        <div class="contact-label">
+          <span data-lang="kr" class="active">실시간 번역 메신저 (MANDU)</span>
+          <span data-lang="vi">Nhắn tin dịch tự động (MANDU)</span>
+          <span data-lang="ur">ریئل ٹائم ترجمہ میسنجر (MANDU)</span>
+          <span data-lang="si">තත්‍යකාලීන පරිවර්තන (MANDU)</span>
+        </div>
+        <div class="contact-value">MANDU로 연락하기</div>
+      </div>
+    </a>
     <div class="contact-item">
       <div class="contact-icon">📍</div>
       <div>
@@ -736,7 +602,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <div class="contact-value" style="font-size:12px; line-height:1.5;">
           <span data-lang="kr" class="active">부산 사하구 낙동대로 398번길 5<br>(사하구청 정문앞)</span>
           <span data-lang="vi">5 Nakdong-daero 398beon-gil, Saha-gu, Busan</span>
-          <span data-lang="ur">بسان شہر، ساہا گو، ناکڈونگ-ڈیرو 398 گلی 5</span>
+          <span data-lang="ur">بسان، ساہا گو، ناکڈونگ-ڈیرو 398 گلی 5</span>
           <span data-lang="si">5 Nakdong-daero 398beon-gil, Saha-gu, Busan</span>
         </div>
       </div>
@@ -758,6 +624,13 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="vi">🗂️ Lưu danh thiếp</span>
       <span data-lang="ur">🗂️ کارڈ محفوظ کریں</span>
       <span data-lang="si">🗂️ කාඩ් සුරකින්න</span>
+    </button>
+    <!-- MANDU 버튼: manduid 확인 후 YOUR_MANDU_ID 교체 -->
+    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?uid=YOUR_MANDU_ID','_blank')">
+      <span data-lang="kr" class="active">💬 MANDU로 바로 연락</span>
+      <span data-lang="vi">💬 Liên hệ qua MANDU</span>
+      <span data-lang="ur">💬 MANDU سے رابطہ</span>
+      <span data-lang="si">💬 MANDU හරහා සම්බන්ධ වන්න</span>
     </button>
   </div>
 </div>
@@ -785,7 +658,7 @@ function setLang(lang) {
   });
 }
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:전광일\nORG:부경행정사사무소\nTITLE:대표 행정사\nTEL:010-5396-4416\nURL:https://blog.naver.com/pkminwon\nEND:VCARD`;
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:전광일\nORG:부경행정사사무소\nTITLE:대표 행정사\nTEL:010-5396-4416\nURL:https://blog.naver.com/pkminwon\nADR:;;부산시 사하구 낙동대로 398번길 5;;;;\nEND:VCARD`;
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
