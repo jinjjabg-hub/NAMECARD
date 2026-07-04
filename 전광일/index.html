@@ -232,21 +232,28 @@ section { padding: 40px 20px; }
 .contact { background: var(--light); }
 .contact .section-label { color: var(--muted-light); }
 .contact .section-title { color: var(--text-light); }
-.contact-list { display: flex; flex-direction: column; gap:10px; }
-.contact-item {
-  display: flex; align-items:center; gap:12px;
-  background: #fff; border-radius: 10px;
-  padding: 14px 16px; border: 1px solid rgba(0,0,0,0.05);
-  text-decoration: none; min-height: 56px;
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
 .contact-icon {
-  width: 40px; height: 40px; min-width:40px;
+  width: 42px; height: 42px; min-width:42px;
   border-radius: 50%; background: var(--navy);
   display: flex; align-items:center; justify-content:center;
-  font-size: 17px; flex-shrink: 0;
+  font-size: 18px; flex-shrink: 0;
 }
-.contact-label { font-size: 10px; color: #999; margin-bottom: 2px; }
-.contact-value { font-size: 14px; font-weight: 600; color: var(--text-light); line-height: 1.4; }
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
 
 /* ── ACTION ── */
 .action { background: var(--navy2); padding: 32px 20px; }
@@ -265,7 +272,25 @@ section { padding: 40px 20px; }
   background: linear-gradient(135deg, #1a3a6b, #0d5ca8);
   color: #fff; border: none;
 }
+.btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
 .btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
 
 /* ── FOOTER ── */
 footer {
@@ -548,65 +573,55 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="contact-list">
     <a class="contact-item" href="tel:010-5396-4416">
       <div class="contact-icon">📞</div>
-      <div>
-        <div class="contact-label">
-          <span data-lang="kr" class="active">전화</span>
-          <span data-lang="vi">Điện thoại</span>
-          <span data-lang="ur">فون</span>
-          <span data-lang="si">දුරකථනය</span>
-        </div>
-        <div class="contact-value">010-5396-4416</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="vi">Điện thoại</span>
+        <span data-lang="ur">فون</span>
+        <span data-lang="si">දුරකථනය</span>
       </div>
+      <div class="contact-value">010-5396-4416</div>
     </a>
     <a class="contact-item" href="https://blog.naver.com/pkminwon" target="_blank">
       <div class="contact-icon">🌐</div>
-      <div>
-        <div class="contact-label">
-          <span data-lang="kr" class="active">블로그</span>
-          <span data-lang="vi">Blog</span>
-          <span data-lang="ur">بلاگ</span>
-          <span data-lang="si">බ්ලොග්</span>
-        </div>
-        <div class="contact-value">blog.naver.com/pkminwon</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">블로그</span>
+        <span data-lang="vi">Blog</span>
+        <span data-lang="ur">بلاگ</span>
+        <span data-lang="si">බ්ලොග්</span>
       </div>
+      <div class="contact-value">blog.naver.com<br>/pkminwon</div>
     </a>
     <a class="contact-item" href="https://www.facebook.com/jeongwang.il.816198" target="_blank">
       <div class="contact-icon">📘</div>
-      <div>
-        <div class="contact-label">Facebook</div>
-        <div class="contact-value">전광일</div>
-      </div>
+      <div class="contact-label">Facebook</div>
+      <div class="contact-value">전광일</div>
     </a>
-    <!-- MANDU 링크: 전광일 대표님 MANDU 로그인 후 manduid 확인하여 아래 YOUR_MANDU_ID 교체 -->
+    <!-- MANDU 링크: manduid 확인 후 YOUR_MANDU_ID 교체 -->
     <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?uid=YOUR_MANDU_ID" target="_blank">
       <div class="contact-icon">💬</div>
-      <div>
-        <div class="contact-label">
-          <span data-lang="kr" class="active">실시간 번역 메신저 (MANDU)</span>
-          <span data-lang="vi">Nhắn tin dịch tự động (MANDU)</span>
-          <span data-lang="ur">ریئل ٹائم ترجمہ میسنجر (MANDU)</span>
-          <span data-lang="si">තත්‍යකාලීන පරිවර්තන (MANDU)</span>
-        </div>
-        <div class="contact-value">MANDU로 연락하기</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="vi">Nhắn tin dịch tự động</span>
+        <span data-lang="ur">ترجمہ میسنجر</span>
+        <span data-lang="si">පරිවර්තන මැසෙන්ජර්</span>
       </div>
     </a>
-    <div class="contact-item">
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/부산%20사하구%20낙동대로%20398번길%205" target="_blank">
       <div class="contact-icon">📍</div>
-      <div>
-        <div class="contact-label">
-          <span data-lang="kr" class="active">주소</span>
-          <span data-lang="vi">Địa chỉ</span>
-          <span data-lang="ur">پتہ</span>
-          <span data-lang="si">ලිපිනය</span>
-        </div>
-        <div class="contact-value" style="font-size:12px; line-height:1.5;">
-          <span data-lang="kr" class="active">부산 사하구 낙동대로 398번길 5<br>(사하구청 정문앞)</span>
-          <span data-lang="vi">5 Nakdong-daero 398beon-gil, Saha-gu, Busan</span>
-          <span data-lang="ur">بسان، ساہا گو، ناکڈونگ-ڈیرو 398 گلی 5</span>
-          <span data-lang="si">5 Nakdong-daero 398beon-gil, Saha-gu, Busan</span>
-        </div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
+        <span data-lang="vi">Địa chỉ (chạm để mở bản đồ)</span>
+        <span data-lang="ur">پتہ (نقشہ کھولنے کے لیے دبائیں)</span>
+        <span data-lang="si">ලිපිනය (සිතියම විවෘත කිරීමට ඔබන්න)</span>
       </div>
-    </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">부산 사하구 낙동대로 398번길 5 (사하구청 정문앞)</span>
+        <span data-lang="vi">5 Nakdong-daero 398beon-gil, Saha-gu, Busan</span>
+        <span data-lang="ur">بسان، ساہا گو، ناکڈونگ-ڈیرو 398 گلی 5</span>
+        <span data-lang="si">5 Nakdong-daero 398beon-gil, Saha-gu, Busan</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -632,6 +647,40 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="ur">💬 MANDU سے رابطہ</span>
       <span data-lang="si">💬 MANDU හරහා සම්බන්ධ වන්න</span>
     </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="vi">📤 Chia sẻ danh thiếp</span>
+      <span data-lang="ur">📤 کارڈ شیئر کریں</span>
+      <span data-lang="si">📤 කාඩ්පත බෙදාගන්න</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 (Web Share API 미지원 브라우저용) -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div>
+        <span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div>
+        <span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div>
+        <span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#0d1b3e;">📱</div>
+        <span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
   </div>
 </div>
 
@@ -664,6 +713,51 @@ function saveContact() {
   a.href = URL.createObjectURL(blob);
   a.download = 'JeonKwangil.vcf';
   a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EC%A0%84%EA%B4%91%EC%9D%BC/';
+const CARD_TITLE = '전광일 | 부경행정사사무소';
+const CARD_TEXT = '출입국·비자·국적 전문 행정사 전광일 대표의 디지털 명함입니다.';
+
+function shareCard() {
+  // 모바일 네이티브 공유 우선 (카톡/문자/등 시스템 공유창)
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL })
+      .catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() {
+  document.getElementById('shareSheet').style.display = 'none';
+}
+function shareKakao() {
+  // 카카오톡 공유 (모바일에선 카톡 앱으로)
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => {
+    alert('링크가 복사되었습니다!');
+  }).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t);
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() {
+  window.open('qr.png', '_blank');
+  closeShare();
 }
 </script>
 </body>
