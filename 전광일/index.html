@@ -6,13 +6,13 @@
 <title>전광일 | 부경행정사사무소</title>
 <meta property="og:title" content="전광일 | 대표 · 부경행정사사무소">
 <meta property="og:description" content="복잡한 출입국·비자·국적·국제민원을 가장 정확하고 신속하게 해결하는 당신의 든든한 행정 파트너입니다.">
-<meta property="og:image" content="og.png">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EC%A0%84%EA%B4%91%EC%9D%BC/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/전광일/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+Sinhala:wght@300;400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+Sinhala:wght@300;400;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --navy: #0d1b3e;
@@ -40,6 +40,7 @@ body {
 
 [data-lang="si"] { font-family: 'Noto Sans Sinhala', sans-serif; }
 [data-lang="ur"] { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+[data-lang="cn"] { font-family: 'Noto Sans SC', sans-serif; }
 [data-lang] { display: none; }
 [data-lang].active { display: block; }
 span[data-lang].active { display: inline; }
@@ -48,31 +49,37 @@ span[data-lang].active { display: inline; }
 nav {
   position: fixed; top:0; left:0; right:0; z-index:100;
   max-width: 480px; margin: 0 auto;
-  background: rgba(13,27,62,0.97);
-  backdrop-filter: blur(10px);
-  padding: 10px 16px;
-  display: flex; justify-content: space-between; align-items: center;
-  border-bottom: 1px solid rgba(201,168,76,0.25);
+  background: #BFFFE1;
+  padding: 10px 12px;
+  display: flex; justify-content: space-between; align-items: center; gap:8px;
+  border-bottom: 1px solid rgba(13,27,62,0.15);
 }
-.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
-.lang-btns { display:flex; gap:4px; }
+.nav-brand { font-size: 11px; font-weight: 700; color: var(--navy); white-space: nowrap; flex-shrink:0; }
+.lang-btns {
+  display:flex; gap:4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.lang-btns::-webkit-scrollbar { display: none; }
 .lang-btn {
   padding: 5px 8px;
-  border: 1px solid rgba(201,168,76,0.35);
+  border: 1px solid rgba(13,27,62,0.3);
   background: transparent;
-  color: var(--muted-dark);
+  color: var(--navy);
   font-size: 10px; font-weight: 700;
   cursor: pointer; border-radius: 5px;
   transition: all 0.2s;
-  min-width: 40px; min-height: 32px;
+  min-width: 38px; min-height: 30px;
   display: flex; align-items:center; justify-content:center;
   font-family: 'Noto Sans KR', sans-serif;
+  white-space: nowrap; flex-shrink: 0;
 }
-.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.lang-btn.active { background: var(--navy); color: #BFFFE1; border-color: var(--navy); }
 
 /* ── HERO ── */
 .hero {
-  margin-top: 54px;
+  margin-top: 52px;
   position: relative;
   width: 100%;
   aspect-ratio: 3/4;
@@ -305,9 +312,11 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">부경행정사사무소</div>
+  <div class="nav-brand">부경행정사</div>
   <div class="lang-btns">
     <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
     <button class="lang-btn" onclick="setLang('vi')">Việt</button>
     <button class="lang-btn" onclick="setLang('ur')">اردو</button>
     <button class="lang-btn" onclick="setLang('si')">සිංහල</button>
@@ -321,18 +330,24 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="hero-content">
     <div class="hero-badge">
       <span data-lang="kr" class="active">행정사</span>
+      <span data-lang="en">Immigration Consultant</span>
+      <span data-lang="cn">行政士</span>
       <span data-lang="vi">Hành chính sư</span>
       <span data-lang="ur">ایڈمنسٹریٹر</span>
       <span data-lang="si">පරිපාලන නිලධාරී</span>
     </div>
     <div class="hero-name">
       <span data-lang="kr" class="active">전 광 일</span>
+      <span data-lang="en">JEON KWANGIL</span>
+      <span data-lang="cn">全光一</span>
       <span data-lang="vi">JEON KWANGIL</span>
       <span data-lang="ur">جیون کوانگ ایل</span>
       <span data-lang="si">ජොන් ක්වෑංගිල්</span>
     </div>
     <div class="hero-title">
       <span data-lang="kr" class="active">대표 · 부경행정사사무소</span>
+      <span data-lang="en">CEO · BuGyeong Visa Servicing Office</span>
+      <span data-lang="cn">代表 · 釜庆行政士事务所</span>
       <span data-lang="vi">Giám đốc · BuGyeong Visa Servicing Office</span>
       <span data-lang="ur">سربراہ · بوگیونگ ویزا سروسنگ آفس</span>
       <span data-lang="si">CEO · BuGyeong Visa Servicing Office</span>
@@ -349,6 +364,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <h2>전광일 · JEON KWANGIL</h2>
     <p>
       <span data-lang="kr" class="active">외국인비자대행 · 행정심판</span>
+      <span data-lang="en">Foreigner Visa Service · Administrative Appeals</span>
+      <span data-lang="cn">外国人签证代办 · 行政审判</span>
       <span data-lang="vi">Dịch vụ visa · Khiếu nại hành chính</span>
       <span data-lang="ur">غیر ملکی ویزا سروس · انتظامی اپیل</span>
       <span data-lang="si">විදේශ වීසා සේවා · පරිපාලන අභියාචනා</span>
@@ -361,12 +378,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="section-label">About</div>
   <div class="slogan">
     <span data-lang="kr" class="active">Beyond Documents, Building Trust.</span>
+    <span data-lang="en">Beyond Documents, Building Trust.</span>
+    <span data-lang="cn">超越文件，建立信任。</span>
     <span data-lang="vi">Vượt qua thủ tục, xây dựng niềm tin.</span>
     <span data-lang="ur">دستاویزات سے آگے، اعتماد کی تعمیر۔</span>
     <span data-lang="si">ලේඛන ඉක්මවා, විශ්වාසය ගොඩනඟමු.</span>
   </div>
   <p class="about-text">
     <span data-lang="kr" class="active">복잡한 출입국행정·취업비자·투자비자·결혼비자·가족초청을 가장 정확하고 신속하게 해결하는 당신의 든든한 행정 파트너입니다.</span>
+    <span data-lang="en">Your reliable administrative partner, resolving complex immigration, employment visas, investment visas, marriage visas, and family invitations with the utmost accuracy and speed.</span>
+    <span data-lang="cn">我们是您可靠的行政伙伴，以最准确、最迅速的方式解决复杂的出入境行政、就业签证、投资签证、结婚签证和家属邀请事务。</span>
     <span data-lang="vi">Chúng tôi là đối tác hành chính đáng tin cậy, giải quyết xuất nhập cảnh, visa việc làm, visa đầu tư, visa kết hôn và bảo lãnh gia đình một cách chính xác và nhanh chóng nhất.</span>
     <span data-lang="ur">ہم آپ کے قابل اعتماد انتظامی شراکت دار ہیں جو ویزا، روزگار، سرمایہ کاری، شادی اور خاندانی دعوت کو انتہائی درستگی اور تیزی سے حل کرتے ہیں۔</span>
     <span data-lang="si">ඉමිග්‍රේෂන්, රැකියා වීසා, ආයෝජන වීසා, විවාහ වීසා සහ පවුල් ආරාධනය නිවැරදිව සහ ඉක්මනින් විසඳන ඔබේ විශ්වාසනීය හවුල්කරු අපි වෙමු.</span>
@@ -378,6 +399,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="section-label">Why Us</div>
   <div class="section-title">
     <span data-lang="kr" class="active">왜 부경행정사사무소인가</span>
+    <span data-lang="en">Why BuGyeong Office?</span>
+    <span data-lang="cn">为什么选择釜庆行政士事务所</span>
     <span data-lang="vi">Tại sao chọn chúng tôi?</span>
     <span data-lang="ur">ہمیں کیوں منتخب کریں؟</span>
     <span data-lang="si">අපව තෝරා ගන්නේ ඇයි?</span>
@@ -386,12 +409,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="why-card">
       <h3>
         <span data-lang="kr" class="active">① 풍부한 실제 사례</span>
+        <span data-lang="en">① Extensive Real-World Experience</span>
+        <span data-lang="cn">① 丰富的实际案例</span>
         <span data-lang="vi">① Kinh nghiệm thực tiễn phong phú</span>
         <span data-lang="ur">① وسیع عملی تجربہ</span>
         <span data-lang="si">① පුළුල් ප්‍රායෝගික අත්දැකීම්</span>
       </h3>
       <p>
         <span data-lang="kr" class="active">풍부한 실제 사례를 바탕으로 <strong>가장 빠르고 정확한 해결방안</strong>을 제시합니다.</span>
+        <span data-lang="en">Based on extensive real cases, we provide <strong>the fastest and most accurate solutions</strong>.</span>
+        <span data-lang="cn">基于丰富的实际案例，提供<strong>最快速、最准确的解决方案</strong>。</span>
         <span data-lang="vi">Dựa trên kinh nghiệm thực tiễn phong phú, đề xuất <strong>giải pháp nhanh nhất và chính xác nhất</strong>.</span>
         <span data-lang="ur">وسیع عملی تجربے کی بنیاد پر <strong>سب سے تیز اور درست حل</strong> پیش کرتے ہیں۔</span>
         <span data-lang="si">පුළුල් ප්‍රායෝගික අත්දැකීම් මත <strong>වේගවත්ම හා නිවැරදිම විසඳුම</strong> ඉදිරිපත් කරමු.</span>
@@ -400,12 +427,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="why-card">
       <h3>
         <span data-lang="kr" class="active">② 국제결혼비자 23개국+ 경험</span>
+        <span data-lang="en">② Marriage Visa Experience: 23+ Countries</span>
+        <span data-lang="cn">② 国际婚姻签证 23+国经验</span>
         <span data-lang="vi">② Kinh nghiệm visa kết hôn 23+ quốc gia</span>
         <span data-lang="ur">② 23 سے زائد ممالک کی شادی ویزا کا تجربہ</span>
         <span data-lang="si">② රටවල් 23+ ජාත්‍යන්තර විවාහ වීසා අත්දැකීම්</span>
       </h3>
       <p>
         <span data-lang="kr" class="active">국제결혼(F-6) 비자는 <strong>23개국 이상</strong>의 외국인 배우자 비자 진행 경험을 보유하고 있습니다.</span>
+        <span data-lang="en">For marriage visas (F-6), we have handled spouse visa cases from <strong>more than 23 countries</strong>.</span>
+        <span data-lang="cn">国际婚姻(F-6)签证方面，拥有<strong>23个以上国家</strong>的外国配偶签证办理经验。</span>
         <span data-lang="vi">Visa kết hôn quốc tế (F-6): kinh nghiệm xử lý visa cho vợ/chồng nước ngoài từ <strong>hơn 23 quốc gia</strong>.</span>
         <span data-lang="ur">بین الاقوامی شادی (F-6) ویزا: <strong>23 سے زائد ممالک</strong> کے غیر ملکی شریک حیات کے ویزا کا تجربہ۔</span>
         <span data-lang="si">ජාත්‍යන්තර විවාහ (F-6) වීසා: <strong>රටවල් 23 කට වැඩි</strong> විදේශ කලත්‍රයන්ගේ වීසා අත්දැකීම.</span>
@@ -414,12 +445,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="why-card">
       <h3>
         <span data-lang="kr" class="active">③ 취업비자 E-7 전문</span>
+        <span data-lang="en">③ E-7 Work Visa Specialist</span>
+        <span data-lang="cn">③ 就业签证 E-7 专业</span>
         <span data-lang="vi">③ Chuyên gia visa việc làm E-7</span>
         <span data-lang="ur">③ ملازمت ویزا E-7 کا ماہر</span>
         <span data-lang="si">③ රැකියා වීසා E-7 විශේෂඥ</span>
       </h3>
       <p>
         <span data-lang="kr" class="active">취업비자는 <strong>E-7, E-7-4(E-7-4R 포함)</strong> 전문으로 정확한 직종코드 분석부터 허가까지 체계적으로 진행합니다.</span>
+        <span data-lang="en">Specializing in <strong>E-7 and E-7-4 (including E-7-4R)</strong> — from precise job code analysis to final approval, handled systematically.</span>
+        <span data-lang="cn">就业签证专注于<strong>E-7、E-7-4（含E-7-4R）</strong>，从准确的职业代码分析到获批，全程系统化办理。</span>
         <span data-lang="vi">Chuyên về <strong>E-7, E-7-4 (kể cả E-7-4R)</strong>: phân tích mã nghề chính xác đến khi được chấp thuận.</span>
         <span data-lang="ur"><strong>E-7، E-7-4 (E-7-4R سمیت)</strong> میں مہارت: درست پیشہ کوڈ تجزیہ سے منظوری تک منظم عملدرآمد۔</span>
         <span data-lang="si"><strong>E-7, E-7-4 (E-7-4R ඇතුළු)</strong> විශේෂඥ: නිවැරදි රැකියා කේත විශ්ලේෂණයේ සිට අනුමැතිය දක්වා.</span>
@@ -433,6 +468,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="section-label">Difference</div>
   <div class="section-title">
     <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">What Makes Us Different</span>
+    <span data-lang="cn">差异化优势</span>
     <span data-lang="vi">Điểm khác biệt</span>
     <span data-lang="ur">ہماری خصوصیات</span>
     <span data-lang="si">විශේෂතා</span>
@@ -441,12 +478,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="diff-card">
       <h3>
         <span data-lang="kr" class="active">🏢 외국인투자(D-8) 원스톱</span>
+        <span data-lang="en">🏢 D-8 Investment One-Stop Service</span>
+        <span data-lang="cn">🏢 外国人投资(D-8)一站式</span>
         <span data-lang="vi">🏢 D-8 Đầu tư nước ngoài một cửa</span>
         <span data-lang="ur">🏢 D-8 غیر ملکی سرمایہ کاری ون اسٹاپ</span>
         <span data-lang="si">🏢 D-8 විදේශ ආයෝජන එකම ස්ථානය</span>
       </h3>
       <p>
         <span data-lang="kr" class="active">외국인투자신고부터 법인설립, 비자신청까지 법무사·세무사와 협업하여 원스톱 서비스를 제공합니다.</span>
+        <span data-lang="en">From investment reporting to company incorporation and visa applications — one-stop service in collaboration with legal and tax professionals.</span>
+        <span data-lang="cn">从外国人投资申报到法人设立、签证申请，与司法书士、税务师合作提供一站式服务。</span>
         <span data-lang="vi">Từ báo cáo đầu tư đến thành lập công ty và xin visa — dịch vụ một cửa phối hợp với luật sư và kế toán.</span>
         <span data-lang="ur">سرمایہ کاری اطلاع سے کمپنی قیام اور ویزا درخواست تک — قانونی و مالیاتی ماہرین کے ساتھ ون اسٹاپ سروس۔</span>
         <span data-lang="si">ආයෝජන ලියාපදිංචියේ සිට සමාගම් ආරම්භය සහ වීසා ඉල්ලීම දක්වා — නීතිඥයින් සමඟ එකම ස්ථානයෙන්.</span>
@@ -455,12 +496,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="diff-card">
       <h3>
         <span data-lang="kr" class="active">💑 가족·결혼비자 높은 허가율</span>
+        <span data-lang="en">💑 High Approval Rate for Family & Marriage Visas</span>
+        <span data-lang="cn">💑 家属·婚姻签证高批准率</span>
         <span data-lang="vi">💑 Tỷ lệ chấp thuận visa gia đình cao</span>
         <span data-lang="ur">💑 خاندانی ویزا کی بلند منظوری شرح</span>
         <span data-lang="si">💑 පවුල් වීසා ඉහළ අනුමත අනුපාතය</span>
       </h3>
       <p>
         <span data-lang="kr" class="active">초청인 서류부터 해외 가족서류, 공증, 번역, 인증까지 체계적으로 지원하여 높은 허가율을 유지합니다.</span>
+        <span data-lang="en">Systematic support from sponsor documents to overseas family papers, notarization, translation, and certification — maintaining a high approval rate.</span>
+        <span data-lang="cn">从邀请人材料到海外家属文件、公证、翻译、认证，系统化支持，保持高批准率。</span>
         <span data-lang="vi">Hỗ trợ từ tài liệu người bảo lãnh đến hồ sơ gia đình nước ngoài, công chứng, dịch thuật — tỷ lệ chấp thuận cao.</span>
         <span data-lang="ur">دعوت دینے والے سے غیر ملکی خاندانی دستاویزات، نوٹرائزیشن اور ترجمے تک مکمل تعاون — بلند منظوری شرح۔</span>
         <span data-lang="si">ආරාධකයාගේ ලේඛනවල සිට විදේශ පවුල් ලේඛන, නොතාරිස්, පරිවර්තනය දක්වා — ඉහළ අනුමත අනුපාතය.</span>
@@ -469,15 +514,19 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="diff-card">
       <h3>
         <span data-lang="kr" class="active">🌏 영주권·귀화 전 분야 전문</span>
+        <span data-lang="en">🌏 Full-Spectrum Residency & Naturalization</span>
+        <span data-lang="cn">🌏 永住权·归化全领域专业</span>
         <span data-lang="vi">🌏 Chuyên gia thường trú & nhập tịch</span>
-        <span data-lang="ur">🌏 مستقل اقامت اور귀화 کے مکمل ماہر</span>
+        <span data-lang="ur">🌏 مستقل اقامت اور شہریت کے مکمل ماہر</span>
         <span data-lang="si">🌏 ස්ථිර පදිංචිය සහ ජාතිකත්ව විශේෂඥ</span>
       </h3>
       <p>
         <span data-lang="kr" class="active">영주권(F-5), 귀화, 특별귀화(인지·입양), 국적회복 등 출입국 전 분야 업무를 전문적으로 수행합니다.</span>
+        <span data-lang="en">Professional handling of F-5 permanent residency, naturalization, special naturalization (recognition/adoption), and nationality restoration.</span>
+        <span data-lang="cn">专业办理永住权(F-5)、归化、特别归化（认知·收养）、国籍恢复等出入境全领域业务。</span>
         <span data-lang="vi">Thực hiện chuyên nghiệp F-5, nhập tịch, nhập tịch đặc biệt (công nhận con/nhận nuôi), phục hồi quốc tịch.</span>
-        <span data-lang="ur">F-5،귀화، خصوصی귀화 (تسلیم و گود لینا)، شہریت بحالی — تمام امیگریشن شعبوں میں مہارت۔</span>
-        <span data-lang="si">F-5, ජාතිකත්වය, විශේෂ ජාතිකත්වය (හඳුනාගැනීම/දරු සම්බන්ධය), ජාතිකත්ව ප්‍රතිෂ්ඨාපනය — සම්පූර්ණ ක්ෂේත්‍රය.</span>
+        <span data-lang="ur">F-5، شہریت، خصوصی شہریت (تسلیم و گود لینا)، شہریت بحالی — تمام امیگریشن شعبوں میں مہارت۔</span>
+        <span data-lang="si">F-5, ජාතිකත්වය, විශේෂ ජාතිකත්වය, ජාතිකත්ව ප්‍රතිෂ්ඨාපනය — සම්පූර්ණ ක්ෂේත්‍රය.</span>
       </p>
     </div>
   </div>
@@ -488,6 +537,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="section-label">Referral</div>
   <div class="section-title">
     <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please Refer These People</span>
+    <span data-lang="cn">请介绍这样的人</span>
     <span data-lang="vi">Giới thiệu những người như thế này</span>
     <span data-lang="ur">ان لوگوں کا تعارف کروائیں</span>
     <span data-lang="si">මෙවැනි අය හඳුන්වා දෙන්න</span>
@@ -497,6 +548,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="ref-num">1</div>
       <p>
         <span data-lang="kr" class="active">한국에서 체류할 수 있는 비자가 필요한 모든 외국인</span>
+        <span data-lang="en">Any foreigner who needs a visa to stay in Korea</span>
+        <span data-lang="cn">需要在韩国居留签证的所有外国人</span>
         <span data-lang="vi">Tất cả người nước ngoài cần visa để cư trú tại Hàn Quốc</span>
         <span data-lang="ur">کوریا میں قیام کے لیے ویزا کی ضرورت والے تمام غیر ملکی</span>
         <span data-lang="si">කොරියාවේ නිත්‍ය පදිංචිය සඳහා වීසා අවශ්‍ය සියලුම විදේශිකයන්</span>
@@ -506,6 +559,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="ref-num">2</div>
       <p>
         <span data-lang="kr" class="active">외국인을 초청할 한국인이나 한국 회사</span>
+        <span data-lang="en">Koreans or Korean companies inviting foreigners</span>
+        <span data-lang="cn">邀请外国人的韩国人或韩国公司</span>
         <span data-lang="vi">Người Hàn Quốc hoặc công ty Hàn Quốc muốn bảo lãnh người nước ngoài</span>
         <span data-lang="ur">غیر ملکی کو مدعو کرنے کے خواہشمند کورین شہری یا کورین کمپنی</span>
         <span data-lang="si">විදේශිකයෙකු ආරාධනා කිරීමට කැමති කොරියානු පුද්ගලයන් හෝ සමාගම්</span>
@@ -519,22 +574,35 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="section-label">Career</div>
   <div class="section-title">
     <span data-lang="kr" class="active">경력 및 전문 분야</span>
+    <span data-lang="en">Experience & Expertise</span>
+    <span data-lang="cn">经历及专业领域</span>
     <span data-lang="vi">Kinh nghiệm & Chuyên môn</span>
     <span data-lang="ur">تجربہ اور تخصص</span>
     <span data-lang="si">අත්දැකීම් සහ විශේෂතා</span>
   </div>
   <div class="career-list">
     <div class="career-item">
-      <div class="career-badge">현재</div>
+      <div class="career-badge">
+        <span data-lang="kr" class="active">현재</span>
+        <span data-lang="en">Now</span>
+        <span data-lang="cn">现任</span>
+        <span data-lang="vi">Hiện tại</span>
+        <span data-lang="ur">حال</span>
+        <span data-lang="si">දැන්</span>
+      </div>
       <div class="career-content">
         <h3>
           <span data-lang="kr" class="active">부경행정사사무소 대표 행정사</span>
+          <span data-lang="en">CEO — BuGyeong Visa Servicing Office</span>
+          <span data-lang="cn">釜庆行政士事务所 代表行政士</span>
           <span data-lang="vi">Giám đốc — BuGyeong Visa Servicing Office</span>
           <span data-lang="ur">بوگیونگ آفس — سربراہ ایڈمنسٹریٹر</span>
           <span data-lang="si">BuGyeong Visa Servicing Office — ප්‍රධාන නිලධාරී</span>
         </h3>
         <p>
           <span data-lang="kr" class="active">출입국·비자 / 국적·귀화 / 국제결혼·가족관계 / 외국인투자기업 / Apostille·영사확인 / 행정심판</span>
+          <span data-lang="en">Immigration & Visa · Nationality & Naturalization · Int'l Marriage & Family · Foreign Investment · Apostille · Administrative Appeals</span>
+          <span data-lang="cn">出入境·签证 / 国籍·归化 / 国际婚姻·家属关系 / 外国人投资企业 / Apostille·领事认证 / 行政审判</span>
           <span data-lang="vi">Xuất nhập cảnh · Quốc tịch · Kết hôn quốc tế · Đầu tư · Apostille · Khiếu nại</span>
           <span data-lang="ur">امیگریشن · ویزا · شہریت · بین الاقوامی شادی · سرمایہ کاری · اپوسٹیل · اپیل</span>
           <span data-lang="si">ඉමිග්‍රේෂන් · ජාතිකත්වය · ජාත්‍යන්තර විවාහ · ආයෝජන · Apostille · අභියාචනා</span>
@@ -542,16 +610,27 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       </div>
     </div>
     <div class="career-item">
-      <div class="career-badge">강점</div>
+      <div class="career-badge">
+        <span data-lang="kr" class="active">강점</span>
+        <span data-lang="en">Edge</span>
+        <span data-lang="cn">优势</span>
+        <span data-lang="vi">Thế mạnh</span>
+        <span data-lang="ur">طاقت</span>
+        <span data-lang="si">ශක්තිය</span>
+      </div>
       <div class="career-content">
         <h3>
           <span data-lang="kr" class="active">핵심 강점</span>
+          <span data-lang="en">Core Strengths</span>
+          <span data-lang="cn">核心优势</span>
           <span data-lang="vi">Thế mạnh cốt lõi</span>
           <span data-lang="ur">بنیادی طاقت</span>
           <span data-lang="si">මූලික ශක්තීන්</span>
         </h3>
         <p>
           <span data-lang="kr" class="active">실제 사례 중심 컨설팅 · 신속한 민원 처리 · 정확한 서류 작성 · 의뢰인 맞춤형 상담</span>
+          <span data-lang="en">Case-based consulting · Prompt processing · Accurate documentation · Personalized guidance</span>
+          <span data-lang="cn">以实际案例为中心的咨询 · 快速办理 · 准确的文件制作 · 客户定制咨询</span>
           <span data-lang="vi">Tư vấn thực tiễn · Xử lý nhanh · Hồ sơ chính xác · Tư vấn cá nhân hóa</span>
           <span data-lang="ur">عملی مشاورت · تیز عملدرآمد · درست دستاویزات · ذاتی مشاورت</span>
           <span data-lang="si">ප්‍රායෝගික උපදේශනය · ඉක්මන් ක්‍රියාදාමය · නිවැරදි ලේඛන · ශ්‍රේෂ්ඨ උපදේශනය</span>
@@ -566,6 +645,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="section-label">Contact</div>
   <div class="section-title">
     <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Get in Touch</span>
+    <span data-lang="cn">联系方式</span>
     <span data-lang="vi">Liên hệ</span>
     <span data-lang="ur">رابطہ کریں</span>
     <span data-lang="si">සම්බන්ධ වන්න</span>
@@ -575,6 +656,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-icon">📞</div>
       <div class="contact-label">
         <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="cn">电话</span>
         <span data-lang="vi">Điện thoại</span>
         <span data-lang="ur">فون</span>
         <span data-lang="si">දුරකථනය</span>
@@ -585,6 +668,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-icon">🌐</div>
       <div class="contact-label">
         <span data-lang="kr" class="active">블로그</span>
+        <span data-lang="en">Blog</span>
+        <span data-lang="cn">博客</span>
         <span data-lang="vi">Blog</span>
         <span data-lang="ur">بلاگ</span>
         <span data-lang="si">බ්ලොග්</span>
@@ -602,6 +687,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-label">MANDU</div>
       <div class="contact-value">
         <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Real-time Translation Chat</span>
+        <span data-lang="cn">实时翻译聊天</span>
         <span data-lang="vi">Nhắn tin dịch tự động</span>
         <span data-lang="ur">ترجمہ میسنجر</span>
         <span data-lang="si">පරිවර්තන මැසෙන්ජර්</span>
@@ -611,12 +698,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-icon">📍</div>
       <div class="contact-label">
         <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
+        <span data-lang="en">Address (tap to open map)</span>
+        <span data-lang="cn">地址（点击打开地图）</span>
         <span data-lang="vi">Địa chỉ (chạm để mở bản đồ)</span>
         <span data-lang="ur">پتہ (نقشہ کھولنے کے لیے دبائیں)</span>
         <span data-lang="si">ලිපිනය (සිතියම විවෘත කිරීමට ඔබන්න)</span>
       </div>
       <div class="contact-value">
         <span data-lang="kr" class="active">부산 사하구 낙동대로 398번길 5 (사하구청 정문앞)</span>
+        <span data-lang="en">5 Nakdong-daero 398beon-gil, Saha-gu, Busan</span>
+        <span data-lang="cn">釜山沙下区洛东大路398街5号（沙下区厅正门前）</span>
         <span data-lang="vi">5 Nakdong-daero 398beon-gil, Saha-gu, Busan</span>
         <span data-lang="ur">بسان، ساہا گو، ناکڈونگ-ڈیرو 398 گلی 5</span>
         <span data-lang="si">5 Nakdong-daero 398beon-gil, Saha-gu, Busan</span>
@@ -630,12 +721,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="btn-group">
     <button class="btn btn-primary" onclick="saveContact()">
       <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save Contact</span>
+      <span data-lang="cn">📞 保存联系人</span>
       <span data-lang="vi">📞 Lưu danh bạ</span>
       <span data-lang="ur">📞 رابطہ محفوظ کریں</span>
       <span data-lang="si">📞 සම්බන්ධතා සුරකින්න</span>
     </button>
     <button class="btn btn-secondary" onclick="saveToCardbook({id:'jeon-kwangil',name:'전광일',nameEn:'JEON KWANGIL',title:'대표 행정사',company:'부경행정사사무소',phone:'010-5396-4416',email:'',chapter:'기타',bni:'',url:window.location.href})">
       <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save Card (CardBook)</span>
+      <span data-lang="cn">🗂️ 保存名片 (CardBook)</span>
       <span data-lang="vi">🗂️ Lưu danh thiếp</span>
       <span data-lang="ur">🗂️ کارڈ محفوظ کریں</span>
       <span data-lang="si">🗂️ කාඩ් සුරකින්න</span>
@@ -643,12 +738,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <!-- MANDU 버튼: manduid 확인 후 YOUR_MANDU_ID 교체 -->
     <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?uid=YOUR_MANDU_ID','_blank')">
       <span data-lang="kr" class="active">💬 MANDU로 바로 연락</span>
+      <span data-lang="en">💬 Chat via MANDU</span>
+      <span data-lang="cn">💬 通过MANDU联系</span>
       <span data-lang="vi">💬 Liên hệ qua MANDU</span>
       <span data-lang="ur">💬 MANDU سے رابطہ</span>
       <span data-lang="si">💬 MANDU හරහා සම්බන්ධ වන්න</span>
     </button>
     <button class="btn btn-share" onclick="shareCard()">
       <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share This Card</span>
+      <span data-lang="cn">📤 转发名片</span>
       <span data-lang="vi">📤 Chia sẻ danh thiếp</span>
       <span data-lang="ur">📤 کارڈ شیئر کریں</span>
       <span data-lang="si">📤 කාඩ්පත බෙදාගන්න</span>
@@ -688,6 +787,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 <footer>
   <div class="company">
     <span data-lang="kr" class="active">부경행정사사무소</span>
+    <span data-lang="en">BuGyeong Visa Servicing Office</span>
+    <span data-lang="cn">釜庆行政士事务所</span>
     <span data-lang="vi">BuGyeong Visa Servicing Office</span>
     <span data-lang="ur">بوگیونگ ویزا سروسنگ آفس</span>
     <span data-lang="si">BuGyeong Visa Servicing Office</span>
@@ -721,7 +822,6 @@ const CARD_TITLE = '전광일 | 부경행정사사무소';
 const CARD_TEXT = '출입국·비자·국적 전문 행정사 전광일 대표의 디지털 명함입니다.';
 
 function shareCard() {
-  // 모바일 네이티브 공유 우선 (카톡/문자/등 시스템 공유창)
   if (navigator.share) {
     navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL })
       .catch(() => {});
@@ -733,7 +833,6 @@ function closeShare() {
   document.getElementById('shareSheet').style.display = 'none';
 }
 function shareKakao() {
-  // 카카오톡 공유 (모바일에선 카톡 앱으로)
   window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
   closeShare();
 }
