@@ -760,7 +760,25 @@ footer{
       <span class="lang-inline" data-lang="zh">保存联系人</span>
     </span>
   </a>
-  <button class="save-btn btn-secondary" onclick="saveToCardbook({
+  <button class="save-btn btn-secondary" onclick="shareCard()">
+    <span>📤</span>
+    <span>
+      <span class="lang-inline active" data-lang="ko">명함 공유하기</span>
+      <span class="lang-inline" data-lang="en">Share Card</span>
+      <span class="lang-inline" data-lang="ja">名刺をシェア</span>
+      <span class="lang-inline" data-lang="zh">分享名片</span>
+    </span>
+  </button>
+    <button class="save-btn btn-secondary" onclick="saveContact()">
+    <span>📞</span>
+    <span>
+      <span class="lang-inline active" data-lang="ko">명함첩에 저장</span>
+      <span class="lang-inline" data-lang="en">Save Contact</span>
+      <span class="lang-inline" data-lang="ja">連絡先を保存</span>
+      <span class="lang-inline" data-lang="zh">保存联系人</span>
+    </span>
+  </button>
+    <button class="save-btn btn-secondary" onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/NAMECARD/이서원/',
     id:'seowon-lee',
     name:'이서원',
     company:'웰슨트서원 (Wealthent Seowon)',
@@ -889,5 +907,25 @@ function showToast(msg) {
 }
 </script>
 <script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+
+<script>
+/* v8 표준 공유 */
+if(typeof shareCard==='undefined'){
+  window.shareCard=function(){
+    if(navigator.share){navigator.share({title:document.title,url:window.location.href}).catch(function(){});}
+    else{navigator.clipboard.writeText(window.location.href).then(function(){alert('링크가 복사되었습니다!');});}
+  };
+}
+</script>
+
+<script>
+/* v8 표준 연락처 저장 */
+if(typeof saveContact==='undefined'){
+  window.saveContact=function(){
+    var v='BEGIN:VCARD\nVERSION:3.0\nFN:이서원\nN:이;서원;;;\nORG:웰슨트서원 (Wealthent Seowon)\nTITLE:CEO\nTEL;TYPE=CELL:010-4732-5452\nURL:https://jinjjabg-hub.github.io/NAMECARD/이서원/\nEND:VCARD';
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download='LeeSeowon.vcf';a.click();
+  };
+}
+</script>
 </body>
 </html>
