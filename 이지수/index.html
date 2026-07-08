@@ -496,7 +496,14 @@
       <span class="lang-inline" data-lang="cn">保存联系人</span>
     </button>
     <!-- saveToCardbook 버튼 (외부 스크립트 사용) -->
-    <button onclick="saveToCardbook({id:'lee-jisu-schweiss',name:'이지수',nameEn:'Jisu Lee',company:'SCHWEISS (스바이즈)',title:'대표',phone:'010-2169-7247',email:'schweiss0510@naver.com',chapter:'토파즈',bni:'BNI 토파즈 챕터 2기 부의장',url:'https://jinjjabg-hub.github.io/NAMECARD/이지수/'})" class="save-btn btn-secondary" style="background: transparent; border-color: var(--blue2); color: var(--blue3);">
+    <button onclick="shareCard()" class="save-btn btn-secondary" style="background: transparent; border-color: var(--blue2); color: var(--blue3);">
+      <span>📤</span>
+      <span class="lang-inline on" data-lang="kr">명함 공유하기</span>
+      <span class="lang-inline" data-lang="en">Share Card</span>
+      <span class="lang-inline" data-lang="jp">名刺をシェア</span>
+      <span class="lang-inline" data-lang="cn">分享名片</span>
+    </button>
+    <button onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/NAMECARD/이지수/',id:'lee-jisu-schweiss',name:'이지수',nameEn:'Jisu Lee',company:'SCHWEISS (스바이즈)',title:'대표',phone:'010-2169-7247',email:'schweiss0510@naver.com',chapter:'토파즈',bni:'BNI 토파즈 챕터 2기 부의장',url:'https://jinjjabg-hub.github.io/NAMECARD/이지수/'})" class="save-btn btn-secondary" style="background: transparent; border-color: var(--blue2); color: var(--blue3);">
       <span>🗂️</span>
       <span class="lang-inline on" data-lang="kr">명함 저장하기</span>
       <span class="lang-inline" data-lang="en">Save to Cardbook</span>
@@ -599,5 +606,15 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 <!-- ═══ 외부 스크립트 추가 (명함첩 연동) ═══ -->
 <script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 
+
+<script>
+/* v8 표준 공유 */
+if(typeof shareCard==='undefined'){
+  window.shareCard=function(){
+    if(navigator.share){navigator.share({title:document.title,url:window.location.href}).catch(function(){});}
+    else{navigator.clipboard.writeText(window.location.href).then(function(){alert('링크가 복사되었습니다!');});}
+  };
+}
+</script>
 </body>
 </html>
