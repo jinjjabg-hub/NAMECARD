@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>정율채 | K-VISA센터 행정사사무소</title>
+<meta property="og:title" content="정율채 | 대표 행정사 · K-VISA센터 행정사사무소">
+<meta property="og:description" content="외국인의 투자·취업·결혼비자를 가장 정확하고 신속하게 해결하는 행정안전부장관 표창 행정사">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/BNI-GIANTS/%EC%A0%95%EC%9C%A8%EC%B1%84/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/BNI-GIANTS/정율채/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #0d1b3e;
+  --navy2: #152347;
+  --navy3: #1e2f5a;
+  --gold: #c9a84c;
+  --gold2: #e8c86a;
+  --light: #f4f1e8;
+  --text-dark: #f0ece0;
+  --text-light: #1a1a2e;
+  --muted-dark: #a89060;
+  --muted-light: #5a4a2a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang="ne"] { font-family: 'Noto Sans Devanagari', 'Noto Sans KR', sans-serif; }
+[data-lang="jp"] { font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif; }
+[data-lang="cn"] { font-family: 'Noto Sans SC', 'Noto Sans KR', sans-serif; }
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV : 언어 6개 → 브랜드 텍스트 제거하고 6등분 풀폭 ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(13,27,62,0.97);
+  backdrop-filter: blur(10px);
+  padding: 8px 10px;
+  display: flex; align-items: center;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+}
+.lang-btns { display:flex; gap:4px; width:100%; }
+.lang-btn {
+  flex: 1; min-width: 0;
+  padding: 5px 2px;
+  border: 1px solid rgba(201,168,76,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  white-space: nowrap;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 49px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,27,62,0.1) 0%,
+    rgba(13,27,62,0.15) 40%,
+    rgba(13,27,62,0.75) 75%,
+    rgba(13,27,62,0.95) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(201,168,76,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p strong { color: var(--navy); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.85; }
+.diff-card p strong { color: var(--gold2); font-weight: 700; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+
+/* ── CAREER ── */
+.career { background-color: #f0f4ff; }
+.career .section-label { color: var(--muted-light); }
+.career .section-title { color: var(--text-light); }
+.career-list { display: flex; flex-direction: column; gap:18px; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-mandu {
+  background: linear-gradient(135deg, #1a3a6b, #0d5ca8);
+  color: #fff; border: none;
+}
+.btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(201,168,76,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .gov { font-size: 11px; color: var(--text-dark); opacity: 0.6; margin-bottom: 6px; line-height: 1.6; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+    <button class="lang-btn" onclick="setLang('ne')">नेपाली</button>
+    <button class="lang-btn" onclick="setLang('id')">ID</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="hero.jpg" alt="정율채">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">BNI 자이언츠 챕터 · 행정사</span>
+      <span data-lang="en">BNI GIANTS · VISA EXPERT</span>
+      <span data-lang="jp">BNI ジャイアンツ · 行政士</span>
+      <span data-lang="cn">BNI 巨人分会 · 行政士</span>
+      <span data-lang="ne">BNI GIANTS · भिसा विशेषज्ञ</span>
+      <span data-lang="id">BNI GIANTS · AHLI VISA</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">정 율 채</span>
+      <span data-lang="en">JUNG YULCHAE</span>
+      <span data-lang="jp">チョン・ユルチェ</span>
+      <span data-lang="cn">郑律采</span>
+      <span data-lang="ne">JUNG YULCHAE</span>
+      <span data-lang="id">JUNG YULCHAE</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 행정사 · K-VISA센터 행정사사무소</span>
+      <span data-lang="en">Certified Administrative Attorney · K-VISA Center</span>
+      <span data-lang="jp">代表行政士 · K-VISAセンター行政士事務所</span>
+      <span data-lang="cn">代表行政士 · K-VISA中心行政士事务所</span>
+      <span data-lang="ne">प्रमाणित प्रशासनिक वकिल · K-VISA केन्द्र</span>
+      <span data-lang="id">Konsultan Administrasi Resmi · K-VISA Center</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="정율채">
+  </div>
+  <div class="profile-info">
+    <h2>정율채 · JUNG YULCHAE</h2>
+    <p>
+      <span data-lang="kr" class="active">투자 D-8 · 취업 E-7 · 결혼 F-6 비자 전문</span>
+      <span data-lang="en">Investment D-8 · Employment E-7 · Marriage F-6 visas</span>
+      <span data-lang="jp">投資D-8 · 就労E-7 · 結婚F-6ビザ専門</span>
+      <span data-lang="cn">投资D-8 · 就业E-7 · 结婚F-6签证专家</span>
+      <span data-lang="ne">लगानी D-8 · रोजगारी E-7 · विवाह F-6 भिसा विशेषज्ञ</span>
+      <span data-lang="id">Visa Investasi D-8 · Kerja E-7 · Pernikahan F-6</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">언제나 내 일처럼, 당신의 내일을 책임집니다.</span>
+    <span data-lang="en">Your tomorrow, my commitment.</span>
+    <span data-lang="jp">あなたの明日を、私の責任として。</span>
+    <span data-lang="cn">您的明天，我的承诺。</span>
+    <span data-lang="ne">तपाईंको भोलि, मेरो प्रतिबद्धता।</span>
+    <span data-lang="id">Masa depan Anda, komitmen saya.</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">외국인의 투자·취업·결혼비자를 가장 정확하고 신속하게 해결하는 행정안전부장관 표창 행정사입니다. 상담부터 허가, 그 이후 관리까지 끝까지 책임집니다.</span>
+    <span data-lang="en">A licensed Korean administrative attorney (Haengjeongsa), awarded by the Minister of the Interior and Safety, specializing in investment, employment and marriage visas for foreigners. From the first consultation to approval — and the management that follows.</span>
+    <span data-lang="jp">外国人の投資・就労・結婚ビザを最も正確かつ迅速に解決する行政士です。行政安全部長官表彰。相談から許可、その後の管理まで最後まで責任を持ちます。</span>
+    <span data-lang="cn">专为外国人办理投资、就业、结婚签证的韩国行政士，荣获行政安全部长官表彰。从咨询到许可，直至之后的管理，全程负责。</span>
+    <span data-lang="ne">विदेशीहरूको लगानी, रोजगारी र विवाह भिसा सबैभन्दा सटीक र छिटो समाधान गर्ने कोरियाली प्रमाणित प्रशासनिक वकिल। गृह तथा सुरक्षा मन्त्रीबाट सम्मानित। परामर्शदेखि स्वीकृति र त्यसपछिको व्यवस्थापनसम्म पूर्ण जिम्मेवारी।</span>
+    <span data-lang="id">Konsultan administrasi hukum Korea peraih penghargaan Menteri Dalam Negeri, spesialis visa investasi, kerja, dan pernikahan untuk warga asing. Dari konsultasi hingga persetujuan dan pendampingan setelahnya.</span>
+  </p>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 정율채 행정사인가</span>
+    <span data-lang="en">Why Jung Yulchae?</span>
+    <span data-lang="jp">なぜチョン・ユルチェ行政士なのか</span>
+    <span data-lang="cn">为什么选择郑律采行政士</span>
+    <span data-lang="ne">किन Jung Yulchae?</span>
+    <span data-lang="id">Mengapa Jung Yulchae?</span>
+  </div>
+  <div class="why-cards">
+
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">① 비자 성공률 95%</span>
+        <span data-lang="en">① 95% visa success rate</span>
+        <span data-lang="jp">① ビザ成功率95%</span>
+        <span data-lang="cn">① 签证成功率95%</span>
+        <span data-lang="ne">① भिसा सफलता दर ९५%</span>
+        <span data-lang="id">① Tingkat keberhasilan visa 95%</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">철저한 사전검토와 정확한 서류 준비로 <strong>성공률 95%</strong>를 유지합니다.</span>
+        <span data-lang="en">Thorough pre-screening and precise document preparation keep the success rate at <strong>95%</strong>.</span>
+        <span data-lang="jp">徹底した事前検討と正確な書類準備で<strong>成功率95%</strong>を維持しています。</span>
+        <span data-lang="cn">通过彻底的事前审查与精准的材料准备，保持<strong>95%</strong>的成功率。</span>
+        <span data-lang="ne">गहन पूर्व-समीक्षा र सही कागजात तयारीले <strong>९५%</strong> सफलता दर कायम राख्छ।</span>
+        <span data-lang="id">Pemeriksaan awal menyeluruh dan berkas yang akurat menjaga tingkat keberhasilan di <strong>95%</strong>.</span>
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">② 정부가 인정한 행정사</span>
+        <span data-lang="en">② Recognized by the government</span>
+        <span data-lang="jp">② 政府が認めた行政士</span>
+        <span data-lang="cn">② 政府认可的行政士</span>
+        <span data-lang="ne">② सरकारद्वारा मान्यताप्राप्त</span>
+        <span data-lang="id">② Diakui oleh pemerintah</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">2017년 <strong>행정안전부장관 표창</strong> 수상. 국가시험 합격 출신 <strong>부산·울산·경남 최초 여성 행정사</strong>입니다.</span>
+        <span data-lang="en">Awarded by the <strong>Minister of the Interior and Safety (2017)</strong>. The <strong>first female licensed Haengjeongsa</strong> in Busan·Ulsan·Gyeongnam to pass the national exam.</span>
+        <span data-lang="jp">2017年<strong>行政安全部長官表彰</strong>受賞。国家試験合格出身の<strong>釜山・蔚山・慶南初の女性行政士</strong>です。</span>
+        <span data-lang="cn">2017年荣获<strong>行政安全部长官表彰</strong>。国家考试合格出身，<strong>釜山·蔚山·庆南首位女性行政士</strong>。</span>
+        <span data-lang="ne">सन् २०१७ मा <strong>गृह तथा सुरक्षा मन्त्रीबाट सम्मानित</strong>। राष्ट्रिय परीक्षा उत्तीर्ण गर्ने <strong>बुसान·उल्सान·ग्योङनामकी पहिलो महिला प्रशासनिक वकिल</strong>।</span>
+        <span data-lang="id">Peraih <strong>penghargaan Menteri Dalam Negeri (2017)</strong>. <strong>Haengjeongsa perempuan pertama</strong> di Busan·Ulsan·Gyeongnam yang lulus ujian negara.</span>
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">③ 처음부터 끝까지 책임지는 행정사</span>
+        <span data-lang="en">③ Responsible from start to finish</span>
+        <span data-lang="jp">③ 最初から最後まで責任を持つ行政士</span>
+        <span data-lang="cn">③ 从头到尾负责到底</span>
+        <span data-lang="ne">③ सुरुदेखि अन्तिमसम्म जिम्मेवार</span>
+        <span data-lang="id">③ Bertanggung jawab dari awal sampai akhir</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">사전 상담부터 허가 결과, 그 이후 최적의 관리까지 <strong>끝까지 책임</strong>집니다.</span>
+        <span data-lang="en">From the first consultation to the approval — and the ongoing management afterwards. <strong>Responsible to the end.</strong></span>
+        <span data-lang="jp">事前相談から許可の結果、その後の最適な管理まで<strong>最後まで責任</strong>を持ちます。</span>
+        <span data-lang="cn">从事前咨询到许可结果，再到之后的最优管理，<strong>负责到底</strong>。</span>
+        <span data-lang="ne">पूर्व-परामर्शदेखि स्वीकृति र त्यसपछिको उत्तम व्यवस्थापनसम्म <strong>अन्तिमसम्म जिम्मेवारी</strong>।</span>
+        <span data-lang="id">Dari konsultasi awal hingga persetujuan dan pendampingan setelahnya — <strong>bertanggung jawab sampai tuntas</strong>.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">What Makes Us Different</span>
+    <span data-lang="jp">差別化ポイント</span>
+    <span data-lang="cn">差异化优势</span>
+    <span data-lang="ne">हाम्रो विशेषता</span>
+    <span data-lang="id">Keunggulan Kami</span>
+  </div>
+  <div class="diff-grid">
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">외국인투자(D-8) 원스톱</span>
+        <span data-lang="en">Foreign Investment (D-8) — one-stop</span>
+        <span data-lang="jp">外国人投資(D-8) ワンストップ</span>
+        <span data-lang="cn">外国人投资(D-8) 一站式</span>
+        <span data-lang="ne">विदेशी लगानी (D-8) — एकै ठाउँमा</span>
+        <span data-lang="id">Investasi Asing (D-8) — satu pintu</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">투자신고부터 법인설립, 비자 취득까지 — 세무·법무 전문가와 함께하는 원스톱 서비스.</span>
+        <span data-lang="en">From investment notification to company registration and the visa itself — one-stop, together with tax and legal specialists.</span>
+        <span data-lang="jp">投資申告から法人設立、ビザ取得まで — 税務・法務の専門家と共にワンストップで。</span>
+        <span data-lang="cn">从投资申报到法人设立、签证取得 — 与税务·法务专家协作的一站式服务。</span>
+        <span data-lang="ne">लगानी सूचनादेखि कम्पनी दर्ता र भिसासम्म — कर तथा कानुनी विज्ञसँग मिलेर एकै ठाउँमा सेवा।</span>
+        <span data-lang="id">Dari pelaporan investasi, pendirian badan usaha, hingga visa — layanan satu pintu bersama ahli pajak dan hukum.</span>
+      </p>
+    </div>
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">외국인근로자(E-7) 올인원</span>
+        <span data-lang="en">Foreign Workers (E-7) — all-in-one</span>
+        <span data-lang="jp">外国人労働者(E-7) オールインワン</span>
+        <span data-lang="cn">外籍员工(E-7) 全包服务</span>
+        <span data-lang="ne">विदेशी कामदार (E-7) — सम्पूर्ण सेवा</span>
+        <span data-lang="id">Pekerja Asing (E-7) — all-in-one</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">E-7 변경부터 체계적인 사후관리, 가족초청까지 — 영주권·국적 취득까지 이어지는 토탈 케어.</span>
+        <span data-lang="en">E-7 change of status, systematic follow-up, family invitation — total care leading to permanent residency and citizenship.</span>
+        <span data-lang="jp">E-7への変更から体系的な事後管理、家族招請まで — 永住権・国籍取得まで続くトータルケア。</span>
+        <span data-lang="cn">从E-7变更到系统的后续管理、家属邀请 — 直至永住权·国籍取得的全程照护。</span>
+        <span data-lang="ne">E-7 परिवर्तनदेखि व्यवस्थित अनुगमन र परिवार निम्तोसम्म — स्थायी बसोबास र नागरिकतासम्म पुग्ने पूर्ण हेरचाह।</span>
+        <span data-lang="id">Perubahan status E-7, pendampingan berkala, hingga mengundang keluarga — perawatan total sampai izin tinggal tetap dan kewarganegaraan.</span>
+      </p>
+    </div>
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">결혼비자(F-6) 30개국 성공사례</span>
+        <span data-lang="en">Marriage Visa (F-6) — 30 countries</span>
+        <span data-lang="jp">結婚ビザ(F-6) 30か国の成功事例</span>
+        <span data-lang="cn">结婚签证(F-6) 30国成功案例</span>
+        <span data-lang="ne">विवाह भिसा (F-6) — ३० देश</span>
+        <span data-lang="id">Visa Pernikahan (F-6) — 30 negara</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active"><strong>30개국</strong> 다국적 성공사례. 비자 허가 전까지 <strong>추가비용 없이</strong> 책임 지원합니다.</span>
+        <span data-lang="en">Successful cases across <strong>30 countries</strong>. Full support with <strong>no extra fees</strong> until the visa is approved.</span>
+        <span data-lang="jp"><strong>30か国</strong>の多国籍成功事例。ビザ許可まで<strong>追加費用なし</strong>で責任を持って支援します。</span>
+        <span data-lang="cn"><strong>30个国家</strong>的多国成功案例。签证获批前<strong>不收取额外费用</strong>，负责到底。</span>
+        <span data-lang="ne"><strong>३० देश</strong>का सफल केसहरू। भिसा स्वीकृत नहुन्जेल <strong>थप शुल्क बिना</strong> पूर्ण सहयोग।</span>
+        <span data-lang="id">Kasus sukses dari <strong>30 negara</strong>. Dukungan penuh <strong>tanpa biaya tambahan</strong> hingga visa disetujui.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的客户</span>
+    <span data-lang="ne">कृपया यस्ता व्यक्तिलाई परिचय गराइदिनुहोस्</span>
+    <span data-lang="id">Mohon rekomendasikan orang seperti ini</span>
+  </div>
+  <div class="ref-list">
+
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+        <span data-lang="kr" class="active">한국에서 <strong>사업을 시작하려는 외국인 사업가</strong> — 투자(D-8)·법인설립·비자가 필요한 분, 그리고 한국 진출을 돕는 컨설팅 업체</span>
+        <span data-lang="en"><strong>Foreign entrepreneurs starting a business in Korea</strong> — investment (D-8), company setup, visa. Also consultancies guiding entry into the Korean market.</span>
+        <span data-lang="jp">韓国で<strong>事業を始めたい外国人事業家</strong> — 投資(D-8)・法人設立・ビザが必要な方、韓国進出を支援するコンサルティング会社。</span>
+        <span data-lang="cn"><strong>想在韩国创业的外国企业家</strong> — 需要投资(D-8)·法人设立·签证的人士，以及协助进入韩国市场的咨询公司。</span>
+        <span data-lang="ne"><strong>कोरियामा व्यवसाय सुरु गर्न चाहने विदेशी उद्यमी</strong> — लगानी (D-8), कम्पनी दर्ता, भिसा चाहिनेहरू र कोरिया प्रवेशमा सहयोग गर्ने परामर्श कम्पनी।</span>
+        <span data-lang="id"><strong>Pengusaha asing yang ingin memulai bisnis di Korea</strong> — butuh investasi (D-8), pendirian perusahaan, visa. Termasuk konsultan ekspansi ke Korea.</span>
+      </p>
+    </div>
+
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+        <span data-lang="kr" class="active"><strong>외국인 직원을 채용 중이거나 채용 예정인 회사</strong> — E-7·E-9 취업비자가 필요한 기업, 외국인 취업·이직을 돕는 컨설팅 업체</span>
+        <span data-lang="en"><strong>Companies hiring (or about to hire) foreign employees</strong> — E-7 / E-9 work visas. Also consultancies helping foreigners find jobs in Korea.</span>
+        <span data-lang="jp"><strong>外国人職員を採用中・採用予定の会社</strong> — E-7・E-9就労ビザが必要な企業、外国人の就職・転職を支援する会社。</span>
+        <span data-lang="cn"><strong>正在或计划雇用外籍员工的公司</strong> — 需要E-7·E-9就业签证的企业，以及协助外国人就业·跳槽的咨询公司。</span>
+        <span data-lang="ne"><strong>विदेशी कर्मचारी नियुक्त गर्दै वा गर्न लागेका कम्पनी</strong> — E-7·E-9 कार्य भिसा चाहिने कम्पनी र विदेशीलाई जागिर खोज्न सहयोग गर्ने परामर्शदाता।</span>
+        <span data-lang="id"><strong>Perusahaan yang sedang atau akan merekrut pekerja asing</strong> — butuh visa kerja E-7 / E-9. Termasuk konsultan penempatan kerja untuk WNA.</span>
+      </p>
+    </div>
+
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+        <span data-lang="kr" class="active"><strong>외국인 가족·파트너를 초청하려는 한국인 또는 한국 기업</strong> — 결혼비자(F-6), 가족초청, 장기 체류가 필요한 모든 분</span>
+        <span data-lang="en"><strong>Koreans or Korean companies inviting a foreign spouse, family member or partner</strong> — marriage visa (F-6), family invitation, or any long-term stay.</span>
+        <span data-lang="jp"><strong>外国人の家族・パートナーを招請したい韓国人または韓国企業</strong> — 結婚ビザ(F-6)、家族招請、長期滞在が必要な全ての方。</span>
+        <span data-lang="cn"><strong>想邀请外国配偶·家人·合作伙伴的韩国人或韩国企业</strong> — 结婚签证(F-6)、家属邀请、需要长期滞留的所有人士。</span>
+        <span data-lang="ne"><strong>विदेशी परिवार वा साझेदारलाई कोरिया बोलाउन चाहने कोरियाली व्यक्ति वा कम्पनी</strong> — विवाह भिसा (F-6), परिवार निम्तो, दीर्घकालीन बसाइ।</span>
+        <span data-lang="id"><strong>Warga atau perusahaan Korea yang mengundang pasangan atau keluarga asing</strong> — visa pernikahan (F-6), undangan keluarga, atau tinggal jangka panjang.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 전문 분야</span>
+    <span data-lang="en">Career &amp; Expertise</span>
+    <span data-lang="jp">経歴・専門分野</span>
+    <span data-lang="cn">经历与专业领域</span>
+    <span data-lang="ne">अनुभव र विशेषज्ञता</span>
+    <span data-lang="id">Karier &amp; Keahlian</span>
+  </div>
+  <div class="career-list">
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">현재</span>
+        <span data-lang="en">Now</span>
+        <span data-lang="jp">現在</span>
+        <span data-lang="cn">现在</span>
+        <span data-lang="ne">अहिले</span>
+        <span data-lang="id">Kini</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">K-VISA센터 행정사사무소 대표 행정사</span>
+          <span data-lang="en">Principal, K-VISA Center</span>
+          <span data-lang="jp">K-VISAセンター行政士事務所 代表</span>
+          <span data-lang="cn">K-VISA中心行政士事务所 代表</span>
+          <span data-lang="ne">प्रमुख, K-VISA केन्द्र</span>
+          <span data-lang="id">Kepala, K-VISA Center</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">법무부 등록 출입국민원 대행기관 (13101070338) · BNI 자이언츠 챕터 ST</span>
+          <span data-lang="en">Immigration agency registered with the Ministry of Justice (13101070338) · BNI Giants Chapter, ST</span>
+          <span data-lang="jp">法務部登録 出入国民願代行機関 (13101070338) · BNIジャイアンツチャプター ST</span>
+          <span data-lang="cn">法务部登记出入境民愿代办机构 (13101070338) · BNI巨人分会 ST</span>
+          <span data-lang="ne">न्याय मन्त्रालयमा दर्ता भएको अध्यागमन एजेन्सी (13101070338) · BNI Giants Chapter, ST</span>
+          <span data-lang="id">Agen imigrasi terdaftar Kementerian Kehakiman (13101070338) · BNI Giants Chapter, ST</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">자격</span>
+        <span data-lang="en">Credentials</span>
+        <span data-lang="jp">資格</span>
+        <span data-lang="cn">资格</span>
+        <span data-lang="ne">योग्यता</span>
+        <span data-lang="id">Kualifikasi</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">제1회 행정사 국가시험 합격 (합격률 2%)</span>
+          <span data-lang="en">Passed the 1st national Haengjeongsa exam (2% pass rate)</span>
+          <span data-lang="jp">第1回行政士国家試験合格（合格率2%）</span>
+          <span data-lang="cn">第1届行政士国家考试合格（合格率2%）</span>
+          <span data-lang="ne">पहिलो राष्ट्रिय Haengjeongsa परीक्षा उत्तीर्ण (उत्तीर्ण दर २%)</span>
+          <span data-lang="id">Lulus ujian negara Haengjeongsa ke-1 (tingkat kelulusan 2%)</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">2017년 행정안전부장관 표창 · 행정사 교재 편찬위원 · 행정사 실무교육 강사</span>
+          <span data-lang="en">2017 Minister of the Interior and Safety Award · Textbook committee member · Instructor for professional Haengjeongsa training</span>
+          <span data-lang="jp">2017年 行政安全部長官表彰 · 行政士教材編纂委員 · 行政士実務教育講師</span>
+          <span data-lang="cn">2017年行政安全部长官表彰 · 行政士教材编纂委员 · 行政士实务教育讲师</span>
+          <span data-lang="ne">२०१७ गृह तथा सुरक्षा मन्त्री सम्मान · पाठ्यपुस्तक समिति सदस्य · व्यावसायिक तालिम प्रशिक्षक</span>
+          <span data-lang="id">Penghargaan Menteri Dalam Negeri 2017 · Anggota komite penyusun buku ajar · Instruktur pelatihan praktik</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">경력</span>
+        <span data-lang="en">Background</span>
+        <span data-lang="jp">経歴</span>
+        <span data-lang="cn">经历</span>
+        <span data-lang="ne">पृष्ठभूमि</span>
+        <span data-lang="id">Latar belakang</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">영어강사 · 노르웨이 선박업체 근무</span>
+          <span data-lang="en">English instructor · Norwegian shipping company</span>
+          <span data-lang="jp">英語講師 · ノルウェー船舶会社勤務</span>
+          <span data-lang="cn">英语讲师 · 挪威船舶公司任职</span>
+          <span data-lang="ne">अंग्रेजी प्रशिक्षक · नर्वेली जहाज कम्पनीमा कार्यरत</span>
+          <span data-lang="id">Pengajar bahasa Inggris · Perusahaan kapal Norwegia</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">외국인 고객과 영어로 일해온 실무 경험이 비자 상담의 기본기가 되었습니다.</span>
+          <span data-lang="en">Years of working with foreign clients in English became the foundation of her visa consulting.</span>
+          <span data-lang="jp">外国人顧客と英語で働いてきた実務経験が、ビザ相談の基礎になりました。</span>
+          <span data-lang="cn">长期以英语与外国客户共事的实务经验，成为签证咨询的根基。</span>
+          <span data-lang="ne">विदेशी ग्राहकसँग अंग्रेजीमा काम गरेको अनुभव नै भिसा परामर्शको आधार बन्यो।</span>
+          <span data-lang="id">Pengalaman bertahun-tahun bekerja dengan klien asing dalam bahasa Inggris menjadi fondasi konsultasi visanya.</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+    <span data-lang="ne">सम्पर्क</span>
+    <span data-lang="id">Kontak</span>
+  </div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-9828-2212">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+        <span data-lang="ne">फोन</span>
+        <span data-lang="id">Telepon</span>
+      </div>
+      <div class="contact-value">010-9828-2212</div>
+    </a>
+    <a class="contact-item" href="mailto:achimgrim@naver.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">achimgrim@naver.com</div>
+    </a>
+    <a class="contact-item" href="https://open.kakao.com/o/sHkiYupf" target="_blank">
+      <div class="contact-icon">💛</div>
+      <div class="contact-label">KakaoTalk</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">오픈채팅 상담</span>
+        <span data-lang="en">Open chat</span>
+        <span data-lang="jp">オープンチャット</span>
+        <span data-lang="cn">开放聊天咨询</span>
+        <span data-lang="ne">खुला च्याट</span>
+        <span data-lang="id">Open chat</span>
+      </div>
+    </a>
+    <a class="contact-item" href="https://blog.naver.com/achimgrim" target="_blank">
+      <div class="contact-icon">🌐</div>
+      <div class="contact-label">Blog</div>
+      <div class="contact-value">blog.naver.com/achimgrim</div>
+    </a>
+    <a class="contact-item" href="https://instagram.com/jung_yulchae" target="_blank">
+      <div class="contact-icon">📷</div>
+      <div class="contact-label">Instagram</div>
+      <div class="contact-value">@jung_yulchae</div>
+    </a>
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=jyc_kvisa" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Live translation chat</span>
+        <span data-lang="jp">リアルタイム翻訳チャット</span>
+        <span data-lang="cn">实时翻译聊天</span>
+        <span data-lang="ne">प्रत्यक्ष अनुवाद च्याट</span>
+        <span data-lang="id">Chat terjemahan langsung</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+      <span data-lang="ne">📞 सम्पर्क सुरक्षित गर्नुहोस्</span>
+      <span data-lang="id">📞 Simpan kontak</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'jung_yulchae_kvisa',name:'정율채',nameEn:'JUNG YULCHAE',title:'대표 행정사',company:'K-VISA센터 행정사사무소',phone:'010-9828-2212',email:'achimgrim@naver.com',chapter:'BNI 자이언츠 챕터',bni:'행정사',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ 名刺を保存</span>
+      <span data-lang="cn">🗂️ 保存名片</span>
+      <span data-lang="ne">🗂️ CardBook मा सुरक्षित</span>
+      <span data-lang="id">🗂️ Simpan ke CardBook</span>
+    </button>
+    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?u=jyc_kvisa','_blank')">
+      <span data-lang="kr" class="active">💬 MANDU로 바로 연락</span>
+      <span data-lang="en">💬 Chat on MANDU</span>
+      <span data-lang="jp">💬 MANDUで連絡</span>
+      <span data-lang="cn">💬 通过MANDU联系</span>
+      <span data-lang="ne">💬 MANDU मा च्याट</span>
+      <span data-lang="id">💬 Chat via MANDU</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="jp">📤 名刺を共有</span>
+      <span data-lang="cn">📤 分享名片</span>
+      <span data-lang="ne">📤 यो कार्ड सेयर गर्नुहोस्</span>
+      <span data-lang="id">📤 Bagikan kartu ini</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#0d1b3e;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">K-VISA센터 행정사사무소</span>
+    <span data-lang="en">K-VISA Center</span>
+    <span data-lang="jp">K-VISAセンター行政士事務所</span>
+    <span data-lang="cn">K-VISA中心行政士事务所</span>
+    <span data-lang="ne">K-VISA केन्द्र</span>
+    <span data-lang="id">K-VISA Center</span>
+  </div>
+  <div class="gov">
+    <span data-lang="kr" class="active">법무부 등록 출입국민원 대행기관 (13101070338)</span>
+    <span data-lang="en">Immigration agency registered with the Ministry of Justice (13101070338)</span>
+    <span data-lang="jp">法務部登録 出入国民願代行機関 (13101070338)</span>
+    <span data-lang="cn">法务部登记出入境民愿代办机构 (13101070338)</span>
+    <span data-lang="ne">न्याय मन्त्रालयमा दर्ता (13101070338)</span>
+    <span data-lang="id">Terdaftar di Kementerian Kehakiman (13101070338)</span>
+  </div>
+  <div class="slogan-footer">Your tomorrow, my commitment.</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:정율채\nORG:K-VISA센터 행정사사무소\nTITLE:대표 행정사\nTEL:010-9828-2212\nEMAIL:achimgrim@naver.com\nURL:https://jinjjabg-hub.github.io/BNI-GIANTS/정율채/\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'jung_yulchae.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/BNI-GIANTS/%EC%A0%95%EC%9C%A8%EC%B1%84/';
+const CARD_TITLE = '정율채 | K-VISA센터 행정사사무소';
+const CARD_TEXT = '외국인 투자·취업·결혼비자 전문 행정사 정율채입니다.';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+</script>
+</body>
+</html>
