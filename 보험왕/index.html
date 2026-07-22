@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>전미진 | 라이프가디언 자산리스크센터</title>
+<meta property="og:title" content="전미진 | 종신·질병보장 설계 18년 · 자산가 리스크 전문">
+<meta property="og:description" content="보험은 상품이 아니라, 그 집안의 다음 20년입니다.">
+<meta property="og:image" content="og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --choco:   #241611;   /* 다크초콜릿 base */
+  --choco2:  #2f1d16;
+  --choco3:  #3b2620;
+  --gold:    #c9a24a;
+  --gold2:   #e6c674;
+  --burgundy:#d81f2a;   /* 포인트 - 선명한 레드 */
+  --burgundy2:#f0353f;
+  --cream:   #f4efe6;
+  --text-dark: #efe6d6;
+  --text-light: #241611;
+  --muted-dark: #b39a6a;
+  --muted-light: #6b5638;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--choco);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(36,22,17,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(201,162,74,0.28);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; letter-spacing:0.3px; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(201,162,74,0.4);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 11px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 46px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--choco); border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #e9e4da;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(36,22,17,0) 0%,
+    rgba(36,22,17,0.05) 45%,
+    rgba(36,22,17,0.72) 80%,
+    rgba(36,22,17,0.96) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--burgundy);
+  color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 5px 13px; border-radius: 20px;
+  margin-bottom: 12px; letter-spacing: 1.5px;
+  box-shadow: 0 2px 10px rgba(216,31,42,0.45);
+}
+.hero-name {
+  font-size: 36px; font-weight: 900;
+  color: #fff; line-height: 1.12;
+  margin-bottom: 8px; letter-spacing: -0.5px;
+}
+.hero-title { font-size: 13px; color: var(--gold2); opacity: 0.98; line-height: 1.5; font-weight:500; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--choco2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(201,162,74,0.14);
+}
+.profile-img {
+  width: 66px; height: 66px; min-width:66px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 42px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--choco); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-family: 'Playfair Display', 'Noto Sans KR', serif;
+  font-size: 19px; font-weight: 700;
+  color: var(--gold2); margin-bottom: 20px;
+  font-style: italic; line-height: 1.55;
+}
+.about-text { font-size: 14px; line-height: 2.0; color: var(--text-dark); opacity: 0.9; }
+.about-text .em { color: var(--gold2); font-weight:700; font-style:normal; }
+
+/* ── STATS 스트립 ── */
+.stats {
+  background: linear-gradient(135deg, var(--choco2), var(--choco3));
+  padding: 34px 18px;
+  border-top: 1px solid rgba(201,162,74,0.2);
+  border-bottom: 1px solid rgba(201,162,74,0.2);
+}
+.stats .section-label { text-align:center; color: var(--gold); }
+.stats-title {
+  text-align:center; font-size:15px; font-weight:700; color:#fff;
+  margin-bottom: 24px; letter-spacing:0.5px;
+}
+.stats-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px 12px;
+}
+.stat-item { text-align:center; }
+.stat-num {
+  font-family:'Playfair Display', serif;
+  font-size: 40px; font-weight:700; line-height:1;
+  color: var(--gold2); margin-bottom:7px;
+}
+.stat-num .unit { font-size:19px; color:var(--gold); }
+.stat-num.accent { color: var(--burgundy2); }
+.stat-label { font-size:11.5px; color: var(--muted-dark); font-weight:500; letter-spacing:0.3px; }
+
+/* ── WHY ── */
+.why { background: var(--cream); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(216,31,42,0.14);
+  border-left: 4px solid var(--burgundy);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #4a4038; }
+.why-card p strong { color: var(--burgundy); font-weight: 700; }
+
+/* ── DIFFERENCE (결정적 순간) ── */
+.difference { background: var(--choco2); }
+.difference .section-title { color: #fff; }
+.diff-lead { font-size:13px; color:var(--muted-dark); margin:-12px 0 20px; line-height:1.7; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--choco3);
+  border: 1px solid rgba(201,162,74,0.14);
+  border-radius: 10px; padding: 18px 16px;
+  position: relative;
+}
+.diff-card.key { border: 1px solid rgba(216,31,42,0.5); background: linear-gradient(135deg, #3b2620, #52251f); }
+.diff-tag {
+  display:inline-block; background:var(--burgundy); color:#fff;
+  font-size:9px; font-weight:700; letter-spacing:1px;
+  padding:3px 9px; border-radius:4px; margin-bottom:10px;
+}
+.diff-card h3 { font-size: 15px; font-weight: 700; color: var(--gold2); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.85; color: var(--text-dark); opacity: 0.88; }
+.diff-card p em { color:var(--gold2); font-style:normal; font-weight:600; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--cream); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-lead { font-size:13px; color:var(--muted-light); margin:-12px 0 20px; line-height:1.7; }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 16px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 27px; height: 27px; min-width:27px;
+  border-radius: 50%; background: var(--burgundy);
+  color: #fff; font-weight: 700; font-size: 13px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item h4 { font-size:13.5px; font-weight:700; color:var(--text-light); margin-bottom:4px; }
+.ref-item p { font-size: 12.5px; line-height: 1.7; color: #5a4f45; }
+
+/* ── CAREER ── */
+.career { background: var(--choco); }
+.career .section-label { color: var(--gold); }
+.career .section-title { color: #fff; }
+.career-list { display: flex; flex-direction: column; gap:16px; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(201,162,74,0.12);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--gold); color: var(--choco);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 5px; line-height: 1.4; }
+.career-item p { font-size: 12.5px; line-height: 1.75; color: var(--muted-dark); }
+
+/* ── CONTACT ── */
+.contact { background: var(--choco2); }
+.contact .section-label { color: var(--gold); }
+.contact .section-title { color: #fff; }
+.contact-list {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: var(--choco3); border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(201,162,74,0.12);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 44px; height: 44px; min-width:44px;
+  border-radius: 50%; background: var(--burgundy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 19px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: var(--muted-dark); }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-dark); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--choco); padding: 34px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 18px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 56px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--burgundy); color: #fff; box-shadow:0 4px 14px rgba(216,31,42,0.4); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold2); }
+.btn-share { background: var(--gold); color: var(--choco); }
+.btn:active { transform: scale(0.97); opacity: 0.92; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.55); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--choco); padding: 26px 20px 34px;
+  text-align: center; border-top: 1px solid rgba(201,162,74,0.14);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+footer .slogan-footer { font-family:'Playfair Display',serif; font-size: 12px; color: var(--muted-dark); font-style:italic; letter-spacing: 0.3px; }
+.demo-note { margin-top:14px; font-size:10px; color:rgba(179,154,106,0.5); letter-spacing:0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <span data-lang="kr" class="active">라이프가디언 자산리스크센터</span>
+    <span data-lang="en">LifeGuardian Wealth Risk Center</span>
+  </div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="hero.png" alt="전미진">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">보험왕 통산 40회</span>
+      <span data-lang="en">40× MONTHLY TOP AGENT</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">전 미 진</span>
+      <span data-lang="en">Mijin Jeon</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">종신·질병보장 설계 18년 · 자산가 리스크 전문</span>
+      <span data-lang="en">18 Years in Life &amp; Health Coverage · Wealth Risk Specialist</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="전미진">
+  </div>
+  <div class="profile-info">
+    <h2>전미진 · Mijin Jeon</h2>
+    <p>
+      <span data-lang="kr" class="active">종신 · 질병보장 · 상속/법인 설계 · 매년 보장점검</span>
+      <span data-lang="en">Life · Health · Estate/Corporate · Annual Review</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">"보험은 상품이 아니라,<br>그 집안의 다음 20년입니다."</span>
+    <span data-lang="en">"Insurance isn't a product.<br>It's a family's next 20 years."</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">
+      스물여섯, 저는 아버지를 암으로 떠나보냈습니다.
+      병원비보다 무서웠던 건, 남겨진 가족이 무너지는 속도였습니다.<br><br>
+      그때 알았습니다. 보험은 종이 한 장이 아니라, <span class="em">한 가족이 다시 설 수 있는 바닥</span>이라는 걸.<br><br>
+      그래서 18년째, 저는 이 일을 놓지 못합니다.
+      두 아이의 엄마로서, 제 가족을 지키는 마음 그대로 고객의 가족을 지킵니다.
+    </span>
+    <span data-lang="en">
+      At twenty-six, I lost my father to cancer.
+      What frightened me more than the medical bills was how fast the family left behind began to fall apart.<br><br>
+      That's when I understood: insurance isn't a piece of paper — it's <span class="em">the floor a family can stand on again</span>.<br><br>
+      For 18 years, I haven't been able to let this work go.
+      As a mother of two, I protect my clients' families with the same heart I protect my own.
+    </span>
+  </p>
+</section>
+
+<!-- STATS : 숫자로 보는 전미진 -->
+<section class="stats">
+  <div class="section-label">By the Numbers</div>
+  <div class="stats-title">
+    <span data-lang="kr" class="active">숫자로 보는 전미진</span>
+    <span data-lang="en">Mijin Jeon, in Numbers</span>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">18<span class="unit">년</span></div>
+      <div class="stat-label">
+        <span data-lang="kr" class="active">종신·질병 외길</span>
+        <span data-lang="en">Years, one path</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num accent">40<span class="unit">회+</span></div>
+      <div class="stat-label">
+        <span data-lang="kr" class="active">월간 보험왕 통산</span>
+        <span data-lang="en">Monthly Top Agent</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1,200<span class="unit">+</span></div>
+      <div class="stat-label">
+        <span data-lang="kr" class="active">함께한 가정</span>
+        <span data-lang="en">Families served</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98<span class="unit">%</span></div>
+      <div class="stat-label">
+        <span data-lang="kr" class="active">재계약 유지율</span>
+        <span data-lang="en">Renewal retention</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="section-label">Why Me</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 전미진인가</span>
+    <span data-lang="en">Why Mijin Jeon</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">① 18년, 한 번도 쉬지 않았습니다</span>
+        <span data-lang="en">① 18 years, never once paused</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">종신·질병보장만 파고든 <strong>18년</strong>. 유행 상품이 아니라, 20년 뒤에도 유지되는 설계를 합니다.</span>
+        <span data-lang="en">Focused solely on life &amp; health coverage for <strong>18 years</strong>. Not trendy products — plans that still hold up 20 years from now.</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">② 월간 보험왕 통산 40회+</span>
+        <span data-lang="en">② 40+ Monthly Top Agent awards</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">운이 아니라 <strong>재계약률</strong>입니다. 고객이 떠나지 않았다는 가장 정직한 증거입니다.</span>
+        <span data-lang="en">Not luck — <strong>renewals</strong>. The most honest proof that clients chose to stay.</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">③ 결정적 순간, 제가 갔습니다</span>
+        <span data-lang="en">③ At the decisive moment, I showed up</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active"><strong>1,200여 가정</strong>의 보장을 설계했고, 사고가 났을 때 서류 대신 <strong>제가 직접 현장에</strong> 갔습니다.</span>
+        <span data-lang="en">I've designed coverage for <strong>1,200+ families</strong> — and when something happened, I went <strong>to them in person</strong>, not just the paperwork.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE : 결정적 순간 -->
+<section class="difference">
+  <div class="section-label">The Decisive Moment</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">사고가 났을 때,<br>비로소 드러나는 차이</span>
+    <span data-lang="en">The difference that only<br>shows when it matters</span>
+  </div>
+  <p class="diff-lead">
+    <span data-lang="kr" class="active">종이 명함은 사고 순간 서랍 속에 있습니다. 저는 고객의 폰 안에서 24시간 살아 있습니다.</span>
+    <span data-lang="en">A paper card sits in a drawer when disaster strikes. I stay alive in your phone, 24 hours a day.</span>
+  </p>
+  <div class="diff-grid">
+    <div class="diff-card key">
+      <div class="diff-tag">
+        <span data-lang="kr" class="active">결정적 순간</span>
+        <span data-lang="en">KEY</span>
+      </div>
+      <h3>
+        <span data-lang="kr" class="active">"청구는 제가 합니다"</span>
+        <span data-lang="en">"I handle the claim."</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">고객이 아플 때 서류와 씨름하지 않게 합니다. 진단 확인부터 지급까지 제가 대리합니다. <em>실제로 40대 가장, 암 진단 3일 만에 보험금 지급을 마쳤습니다.</em></span>
+        <span data-lang="en">When you're ill, you shouldn't be fighting paperwork. I handle it — from diagnosis to payout. <em>Once, a father in his 40s received his claim just 3 days after his cancer diagnosis.</em></span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">자산가 리스크 설계</span>
+        <span data-lang="en">Wealth risk design</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">의사·변호사·법인 대표의 상속·법인·절세까지 연결되는 종합 설계. 일반 보장 설계와는 다른 영역입니다.</span>
+        <span data-lang="en">Comprehensive planning for doctors, lawyers and CEOs — spanning estate, corporate and tax. A different league from standard coverage.</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">매년 무료 보장 점검</span>
+        <span data-lang="en">Free annual review</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">팔고 끝이 아닙니다. 가족 구성·소득·법이 바뀌면 보장도 바뀌어야 합니다. 1년에 한 번, 제가 먼저 연락드립니다.</span>
+        <span data-lang="en">The sale isn't the end. As family, income and law change, coverage must too. Once a year, I reach out first.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+  </div>
+  <p class="ref-lead">
+    <span data-lang="kr" class="active">주변에 이런 분이 떠오른다면, 이 명함을 그대로 전달해 주세요.</span>
+    <span data-lang="en">If someone comes to mind, just pass this card along.</span>
+  </p>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <div>
+        <h4>
+          <span data-lang="kr" class="active">이제 막 '가장'이 된 분</span>
+          <span data-lang="en">Someone who just became a provider</span>
+        </h4>
+        <p>
+          <span data-lang="kr" class="active">결혼·출산·내 집 마련으로 지켜야 할 게 생긴 30~40대. 지금이 설계의 골든타임입니다.</span>
+          <span data-lang="en">30s–40s with new responsibilities — marriage, a child, a first home. This is the golden window.</span>
+        </p>
+      </div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <div>
+        <h4>
+          <span data-lang="kr" class="active">보험이 5개 넘게 흩어진 분</span>
+          <span data-lang="en">Someone with 5+ scattered policies</span>
+        </h4>
+        <p>
+          <span data-lang="kr" class="active">뭐가 중복이고 뭐가 비었는지 모르는 분. 정리만 해드려도 매달 나가는 돈이 달라집니다.</span>
+          <span data-lang="en">Unsure what overlaps and what's missing. Just organizing it can change what they pay each month.</span>
+        </p>
+      </div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <div>
+        <h4>
+          <span data-lang="kr" class="active">법인 대표 · 전문직</span>
+          <span data-lang="en">CEOs &amp; professionals</span>
+        </h4>
+        <p>
+          <span data-lang="kr" class="active">상속·법인·절세까지 함께 봐야 하는 자산가. 제가 가장 강한 영역입니다.</span>
+          <span data-lang="en">Wealth owners who need estate, corporate and tax planning together. This is where I'm strongest.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 전문 분야</span>
+    <span data-lang="en">Career &amp; Expertise</span>
+  </div>
+  <div class="career-list">
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">현재</span>
+        <span data-lang="en">NOW</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">라이프가디언 자산리스크센터 수석 설계사</span>
+          <span data-lang="en">Senior Advisor, LifeGuardian Wealth Risk Center</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">GA 소속 · 종신/질병보장 및 자산가 리스크 종합 설계</span>
+          <span data-lang="en">GA-based · Life/health coverage &amp; comprehensive wealth-risk planning</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">경력</span>
+        <span data-lang="en">PATH</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">삼성생명 출발 → GA로, 18년</span>
+          <span data-lang="en">Started at Samsung Life → moved to GA, 18 years</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">한 회사 상품이 아니라, 고객에게 맞는 상품을 고르기 위해 GA를 선택했습니다.</span>
+          <span data-lang="en">I chose GA to recommend what fits the client — not just one company's products.</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">강점</span>
+        <span data-lang="en">EDGE</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">전문직 자산가 고객 다수</span>
+          <span data-lang="en">Trusted by professionals &amp; wealth owners</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">의사·변호사·법인 대표의 상속·법인·절세 설계 경험 다수</span>
+          <span data-lang="en">Extensive estate, corporate &amp; tax planning for doctors, lawyers and CEOs</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+  </div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-0000-0000">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+      </div>
+      <div class="contact-value">010-0000-0000</div>
+    </a>
+    <a class="contact-item" href="mailto:mijin.jeon@example.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">mijin.jeon@<br>example.com</div>
+    </a>
+    <a class="contact-item" href="#" onclick="return false;">
+      <div class="contact-icon">💛</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">카카오 상담</span>
+        <span data-lang="en">KakaoTalk</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">1:1 상담 채널</span>
+        <span data-lang="en">1:1 chat</span>
+      </div>
+    </a>
+    <a class="contact-item" href="#" onclick="return false;">
+      <div class="contact-icon">🕐</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">상담 가능</span>
+        <span data-lang="en">Hours</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">평일 09–20시<br>사고 시 24시간</span>
+        <span data-lang="en">Weekdays 9–20<br>24h for claims</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+    </button>
+    <button class="btn btn-secondary" onclick="alert('데모 명함입니다 · CardBook 저장 기능 연동 예정')">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#241611;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">라이프가디언 자산리스크센터</span>
+    <span data-lang="en">LifeGuardian Wealth Risk Center</span>
+  </div>
+  <div class="slogan-footer">Your family's next 20 years.</div>
+  <div class="demo-note">SAMPLE CARD · 가상 인물 · DiCA by T.M</div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+  document.documentElement.lang = (lang === 'kr') ? 'ko' : 'en';
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:전미진\nORG:라이프가디언 자산리스크센터\nTITLE:종신·질병보장 설계 · 자산가 리스크 전문\nTEL:010-0000-0000\nEMAIL:mijin.jeon@example.com\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'jeon-mijin.vcf';
+  a.click();
+}
+const CARD_TITLE = '전미진 | 라이프가디언 자산리스크센터';
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: '보험은 상품이 아니라, 그 집안의 다음 20년입니다.', url: window.location.href }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareSMS() { location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + window.location.href); closeShare(); }
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => alert('링크가 복사되었습니다!')).catch(() => {});
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+</script>
+</body>
+</html>
