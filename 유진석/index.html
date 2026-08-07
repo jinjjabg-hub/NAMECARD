@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>유진석 | 전북국제행정사사무소</title>
+<meta property="og:title" content="유진석 | 대표 · 전북국제행정사사무소">
+<meta property="og:description" content="출입국·비자 변경·외국인 초청 업무를 빠르고 정확하게, 합리적인 수임료로. 믿을 수 있는 행정사.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EC%9C%A0%EC%A7%84%EC%84%9D/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/유진석/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+Thai:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --blue:   #041B4D;   /* 메인 배경 (딥 블루) */
+  --blue2:  #072660;
+  --blue3:  #0B3486;
+  --brand:  #0145F2;   /* 엑셀 메인 컬러 — 포인트 */
+  --gold:   #c9a227;   /* 엑셀 포인트 컬러 */
+  --gold2:  #e3c256;
+  --light:  #f0f4ff;   /* 엑셀 서브 컬러 */
+  --text-dark: #eaf0ff;
+  --text-light: #0a1633;
+  --muted-dark: #9db2e8;
+  --muted-light: #52618a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--blue);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang="cn"] { font-family: 'Noto Sans SC', 'Noto Sans KR', sans-serif; }
+[data-lang="th"] { font-family: 'Noto Sans Thai', 'Noto Sans KR', sans-serif; }
+[data-lang="ru"], [data-lang="vi"], [data-lang="en"] { font-family: 'Noto Sans', 'Noto Sans KR', sans-serif; }
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(4,27,77,0.97);
+  backdrop-filter: blur(10px);
+  padding: 8px 12px;
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  border-bottom: 1px solid rgba(201,162,39,0.3);
+}
+.nav-brand { font-size: 11px; font-weight: 700; color: var(--gold); white-space: nowrap; flex-shrink: 0; }
+.lang-btns {
+  display:flex; gap:4px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.lang-btns::-webkit-scrollbar { display: none; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(201,162,39,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 38px; min-height: 30px;
+  white-space: nowrap; flex-shrink: 0;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--blue); border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 47px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(4,27,77,0.05) 0%,
+    rgba(4,27,77,0.15) 40%,
+    rgba(4,27,77,0.78) 75%,
+    rgba(4,27,77,0.97) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--blue);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.2px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-name [data-lang="th"] { font-size: 30px; }
+.hero-name [data-lang="ru"] { font-size: 28px; }
+.hero-title { font-size: 13px; color: var(--gold2); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--blue2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(201,162,39,0.15);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 21px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--blue); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold2); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.88; }
+.about-text [data-lang="th"] { line-height: 2.1; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(1,69,242,0.12);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p [data-lang="th"] { line-height: 2.1; }
+.why-card p strong { color: var(--brand); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--blue2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--blue3);
+  border: 1px solid rgba(201,162,39,0.16);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold2); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.88; }
+.diff-card p [data-lang="th"] { line-height: 2.1; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--blue); font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+.ref-item p [data-lang="th"] { line-height: 2.1; }
+
+/* ── CAREER ── */
+.career {
+  position: relative;
+  background: linear-gradient(160deg, #e9efff 0%, #f7f9ff 55%, #eef3ff 100%);
+}
+.career .section-label { color: var(--muted-light); }
+.career .section-title { color: var(--text-light); }
+.career-list { display: flex; flex-direction: column; gap:18px; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(1,69,242,0.10);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--brand); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 5px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.88); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--brand);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #8b93a7; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--blue2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--blue); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold2); }
+.btn-mandu { background: linear-gradient(135deg, #0145F2, #0a2a8c); color: #fff; border: none; }
+.btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--blue); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(201,162,39,0.15);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.3px; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">전북국제행정사</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('vi')">Việt</button>
+    <button class="lang-btn" onclick="setLang('th')">ไทย</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="hero.png" alt="유진석 대표">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">외국인 비자 전문</span>
+      <span data-lang="cn">外国人签证专业</span>
+      <span data-lang="en">VISA SPECIALIST</span>
+      <span data-lang="vi">CHUYÊN GIA THỊ THỰC</span>
+      <span data-lang="th">ผู้เชี่ยวชาญด้านวีซ่า</span>
+      <span data-lang="ru">ВИЗОВЫЙ СПЕЦИАЛИСТ</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">유 진 석</span>
+      <span data-lang="cn">刘 真 硕</span>
+      <span data-lang="en">YOO JISSUK</span>
+      <span data-lang="vi">YOO JISSUK</span>
+      <span data-lang="th">ยู จินซอก</span>
+      <span data-lang="ru">Ю ЧЖИНСОК</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 · 전북국제행정사사무소</span>
+      <span data-lang="cn">代表 · 全北国际行政士事务所</span>
+      <span data-lang="en">CEO · Jeonbuk Visa Service Office</span>
+      <span data-lang="vi">Giám đốc · Văn phòng Dịch vụ Thị thực Jeonbuk</span>
+      <span data-lang="th">ผู้บริหาร · สำนักงานบริการวีซ่าชอนบุก</span>
+      <span data-lang="ru">Директор · Бюро визовых услуг Чонбук</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="유진석">
+  </div>
+  <div class="profile-info">
+    <h2>유진석 · YOO JISSUK</h2>
+    <p>
+      <span data-lang="kr" class="active">출입국 · 비자 · 체류자격</span>
+      <span data-lang="cn">出入境 · 签证 · 居留资格</span>
+      <span data-lang="en">Immigration · Visa · Residence status</span>
+      <span data-lang="vi">Xuất nhập cảnh · Thị thực · Tư cách lưu trú</span>
+      <span data-lang="th">ตรวจคนเข้าเมือง · วีซ่า · สถานะพำนัก</span>
+      <span data-lang="ru">Иммиграция · Визы · Статус пребывания</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">합리적인 수임료, 정확하고 신속한 업무처리, 신뢰할 수 있는 행정사</span>
+    <span data-lang="cn">合理的费用，准确迅速的办理，值得信赖的行政士</span>
+    <span data-lang="en">Fair fees. Fast, accurate filings. An agent you can trust.</span>
+    <span data-lang="vi">Chi phí hợp lý, xử lý nhanh và chính xác, chuyên viên hành chính đáng tin cậy.</span>
+    <span data-lang="th">ค่าบริการสมเหตุสมผล ดำเนินการรวดเร็วแม่นยำ นักบริหารงานที่ไว้วางใจได้</span>
+    <span data-lang="ru">Разумный гонорар, точное и быстрое оформление, специалист, которому можно доверять.</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">출입국 업무, 비자 변경 및 신청, 외국인 초청 업무를 빠르고 정확하게, 그리고 합리적인 수임료로 진행하여 의뢰인을 만족시키는 믿을 수 있는 행정사입니다.</span>
+    <span data-lang="cn">出入境业务、签证变更与申请、外国人邀请业务，快速准确、收费合理，让每一位委托人放心的行政士。</span>
+    <span data-lang="en">Immigration filings, visa changes and applications, and invitations for foreign nationals — handled quickly and accurately, at a fair fee. A licensed administrative agent you can rely on.</span>
+    <span data-lang="vi">Thủ tục xuất nhập cảnh, thay đổi và xin cấp thị thực, mời người nước ngoài — xử lý nhanh chóng, chính xác với chi phí hợp lý. Một chuyên viên hành chính đáng tin cậy.</span>
+    <span data-lang="th">งานตรวจคนเข้าเมือง การเปลี่ยนและยื่นขอวีซ่า และการเชิญชาวต่างชาติ ดำเนินการอย่างรวดเร็วและแม่นยำ ด้วยค่าบริการที่สมเหตุสมผล เป็นนักบริหารงานที่ท่านวางใจได้</span>
+    <span data-lang="ru">Иммиграционные дела, смена и получение виз, приглашение иностранцев — быстро, точно и по разумной цене. Специалист, на которого можно положиться.</span>
+  </p>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 전북국제행정사사무소인가</span>
+    <span data-lang="cn">为什么选择全北国际行政士事务所</span>
+    <span data-lang="en">Why this office?</span>
+    <span data-lang="vi">Vì sao chọn văn phòng này?</span>
+    <span data-lang="th">ทำไมต้องเลือกสำนักงานนี้</span>
+    <span data-lang="ru">Почему именно мы</span>
+  </div>
+  <div class="why-cards">
+
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">① 축적된 의뢰인의 신뢰</span>
+        <span data-lang="cn">① 长期积累的委托人信赖</span>
+        <span data-lang="en">① Trust built case by case</span>
+        <span data-lang="vi">① Niềm tin tích lũy từ khách hàng</span>
+        <span data-lang="th">① ความไว้วางใจที่สั่งสมมา</span>
+        <span data-lang="ru">① Доверие, накопленное годами</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">오랜 기간 <strong>다양한 비자 업무 경험</strong>으로 의뢰인을 만족시키고, 신뢰를 지키고 있습니다.</span>
+        <span data-lang="cn">凭借长期<strong>多样的签证业务经验</strong>，让委托人满意，守住信赖。</span>
+        <span data-lang="en">Years of hands-on work across <strong>a wide range of visa cases</strong> — clients stay satisfied, and that trust is kept.</span>
+        <span data-lang="vi">Nhiều năm kinh nghiệm với <strong>đa dạng hồ sơ thị thực</strong>, luôn giữ được sự hài lòng và niềm tin của khách hàng.</span>
+        <span data-lang="th">ด้วยประสบการณ์ยาวนานใน<strong>งานวีซ่าหลากหลายประเภท</strong> ทำให้ลูกค้าพึงพอใจและไว้วางใจเสมอ</span>
+        <span data-lang="ru">Многолетний опыт работы с <strong>самыми разными типами виз</strong> — клиенты остаются довольны, а доверие сохраняется.</span>
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">② 외국인 취업비자 E-7 전문</span>
+        <span data-lang="cn">② 外国人就业签证 E-7 专业</span>
+        <span data-lang="en">② E-7 work visa specialist</span>
+        <span data-lang="vi">② Chuyên về thị thực lao động E-7</span>
+        <span data-lang="th">② ผู้เชี่ยวชาญวีซ่าทำงาน E-7</span>
+        <span data-lang="ru">② Специалист по рабочей визе E-7</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">외국인의 조건에 맞는 <strong>E-7 · E-7-4</strong> 비자를 추천하고, 허가부터 외국인등록증 수령까지 진행해 드립니다.</span>
+        <span data-lang="cn">根据外国人的条件推荐合适的 <strong>E-7 · E-7-4</strong> 签证，并从许可到领取外国人登录证全程办理。</span>
+        <span data-lang="en">Recommends the right <strong>E-7 / E-7-4</strong> visa for each applicant's profile, then handles everything from approval to the residence card.</span>
+        <span data-lang="vi">Tư vấn loại thị thực <strong>E-7 · E-7-4</strong> phù hợp với điều kiện của từng người, xử lý từ khi được cấp phép đến khi nhận thẻ cư trú.</span>
+        <span data-lang="th">แนะนำวีซ่า <strong>E-7 · E-7-4</strong> ที่เหมาะกับเงื่อนไขของแต่ละบุคคล พร้อมดำเนินการตั้งแต่การอนุมัติจนถึงรับบัตรประจำตัวคนต่างด้าว</span>
+        <span data-lang="ru">Подбираем визу <strong>E-7 / E-7-4</strong> под конкретные условия заявителя и ведём дело от одобрения до получения карты иностранца.</span>
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">③ 국제결혼 비자, 허가 확률을 높입니다</span>
+        <span data-lang="cn">③ 国际婚姻签证，提高获批率</span>
+        <span data-lang="en">③ Higher approval odds for marriage visas</span>
+        <span data-lang="vi">③ Nâng cao khả năng đậu thị thực kết hôn</span>
+        <span data-lang="th">③ เพิ่มโอกาสอนุมัติวีซ่าแต่งงาน</span>
+        <span data-lang="ru">③ Выше шансы одобрения брачной визы</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">한국인 배우자와 외국인 배우자의 상황에 맞춘 업무 진행으로 <strong>결혼비자</strong> 허가 확률을 높여드립니다.</span>
+        <span data-lang="cn">结合韩国配偶与外国配偶各自的实际情况推进，提高<strong>结婚签证</strong>的获批率。</span>
+        <span data-lang="en">Each case is built around the actual situation of both spouses, which raises the odds of <strong>marriage visa</strong> approval.</span>
+        <span data-lang="vi">Hồ sơ được xây dựng theo hoàn cảnh thực tế của cả hai vợ chồng, giúp tăng khả năng được cấp <strong>thị thực kết hôn</strong>.</span>
+        <span data-lang="th">ดำเนินการตามสถานการณ์จริงของคู่สมรสทั้งฝ่ายเกาหลีและต่างชาติ จึงเพิ่มโอกาสอนุมัติ<strong>วีซ่าแต่งงาน</strong></span>
+        <span data-lang="ru">Дело выстраивается под реальную ситуацию обоих супругов, что повышает шансы одобрения <strong>брачной визы</strong>.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="cn">差异化优势</span>
+    <span data-lang="en">What makes us different</span>
+    <span data-lang="vi">Điểm khác biệt</span>
+    <span data-lang="th">จุดแตกต่าง</span>
+    <span data-lang="ru">Наши отличия</span>
+  </div>
+  <div class="diff-grid">
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">베트남 혼인요건 인증서 발급 대행</span>
+        <span data-lang="cn">越南婚姻状况证明代办</span>
+        <span data-lang="en">Vietnam marriage eligibility certificates</span>
+        <span data-lang="vi">Đại diện xin giấy xác nhận tình trạng hôn nhân Việt Nam</span>
+        <span data-lang="th">รับดำเนินการหนังสือรับรองสถานะสมรสเวียดนาม</span>
+        <span data-lang="ru">Оформление вьетнамской справки о брачной правоспособности</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">베트남 배우자의 한국 혼인신고에 필요한 혼인요건 인증서 발급부터 결혼비자 신청까지 모든 절차가 가능합니다.</span>
+        <span data-lang="cn">从越南配偶在韩办理婚姻登记所需的婚姻要件证明书，到结婚签证申请，全部流程均可代办。</span>
+        <span data-lang="en">From the certificate required to register a marriage in Korea with a Vietnamese spouse, all the way to the marriage visa application — the whole chain in one place.</span>
+        <span data-lang="vi">Từ giấy xác nhận cần thiết để đăng ký kết hôn tại Hàn Quốc với người phối ngẫu Việt Nam, cho đến hồ sơ xin thị thực kết hôn — toàn bộ quy trình tại một nơi.</span>
+        <span data-lang="th">ตั้งแต่หนังสือรับรองที่ต้องใช้ในการจดทะเบียนสมรสในเกาหลีกับคู่สมรสชาวเวียดนาม ไปจนถึงการยื่นขอวีซ่าแต่งงาน ครบทุกขั้นตอนในที่เดียว</span>
+        <span data-lang="ru">От справки, необходимой для регистрации брака в Корее с супругом из Вьетнама, до подачи на брачную визу — весь путь в одном месте.</span>
+      </p>
+    </div>
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">다양한 기업 초청 비자 경험</span>
+        <span data-lang="cn">丰富的企业邀请签证经验</span>
+        <span data-lang="en">Corporate invitation visas</span>
+        <span data-lang="vi">Kinh nghiệm thị thực mời của doanh nghiệp</span>
+        <span data-lang="th">ประสบการณ์วีซ่าเชิญจากบริษัท</span>
+        <span data-lang="ru">Визы по приглашению компаний</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">의뢰인의 목적에 맞는 C-3-4, E-7, D-7 비자 신청을 진행하며, 원활한 업무 수행으로 기업의 신뢰를 받고 있습니다.</span>
+        <span data-lang="cn">根据委托目的办理 C-3-4、E-7、D-7 签证申请，业务顺畅，深受企业信赖。</span>
+        <span data-lang="en">C-3-4, E-7 and D-7 applications matched to the purpose of the invitation — a track record companies keep coming back to.</span>
+        <span data-lang="vi">Xử lý hồ sơ C-3-4, E-7, D-7 phù hợp với mục đích của khách hàng; công việc trôi chảy nên được doanh nghiệp tin tưởng.</span>
+        <span data-lang="th">ดำเนินการยื่นวีซ่า C-3-4, E-7, D-7 ให้ตรงกับวัตถุประสงค์ของลูกค้า ทำงานราบรื่นจนได้รับความไว้วางใจจากบริษัทต่าง ๆ</span>
+        <span data-lang="ru">Заявления C-3-4, E-7 и D-7 под конкретную цель приглашения — компании возвращаются снова.</span>
+      </p>
+    </div>
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">기업투자 D-8 · D-9 원스톱</span>
+        <span data-lang="cn">企业投资 D-8 · D-9 一站式</span>
+        <span data-lang="en">D-8 / D-9 investment visas, end to end</span>
+        <span data-lang="vi">Thị thực đầu tư D-8 · D-9 trọn gói</span>
+        <span data-lang="th">วีซ่าลงทุน D-8 · D-9 ครบวงจร</span>
+        <span data-lang="ru">Инвестиционные визы D-8 / D-9 «под ключ»</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">협업 중인 세무사·법무사와 함께 법인 설립부터 비자 허가까지 원스톱으로 진행합니다.</span>
+        <span data-lang="cn">与合作的税务士、法务士一同，从法人设立到签证许可一站式办理。</span>
+        <span data-lang="en">Together with partner tax and judicial scriveners, from company incorporation through to visa approval on a single track.</span>
+        <span data-lang="vi">Cùng với các chuyên viên thuế và pháp lý đối tác, xử lý từ khâu thành lập pháp nhân đến khi được cấp thị thực.</span>
+        <span data-lang="th">ร่วมกับผู้เชี่ยวชาญด้านภาษีและกฎหมายที่เป็นพันธมิตร ดำเนินการตั้งแต่จดทะเบียนบริษัทจนถึงอนุมัติวีซ่า</span>
+        <span data-lang="ru">Совместно с партнёрами-налоговиками и юристами: от регистрации компании до одобрения визы.</span>
+      </p>
+    </div>
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">외국인 가족초청 비자 높은 허가 확률</span>
+        <span data-lang="cn">外国人家属邀请签证获批率高</span>
+        <span data-lang="en">Family invitation visas with a strong approval record</span>
+        <span data-lang="vi">Thị thực mời thân nhân với tỷ lệ đậu cao</span>
+        <span data-lang="th">วีซ่าเชิญครอบครัวที่มีอัตราอนุมัติสูง</span>
+        <span data-lang="ru">Визы для приглашения семьи с высоким процентом одобрения</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">C-3, F-1-5, F-3 등 의뢰인에게 맞는 비자로 높은 허가 확률을 보유하고 있습니다.</span>
+        <span data-lang="cn">C-3、F-1-5、F-3 等，按委托人情况选择合适签证，保持较高的获批率。</span>
+        <span data-lang="en">C-3, F-1-5, F-3 and more — matched to the family's actual situation, with a strong approval record.</span>
+        <span data-lang="vi">C-3, F-1-5, F-3 và các loại khác — chọn đúng loại theo hoàn cảnh thực tế, duy trì tỷ lệ đậu cao.</span>
+        <span data-lang="th">C-3, F-1-5, F-3 และอื่น ๆ เลือกประเภทที่เหมาะกับสถานการณ์จริง จึงมีอัตราอนุมัติสูง</span>
+        <span data-lang="ru">C-3, F-1-5, F-3 и другие — виза подбирается под реальную ситуацию семьи, отсюда высокий процент одобрения.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="cn">请介绍这样的客户</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="vi">Hãy giới thiệu những người như thế này</span>
+    <span data-lang="th">กรุณาแนะนำบุคคลเหล่านี้</span>
+    <span data-lang="ru">Кого стоит порекомендовать</span>
+  </div>
+  <div class="ref-list">
+
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+        <span data-lang="kr" class="active">국내에 거주하며 비자 변경을 고려하는 외국인</span>
+        <span data-lang="cn">在韩居住、正考虑变更签证的外国人</span>
+        <span data-lang="en">Foreign nationals living in Korea who are considering a change of visa status</span>
+        <span data-lang="vi">Người nước ngoài đang sống tại Hàn Quốc và cân nhắc đổi loại thị thực</span>
+        <span data-lang="th">ชาวต่างชาติที่พำนักในเกาหลีและกำลังพิจารณาเปลี่ยนประเภทวีซ่า</span>
+        <span data-lang="ru">Иностранцы, живущие в Корее и думающие о смене визового статуса</span>
+      </p>
+    </div>
+
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+        <span data-lang="kr" class="active">외국인 배우자와 혼인신고 및 결혼비자 신청을 고민하는 한국인</span>
+        <span data-lang="cn">正考虑与外国配偶办理婚姻登记及结婚签证的韩国人</span>
+        <span data-lang="en">Koreans preparing to register a marriage with a foreign spouse and apply for a marriage visa</span>
+        <span data-lang="vi">Người Hàn Quốc chuẩn bị đăng ký kết hôn với người nước ngoài và xin thị thực kết hôn</span>
+        <span data-lang="th">คนเกาหลีที่เตรียมจดทะเบียนสมรสกับคู่สมรสชาวต่างชาติและยื่นขอวีซ่าแต่งงาน</span>
+        <span data-lang="ru">Корейцы, готовящие регистрацию брака с иностранным супругом и подачу на брачную визу</span>
+      </p>
+    </div>
+
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+        <span data-lang="kr" class="active">외국인 초청을 원하는 기업 또는 개인</span>
+        <span data-lang="cn">希望邀请外国人的企业或个人</span>
+        <span data-lang="en">Companies or individuals who need to invite someone from abroad</span>
+        <span data-lang="vi">Doanh nghiệp hoặc cá nhân muốn mời người nước ngoài sang Hàn Quốc</span>
+        <span data-lang="th">บริษัทหรือบุคคลที่ต้องการเชิญชาวต่างชาติเข้าประเทศเกาหลี</span>
+        <span data-lang="ru">Компании или частные лица, которым нужно пригласить человека из-за рубежа</span>
+      </p>
+    </div>
+
+    <div class="ref-item">
+      <div class="ref-num">4</div>
+      <p>
+        <span data-lang="kr" class="active">중국 인증서류·베트남 혼인요건 인증서 발급이 필요한 내외국인</span>
+        <span data-lang="cn">需要办理中国认证文件、越南婚姻要件证明的中外人士</span>
+        <span data-lang="en">Anyone who needs Chinese certified documents or a Vietnamese marriage eligibility certificate</span>
+        <span data-lang="vi">Người trong và ngoài nước cần giấy tờ công chứng Trung Quốc hoặc giấy xác nhận hôn nhân Việt Nam</span>
+        <span data-lang="th">ผู้ที่ต้องการเอกสารรับรองจากจีน หรือหนังสือรับรองสถานะสมรสจากเวียดนาม</span>
+        <span data-lang="ru">Те, кому нужны заверенные документы из Китая или вьетнамская справка о брачной правоспособности</span>
+      </p>
+    </div>
+
+    <div class="ref-item">
+      <div class="ref-num">5</div>
+      <p>
+        <span data-lang="kr" class="active">귀화 신청 또는 영주권 신청을 준비하는 외국인</span>
+        <span data-lang="cn">准备申请归化或永住权的外国人</span>
+        <span data-lang="en">Foreign nationals preparing a naturalization or permanent residency application</span>
+        <span data-lang="vi">Người nước ngoài đang chuẩn bị hồ sơ nhập tịch hoặc thường trú</span>
+        <span data-lang="th">ชาวต่างชาติที่เตรียมยื่นขอสัญชาติหรือสถานะผู้พำนักถาวร</span>
+        <span data-lang="ru">Иностранцы, готовящие заявление на натурализацию или ПМЖ</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 전문 분야</span>
+    <span data-lang="cn">经历与专业领域</span>
+    <span data-lang="en">Career &amp; Expertise</span>
+    <span data-lang="vi">Kinh nghiệm &amp; chuyên môn</span>
+    <span data-lang="th">ประสบการณ์และความเชี่ยวชาญ</span>
+    <span data-lang="ru">Опыт и специализация</span>
+  </div>
+  <div class="career-list">
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">현재</span>
+        <span data-lang="cn">现任</span>
+        <span data-lang="en">Now</span>
+        <span data-lang="vi">Hiện tại</span>
+        <span data-lang="th">ปัจจุบัน</span>
+        <span data-lang="ru">Сейчас</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">전북국제행정사사무소 대표 행정사</span>
+          <span data-lang="cn">全北国际行政士事务所 代表行政士</span>
+          <span data-lang="en">Principal agent, Jeonbuk Visa Service Office</span>
+          <span data-lang="vi">Chuyên viên hành chính đại diện, Văn phòng Dịch vụ Thị thực Jeonbuk</span>
+          <span data-lang="th">นักบริหารงานผู้แทน สำนักงานบริการวีซ่าชอนบุก</span>
+          <span data-lang="ru">Главный специалист, Бюро визовых услуг Чонбук</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">출입국 외국인 업무, 비자 신청, 체류자격 변경, 결혼비자, 기업·개인 초청비자, 기업투자비자</span>
+          <span data-lang="cn">出入境外国人业务、签证申请、居留资格变更、结婚签证、企业及个人邀请签证、企业投资签证</span>
+          <span data-lang="en">Immigration matters, visa applications, status changes, marriage visas, corporate and personal invitations, investment visas</span>
+          <span data-lang="vi">Thủ tục xuất nhập cảnh, xin thị thực, thay đổi tư cách lưu trú, thị thực kết hôn, thị thực mời của doanh nghiệp và cá nhân, thị thực đầu tư</span>
+          <span data-lang="th">งานคนต่างชาติด้านตรวจคนเข้าเมือง การยื่นวีซ่า การเปลี่ยนสถานะพำนัก วีซ่าแต่งงาน วีซ่าเชิญจากบริษัทและบุคคล วีซ่าลงทุน</span>
+          <span data-lang="ru">Иммиграционные дела, подача на визы, смена статуса пребывания, брачные визы, визы по приглашению компаний и частных лиц, инвестиционные визы</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">전문</span>
+        <span data-lang="cn">专业</span>
+        <span data-lang="en">Expertise</span>
+        <span data-lang="vi">Chuyên môn</span>
+        <span data-lang="th">ความเชี่ยวชาญ</span>
+        <span data-lang="ru">Экспертиза</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">국제 인증서류 발급 대행</span>
+          <span data-lang="cn">国际认证文件代办</span>
+          <span data-lang="en">Certified international documents</span>
+          <span data-lang="vi">Đại diện xin giấy tờ công chứng quốc tế</span>
+          <span data-lang="th">รับดำเนินการเอกสารรับรองระหว่างประเทศ</span>
+          <span data-lang="ru">Оформление международных заверенных документов</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">베트남 혼인요건 인증서 발급, 중국 인증서류 발급, 문서 아포스티유 인증 대행</span>
+          <span data-lang="cn">越南婚姻要件证明、中国认证文件、文书海牙认证（Apostille）代办</span>
+          <span data-lang="en">Vietnamese marriage eligibility certificates, Chinese certified documents, apostille authentication</span>
+          <span data-lang="vi">Giấy xác nhận hôn nhân Việt Nam, giấy tờ công chứng Trung Quốc, hợp pháp hóa Apostille</span>
+          <span data-lang="th">หนังสือรับรองสถานะสมรสเวียดนาม เอกสารรับรองจากจีน และการรับรอง Apostille</span>
+          <span data-lang="ru">Вьетнамские справки о брачной правоспособности, китайские заверенные документы, апостиль</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">실적</span>
+        <span data-lang="cn">业绩</span>
+        <span data-lang="en">Record</span>
+        <span data-lang="vi">Thành tích</span>
+        <span data-lang="th">ผลงาน</span>
+        <span data-lang="ru">Результаты</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">행정심판 · 여행업 등록</span>
+          <span data-lang="cn">行政复议 · 旅行社设立</span>
+          <span data-lang="en">Administrative appeals · travel agency registration</span>
+          <span data-lang="vi">Khiếu nại hành chính · đăng ký công ty du lịch</span>
+          <span data-lang="th">การอุทธรณ์ทางปกครอง · จดทะเบียนบริษัทท่องเที่ยว</span>
+          <span data-lang="ru">Административные обжалования · регистрация турагентства</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">음주운전 행정심판, 여행사 설립</span>
+          <span data-lang="cn">酒驾行政复议、旅行社设立</span>
+          <span data-lang="en">DUI administrative appeals, travel agency establishment</span>
+          <span data-lang="vi">Khiếu nại hành chính về vi phạm nồng độ cồn, thành lập công ty du lịch</span>
+          <span data-lang="th">การอุทธรณ์ทางปกครองกรณีเมาแล้วขับ และการจัดตั้งบริษัทท่องเที่ยว</span>
+          <span data-lang="ru">Обжалование лишения прав за вождение в нетрезвом виде, создание турагентства</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="cn">联系方式</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="vi">Liên hệ</span>
+    <span data-lang="th">ติดต่อ</span>
+    <span data-lang="ru">Контакты</span>
+  </div>
+  <div class="contact-list">
+
+    <a class="contact-item" href="tel:010-7671-5840">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="cn">电话</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="vi">Điện thoại</span>
+        <span data-lang="th">โทรศัพท์</span>
+        <span data-lang="ru">Телефон</span>
+      </div>
+      <div class="contact-value">010-7671-5840</div>
+    </a>
+
+    <a class="contact-item" href="mailto:jb5840@naver.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">jb5840@naver.com</div>
+    </a>
+
+    <a class="contact-item" href="https://blog.naver.com/jb5840" target="_blank">
+      <div class="contact-icon">🌐</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">블로그</span>
+        <span data-lang="cn">博客</span>
+        <span data-lang="en">Blog</span>
+        <span data-lang="vi">Blog</span>
+        <span data-lang="th">บล็อก</span>
+        <span data-lang="ru">Блог</span>
+      </div>
+      <div class="contact-value">blog.naver.com/jb5840</div>
+    </a>
+
+    <a class="contact-item" href="https://www.facebook.com/profile.php?id=100026330291754" target="_blank">
+      <div class="contact-icon">📘</div>
+      <div class="contact-label">Facebook</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">페이스북 프로필</span>
+        <span data-lang="cn">Facebook 主页</span>
+        <span data-lang="en">Profile</span>
+        <span data-lang="vi">Trang cá nhân</span>
+        <span data-lang="th">โปรไฟล์</span>
+        <span data-lang="ru">Профиль</span>
+      </div>
+    </a>
+
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저 — 모국어로 바로 상담</span>
+        <span data-lang="cn">实时翻译聊天 — 用母语直接咨询</span>
+        <span data-lang="en">Live translation chat — talk in your own language</span>
+        <span data-lang="vi">Trò chuyện dịch trực tiếp — nói bằng tiếng mẹ đẻ của bạn</span>
+        <span data-lang="th">แชทแปลภาษาสด — ปรึกษาด้วยภาษาของคุณเอง</span>
+        <span data-lang="ru">Чат с переводом — пишите на родном языке</span>
+      </div>
+    </a>
+
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EC%A0%84%EB%B6%81%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EA%B5%B0%EC%82%B0%EC%8B%9C%20%EA%B2%80%EB%8B%A4%EB%A9%941%EA%B8%B8%2014" target="_blank">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
+        <span data-lang="cn">地址（点击打开地图）</span>
+        <span data-lang="en">Address (tap to open map)</span>
+        <span data-lang="vi">Địa chỉ (chạm để mở bản đồ)</span>
+        <span data-lang="th">ที่อยู่ (แตะเพื่อเปิดแผนที่)</span>
+        <span data-lang="ru">Адрес (нажмите, чтобы открыть карту)</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">전북특별자치도 군산시 검다메1길 14, 101호</span>
+        <span data-lang="cn">全北特别自治道 群山市 检多梅1路 14, 101号</span>
+        <span data-lang="en">#101, 14 Geomdame 1-gil, Gunsan-si, Jeonbuk State, Korea</span>
+        <span data-lang="vi">#101, 14 Geomdame 1-gil, Gunsan-si, Jeonbuk, Hàn Quốc</span>
+        <span data-lang="th">#101, 14 Geomdame 1-gil, เมืองกุนซาน จังหวัดชอนบุก เกาหลีใต้</span>
+        <span data-lang="ru">#101, 14 Geomdame 1-gil, г. Кунсан, пров. Чонбук, Республика Корея</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="cn">📞 保存联系人</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="vi">📞 Lưu danh bạ</span>
+      <span data-lang="th">📞 บันทึกรายชื่อ</span>
+      <span data-lang="ru">📞 Сохранить контакт</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'yoo-jissuk',name:'유진석',nameEn:'YOO JISSUK',title:'대표',company:'전북국제행정사사무소',phone:'010-7671-5840',email:'jb5840@naver.com',chapter:'기타',bni:'',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="cn">🗂️ 保存名片 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="vi">🗂️ Lưu danh thiếp (CardBook)</span>
+      <span data-lang="th">🗂️ บันทึกนามบัตร (CardBook)</span>
+      <span data-lang="ru">🗂️ Сохранить визитку (CardBook)</span>
+    </button>
+    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID','_blank')">
+      <span data-lang="kr" class="active">💬 MANDU로 바로 연락</span>
+      <span data-lang="cn">💬 通过 MANDU 联系</span>
+      <span data-lang="en">💬 Chat on MANDU</span>
+      <span data-lang="vi">💬 Liên hệ qua MANDU</span>
+      <span data-lang="th">💬 แชทผ่าน MANDU</span>
+      <span data-lang="ru">💬 Написать в MANDU</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="cn">📤 分享名片</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="vi">📤 Chia sẻ danh thiếp</span>
+      <span data-lang="th">📤 แชร์นามบัตร</span>
+      <span data-lang="ru">📤 Поделиться визиткой</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#0145F2;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">전북국제행정사사무소</span>
+    <span data-lang="cn">全北国际行政士事务所</span>
+    <span data-lang="en">Jeonbuk Visa Service Office</span>
+    <span data-lang="vi">Văn phòng Dịch vụ Thị thực Jeonbuk</span>
+    <span data-lang="th">สำนักงานบริการวีซ่าชอนบุก</span>
+    <span data-lang="ru">Бюро визовых услуг Чонбук</span>
+  </div>
+  <div class="slogan-footer">Fair fees · Fast, accurate filings · An agent you can trust</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+  document.documentElement.lang = (lang === 'kr' ? 'ko' : lang);
+}
+
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:유진석\nN:유;진석;;;\nORG:전북국제행정사사무소\nTITLE:대표\nTEL;TYPE=CELL:010-7671-5840\nEMAIL:jb5840@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/%EC%9C%A0%EC%A7%84%EC%84%9D/\nADR:;;전북특별자치도 군산시 검다메1길 14, 101호;;;;\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'YooJissuk.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EC%9C%A0%EC%A7%84%EC%84%9D/';
+const CARD_TITLE = '유진석 | 전북국제행정사사무소';
+const CARD_TEXT = '출입국·비자·외국인 초청 업무 — 6개 언어로 보는 디지털 명함';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+</script>
+</body>
+</html>
