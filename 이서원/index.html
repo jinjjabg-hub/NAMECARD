@@ -836,8 +836,24 @@ footer{
         <div class="contact-value"><span class="lang-inline active" data-lang="ko">카카오 오픈채팅</span><span class="lang-inline" data-lang="en">KakaoTalk Open Chat</span><span class="lang-inline" data-lang="ja">カカオオープンチャット</span><span class="lang-inline" data-lang="zh">KakaoTalk开放聊天</span></div>
       </div>
     </a>
+    <a href="https://jinjjabg-hub.github.io/MANDU/?u=lee-seowon" target="_blank" class="contact-item">
+      <div class="contact-icon">💬</div>
+      <div class="contact-info">
+        <div class="contact-label">MANDU</div>
+        <div class="contact-value"><span class="lang-inline active" data-lang="ko">실시간 번역 메신저</span><span class="lang-inline" data-lang="en">Live Translation Chat</span><span class="lang-inline" data-lang="ja">翻訳チャット</span><span class="lang-inline" data-lang="zh">实时翻译聊天</span></div>
+      </div>
+    </a>
   </div>
 </section>
+
+<div style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(0,0,0,0.15);color:#888;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:#888;padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -926,6 +942,79 @@ if(typeof saveContact==='undefined'){
     var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download='LeeSeowon.vcf';a.click();
   };
 }
+</script>
+
+<script>
+/* ── 만두 원클릭 연결 (카드 주인 전용) ────────────────────────── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+async function _manduFinishActivate(user) {
+  const slug = 'lee-seowon';
+  const db = firebase.firestore();
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'lee-seowon');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
 </script>
 </body>
 </html>
