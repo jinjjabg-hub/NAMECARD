@@ -275,10 +275,6 @@ section { padding: 40px 20px; }
 }
 .btn-primary { background: var(--gold); color: var(--navy); }
 .btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
-.btn-mandu {
-  background: linear-gradient(135deg, #1a3a6b, #0d5ca8);
-  color: #fff; border: none;
-}
 .btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
 .btn:active { transform: scale(0.97); opacity: 0.9; }
 
@@ -681,8 +677,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-label">Facebook</div>
       <div class="contact-value">전광일</div>
     </a>
-    <!-- MANDU 링크: manduid 확인 후 YOUR_MANDU_ID 교체 -->
-    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?uid=YOUR_MANDU_ID" target="_blank">
+    <!-- MANDU 링크: 슬러그(jeon-kwangil) 기반 확정 URL. 본인 연결은 하단 "만두 연결" 버튼으로 -->
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=jeon-kwangil" target="_blank">
       <div class="contact-icon">💬</div>
       <div class="contact-label">MANDU</div>
       <div class="contact-value">
@@ -735,15 +731,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="ur">🗂️ کارڈ محفوظ کریں</span>
       <span data-lang="si">🗂️ කාඩ් සුරකින්න</span>
     </button>
-    <!-- MANDU 버튼: manduid 확인 후 YOUR_MANDU_ID 교체 -->
-    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?uid=YOUR_MANDU_ID','_blank')">
-      <span data-lang="kr" class="active">💬 MANDU로 바로 연락</span>
-      <span data-lang="en">💬 Chat via MANDU</span>
-      <span data-lang="cn">💬 通过MANDU联系</span>
-      <span data-lang="vi">💬 Liên hệ qua MANDU</span>
-      <span data-lang="ur">💬 MANDU سے رابطہ</span>
-      <span data-lang="si">💬 MANDU හරහා සම්බන්ධ වන්න</span>
-    </button>
+    <!-- MANDU 버튼 삭제됨 — CONTACT의 MANDU 링크와 중복이라 표준 규칙에 따라 제거 -->
     <button class="btn btn-share" onclick="shareCard()">
       <span data-lang="kr" class="active">📤 명함 전달하기</span>
       <span data-lang="en">📤 Share This Card</span>
@@ -784,6 +772,17 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 </div>
 
 <!-- FOOTER -->
+<!-- 만두 연결 (카드 주인 전용, 방문자는 무시해도 되는 위치) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(201,168,76,0.3);color:var(--muted-dark,#a89060);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
 <footer>
   <div class="company">
     <span data-lang="kr" class="active">부경행정사사무소</span>
@@ -858,6 +857,87 @@ function shareQR() {
   window.open('qr.png', '_blank');
   closeShare();
 }
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ──────────────────────────
+   구글 로그인 1번 → manduid_index/jeon-kwangil 문서에 uid 자동 등록.
+   MANDU 링크(?u=jeon-kwangil)는 이미 고정돼 있으므로 아무도 링크를
+   중간에서 복사·전달·붙여넣기 할 필요가 없다. save-to-cardbook.js가
+   이미 firebase를 로드해두므로 그걸 재사용한다. */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'jeon-kwangil';
+  const db = firebase.firestore();
+
+  // 이미 다른 uid로 연결돼 있으면 덮어쓰지 않음 (실수·장난 클릭으로부터 카드 보호)
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'jeon-kwangil');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
 </script>
 </body>
 </html>
