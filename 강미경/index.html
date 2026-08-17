@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>강미경 | 숙성채</title>
+<meta property="og:title" content="강미경 | 대표 · 숙성채">
+<meta property="og:description" content="세상에 없던, 숙성채만의 특별한 지중해식 샐러드. 매일 한 팩, 건강한 습관이 되다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B0%95%EB%AF%B8%EA%B2%BD/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/강미경/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #F6F0E4;        /* 메인 배경 — 크림 베이지 */
+  --navy2: #FFFDF8;       /* 서브 배경 — 오프화이트 */
+  --navy3: #FFFFFF;
+  --gold: #6F7F3D;        /* 포인트 — 올리브 그린 */
+  --gold2: #8FA254;
+  --light: #FFFDF8;
+  --text-dark: #33381F;
+  --text-light: #33381F;
+  --muted-dark: #7C7C5E;
+  --muted-light: #6F7F3D;
+  --deep: #2E3520;        /* 다크 밴드 (Difference / Portfolio / Footer) */
+  --deep2: #3C462A;
+  --gold-on-dark: #B7C97F;
+  --cream: #F6F0E4;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang="si"] { font-family: 'Noto Sans Sinhala', sans-serif; }
+[data-lang="ur"] { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(246,240,228,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(111,127,61,0.28);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(111,127,61,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(46,53,32,0.05) 0%,
+    rgba(46,53,32,0.12) 40%,
+    rgba(46,53,32,0.72) 75%,
+    rgba(46,53,32,0.94) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-name [data-lang="ur"] { font-size: 26px; }
+.hero-title { font-size: 13px; color: var(--gold-on-dark); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(111,127,61,0.15);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: var(--text-light); margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: var(--text-light); }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.88; }
+.about-text [data-lang="ur"] { font-size: 15px; line-height: 2.2; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(111,127,61,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+.why-card p strong { color: var(--gold); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--deep); }
+.difference .section-label { color: var(--gold-on-dark); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--deep2);
+  border: 1px solid rgba(183,201,127,0.15);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold-on-dark); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: #EDEBDD; opacity: 0.85; }
+.diff-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--navy); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(111,127,61,0.15);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: #fff; font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+.ref-item p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+
+/* ── CAREER ── */
+.career {
+  position: relative;
+  background-color: var(--navy2);
+}
+.career .section-label { position: relative; z-index:1; color: var(--muted-light); }
+.career .section-title { color: var(--text-light); position: relative; z-index:1; }
+.career-list { display: flex; flex-direction: column; gap:18px; position: relative; z-index:1; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(111,127,61,0.15);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--gold); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: #fff; border: 1px solid rgba(111,127,61,0.12); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── PORTFOLIO ── */
+.portfolio { background: var(--deep); }
+.portfolio .section-label { color: var(--gold-on-dark); }
+.portfolio .section-title { color: #fff; }
+.portfolio-track-wrap { overflow: hidden; border-radius: 12px; }
+.portfolio-track { display: flex; transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94); }
+.portfolio-slide { min-width: 100%; aspect-ratio: 4/3; overflow: hidden; }
+.portfolio-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.portfolio-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px; }
+.portfolio-btn {
+  background: transparent; border: 1px solid rgba(183,201,127,0.4);
+  color: var(--gold-on-dark); width: 30px; height: 30px; border-radius: 50%;
+  font-size: 15px; cursor: pointer; display:flex; align-items:center; justify-content:center;
+}
+.portfolio-dots { display:flex; gap:6px; }
+.portfolio-dot { width:6px; height:6px; border-radius:50%; background: rgba(183,201,127,0.35); transition: all 0.25s; }
+.portfolio-dot.active { background: var(--gold-on-dark); width:18px; border-radius:3px; }
+
+/* ── CONTACT ── */
+.contact { background: var(--navy); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(111,127,61,0.15);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--gold);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: #fff; }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-share { background: linear-gradient(135deg, #4E5C2A, #7D9046); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(183,201,127,0.15);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold-on-dark); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">숙성채</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="hero.jpg" alt="강미경">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">지중해식 샐러드</span>
+      <span data-lang="en">MEDITERRANEAN SALAD</span>
+      <span data-lang="jp">地中海サラダ</span>
+      <span data-lang="cn">地中海沙拉</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">강 미 경</span>
+      <span data-lang="en">KANG MI-KYUNG</span>
+      <span data-lang="jp">カン・ミギョン</span>
+      <span data-lang="cn">姜美炅</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 · 숙성채</span>
+      <span data-lang="en">CEO · SUKSUNGCHAE</span>
+      <span data-lang="jp">代表 · 熟成菜</span>
+      <span data-lang="cn">代表 · 熟成菜</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="강미경">
+  </div>
+  <div class="profile-info">
+    <h2>강미경 · KANG MI-KYUNG</h2>
+    <p>
+      <span data-lang="kr" class="active">지중해식 샐러드 · 정기배송 · 채소·과일·견과</span>
+      <span data-lang="en">Mediterranean Salad · Subscription · Veggies & Nuts</span>
+      <span data-lang="jp">地中海サラダ · 定期便 · 野菜・果物・ナッツ</span>
+      <span data-lang="cn">地中海沙拉 · 定期配送 · 蔬果与坚果</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">세상에 없던, 숙성채만의 특별한 지중해식 샐러드</span>
+    <span data-lang="en">A Mediterranean salad the world hasn't tasted yet</span>
+    <span data-lang="jp">世界にない、熟成菜だけの地中海サラダ</span>
+    <span data-lang="cn">世上未有的，熟成菜专属地中海沙拉</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">숙성채는 다양한 채소와 과일, 견과류를 한 번에 즐길 수 있도록 만든 지중해식 샐러드입니다. 단순히 잎채소를 섞은 샐러드가 아니라, 아삭한 식감과 새콤달콤한 맛의 균형을 살렸습니다. 레몬·사과식초·꿀·올리브오일로 재료 본연의 맛을 살려, 매일 부담 없이 먹을 수 있는 채소 습관을 제안합니다.</span>
+    <span data-lang="en">Suksungchae is a Mediterranean salad that brings vegetables, fruits and nuts together in a single pack. It is not simply a mix of leafy greens — it is built around crisp texture and a sweet-and-tangy balance. Lemon, apple vinegar, honey and olive oil draw out the natural flavor of each ingredient, making a vegetable habit you can keep every single day.</span>
+    <span data-lang="jp">熟成菜は、様々な野菜・果物・ナッツを一度に楽しめるように作った地中海サラダです。単に葉物を混ぜたサラダではなく、シャキッとした食感と甘酸っぱさのバランスを大切にしています。レモン・りんご酢・はちみつ・オリーブオイルで素材本来の味を活かし、毎日無理なく続けられる野菜習慣をご提案します。</span>
+    <span data-lang="cn">熟成菜是一款可一次享用多种蔬菜、水果与坚果的地中海沙拉。它并非简单混合叶菜，而是着重于爽脆口感与酸甜风味的平衡。以柠檬、苹果醋、蜂蜜与橄榄油带出食材本味，帮助您养成每天都能轻松坚持的蔬菜习惯。</span>
+  </p>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 숙성채인가</span>
+    <span data-lang="en">Why SUKSUNGCHAE?</span>
+    <span data-lang="jp">なぜ熟成菜なのか</span>
+    <span data-lang="cn">为什么选择熟成菜</span>
+  </div>
+  <div class="why-cards">
+
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">① 매일 한 팩, 건강한 습관이 되다</span>
+        <span data-lang="en">① One pack a day, a habit that lasts</span>
+        <span data-lang="jp">① 一日一パック、健康な習慣に</span>
+        <span data-lang="cn">① 每天一盒，成为健康习惯</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">하루 한 팩이면 채소·과일·견과를 한 번에. <strong>억지로 먹는 건강식</strong>이 아니라, 매일 이어지는 습관이 되도록 만들었습니다.</span>
+        <span data-lang="en">Vegetables, fruits and nuts in one pack a day. Not a <strong>health food you force down</strong>, but a habit you actually keep.</span>
+        <span data-lang="jp">一日一パックで野菜・果物・ナッツを一度に。<strong>無理して食べる健康食</strong>ではなく、毎日続く習慣になるよう作りました。</span>
+        <span data-lang="cn">每天一盒，蔬菜、水果与坚果一次摄取。不是<strong>勉强吃下的健康餐</strong>，而是能够天天坚持的习惯。</span>
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">② 매일 먹으려면, 맛있어야 하니까</span>
+        <span data-lang="en">② To eat it daily, it has to taste good</span>
+        <span data-lang="jp">② 毎日食べるなら、美味しくなければ</span>
+        <span data-lang="cn">② 想天天吃，就必须好吃</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">건강을 위해 참고 먹는 채소가 아니라, <strong>한 번 먹고 다시 찾게 되는</strong> 맛과 식감을 가장 중요하게 생각합니다.</span>
+        <span data-lang="en">Not vegetables you endure for your health — we care most about taste and texture that <strong>make you come back for more</strong>.</span>
+        <span data-lang="jp">健康のために我慢して食べる野菜ではなく、<strong>一度食べたらまた食べたくなる</strong>味と食感を最も大切にしています。</span>
+        <span data-lang="cn">不是为了健康而勉强吃的蔬菜，我们最看重的是<strong>吃过一次还想再吃</strong>的味道与口感。</span>
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">③ 씻고 손질할 필요 없는 간편함</span>
+        <span data-lang="en">③ No washing, no prepping</span>
+        <span data-lang="jp">③ 洗う・切る手間なし</span>
+        <span data-lang="cn">③ 无需清洗与处理的便利</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">바쁜 일상 속 채소 습관. 여러 재료를 씻고 다듬는 번거로움을 없애, <strong>냉장고에서 꺼내 바로</strong> 즐길 수 있습니다.</span>
+        <span data-lang="en">A vegetable habit for busy days. No rinsing, no chopping — <strong>straight from the fridge</strong> to your table.</span>
+        <span data-lang="jp">忙しい毎日の野菜習慣。何種類もの食材を洗って切る手間をなくし、<strong>冷蔵庫から出してすぐ</strong>お召し上がりいただけます。</span>
+        <span data-lang="cn">忙碌日常中的蔬菜习惯。省去清洗与切配的麻烦，<strong>从冰箱取出即可</strong>享用。</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">What Makes Us Different</span>
+    <span data-lang="jp">差別化ポイント</span>
+    <span data-lang="cn">差异化优势</span>
+  </div>
+  <div class="diff-grid">
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">잎채소와는 다른, 아삭한 식감</span>
+        <span data-lang="en">Crunchy — unlike leafy salads</span>
+        <span data-lang="jp">葉物とは違う、シャキッとした食感</span>
+        <span data-lang="cn">与叶菜不同的爽脆口感</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">금방 숨이 죽는 잎채소 위주가 아니라 다양한 원물의 식감을 살려, 마지막 한 입까지 아삭하게 즐길 수 있도록 구성했습니다.</span>
+        <span data-lang="en">Instead of greens that wilt within hours, we build on the texture of whole ingredients so it stays crisp to the last bite.</span>
+        <span data-lang="jp">すぐにしんなりする葉物中心ではなく、様々な素材の食感を活かし、最後の一口までシャキシャキとお楽しみいただけます。</span>
+        <span data-lang="cn">不以易蔫的叶菜为主，而是发挥各种原料的口感，让您脆爽地享用到最后一口。</span>
+      </p>
+    </div>
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">숙성채만의 지중해식 맛의 조화</span>
+        <span data-lang="en">A Mediterranean balance of our own</span>
+        <span data-lang="jp">熟成菜ならではの地中海の味わい</span>
+        <span data-lang="cn">熟成菜独有的地中海风味平衡</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">레몬의 산뜻함, 사과식초의 새콤함, 꿀의 은은한 단맛, 올리브오일의 풍미. 자극적인 소스 없이도 재료 본연의 맛으로 완성했습니다.</span>
+        <span data-lang="en">Fresh lemon, tangy apple vinegar, gentle honey and rich olive oil — complete without any heavy or artificial sauce.</span>
+        <span data-lang="jp">レモンの爽やかさ、りんご酢の酸味、はちみつのやさしい甘み、オリーブオイルの香り。刺激的なソースなしで素材本来の味に仕上げました。</span>
+        <span data-lang="cn">柠檬的清新、苹果醋的酸爽、蜂蜜的淡甜、橄榄油的香醇。无需刺激性酱料，也能呈现食材本味。</span>
+      </p>
+    </div>
+
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">다이어트 식단이 아닌, 매일의 식생활</span>
+        <span data-lang="en">Not a diet plan — an everyday way of eating</span>
+        <span data-lang="jp">ダイエット食ではなく、毎日の食生活</span>
+        <span data-lang="cn">不是减肥餐，而是日常饮食</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">일시적인 식단이 아니라 아이부터 어른까지 꾸준히 즐기는 식생활을 지향합니다. 최종 목표는 장 속 환경을 바꾸는 것입니다.</span>
+        <span data-lang="en">Not a temporary regimen, but something children and adults can enjoy every day. Our ultimate goal is to change the environment inside your gut.</span>
+        <span data-lang="jp">一時的な食事制限ではなく、子どもから大人まで日常的に楽しめる食生活を目指します。最終的な目標は腸内環境を変えることです。</span>
+        <span data-lang="cn">并非一时的食谱，而是从孩子到成人都能长期享用的饮食方式。我们的最终目标是改变肠道内环境。</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的客户</span>
+  </div>
+  <div class="ref-list">
+
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+        <span data-lang="kr" class="active">🏋️ <strong>필라테스·헬스장·요가원 운영자</strong><br>수업 후 식단 관리가 필요한 회원이 많은 센터. 회원 대상 정기배송·단체 제안을 함께 만들어 드립니다.</span>
+        <span data-lang="en">🏋️ <strong>Pilates studios, gyms and yoga centers</strong><br>Places where members need meal support after class. We build member subscription and group offers together.</span>
+        <span data-lang="jp">🏋️ <strong>ピラティス・ジム・ヨガスタジオ</strong><br>レッスン後の食事管理が必要な会員が多い施設。会員向けの定期便・団体プランを一緒にご提案します。</span>
+        <span data-lang="cn">🏋️ <strong>普拉提馆、健身房与瑜伽馆</strong><br>会员在课后需要饮食管理的场所。可共同规划会员定期配送与团体方案。</span>
+      </p>
+    </div>
+
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+        <span data-lang="kr" class="active">🏥 <strong>병원·한의원·검진센터·산후조리원</strong><br>환자·산모 식단에 채소를 늘리고 싶은 곳. 원내 비치와 정기 납품 상담이 가능합니다.</span>
+        <span data-lang="en">🏥 <strong>Clinics, health screening and postpartum care centers</strong><br>Where patient meals need more vegetables. In-house stocking and regular supply are available.</span>
+        <span data-lang="jp">🏥 <strong>病院・韓方医院・健診センター・産後ケア施設</strong><br>患者や産婦の食事に野菜を増やしたい施設。院内設置や定期納品のご相談が可能です。</span>
+        <span data-lang="cn">🏥 <strong>医院、韩医院、体检中心与月子中心</strong><br>希望在患者膳食中增加蔬菜的机构。可洽谈院内供应与定期配送。</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 전문 분야</span>
+    <span data-lang="en">Career &amp; Expertise</span>
+    <span data-lang="jp">経歴・専門分野</span>
+    <span data-lang="cn">经历与专业领域</span>
+  </div>
+  <div class="career-list">
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">현재</span>
+        <span data-lang="en">NOW</span>
+        <span data-lang="jp">現在</span>
+        <span data-lang="cn">现在</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">지중해식 샐러드 브랜드 '숙성채' 운영</span>
+          <span data-lang="en">Founder of Mediterranean salad brand 'Suksungchae'</span>
+          <span data-lang="jp">地中海サラダブランド「熟成菜」運営</span>
+          <span data-lang="cn">经营地中海沙拉品牌「熟成菜」</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">채소·과일·견과류를 조합한 숙성채만의 제품을 직접 개발하고, 정기배송과 직접배송으로 고객의 일상 속 채소 습관을 만들어가고 있습니다.</span>
+          <span data-lang="en">Develops original recipes combining vegetables, fruits and nuts, delivering by subscription and direct delivery to build everyday vegetable habits.</span>
+          <span data-lang="jp">野菜・果物・ナッツを組み合わせた独自の商品を開発し、定期便と直接配送でお客様の日常の野菜習慣を作っています。</span>
+          <span data-lang="cn">自主开发结合蔬菜、水果与坚果的产品，通过定期配送与直送，帮助顾客建立日常蔬菜习惯。</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">경력</span>
+        <span data-lang="en">EXP</span>
+        <span data-lang="jp">経歴</span>
+        <span data-lang="cn">经历</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">15년의 샐러드 경험에서 나온 제품</span>
+          <span data-lang="en">A product born from 15 years of eating salads</span>
+          <span data-lang="jp">15年のサラダ経験から生まれた商品</span>
+          <span data-lang="cn">源自15年沙拉经验的产品</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">샐러드 붐이 일던 15년 전부터 직접 먹어오며 느낀 불편함과 아쉬움, 개선점을 연구해 지금의 숙성채를 만들었습니다.</span>
+          <span data-lang="en">Since the salad boom 15 years ago, she studied every inconvenience and shortcoming she experienced firsthand — and built Suksungchae from it.</span>
+          <span data-lang="jp">サラダブームが起きた15年前から自ら食べ続け、感じた不便さや物足りなさ、改善点を研究して今の熟成菜を作りました。</span>
+          <span data-lang="cn">自15年前沙拉热潮起便持续亲身食用，研究其中的不便、不足与改进点，才有了今天的熟成菜。</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">강점</span>
+        <span data-lang="en">STRENGTH</span>
+        <span data-lang="jp">強み</span>
+        <span data-lang="cn">优势</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">고객의 몸이 먼저 알아본 변화</span>
+          <span data-lang="en">The change our customers noticed first</span>
+          <span data-lang="jp">お客様の体が先に気づいた変化</span>
+          <span data-lang="cn">顾客身体先感受到的变化</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">"몸이 달라졌다", "피곤함이 줄었다", "배변활동이 좋아졌다", "문득 생각난다" — 꾸준히 드시는 고객층이 계속 넓어지고 있습니다.</span>
+          <span data-lang="en">"My body feels different", "less fatigue", "better digestion", "I keep craving it" — our base of regular customers keeps growing.</span>
+          <span data-lang="jp">「体が変わった」「疲れにくくなった」「お通じが良くなった」「ふと思い出す」— 続けて召し上がるお客様の輪が広がっています。</span>
+          <span data-lang="cn">"身体不一样了""不那么疲惫了""排便更顺畅了""时不时就想吃"—— 长期回购的顾客群不断扩大。</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">제품 사진</span>
+    <span data-lang="en">Our Products</span>
+    <span data-lang="jp">商品紹介</span>
+    <span data-lang="cn">产品展示</span>
+  </div>
+  <div class="portfolio-track-wrap">
+    <div class="portfolio-track" id="portfolio-track">
+      <div class="portfolio-slide"><img src="portfolio1.jpg" alt="숙성채 샐러드 1"></div>
+      <div class="portfolio-slide"><img src="portfolio2.jpg" alt="숙성채 샐러드 2"></div>
+      <div class="portfolio-slide"><img src="portfolio3.jpg" alt="숙성채 샐러드 3"></div>
+    </div>
+  </div>
+  <div class="portfolio-nav">
+    <button class="portfolio-btn" onclick="portfolioSlide(-1)">‹</button>
+    <div class="portfolio-dots" id="portfolio-dots"></div>
+    <button class="portfolio-btn" onclick="portfolioSlide(1)">›</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="contact-list">
+
+    <a class="contact-item" href="tel:010-3753-4918">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-3753-4918</div>
+    </a>
+
+    <a class="contact-item" href="mailto:fhfhfh0116@naver.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">fhfhfh0116@naver.com</div>
+    </a>
+
+    <a class="contact-item" href="https://instagram.com/suksungsalad" target="_blank">
+      <div class="contact-icon">📷</div>
+      <div class="contact-label">Instagram</div>
+      <div class="contact-value">@suksungsalad</div>
+    </a>
+
+    <a class="contact-item" href="https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=%EC%88%99%EC%84%B1%EC%B1%84" target="_blank">
+      <div class="contact-icon">🛒</div>
+      <div class="contact-label">Shop</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">네이버쇼핑 주문</span>
+        <span data-lang="en">Order online</span>
+        <span data-lang="jp">オンライン注文</span>
+        <span data-lang="cn">在线订购</span>
+      </div>
+    </a>
+
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://jinjjabg-hub.github.io/MANDU/?u=kang-mikyung" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Live translation chat</span>
+        <span data-lang="jp">リアルタイム翻訳チャット</span>
+        <span data-lang="cn">实时翻译聊天</span>
+      </div>
+    </a>
+
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EA%B2%BD%EB%82%A8%20%EA%B9%80%ED%95%B4%EC%8B%9C%20%EB%82%B4%EC%99%B8%EB%A1%9C11%EB%B2%88%EA%B8%B8%204-15" target="_blank">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
+        <span data-lang="en">Address (tap to open map)</span>
+        <span data-lang="jp">住所（タップで地図）</span>
+        <span data-lang="cn">地址（点击打开地图）</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">경남 김해시 내외로11번길 4-15 1층</span>
+        <span data-lang="en">4-15 1F, Naeoe-ro 11beon-gil, Gimhae-si, Gyeongnam, Korea</span>
+        <span data-lang="jp">慶尚南道 金海市 内外路11番ギル 4-15 1階</span>
+        <span data-lang="cn">庆尚南道 金海市 内外路11番街 4-15 1层</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'kang-mikyung',name:'강미경',nameEn:'KANG MI-KYUNG',title:'대표',company:'숙성채',phone:'010-3753-4918',email:'fhfhfh0116@naver.com',chapter:'',bni:'',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ 名刺を保存</span>
+      <span data-lang="cn">🗂️ 保存名片</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="jp">📤 名刺を共有</span>
+      <span data-lang="cn">📤 分享名片</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#2E3520;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- 만두 연결 (카드 주인 전용) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;background:var(--navy2);">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(111,127,61,0.35);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">숙성채</span>
+    <span data-lang="en">SUKSUNGCHAE</span>
+    <span data-lang="jp">熟成菜</span>
+    <span data-lang="cn">熟成菜</span>
+  </div>
+  <div class="slogan-footer">A Mediterranean salad the world hasn't tasted yet</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:강미경\nORG:숙성채\nTITLE:대표\nTEL:010-3753-4918\nEMAIL:fhfhfh0116@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/강미경/\nADR:;;경남 김해시 내외로11번길 4-15 1층;;;;\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '강미경_숙성채.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EA%B0%95%EB%AF%B8%EA%B2%BD/';
+const CARD_TITLE = '강미경 | 숙성채';
+const CARD_TEXT = '매일 한 팩, 건강한 채소 습관 — 지중해식 샐러드 숙성채 강미경 대표 명함입니다.';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── PORTFOLIO 자동 슬라이드 (3초 · 터치 스와이프 · 수동 조작 시 타이머 리셋) ── */
+(function () {
+  const track = document.getElementById('portfolio-track');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.portfolio-slide');
+  const total = slides.length;
+  const dotsWrap = document.getElementById('portfolio-dots');
+  let idx = 0, timer = null;
+
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'portfolio-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => { go(i); reset(); };
+    dotsWrap.appendChild(dot);
+  }
+
+  function render() {
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dotsWrap.querySelectorAll('.portfolio-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  function go(i) { idx = (i + total) % total; render(); }
+  window.portfolioSlide = function (dir) { go(idx + dir); reset(); };
+  function auto() { timer = setTimeout(() => { go(idx + 1); auto(); }, 3000); }
+  function reset() { clearTimeout(timer); auto(); }
+
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; clearTimeout(timer); }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
+    auto();
+  }, { passive: true });
+
+  auto();
+})();
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'kang-mikyung';
+  const db = firebase.firestore();
+
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'kang-mikyung');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
+</script>
+</body>
+</html>
