@@ -6,13 +6,14 @@
 <title>강미경 | 숙성채</title>
 <meta property="og:title" content="강미경 | 대표 · 숙성채">
 <meta property="og:description" content="세상에 없던, 숙성채만의 특별한 지중해식 샐러드. 매일 한 팩, 건강한 습관이 되다.">
-<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B0%95%EB%AF%B8%EA%B2%BD/og.png">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B0%95%EB%AF%B8%EA%B2%BD/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/강미경/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
 
 :root {
@@ -35,7 +36,7 @@
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
 html { font-size: 16px; }
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   background: var(--navy);
   color: var(--text-dark);
   max-width: 480px;
@@ -43,6 +44,8 @@ body {
   overflow-x: hidden;
 }
 
+[data-lang="jp"] { font-family: 'Noto Sans JP', 'Pretendard', sans-serif; }
+[data-lang="cn"] { font-family: 'Noto Sans SC', 'Pretendard', sans-serif; }
 [data-lang="si"] { font-family: 'Noto Sans Sinhala', sans-serif; }
 [data-lang="ur"] { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
 [data-lang] { display: none; }
@@ -59,7 +62,7 @@ nav {
   display: flex; justify-content: space-between; align-items: center;
   border-bottom: 1px solid rgba(111,127,61,0.28);
 }
-.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.nav-brand { font-size: 15px; font-weight: 800; color: var(--gold); white-space: nowrap; letter-spacing: -0.3px; }
 .lang-btns { display:flex; gap:4px; }
 .lang-btn {
   padding: 5px 8px;
@@ -71,7 +74,7 @@ nav {
   transition: all 0.2s;
   min-width: 40px; min-height: 32px;
   display: flex; align-items:center; justify-content:center;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
 }
 .lang-btn.active { background: var(--gold); color: #fff; border-color: var(--gold); }
 
@@ -112,7 +115,7 @@ nav {
   margin-bottom: 10px; letter-spacing: 1.5px;
 }
 .hero-name {
-  font-size: 34px; font-weight: 700;
+  font-size: 34px; font-weight: 800;
   color: #fff; line-height: 1.15;
   margin-bottom: 7px; letter-spacing: -0.5px;
 }
@@ -143,7 +146,7 @@ section { padding: 40px 20px; }
   letter-spacing: 2.5px; text-transform: uppercase;
   color: var(--gold); margin-bottom: 6px;
 }
-.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+.section-title { font-size: 22px; font-weight: 800; line-height: 1.35; margin-bottom: 22px; }
 
 /* ── ABOUT ── */
 .about { background: var(--navy); }
@@ -283,7 +286,7 @@ section { padding: 40px 20px; }
   border: none; border-radius: 10px;
   font-size: 15px; font-weight: 700;
   cursor: pointer; text-align: center;
-  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  transition: all 0.15s; font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   min-height: 54px; letter-spacing: 0.3px;
 }
 .btn-primary { background: var(--gold); color: #fff; }
@@ -305,15 +308,15 @@ section { padding: 40px 20px; }
 .share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
 .share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
 .share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
-.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
-.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Pretendard','Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Pretendard','Noto Sans KR',sans-serif; }
 
 /* ── FOOTER ── */
 footer {
   background: var(--deep); padding: 24px 20px;
   text-align: center; border-top: 1px solid rgba(183,201,127,0.15);
 }
-footer .company { font-size: 13px; font-weight: 700; color: var(--gold-on-dark); margin-bottom: 5px; }
+footer .company { font-size: 14px; font-weight: 800; color: var(--gold-on-dark); margin-bottom: 5px; }
 footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-spacing: 0.5px; }
 </style>
 </head>
@@ -359,7 +362,7 @@ footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-sp
 <!-- PROFILE ROW -->
 <div class="profile-row">
   <div class="profile-img">
-    <img src="profil.png" alt="강미경">
+    <img src="profil.jpg" alt="강미경">
   </div>
   <div class="profile-info">
     <h2>강미경 · KANG MI-KYUNG</h2>
@@ -773,7 +776,7 @@ footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-sp
 <!-- 만두 연결 (카드 주인 전용) -->
 <div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;background:var(--navy2);">
   <button id="mandu-activate-btn" onclick="activateMandu()"
-    style="background:none;border:1px solid rgba(111,127,61,0.35);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    style="background:none;border:1px solid rgba(111,127,61,0.35);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Pretendard','Noto Sans KR',sans-serif;">
     💬 본인 명함이신가요? 만두 연결하기 (1회)
   </button>
   <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
