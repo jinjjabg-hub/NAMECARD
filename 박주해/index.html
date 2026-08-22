@@ -642,6 +642,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="portfolio-track" id="portfolio-track">
       <div class="portfolio-slide"><img src="portfolio1.jpg" alt="portfolio 1"></div>
       <div class="portfolio-slide"><img src="portfolio2.jpg" alt="portfolio 2"></div>
+      <div class="portfolio-slide"><img src="portfolio3.jpg" alt="portfolio 3"></div>
+      <div class="portfolio-slide"><img src="portfolio4.jpg" alt="portfolio 4"></div>
       <!-- portfolio-slide 필요한 만큼 반복. img src만 portfolioN.jpg로 -->
     </div>
   </div>
@@ -662,6 +664,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="cn">联系方式</span>
   </div>
   <div class="contact-list">
+    <a class="contact-item" href="tel:010-7455-8334">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-7455-8334</div>
+    </a>
     <a class="contact-item" href="mailto:teri1007@naver.com">
       <div class="contact-icon">✉️</div>
       <div class="contact-label">Email</div>
@@ -750,7 +762,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="jp">📞 連絡先を保存</span>
       <span data-lang="cn">📞 保存联系人</span>
     </button>
-    <button class="btn btn-secondary" onclick="saveToCardbook({id:'park-juhae',name:'박주해',nameEn:'Park Ju Hae',title:'대표 · 이미지 컨설턴트',company:'브이엘 이미지컨설팅',phone:'',email:'teri1007@naver.com',chapter:'',bni:'',url:window.location.href})">
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'park-juhae',name:'박주해',nameEn:'Park Ju Hae',title:'대표 · 이미지 컨설턴트',company:'브이엘 이미지컨설팅',phone:'010-7455-8334',email:'teri1007@naver.com',chapter:'',bni:'',url:window.location.href})">
       <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
       <span data-lang="en">🗂️ Save to CardBook</span>
       <span data-lang="jp">🗂️ 名刺を保存</span>
@@ -823,7 +835,7 @@ function setLang(lang) {
   });
 }
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:박주해\nORG:브이엘 이미지컨설팅\nTITLE:대표 · 이미지 컨설턴트\nEMAIL:teri1007@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/박주해/\nADR:;;인천광역시 연수구 송도과학로 70, AT센터 1동 2314호;;;;\nEND:VCARD`;
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:박주해\nORG:브이엘 이미지컨설팅\nTITLE:대표 · 이미지 컨설턴트\nTEL:010-7455-8334\nEMAIL:teri1007@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/박주해/\nADR:;;인천광역시 연수구 송도과학로 70, AT센터 1동 2314호;;;;\nEND:VCARD`;
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
