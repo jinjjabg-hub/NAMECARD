@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>김태연 | 선랑 J.D.C</title>
+<meta property="og:title" content="김태연 | 대표 · 선랑 J.D.C">
+<meta property="og:description" content="아이들이 스포츠 활동을 하면서 자연스럽게 영어를 듣고 말할 수 있는 AI 영어스포츠 교육 시스템을 개발하고 있습니다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%ED%83%9C%EC%97%B0/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/김태연/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #17171a;
+  --navy2: #1f1f23;
+  --navy3: #26262b;
+  --gold: #d62839;
+  --gold2: #e8555f;
+  --light: #f4f1e8;
+  --text-dark: #f0ece0;
+  --text-light: #1a1a2e;
+  --muted-dark: #b08585;
+  --muted-light: #7a1f27;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(23,23,26,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(214,40,57,0.25);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(214,40,57,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(23,23,26,0.1) 0%,
+    rgba(23,23,26,0.15) 40%,
+    rgba(23,23,26,0.75) 75%,
+    rgba(23,23,26,0.95) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(214,40,57,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(214,40,57,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p strong { color: var(--navy); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(214,40,57,0.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.8; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+
+/* ── CAREER ── */
+.career {
+  position: relative;
+  background-color: #f0f4ff;
+}
+.career .section-label { position: relative; z-index:1; color: var(--muted-light); }
+.career .section-title { color: var(--text-light); position: relative; z-index:1; }
+.career-list { display: flex; flex-direction: column; gap:18px; position: relative; z-index:1; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(214,40,57,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">선랑 J.D.C</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="hero.jpg" alt="김태연">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">에듀테크 대표</span>
+      <span data-lang="en">EdTech CEO</span>
+      <span data-lang="jp">エドテック代表</span>
+      <span data-lang="cn">教育科技代表</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">김 태 연</span>
+      <span data-lang="en">KIM TAE-YEON</span>
+      <span data-lang="jp">キム・テヨン</span>
+      <span data-lang="cn">金泰延</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 · 선랑 J.D.C</span>
+      <span data-lang="en">CEO · Sunrang J.D.C</span>
+      <span data-lang="jp">代表 · Sunrang J.D.C</span>
+      <span data-lang="cn">代表 · Sunrang J.D.C</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.jpg" alt="김태연">
+  </div>
+  <div class="profile-info">
+    <h2>김태연 · KIM TAE-YEON</h2>
+    <p>
+      <span data-lang="kr" class="active">前 프로복싱선수 · 現 사범 · AI 영어스포츠 교육</span>
+      <span data-lang="en">Former Pro Boxer · Certified Instructor · AI English-Sports Education</span>
+      <span data-lang="jp">元プロボクサー・現師範・AI英語スポーツ教育</span>
+      <span data-lang="cn">前职业拳击运动员·现任师范·AI英语体育教育</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">영어를 공부시키지 않습니다. 아이들이 움직이며 영어를 말하게 합니다.</span>
+    <span data-lang="en">We don't make kids study English. We get them moving — and speaking it.</span>
+    <span data-lang="jp">英語を勉強させません。子どもたちは体を動かしながら英語を話します。</span>
+    <span data-lang="cn">我们不让孩子们"学习"英语，而是让他们在运动中开口说英语。</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">아이들이 스포츠 활동을 하면서 자연스럽게 영어를 듣고 말할 수 있는 AI 영어스포츠 교육 시스템을 개발하고 있습니다. 영어교육과 스포츠교육을 하나의 프로그램으로 연결하는 새로운 교육 방식입니다.</span>
+    <span data-lang="en">We develop an AI English-Sports education system that lets kids naturally hear and speak English while playing sports — connecting English learning and sports training into one program.</span>
+    <span data-lang="jp">子どもたちがスポーツをしながら自然に英語を聞き、話せるAI英語スポーツ教育システムを開発しています。英語教育とスポーツ教育を一つのプログラムでつなぐ、新しい教育方式です。</span>
+    <span data-lang="cn">我们开发了一套AI英语体育教育系统，让孩子在运动中自然地听懂和说出英语。这是一种将英语教育与体育教育连接为一体的全新教育方式。</span>
+  </p>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 선랑 J.D.C인가</span>
+    <span data-lang="en">Why Sunrang J.D.C?</span>
+    <span data-lang="jp">なぜSunrang J.D.Cなのか</span>
+    <span data-lang="cn">为什么选择Sunrang J.D.C</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">① 특허로 등록된 융합 시스템</span>
+        <span data-lang="en">① A Patented Fusion System</span>
+        <span data-lang="jp">① 特許登録された融合システム</span>
+        <span data-lang="cn">① 已获专利的融合系统</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">「영어 체육 학습 시스템」 <strong>특허 제10-2882550호</strong>로 등록된 자체 기술입니다.</span>
+        <span data-lang="en">Registered as our own technology under <strong>Patent No. 10-2882550</strong>, "English Physical Education Learning System."</span>
+        <span data-lang="jp">「英語体育学習システム」<strong>特許第10-2882550号</strong>として登録された独自技術です。</span>
+        <span data-lang="cn">「英语体育学习系统」已注册为<strong>专利第10-2882550号</strong>的自有技术。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">② 선수 출신 사범이 만든 시스템</span>
+        <span data-lang="en">② Built by a Former Athlete, Not a Theorist</span>
+        <span data-lang="jp">② 選手出身の師範が作ったシステム</span>
+        <span data-lang="cn">② 由运动员出身的师范打造</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active"><strong>전직 프로 복싱선수</strong>, 현재 사범으로 아이들을 직접 지도하며 만든 커리큘럼입니다.</span>
+        <span data-lang="en">Designed by a <strong>former professional boxer</strong> who now teaches as a certified instructor — not from a textbook.</span>
+        <span data-lang="jp"><strong>元プロボクシング選手</strong>であり、現在は師範として子どもたちを直接指導しながら作ったカリキュラムです。</span>
+        <span data-lang="cn">由<strong>前职业拳击运动员</strong>、现任师范亲自指导孩子们的过程中打造的课程体系。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">③ 현장 확장성</span>
+        <span data-lang="en">③ Built to Scale Across Settings</span>
+        <span data-lang="jp">③ 現場への拡張性</span>
+        <span data-lang="cn">③ 可扩展至多种场景</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">영어학원, 복싱・태권도・축구 등 스포츠 체육관, 유치원・학교・방과후까지 하나의 시스템으로 적용됩니다.</span>
+        <span data-lang="en">One system, many settings — English academies, boxing/taekwondo/soccer gyms, kindergartens, schools, and after-school programs.</span>
+        <span data-lang="jp">英語学院、ボクシング・テコンドー・サッカーなどのスポーツジム、幼稚園・学校・放課後まで一つのシステムで適用できます。</span>
+        <span data-lang="cn">一套系统可应用于英语培训机构、拳击・跆拳道・足球等体育馆，以及幼儿园・学校・课后班等多种场景。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">What Makes Us Different</span>
+    <span data-lang="jp">差別化ポイント</span>
+    <span data-lang="cn">差异化优势</span>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">병행수업이 아니라 융합</span>
+        <span data-lang="en">Fusion, Not Parallel Classes</span>
+        <span data-lang="jp">並行授業ではなく融合</span>
+        <span data-lang="cn">融合式教学，而非并行授课</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">영어와 체육을 따로 가르치는 게 아니라, 움직임과 언어를 AI로 하나의 학습 경험으로 설계했습니다.</span>
+        <span data-lang="en">We don't teach English and sports separately — AI designs movement and language as a single learning experience.</span>
+        <span data-lang="jp">英語と体育を別々に教えるのではなく、動きと言語をAIで一つの学習体験として設計しました。</span>
+        <span data-lang="cn">我们不是分别教授英语和体育，而是用AI将运动与语言设计成一个整体学习体验。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">모방하기 어려운 구조</span>
+        <span data-lang="en">Hard to Copy</span>
+        <span data-lang="jp">模倣が難しい構造</span>
+        <span data-lang="cn">难以复制的结构</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">특허(<strong>제10-2882550호</strong>)로 보호된 독자 기술이라 단순 카피가 어렵습니다.</span>
+        <span data-lang="en">Protected by <strong>Patent No. 10-2882550</strong>, our own technology can't be simply replicated.</span>
+        <span data-lang="jp"><strong>特許第10-2882550号</strong>で保護された独自技術のため、単純な模倣は困難です。</span>
+        <span data-lang="cn">受<strong>专利第10-2882550号</strong>保护的自有技术，难以被简单复制。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">현장에서 나온 설계</span>
+        <span data-lang="en">Designed From the Field, Not the Desk</span>
+        <span data-lang="jp">現場から生まれた設計</span>
+        <span data-lang="cn">源自现场的设计</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">전직 프로 복싱선수 출신 사범이, 책상이 아니라 도장·체육관 현장에서 검증하며 만들었습니다.</span>
+        <span data-lang="en">Built by a former pro boxer turned instructor — tested on the gym floor, not at a desk.</span>
+        <span data-lang="jp">元プロボクサーで現在は師範である指導者が、机上ではなく道場・体育館の現場で検証しながら作りました。</span>
+        <span data-lang="cn">由前职业拳击运动员、现任师范打造——在道馆和体育馆现场反复验证，而非纸上谈兵。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的客户</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+        <span data-lang="kr" class="active">아이들 대상 영어 프로그램을 운영 중인 영어학원 원장님</span>
+        <span data-lang="en">English academy directors running programs for kids</span>
+        <span data-lang="jp">子ども向け英語プログラムを運営する英語学院の院長様</span>
+        <span data-lang="cn">面向儿童开设英语课程的英语培训机构院长</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+        <span data-lang="kr" class="active">복싱・태권도・축구 등 스포츠 체육관을 운영하는 관장님</span>
+        <span data-lang="en">Gym owners running boxing, taekwondo, or soccer programs</span>
+        <span data-lang="jp">ボクシング・テコンドー・サッカーなどのスポーツジムを運営する館長様</span>
+        <span data-lang="cn">经营拳击・跆拳道・足球等体育馆的馆长</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+        <span data-lang="kr" class="active">유치원・어린이집・학교・방과후 교육 프로그램 담당자님</span>
+        <span data-lang="en">Kindergarten, daycare, school, or after-school program staff</span>
+        <span data-lang="jp">幼稚園・保育園・学校・放課後プログラムのご担当者様</span>
+        <span data-lang="cn">幼儿园・托儿所・学校・课后班的教育项目负责人</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 전문 분야</span>
+    <span data-lang="en">Career &amp; Expertise</span>
+    <span data-lang="jp">経歴・専門分野</span>
+    <span data-lang="cn">经历与专业领域</span>
+  </div>
+  <div class="career-list">
+    <div class="career-item">
+      <div class="career-badge">현재</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">선랑 J.D.C 대표</span>
+          <span data-lang="en">CEO, Sunrang J.D.C</span>
+          <span data-lang="jp">代表, Sunrang J.D.C</span>
+          <span data-lang="cn">代表，Sunrang J.D.C</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">AI 영어스포츠 교육 시스템 개발·운영</span>
+          <span data-lang="en">Developing and operating the AI English-Sports education system</span>
+          <span data-lang="jp">AI英語スポーツ教育システムの開発・運営</span>
+          <span data-lang="cn">开发并运营AI英语体育教育系统</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">경력</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">프로 복싱선수 출신</span>
+          <span data-lang="en">Former Professional Boxer</span>
+          <span data-lang="jp">元プロボクシング選手</span>
+          <span data-lang="cn">前职业拳击运动员</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">現 사범(지도자) · 아이들을 직접 지도하며 커리큘럼 검증</span>
+          <span data-lang="en">Now a certified instructor, directly coaching kids and field-testing the curriculum</span>
+          <span data-lang="jp">現在は師範（指導者）として、子どもたちを直接指導しながらカリキュラムを検証</span>
+          <span data-lang="cn">现任师范（指导者），亲自指导孩子并验证课程体系</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">자격</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">특허 등록</span>
+          <span data-lang="en">Registered Patent</span>
+          <span data-lang="jp">特許登録</span>
+          <span data-lang="cn">已注册专利</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">「영어 체육 학습 시스템」 특허 제10-2882550호</span>
+          <span data-lang="en">"English Physical Education Learning System" — Patent No. 10-2882550</span>
+          <span data-lang="jp">「英語体育学習システム」特許第10-2882550号</span>
+          <span data-lang="cn">「英语体育学习系统」专利第10-2882550号</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-6524-3100">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-6524-3100</div>
+    </a>
+    <a class="contact-item" href="mailto:taey3356@gmail.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">taey3356@gmail.com</div>
+    </a>
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=kim-taeyeon" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Live translation chat</span>
+        <span data-lang="jp">リアルタイム翻訳チャット</span>
+        <span data-lang="cn">实时翻译聊天</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'kim-taeyeon',name:'김태연',nameEn:'KIM TAE-YEON',title:'대표',company:'선랑 J.D.C',phone:'010-6524-3100',email:'taey3356@gmail.com',chapter:'',bni:'',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ 名刺を保存</span>
+      <span data-lang="cn">🗂️ 保存名片</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="jp">📤 名刺を共有</span>
+      <span data-lang="cn">📤 分享名片</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#17171a;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- 만두 연결 (카드 주인 전용) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(214,40,57,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">선랑 J.D.C</span>
+    <span data-lang="en">Sunrang J.D.C</span>
+    <span data-lang="jp">Sunrang J.D.C</span>
+    <span data-lang="cn">Sunrang J.D.C</span>
+  </div>
+  <div class="slogan-footer">We don't make kids study English. We get them moving.</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:김태연\nORG:선랑 J.D.C\nTITLE:대표\nTEL:010-6524-3100\nEMAIL:taey3356@gmail.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/김태연/\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '김태연.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%ED%83%9C%EC%97%B0/';
+const CARD_TITLE = '김태연 | 선랑 J.D.C';
+const CARD_TEXT = '김태연 대표 · 선랑 J.D.C 디지털 명함을 확인해보세요';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'kim-taeyeon';
+  const db = firebase.firestore();
+
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'kim-taeyeon');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
+</script>
+</body>
+</html>
