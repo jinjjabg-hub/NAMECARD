@@ -155,8 +155,19 @@ section { padding: 40px 20px; }
 
 /* ── WHY ── */
 .why { background: var(--light); }
+.press { background: var(--light); }
+.press-card {
+  display: block; background: #fff; border-radius: 12px; padding: 16px 18px;
+  text-decoration: none; border: 1px solid rgba(13,27,62,0.08);
+  box-shadow: 0 2px 10px rgba(13,27,62,0.06);
+}
+.press-source { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--gold-dark, #a5822f); text-transform: uppercase; margin-bottom: 6px; }
+.press-title { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.5; margin-bottom: 10px; }
+.press-link { font-size: 12px; font-weight: 700; color: var(--navy2); }
 .why .section-label { color: var(--muted-light); }
 .why .section-title { color: var(--text-light); }
+.press .section-label { color: var(--muted-light); }
+.press .section-title { color: var(--text-light); }
 .why-cards { display: flex; flex-direction: column; gap:14px; }
 .why-card {
   background: #fff;
@@ -388,6 +399,32 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="jp">15年のファッション実務経験を基に、パーソナルカラー・顔型・骨格体型を総合的に分析し、目的や状況に合ったイメージを設計します。個人イメージコンサルティングからビジネスブランディング、スタイリング、企業・機関・学校教育まで、実質的な変化を生み出すイメージソリューションを提供します。</span>
     <span data-lang="cn">基于15年时尚实务经验,综合分析个人色彩、脸型与骨骼体型,为客户量身设计符合目的与场合的形象。从个人形象咨询到商业品牌塑造、造型、企业/机构/学校教育,提供切实带来改变的形象解决方案。</span>
   </p>
+</section>
+
+<!-- PRESS : 언론보도 링크 섹션 -->
+<section class="press">
+  <div class="section-label">Press</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">언론 보도</span>
+    <span data-lang="en">Press</span>
+    <span data-lang="jp">メディア掲載</span>
+    <span data-lang="cn">媒体报道</span>
+  </div>
+  <a class="press-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204800" target="_blank" rel="noopener">
+    <div class="press-source">K trendy NEWS</div>
+    <div class="press-title">
+      <span data-lang="kr" class="active">[브이엘이미지컨설팅③] 얼굴형만으로는 부족…헤어·안경 선택도 '선과 비율'로 세분화</span>
+      <span data-lang="en">[VL Image Consulting Ⅲ] Beyond Face Shape — Hair & Glasses Choices Refined by "Line and Proportion"</span>
+      <span data-lang="jp">[VLイメージコンサルティング③] 顔型だけでは不十分…ヘア・メガネ選びも「ライン・比率」で細分化</span>
+      <span data-lang="cn">[VL形象咨询③] 仅靠脸型还不够…发型与眼镜选择也按"线条与比例"细分</span>
+    </div>
+    <div class="press-link">
+      <span data-lang="kr" class="active">기사 보기 →</span>
+      <span data-lang="en">Read Article →</span>
+      <span data-lang="jp">記事を見る →</span>
+      <span data-lang="cn">查看文章 →</span>
+    </div>
+  </a>
 </section>
 
 <!-- WHY : why-card 3개 (①②③) -->
