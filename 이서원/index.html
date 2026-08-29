@@ -1031,23 +1031,19 @@ async function activateMandu() {
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
     if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
 
-    var profileInfo = document.querySelector('.profile-info');
-    if (profileInfo) {
-      var statBtn = document.createElement('div');
-      statBtn.textContent = '📊 카드 현황 보기';
-      statBtn.style.cssText = 'margin-top:8px;font-size:12px;color:#c9a24a;cursor:pointer;text-decoration:underline;';
-      statBtn.onclick = function(){
-        statBtn.style.cursor = 'default';
-        statBtn.style.textDecoration = 'none';
-        statBtn.textContent = '불러오는 중...';
-        fetch(LOG_URL + "?action=stats&slug=" + encodeURIComponent(SLUG))
-          .then(function(r){ return r.json(); })
-          .then(function(d){
-            statBtn.textContent = '조회 ' + d.view + '회 · 저장 ' + d.save + '회';
-          });
-      };
-      profileInfo.appendChild(statBtn);
-    }
+    var statBtn = document.createElement('div');
+    statBtn.textContent = '📊 카드 현황 보기';
+    statBtn.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.65);color:#fff;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;z-index:9999;font-family:sans-serif;box-shadow:0 2px 10px rgba(0,0,0,0.3);';
+    statBtn.onclick = function(){
+      statBtn.style.cursor = 'default';
+      statBtn.textContent = '불러오는 중...';
+      fetch(LOG_URL + "?action=stats&slug=" + encodeURIComponent(SLUG))
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          statBtn.textContent = '조회 ' + d.view + '회 · 저장 ' + d.save + '회';
+        });
+    };
+    document.body.appendChild(statBtn);
   });
 })();
 </script>
