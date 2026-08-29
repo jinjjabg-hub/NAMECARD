@@ -965,5 +965,40 @@ async function activateMandu() {
   } catch (e) { console.error(e); }
 })();
 </script>
+<script>
+(function(){
+  var LOG_URL = "https://script.google.com/macros/s/AKfycbz5VDYuWaAQiE9jxZ9r4dew_DgOyMuB_lj1P0K9YCtY1APweG-iKg7T5IZHqylLojbE/exec";
+  var SLUG = document.title;
+  function dicaLog(type){
+    try { fetch(LOG_URL + "?slug=" + encodeURIComponent(SLUG) + "&event=" + type, {mode:"no-cors"}); } catch(e){}
+  }
+  dicaLog('view');
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var saveBtn = document.querySelector('.btn-primary');
+    var cardBtn = document.querySelector('.btn-secondary');
+    if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
+    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+
+    var profileInfo = document.querySelector('.profile-info');
+    if (profileInfo) {
+      var statBtn = document.createElement('div');
+      statBtn.textContent = '📊 카드 현황 보기';
+      statBtn.style.cssText = 'margin-top:8px;font-size:12px;color:#c9a24a;cursor:pointer;text-decoration:underline;';
+      statBtn.onclick = function(){
+        statBtn.style.cursor = 'default';
+        statBtn.style.textDecoration = 'none';
+        statBtn.textContent = '불러오는 중...';
+        fetch(LOG_URL + "?action=stats&slug=" + encodeURIComponent(SLUG))
+          .then(function(r){ return r.json(); })
+          .then(function(d){
+            statBtn.textContent = '조회 ' + d.view + '회 · 저장 ' + d.save + '회';
+          });
+      };
+      profileInfo.appendChild(statBtn);
+    }
+  });
+})();
+</script>
 </body>
 </html>
