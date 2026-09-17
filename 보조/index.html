@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<link rel="apple-touch-icon" href="icon-180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>정율채 | K-VISA센터 행정사사무소</title>
-<meta property="og:title" content="정율채 | 대표 행정사 · K-VISA센터 행정사사무소">
-<meta property="og:description" content="외국인의 투자·취업·결혼비자를 가장 정확하고 신속하게 해결하는 행정안전부장관 표창 행정사">
-<meta property="og:image" content="https://jinjjabg-hub.github.io/BNI-GIANTS/%EC%A0%95%EC%9C%A8%EC%B1%84/og.png">
+<title>이화춘 | (주)이화춘뷰티랩</title>
+<meta property="og:title" content="이화춘 | 대표 · (주)이화춘뷰티랩">
+<meta property="og:description" content="(주)이화춘뷰티랩은 반영구 눈썹·아이라인·입술, 속눈썹 연장·펌, 전문 교육을 운영하는 뷰티 브랜드입니다. 얼굴형과 근육 움직임, 눈썹의 모량과 기존 잔흔을 세밀하게 분석하여 고객 한 분 한 분에게 어울리는 디자인을 제안합니다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EC%9D%B4%ED%99%94%EC%B6%98/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://jinjjabg-hub.github.io/BNI-GIANTS/정율채/">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/이화춘/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+<!-- 언어팩에 따라 폰트 추가: references/languages.md 참고 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
 
 :root {
-  --navy: #0d1b3e;
-  --navy2: #152347;
-  --navy3: #1e2f5a;
+  --navy: #0a0a0a;
+  --navy2: #161513;
+  --navy3: #211f1c;
   --gold: #c9a84c;
   --gold2: #e8c86a;
   --light: #f4f1e8;
@@ -43,49 +40,41 @@ body {
   overflow-x: hidden;
 }
 
-[data-lang="ne"] { font-family: 'Noto Sans Devanagari', 'Noto Sans KR', sans-serif; }
-[data-lang="jp"] { font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif; }
-[data-lang="cn"] { font-family: 'Noto Sans SC', 'Noto Sans KR', sans-serif; }
+[data-lang="si"] { font-family: 'Noto Sans Sinhala', sans-serif; }
+[data-lang="ur"] { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
 [data-lang] { display: none; }
 [data-lang].active { display: block; }
 span[data-lang].active { display: inline; }
 
-/* ── NAV : 골드 언어바. 언어 6개 → 6등분 풀폭 ── */
+/* ── NAV ── */
 nav {
   position: fixed; top:0; left:0; right:0; z-index:100;
   max-width: 480px; margin: 0 auto;
-  background: linear-gradient(180deg, var(--gold2), var(--gold));
-  padding: 7px 8px;
-  display: flex; align-items: center;
-  border-bottom: 2px solid var(--navy);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
 }
-.lang-btns { display:flex; gap:3px; width:100%; }
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
 .lang-btn {
-  flex: 1; min-width: 0;
-  padding: 5px 2px;
-  border: 1px solid rgba(13,27,62,0.25);
-  background: rgba(255,255,255,0.35);
-  color: rgba(13,27,62,0.75);
+  padding: 5px 8px;
+  border: 1px solid rgba(201,168,76,0.35);
+  background: transparent;
+  color: var(--muted-dark);
   font-size: 10px; font-weight: 700;
-  cursor: pointer; border-radius: 6px;
+  cursor: pointer; border-radius: 5px;
   transition: all 0.2s;
-  min-height: 34px;
+  min-width: 40px; min-height: 32px;
   display: flex; align-items:center; justify-content:center;
-  white-space: nowrap;
   font-family: 'Noto Sans KR', sans-serif;
 }
-.lang-btn.active {
-  background: var(--navy);
-  color: var(--gold2);
-  border-color: var(--navy);
-  box-shadow: 0 2px 6px rgba(13,27,62,0.4);
-  transform: translateY(-1px);
-}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 
 /* ── HERO ── */
 .hero {
-  margin-top: 49px;
+  margin-top: 54px;
   position: relative;
   width: 100%;
   aspect-ratio: 3/4;
@@ -101,10 +90,10 @@ nav {
   position: absolute; inset:0;
   background: linear-gradient(
     to bottom,
-    rgba(13,27,62,0.1) 0%,
-    rgba(13,27,62,0.15) 40%,
-    rgba(13,27,62,0.75) 75%,
-    rgba(13,27,62,0.95) 100%
+    rgba(10,10,10,0.1) 0%,
+    rgba(10,10,10,0.15) 40%,
+    rgba(10,10,10,0.75) 75%,
+    rgba(10,10,10,0.95) 100%
   );
 }
 .hero-content {
@@ -124,6 +113,7 @@ nav {
   color: #fff; line-height: 1.15;
   margin-bottom: 7px; letter-spacing: -0.5px;
 }
+.hero-name [data-lang="ur"] { font-size: 26px; }
 .hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
 
 /* ── PROFILE ROW ── */
@@ -161,6 +151,7 @@ section { padding: 40px 20px; }
   font-style: italic; line-height: 1.6;
 }
 .about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+.about-text [data-lang="ur"] { font-size: 15px; line-height: 2.2; }
 
 /* ── WHY ── */
 .why { background: var(--light); }
@@ -175,6 +166,7 @@ section { padding: 40px 20px; }
 }
 .why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
 .why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
 .why-card p strong { color: var(--navy); font-weight: 700; }
 
 /* ── DIFFERENCE ── */
@@ -187,8 +179,8 @@ section { padding: 40px 20px; }
   border-radius: 10px; padding: 18px 16px;
 }
 .diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
-.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.85; }
-.diff-card p strong { color: var(--gold2); font-weight: 700; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.8; }
+.diff-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
 
 /* ── REFERRAL ── */
 .referral { background: var(--light); }
@@ -208,12 +200,20 @@ section { padding: 40px 20px; }
   flex-shrink: 0; margin-top: 1px;
 }
 .ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+.ref-item p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
 
 /* ── CAREER ── */
-.career { background-color: #f0f4ff; }
-.career .section-label { color: var(--muted-light); }
-.career .section-title { color: var(--text-light); }
-.career-list { display: flex; flex-direction: column; gap:18px; }
+.career {
+  position: relative;
+  background-color: #f4efe4;
+  background-image: url('career-bg.png');
+  background-size: 150%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+.career .section-label { position: relative; z-index:1; color: var(--muted-light); }
+.career .section-title { color: var(--text-light); position: relative; z-index:1; }
+.career-list { display: flex; flex-direction: column; gap:18px; position: relative; z-index:1; }
 .career-item {
   display: flex; gap:12px; align-items:flex-start;
   padding-bottom: 18px;
@@ -229,6 +229,23 @@ section { padding: 40px 20px; }
 .career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
 .career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
 .career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── PORTFOLIO (선택 섹션 — portfolio1.jpg 이상 있을 때만 사용) ── */
+.portfolio { background: var(--navy); }
+.portfolio .section-title { color: #fff; }
+.portfolio-track-wrap { overflow: hidden; border-radius: 12px; }
+.portfolio-track { display: flex; transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94); }
+.portfolio-slide { min-width: 100%; aspect-ratio: 1/1; overflow: hidden; }
+.portfolio-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.portfolio-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px; }
+.portfolio-btn {
+  background: transparent; border: 1px solid rgba(201,168,76,0.35);
+  color: var(--gold); width: 30px; height: 30px; border-radius: 50%;
+  font-size: 15px; cursor: pointer; display:flex; align-items:center; justify-content:center;
+}
+.portfolio-dots { display:flex; gap:6px; }
+.portfolio-dot { width:6px; height:6px; border-radius:50%; background: rgba(201,168,76,0.3); transition: all 0.25s; }
+.portfolio-dot.active { background: var(--gold); width:18px; border-radius:3px; }
 
 /* ── CONTACT ── */
 .contact { background: var(--light); }
@@ -270,10 +287,6 @@ section { padding: 40px 20px; }
 }
 .btn-primary { background: var(--gold); color: var(--navy); }
 .btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
-.btn-mandu {
-  background: linear-gradient(135deg, #1a3a6b, #0d5ca8);
-  color: #fff; border: none;
-}
 .btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
 .btn:active { transform: scale(0.97); opacity: 0.9; }
 
@@ -295,12 +308,9 @@ section { padding: 40px 20px; }
 .share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
 
 /* ── FOOTER ── */
-footer {
-  background: var(--navy); padding: 24px 20px;
-  text-align: center; border-top: 1px solid rgba(201,168,76,0.12);
-}
+footer { background: var(--navy); padding: 28px 20px 26px; text-align: center; border-top: 1px solid rgba(201,168,76,0.12); }
+footer .logo-img { width: 150px; max-width: 60%; margin: 0 auto 14px; display: block; }
 footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
-footer .gov { font-size: 11px; color: var(--text-dark); opacity: 0.6; margin-bottom: 6px; line-height: 1.6; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
 </style>
 </head>
@@ -308,62 +318,53 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 
 <!-- NAV -->
 <nav>
+  <div class="nav-brand">이화춘뷰티랩</div>
   <div class="lang-btns">
     <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('jp')">日本語</button>
     <button class="lang-btn" onclick="setLang('cn')">中文</button>
-    <button class="lang-btn" onclick="setLang('ne')">नेपाली</button>
-    <button class="lang-btn" onclick="setLang('id')">ID</button>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO : hero.png = 세로 3:4 인물 사진 -->
 <div class="hero">
-  <img class="hero-img" src="hero.png" alt="정율채">
+  <img class="hero-img" src="hero.jpg" alt="이화춘">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">
-      <span data-lang="kr" class="active">BNI 자이언츠 챕터 · 행정사</span>
-      <span data-lang="en">BNI GIANTS · VISA EXPERT</span>
-      <span data-lang="jp">BNI ジャイアンツ · 行政士</span>
-      <span data-lang="cn">BNI 巨人分会 · 行政士</span>
-      <span data-lang="ne">BNI GIANTS · भिसा विशेषज्ञ</span>
-      <span data-lang="id">BNI GIANTS · AHLI VISA</span>
+      <span data-lang="kr" class="active">20년차 반영구·속눈썹 전문가</span>
+      <span data-lang="en">20 Years of Expertise</span>
+      <span data-lang="jp">20年のキャリア</span>
+      <span data-lang="cn">20年从业经验</span>
     </div>
     <div class="hero-name">
-      <span data-lang="kr" class="active">정 율 채</span>
-      <span data-lang="en">JUNG YULCHAE</span>
-      <span data-lang="jp">チョン・ユルチェ</span>
-      <span data-lang="cn">郑律采</span>
-      <span data-lang="ne">JUNG YULCHAE</span>
-      <span data-lang="id">JUNG YULCHAE</span>
+      <span data-lang="kr" class="active">이 화 춘</span>
+      <span data-lang="en">Lee Hwa Chun</span>
+      <span data-lang="jp">李化春</span>
+      <span data-lang="cn">李化春</span>
     </div>
     <div class="hero-title">
-      <span data-lang="kr" class="active">대표 행정사 · K-VISA센터 행정사사무소</span>
-      <span data-lang="en">Certified Administrative Attorney · K-VISA Center</span>
-      <span data-lang="jp">代表行政士 · K-VISAセンター行政士事務所</span>
-      <span data-lang="cn">代表行政士 · K-VISA中心行政士事务所</span>
-      <span data-lang="ne">प्रमाणित प्रशासनिक वकिल · K-VISA केन्द्र</span>
-      <span data-lang="id">Konsultan Administrasi Resmi · K-VISA Center</span>
+      <span data-lang="kr" class="active">대표 · (주)이화춘뷰티랩</span>
+      <span data-lang="en">CEO · LHC Beauty Lab Co., Ltd.</span>
+      <span data-lang="jp">代表 · (株)イファチュンビューティーラボ</span>
+      <span data-lang="cn">代表 · 李化春美妆实验室</span>
     </div>
   </div>
 </div>
 
-<!-- PROFILE ROW -->
+<!-- PROFILE ROW : profil.png = 정사각 얼굴 사진 -->
 <div class="profile-row">
   <div class="profile-img">
-    <img src="profil.png" alt="정율채">
+    <img src="profil.jpg" alt="이화춘">
   </div>
   <div class="profile-info">
-    <h2>정율채 · JUNG YULCHAE</h2>
+    <h2>이화춘 · Lee Hwa Chun</h2>
     <p>
-      <span data-lang="kr" class="active">투자 D-8 · 취업 E-7 · 결혼 F-6 비자 전문</span>
-      <span data-lang="en">Investment D-8 · Employment E-7 · Marriage F-6 visas</span>
-      <span data-lang="jp">投資D-8 · 就労E-7 · 結婚F-6ビザ専門</span>
-      <span data-lang="cn">投资D-8 · 就业E-7 · 结婚F-6签证专家</span>
-      <span data-lang="ne">लगानी D-8 · रोजगारी E-7 · विवाह F-6 भिसा विशेषज्ञ</span>
-      <span data-lang="id">Visa Investasi D-8 · Kerja E-7 · Pernikahan F-6</span>
+      <span data-lang="kr" class="active">속눈썹연장 · 속눈썹펌 · 속눈썹교육 · 반영구교육 · 수정눈썹 · 남자눈썹 · 교정눈썹</span>
+      <span data-lang="en">Lash Extensions · Lash Perm · Lash Training · Semi-Permanent Makeup Training · Corrective Brows · Men's Brows</span>
+      <span data-lang="jp">まつ毛エクステ · まつ毛パーマ · まつ毛教育 · 半永久教育 · 修正眉 · 男性眉</span>
+      <span data-lang="cn">睫毛嫁接 · 睫毛烫翘 · 睫毛培训 · 半永久培训 · 修复眉 · 男士眉</span>
     </p>
   </div>
 </div>
@@ -372,97 +373,75 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 <section class="about">
   <div class="section-label">About</div>
   <div class="slogan">
-    <span data-lang="kr" class="active">언제나 내 일처럼, 당신의 내일을 책임집니다.</span>
-    <span data-lang="en">Your tomorrow, my commitment.</span>
-    <span data-lang="jp">あなたの明日を、私の責任として。</span>
-    <span data-lang="cn">您的明天，我的承诺。</span>
-    <span data-lang="ne">तपाईंको भोलि, मेरो प्रतिबद्धता।</span>
-    <span data-lang="id">Masa depan Anda, komitmen saya.</span>
+    <span data-lang="kr" class="active">20년의 경험으로, 한 사람만을 위한 아름다움을 디자인합니다.</span>
+    <span data-lang="en">Two decades of experience — designing beauty for one person at a time.</span>
+    <span data-lang="jp">20年の経験で、たった一人のための美しさをデザインします。</span>
+    <span data-lang="cn">以二十年经验，为每一位顾客量身设计专属美丽。</span>
   </div>
   <p class="about-text">
-    <span data-lang="kr" class="active">외국인의 투자·취업·결혼비자를 가장 정확하고 신속하게 해결하는 행정안전부장관 표창 행정사입니다. 상담부터 허가, 그 이후 관리까지 끝까지 책임집니다.</span>
-    <span data-lang="en">A licensed Korean administrative attorney (Haengjeongsa), awarded by the Minister of the Interior and Safety, specializing in investment, employment and marriage visas for foreigners. From the first consultation to approval — and the management that follows.</span>
-    <span data-lang="jp">外国人の投資・就労・結婚ビザを最も正確かつ迅速に解決する行政士です。行政安全部長官表彰。相談から許可、その後の管理まで最後まで責任を持ちます。</span>
-    <span data-lang="cn">专为外国人办理投资、就业、结婚签证的韩国行政士，荣获行政安全部长官表彰。从咨询到许可，直至之后的管理，全程负责。</span>
-    <span data-lang="ne">विदेशीहरूको लगानी, रोजगारी र विवाह भिसा सबैभन्दा सटीक र छिटो समाधान गर्ने कोरियाली प्रमाणित प्रशासनिक वकिल। गृह तथा सुरक्षा मन्त्रीबाट सम्मानित। परामर्शदेखि स्वीकृति र त्यसपछिको व्यवस्थापनसम्म पूर्ण जिम्मेवारी।</span>
-    <span data-lang="id">Konsultan administrasi hukum Korea peraih penghargaan Menteri Dalam Negeri, spesialis visa investasi, kerja, dan pernikahan untuk warga asing. Dari konsultasi hingga persetujuan dan pendampingan setelahnya.</span>
+    <span data-lang="kr" class="active">(주)이화춘뷰티랩은 반영구 눈썹·아이라인·입술, 속눈썹 연장·펌, 전문 교육을 운영하는 뷰티 브랜드입니다. 얼굴형과 근육 움직임, 눈썹의 모량과 기존 잔흔을 세밀하게 분석하여 고객 한 분 한 분에게 어울리는 디자인을 제안합니다. 현장에서 축적한 노하우를 바탕으로 스피드 갓 디자인, 힐링 브로우, LED 속눈썹 등 실전 중심의 시술과 교육을 진행합니다.</span>
+    <span data-lang="en">LHC Beauty Lab is a beauty brand specializing in semi-permanent brows, eyeliner and lips, eyelash extensions and perms, and professional training. We carefully analyze each client's face shape, muscle movement, brow density, and existing marks to design a look that truly suits them. Drawing on years of hands-on experience, we offer practical, field-tested treatments and courses such as Speed God Design, Healing Brow, and LED lashes.</span>
+    <span data-lang="jp">(株)イファチュンビューティーラボは、半永久眉・アイライン・リップ、まつ毛エクステ・パーマ、専門教育を運営するビューティーブランドです。顔の形や筋肉の動き、眉の毛量や既存の跡を細かく分析し、お客様一人ひとりに似合うデザインをご提案します。現場で培ったノウハウをもとに、スピードゴッドデザイン、ヒーリングブロウ、LEDまつ毛など、実践中心の施術と教育を行っています。</span>
+    <span data-lang="cn">李化春美妆实验室是一家专注于半永久眉毛、眼线、唇部，睫毛嫁接与烫翘，以及专业教育培训的美容品牌。我们会细致分析每位顾客的脸型、肌肉走向、眉毛密度与原有痕迹，为每一位客人设计最适合的造型。凭借多年一线积累的经验，提供以实战为中心的施术与培训课程，如速效女神设计、修复眉、LED睫毛等。</span>
   </p>
 </section>
 
-<!-- WHY -->
+<!-- WHY : why-card 3개 (①②③) -->
 <section class="why">
   <div class="section-label">Why Us</div>
   <div class="section-title">
-    <span data-lang="kr" class="active">왜 K-VISA센터인가</span>
-    <span data-lang="en">Why K-VISA Center?</span>
-    <span data-lang="jp">なぜK-VISAセンターなのか</span>
-    <span data-lang="cn">为什么选择K-VISA中心</span>
-    <span data-lang="ne">किन K-VISA केन्द्र?</span>
-    <span data-lang="id">Mengapa K-VISA Center?</span>
+    <span data-lang="kr" class="active">왜 이화춘뷰티랩인가</span>
+    <span data-lang="en">Why LHC Beauty Lab?</span>
+    <span data-lang="jp">なぜイファチュンビューティーラボなのか</span>
+    <span data-lang="cn">为什么选择李化春美妆实验室</span>
   </div>
   <div class="why-cards">
-
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">① 비자 성공률 95%</span>
-        <span data-lang="en">① 95% visa success rate</span>
-        <span data-lang="jp">① ビザ成功率95%</span>
-        <span data-lang="cn">① 签证成功率95%</span>
-        <span data-lang="ne">① भिसा सफलता दर ९५%</span>
-        <span data-lang="id">① Tingkat keberhasilan visa 95%</span>
+        <span data-lang="kr" class="active">① 얼굴형·근육·모량 분석 기반 맞춤 상담</span>
+        <span data-lang="en">① Consultation Based on Face &amp; Muscle Analysis</span>
+        <span data-lang="jp">① 顔・筋肉分析に基づくオーダーメイド相談</span>
+        <span data-lang="cn">① 基于脸型与肌肉分析的定制咨询</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">철저한 사전검토와 정확한 서류 준비로 <strong>성공률 95%</strong>를 유지합니다.</span>
-        <span data-lang="en">Thorough pre-screening and precise document preparation keep the success rate at <strong>95%</strong>.</span>
-        <span data-lang="jp">徹底した事前検討と正確な書類準備で<strong>成功率95%</strong>を維持しています。</span>
-        <span data-lang="cn">通过彻底的事前审查与精准的材料准备，保持<strong>95%</strong>的成功率。</span>
-        <span data-lang="ne">गहन पूर्व-समीक्षा र सही कागजात तयारीले <strong>९५%</strong> सफलता दर कायम राख्छ।</span>
-        <span data-lang="id">Pemeriksaan awal menyeluruh dan berkas yang akurat menjaga tingkat keberhasilan di <strong>95%</strong>.</span>
+        <span data-lang="kr" class="active">얼굴형과 근육의 움직임, 눈썹의 모량과 기존 잔흔까지 세밀하게 분석해 남녀 눈썹부터 수정눈썹, 속눈썹, 입술·아이라인까지 <strong>전문적으로 상담</strong>합니다.</span>
+        <span data-lang="en">We analyze face shape, muscle movement, brow density, and existing marks to provide <strong>expert consultations</strong> covering brows for men and women, corrective brows, lashes, and lips/eyeliner.</span>
+        <span data-lang="jp">顔の形や筋肉の動き、眉の毛量や既存の跡まで細かく分析し、男女の眉から修正眉、まつ毛、リップ・アイラインまで<strong>専門的にご相談</strong>します。</span>
+        <span data-lang="cn">细致分析脸型、肌肉走向、眉毛密度与原有痕迹，为男女眉毛、修复眉、睫毛、唇部及眼线提供<strong>专业咨询</strong>。</span>
       </p>
     </div>
-
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">② 정부가 인정한 행정사</span>
-        <span data-lang="en">② Recognized by the government</span>
-        <span data-lang="jp">② 政府が認めた行政士</span>
-        <span data-lang="cn">② 政府认可的行政士</span>
-        <span data-lang="ne">② सरकारद्वारा मान्यताप्राप्त</span>
-        <span data-lang="id">② Diakui oleh pemerintah</span>
+        <span data-lang="kr" class="active">② 원하는 눈매·분위기 맞춤 속눈썹 디자인</span>
+        <span data-lang="en">② Lash Design Tailored to Your Look</span>
+        <span data-lang="jp">② 理想の目元・雰囲気に合わせたまつ毛デザイン</span>
+        <span data-lang="cn">② 根据理想眼型与氛围定制睫毛设计</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">2017년 <strong>행정안전부장관 표창</strong> 수상. 국가시험 합격 출신 <strong>부산·울산·경남 최초 여성 행정사</strong>입니다.</span>
-        <span data-lang="en">Awarded by the <strong>Minister of the Interior and Safety (2017)</strong>. The <strong>first female licensed Haengjeongsa</strong> in Busan·Ulsan·Gyeongnam to pass the national exam.</span>
-        <span data-lang="jp">2017年<strong>行政安全部長官表彰</strong>受賞。国家試験合格出身の<strong>釜山・蔚山・慶南初の女性行政士</strong>です。</span>
-        <span data-lang="cn">2017年荣获<strong>行政安全部长官表彰</strong>。国家考试合格出身，<strong>釜山·蔚山·庆南首位女性行政士</strong>。</span>
-        <span data-lang="ne">सन् २०१७ मा <strong>गृह तथा सुरक्षा मन्त्रीबाट सम्मानित</strong>। राष्ट्रिय परीक्षा उत्तीर्ण गर्ने <strong>बुसान·उल्सान·ग्योङनामकी पहिलो महिला प्रशासनिक वकिल</strong>।</span>
-        <span data-lang="id">Peraih <strong>penghargaan Menteri Dalam Negeri (2017)</strong>. <strong>Haengjeongsa perempuan pertama</strong> di Busan·Ulsan·Gyeongnam yang lulus ujian negara.</span>
+        <span data-lang="kr" class="active">고객이 원하는 눈매와 분위기에 맞춰 속눈썹 연장과 속눈썹 펌을 제공하여 <strong>자연스럽고 만족도 높은</strong> 결과를 완성합니다.</span>
+        <span data-lang="en">We provide eyelash extensions and perms customized to the eye shape and mood you want, delivering a <strong>natural and satisfying</strong> result.</span>
+        <span data-lang="jp">お客様が望む目元と雰囲気に合わせて、まつ毛エクステとまつ毛パーマをご提供し、<strong>自然で満足度の高い</strong>仕上がりをお約束します。</span>
+        <span data-lang="cn">根据顾客期望的眼型与氛围，提供睫毛嫁接与烫翘服务，打造<strong>自然又满意</strong>的效果。</span>
       </p>
     </div>
-
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">③ 처음부터 끝까지 책임지는 행정사</span>
-        <span data-lang="en">③ Responsible from start to finish</span>
-        <span data-lang="jp">③ 最初から最後まで責任を持つ行政士</span>
-        <span data-lang="cn">③ 从头到尾负责到底</span>
-        <span data-lang="ne">③ सुरुदेखि अन्तिमसम्म जिम्मेवार</span>
-        <span data-lang="id">③ Bertanggung jawab dari awal sampai akhir</span>
+        <span data-lang="kr" class="active">③ 현장 경험을 담은 1:1 실전 창업 교육</span>
+        <span data-lang="en">③ 1:1 Hands-On Training for Future Salon Owners</span>
+        <span data-lang="jp">③ 現場経験を活かした1対1実践創業教育</span>
+        <span data-lang="cn">③ 融合一线经验的一对一实战创业培训</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">사전 상담부터 허가 결과, 그 이후 최적의 관리까지 <strong>끝까지 책임</strong>집니다.</span>
-        <span data-lang="en">From the first consultation to the approval — and the ongoing management afterwards. <strong>Responsible to the end.</strong></span>
-        <span data-lang="jp">事前相談から許可の結果、その後の最適な管理まで<strong>最後まで責任</strong>を持ちます。</span>
-        <span data-lang="cn">从事前咨询到许可结果，再到之后的最优管理，<strong>负责到底</strong>。</span>
-        <span data-lang="ne">पूर्व-परामर्शदेखि स्वीकृति र त्यसपछिको उत्तम व्यवस्थापनसम्म <strong>अन्तिमसम्म जिम्मेवारी</strong>।</span>
-        <span data-lang="id">Dari konsultasi awal hingga persetujuan dan pendampingan setelahnya — <strong>bertanggung jawab sampai tuntas</strong>.</span>
+        <span data-lang="kr" class="active"><strong>20년간</strong> 축적한 시술 경험을 그대로 담아 1:1 실전 중심으로 진행하는 창업형 뷰티 교육을 제공합니다.</span>
+        <span data-lang="en">We share <strong>20 years</strong> of hands-on treatment experience through 1:1, practice-focused training designed for those planning to open their own beauty business.</span>
+        <span data-lang="jp"><strong>20年間</strong>培った施術経験をそのまま活かし、1対1の実践中心で行う創業向けビューティー教育を提供します。</span>
+        <span data-lang="cn">将<strong>20年</strong>积累的施术经验融入课程，提供以一对一实战为核心的创业型美容教育。</span>
       </p>
     </div>
-
   </div>
 </section>
 
-<!-- DIFFERENCE -->
+<!-- DIFFERENCE : diff-card 2~3개 -->
 <section class="difference">
   <div class="section-label">Difference</div>
   <div class="section-title">
@@ -470,72 +449,68 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="en">What Makes Us Different</span>
     <span data-lang="jp">差別化ポイント</span>
     <span data-lang="cn">差异化优势</span>
-    <span data-lang="ne">हाम्रो विशेषता</span>
-    <span data-lang="id">Keunggulan Kami</span>
   </div>
   <div class="diff-grid">
-
     <div class="diff-card">
       <h3>
-        <span data-lang="kr" class="active">외국인투자(D-8) 원스톱</span>
-        <span data-lang="en">Foreign Investment (D-8) — one-stop</span>
-        <span data-lang="jp">外国人投資(D-8) ワンストップ</span>
-        <span data-lang="cn">外国人投资(D-8) 一站式</span>
-        <span data-lang="ne">विदेशी लगानी (D-8) — एकै ठाउँमा</span>
-        <span data-lang="id">Investasi Asing (D-8) — satu pintu</span>
+        <span data-lang="kr" class="active">스피드 갓 디자인</span>
+        <span data-lang="en">Speed God Design</span>
+        <span data-lang="jp">スピードゴッドデザイン</span>
+        <span data-lang="cn">速效女神设计</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">투자신고부터 법인설립, 비자 취득까지 — 세무·법무 전문가와 함께하는 원스톱 서비스.</span>
-        <span data-lang="en">From investment notification to company registration and the visa itself — one-stop, together with tax and legal specialists.</span>
-        <span data-lang="jp">投資申告から法人設立、ビザ取得まで — 税務・法務の専門家と共にワンストップで。</span>
-        <span data-lang="cn">从投资申报到法人设立、签证取得 — 与税务·法务专家协作的一站式服务。</span>
-        <span data-lang="ne">लगानी सूचनादेखि कम्पनी दर्ता र भिसासम्म — कर तथा कानुनी विज्ञसँग मिलेर एकै ठाउँमा सेवा।</span>
-        <span data-lang="id">Dari pelaporan investasi, pendirian badan usaha, hingga visa — layanan satu pintu bersama ahli pajak dan hukum.</span>
+        <span data-lang="kr" class="active">5가지 공식으로 눈썹을 완성하는 이화춘만의 시그니처 디자인 기법입니다.</span>
+        <span data-lang="en">A signature technique that completes eyebrows using 5 proven formulas.</span>
+        <span data-lang="jp">5つの公式で眉を完成させる、イファチュンならではのシグネチャーデザイン技法です。</span>
+        <span data-lang="cn">运用五大公式完成眉形，是李化春独创的招牌设计技法。</span>
       </p>
     </div>
-
     <div class="diff-card">
       <h3>
-        <span data-lang="kr" class="active">외국인근로자(E-7) 올인원</span>
-        <span data-lang="en">Foreign Workers (E-7) — all-in-one</span>
-        <span data-lang="jp">外国人労働者(E-7) オールインワン</span>
-        <span data-lang="cn">外籍员工(E-7) 全包服务</span>
-        <span data-lang="ne">विदेशी कामदार (E-7) — सम्पूर्ण सेवा</span>
-        <span data-lang="id">Pekerja Asing (E-7) — all-in-one</span>
+        <span data-lang="kr" class="active">힐링 브로우</span>
+        <span data-lang="en">Healing Brow</span>
+        <span data-lang="jp">ヒーリングブロウ</span>
+        <span data-lang="cn">修复眉</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">E-7 변경부터 체계적인 사후관리, 가족초청까지 — 영주권·국적 취득까지 이어지는 토탈 케어.</span>
-        <span data-lang="en">E-7 change of status, systematic follow-up, family invitation — total care leading to permanent residency and citizenship.</span>
-        <span data-lang="jp">E-7への変更から体系的な事後管理、家族招請まで — 永住権・国籍取得まで続くトータルケア。</span>
-        <span data-lang="cn">从E-7变更到系统的后续管理、家属邀请 — 直至永住权·国籍取得的全程照护。</span>
-        <span data-lang="ne">E-7 परिवर्तनदेखि व्यवस्थित अनुगमन र परिवार निम्तोसम्म — स्थायी बसोबास र नागरिकतासम्म पुग्ने पूर्ण हेरचाह।</span>
-        <span data-lang="id">Perubahan status E-7, pendampingan berkala, hingga mengundang keluarga — perawatan total sampai izin tinggal tetap dan kewarganegaraan.</span>
+        <span data-lang="kr" class="active">기존 눈썹의 잔흔과 변색을 세밀하게 분석해 자연스럽게 되살리는 수정눈썹 전문 기법입니다.</span>
+        <span data-lang="en">A corrective brow technique that analyzes existing marks and discoloration to naturally restore the eyebrows.</span>
+        <span data-lang="jp">既存の眉の跡や変色を細かく分析し、自然に蘇らせる修正眉専門技法です。</span>
+        <span data-lang="cn">细致分析原有眉毛的痕迹与变色，以自然方式修复重塑的专业修眉技法。</span>
       </p>
     </div>
-
     <div class="diff-card">
       <h3>
-        <span data-lang="kr" class="active">결혼비자(F-6) 30개국 성공사례</span>
-        <span data-lang="en">Marriage Visa (F-6) — 30 countries</span>
-        <span data-lang="jp">結婚ビザ(F-6) 30か国の成功事例</span>
-        <span data-lang="cn">结婚签证(F-6) 30国成功案例</span>
-        <span data-lang="ne">विवाह भिसा (F-6) — ३० देश</span>
-        <span data-lang="id">Visa Pernikahan (F-6) — 30 negara</span>
+        <span data-lang="kr" class="active">LED 속눈썹 연장·펌</span>
+        <span data-lang="en">LED Lash Extensions &amp; Perms</span>
+        <span data-lang="jp">LEDまつ毛エクステ・パーマ</span>
+        <span data-lang="cn">LED睫毛嫁接·烫翘</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active"><strong>30개국</strong> 다국적 성공사례. 비자 허가 전까지 <strong>추가비용 없이</strong> 책임 지원합니다.</span>
-        <span data-lang="en">Successful cases across <strong>30 countries</strong>. Full support with <strong>no extra fees</strong> until the visa is approved.</span>
-        <span data-lang="jp"><strong>30か国</strong>の多国籍成功事例。ビザ許可まで<strong>追加費用なし</strong>で責任を持って支援します。</span>
-        <span data-lang="cn"><strong>30个国家</strong>的多国成功案例。签证获批前<strong>不收取额外费用</strong>，负责到底。</span>
-        <span data-lang="ne"><strong>३० देश</strong>का सफल केसहरू। भिसा स्वीकृत नहुन्जेल <strong>थप शुल्क बिना</strong> पूर्ण सहयोग।</span>
-        <span data-lang="id">Kasus sukses dari <strong>30 negara</strong>. Dukungan penuh <strong>tanpa biaya tambahan</strong> hingga visa disetujui.</span>
+        <span data-lang="kr" class="active">유지력과 완성도를 함께 고려한 LED 속눈썹 연장과 속눈썹 펌으로 오래가는 결과를 제공합니다.</span>
+        <span data-lang="en">LED lash extensions and perms designed for both durability and finish, giving results that last longer.</span>
+        <span data-lang="jp">持続力と完成度を両立させたLEDまつ毛エクステとまつ毛パーマで、長持ちする仕上がりをご提供します。</span>
+        <span data-lang="cn">兼顾持久度与完成度的LED睫毛嫁接与烫翘，带来持久靓丽的效果。</span>
       </p>
     </div>
-
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">시뮬레이션 + 실전 모델 교육 시스템</span>
+        <span data-lang="en">Simulation + Live Model Training System</span>
+        <span data-lang="jp">シミュレーション+実践モデル教育システム</span>
+        <span data-lang="cn">模拟练习+真人模特实战教学体系</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">시뮬레이션 연습과 실제 모델 실습을 병행하는 체계적인 교육 시스템으로 실전 감각을 빠르게 키웁니다.</span>
+        <span data-lang="en">A structured curriculum combining simulation practice with hands-on live-model sessions to quickly build real-world skill.</span>
+        <span data-lang="jp">シミュレーション練習と実際のモデル実習を並行する体系的な教育システムで、実践力を素早く育てます。</span>
+        <span data-lang="cn">结合模拟练习与真人模特实操的系统化教学体系，快速培养实战能力。</span>
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- REFERRAL -->
+<!-- REFERRAL : BNI 핵심 섹션. ref-item 2~3개 -->
 <section class="referral">
   <div class="section-label">Referral</div>
   <div class="section-title">
@@ -543,51 +518,57 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="en">Please refer people like this</span>
     <span data-lang="jp">こんな方をご紹介ください</span>
     <span data-lang="cn">请介绍这样的客户</span>
-    <span data-lang="ne">कृपया यस्ता व्यक्तिलाई परिचय गराइदिनुहोस्</span>
-    <span data-lang="id">Mohon rekomendasikan orang seperti ini</span>
   </div>
   <div class="ref-list">
-
     <div class="ref-item">
       <div class="ref-num">1</div>
       <p>
-        <span data-lang="kr" class="active">한국에서 <strong>사업을 시작하려는 외국인 사업가</strong> — 투자(D-8)·법인설립·비자가 필요한 분, 그리고 한국 진출을 돕는 컨설팅 업체</span>
-        <span data-lang="en"><strong>Foreign entrepreneurs starting a business in Korea</strong> — investment (D-8), company setup, visa. Also consultancies guiding entry into the Korean market.</span>
-        <span data-lang="jp">韓国で<strong>事業を始めたい外国人事業家</strong> — 投資(D-8)・法人設立・ビザが必要な方、韓国進出を支援するコンサルティング会社。</span>
-        <span data-lang="cn"><strong>想在韩国创业的外国企业家</strong> — 需要投资(D-8)·法人设立·签证的人士，以及协助进入韩国市场的咨询公司。</span>
-        <span data-lang="ne"><strong>कोरियामा व्यवसाय सुरु गर्न चाहने विदेशी उद्यमी</strong> — लगानी (D-8), कम्पनी दर्ता, भिसा चाहिनेहरू र कोरिया प्रवेशमा सहयोग गर्ने परामर्श कम्पनी।</span>
-        <span data-lang="id"><strong>Pengusaha asing yang ingin memulai bisnis di Korea</strong> — butuh investasi (D-8), pendirian perusahaan, visa. Termasuk konsultan ekspansi ke Korea.</span>
+        <span data-lang="kr" class="active">오래된 눈썹 잔흔·변색·비대칭으로 수정 상담이 필요한 분</span>
+        <span data-lang="en">Anyone needing corrective consultation for old brow marks, discoloration, or asymmetry</span>
+        <span data-lang="jp">古い眉の跡・変色・左右差の修正相談が必要な方</span>
+        <span data-lang="cn">因旧眉痕迹、变色或不对称需要修复咨询的顾客</span>
       </p>
     </div>
-
     <div class="ref-item">
       <div class="ref-num">2</div>
       <p>
-        <span data-lang="kr" class="active"><strong>외국인 직원을 채용 중이거나 채용 예정인 회사</strong> — E-7·E-9 취업비자가 필요한 기업, 외국인 취업·이직을 돕는 컨설팅 업체</span>
-        <span data-lang="en"><strong>Companies hiring (or about to hire) foreign employees</strong> — E-7 / E-9 work visas. Also consultancies helping foreigners find jobs in Korea.</span>
-        <span data-lang="jp"><strong>外国人職員を採用中・採用予定の会社</strong> — E-7・E-9就労ビザが必要な企業、外国人の就職・転職を支援する会社。</span>
-        <span data-lang="cn"><strong>正在或计划雇用外籍员工的公司</strong> — 需要E-7·E-9就业签证的企业，以及协助外国人就业·跳槽的咨询公司。</span>
-        <span data-lang="ne"><strong>विदेशी कर्मचारी नियुक्त गर्दै वा गर्न लागेका कम्पनी</strong> — E-7·E-9 कार्य भिसा चाहिने कम्पनी र विदेशीलाई जागिर खोज्न सहयोग गर्ने परामर्शदाता।</span>
-        <span data-lang="id"><strong>Perusahaan yang sedang atau akan merekrut pekerja asing</strong> — butuh visa kerja E-7 / E-9. Termasuk konsultan penempatan kerja untuk WNA.</span>
+        <span data-lang="kr" class="active">자연스럽고 깔끔한 남자눈썹을 원하는 전문직·사업가</span>
+        <span data-lang="en">Professionals and business owners who want natural, clean-cut men's brows</span>
+        <span data-lang="jp">自然で清潔感のある男性眉を希望する専門職・経営者の方</span>
+        <span data-lang="cn">希望拥有自然干净男士眉形的专业人士与企业家</span>
       </p>
     </div>
-
     <div class="ref-item">
       <div class="ref-num">3</div>
       <p>
-        <span data-lang="kr" class="active"><strong>외국인 가족·파트너를 초청하려는 한국인 또는 한국 기업</strong> — 결혼비자(F-6), 가족초청, 장기 체류가 필요한 모든 분</span>
-        <span data-lang="en"><strong>Koreans or Korean companies inviting a foreign spouse, family member or partner</strong> — marriage visa (F-6), family invitation, or any long-term stay.</span>
-        <span data-lang="jp"><strong>外国人の家族・パートナーを招請したい韓国人または韓国企業</strong> — 結婚ビザ(F-6)、家族招請、長期滞在が必要な全ての方。</span>
-        <span data-lang="cn"><strong>想邀请外国配偶·家人·合作伙伴的韩国人或韩国企业</strong> — 结婚签证(F-6)、家属邀请、需要长期滞留的所有人士。</span>
-        <span data-lang="ne"><strong>विदेशी परिवार वा साझेदारलाई कोरिया बोलाउन चाहने कोरियाली व्यक्ति वा कम्पनी</strong> — विवाह भिसा (F-6), परिवार निम्तो, दीर्घकालीन बसाइ।</span>
-        <span data-lang="id"><strong>Warga atau perusahaan Korea yang mengundang pasangan atau keluarga asing</strong> — visa pernikahan (F-6), undangan keluarga, atau tinggal jangka panjang.</span>
+        <span data-lang="kr" class="active">중요한 행사나 촬영을 앞두고 이미지 변화를 원하는 분</span>
+        <span data-lang="en">Anyone wanting an image refresh before an important event or photoshoot</span>
+        <span data-lang="jp">大切な行事や撮影を控えてイメージチェンジを希望する方</span>
+        <span data-lang="cn">在重要活动或拍摄前希望改变形象的顾客</span>
       </p>
     </div>
-
+    <div class="ref-item">
+      <div class="ref-num">4</div>
+      <p>
+        <span data-lang="kr" class="active">속눈썹 연장 유지력이나 자극 때문에 고민하는 고객</span>
+        <span data-lang="en">Clients concerned about lash extension durability or irritation</span>
+        <span data-lang="jp">まつ毛エクステの持続力や刺激で悩んでいる方</span>
+        <span data-lang="cn">为睫毛嫁接持久度或刺激反应而烦恼的顾客</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">5</div>
+      <p>
+        <span data-lang="kr" class="active">반영구·속눈썹 기술 및 뷰티숍 운영 교육이 필요한 원장님</span>
+        <span data-lang="en">Salon owners who need training in semi-permanent/lash techniques or beauty shop management</span>
+        <span data-lang="jp">半永久・まつ毛技術やビューティーショップ運営教育が必要な院長様</span>
+        <span data-lang="cn">需要学习半永久及睫毛技术、或美容院经营培训的店长</span>
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- CAREER -->
+<!-- CAREER : career-item 2~3개. career-badge = 현재 / 경력 / 강점 / 자격 -->
 <section class="career">
   <div class="section-label">Career</div>
   <div class="section-title">
@@ -595,102 +576,123 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="en">Career &amp; Expertise</span>
     <span data-lang="jp">経歴・専門分野</span>
     <span data-lang="cn">经历与专业领域</span>
-    <span data-lang="ne">अनुभव र विशेषज्ञता</span>
-    <span data-lang="id">Karier &amp; Keahlian</span>
   </div>
   <div class="career-list">
-
-    <div class="career-item">
-      <div class="career-badge">
-        <span data-lang="kr" class="active">현재</span>
-        <span data-lang="en">Now</span>
-        <span data-lang="jp">現在</span>
-        <span data-lang="cn">现在</span>
-        <span data-lang="ne">अहिले</span>
-        <span data-lang="id">Kini</span>
-      </div>
-      <div class="career-content">
-        <h3>
-          <span data-lang="kr" class="active">K-VISA센터 행정사사무소 대표 행정사</span>
-          <span data-lang="en">Principal, K-VISA Center</span>
-          <span data-lang="jp">K-VISAセンター行政士事務所 代表</span>
-          <span data-lang="cn">K-VISA中心行政士事务所 代表</span>
-          <span data-lang="ne">प्रमुख, K-VISA केन्द्र</span>
-          <span data-lang="id">Kepala, K-VISA Center</span>
-        </h3>
-        <p>
-          <span data-lang="kr" class="active">법무부 등록 출입국민원 대행기관 (13101070338) · BNI 자이언츠 챕터 ST</span>
-          <span data-lang="en">Immigration agency registered with the Ministry of Justice (13101070338) · BNI Giants Chapter, ST</span>
-          <span data-lang="jp">法務部登録 出入国民願代行機関 (13101070338) · BNIジャイアンツチャプター ST</span>
-          <span data-lang="cn">法务部登记出入境民愿代办机构 (13101070338) · BNI巨人分会 ST</span>
-          <span data-lang="ne">न्याय मन्त्रालयमा दर्ता भएको अध्यागमन एजेन्सी (13101070338) · BNI Giants Chapter, ST</span>
-          <span data-lang="id">Agen imigrasi terdaftar Kementerian Kehakiman (13101070338) · BNI Giants Chapter, ST</span>
-        </p>
-      </div>
-    </div>
-
-    <div class="career-item">
-      <div class="career-badge">
-        <span data-lang="kr" class="active">자격</span>
-        <span data-lang="en">Credentials</span>
-        <span data-lang="jp">資格</span>
-        <span data-lang="cn">资格</span>
-        <span data-lang="ne">योग्यता</span>
-        <span data-lang="id">Kualifikasi</span>
-      </div>
-      <div class="career-content">
-        <h3>
-          <span data-lang="kr" class="active">제1회 행정사 국가시험 합격 (합격률 2%)</span>
-          <span data-lang="en">Passed the 1st national Haengjeongsa exam (2% pass rate)</span>
-          <span data-lang="jp">第1回行政士国家試験合格（合格率2%）</span>
-          <span data-lang="cn">第1届行政士国家考试合格（合格率2%）</span>
-          <span data-lang="ne">पहिलो राष्ट्रिय Haengjeongsa परीक्षा उत्तीर्ण (उत्तीर्ण दर २%)</span>
-          <span data-lang="id">Lulus ujian negara Haengjeongsa ke-1 (tingkat kelulusan 2%)</span>
-        </h3>
-        <p>
-          <span data-lang="kr" class="active">2017년 행정안전부장관 표창 · 행정사 교재 편찬위원 · 행정사 실무교육 강사</span>
-          <span data-lang="en">2017 Minister of the Interior and Safety Award · Textbook committee member · Instructor for professional Haengjeongsa training</span>
-          <span data-lang="jp">2017年 行政安全部長官表彰 · 行政士教材編纂委員 · 行政士実務教育講師</span>
-          <span data-lang="cn">2017年行政安全部长官表彰 · 行政士教材编纂委员 · 行政士实务教育讲师</span>
-          <span data-lang="ne">२०१७ गृह तथा सुरक्षा मन्त्री सम्मान · पाठ्यपुस्तक समिति सदस्य · व्यावसायिक तालिम प्रशिक्षक</span>
-          <span data-lang="id">Penghargaan Menteri Dalam Negeri 2017 · Anggota komite penyusun buku ajar · Instruktur pelatihan praktik</span>
-        </p>
-      </div>
-    </div>
-
     <div class="career-item">
       <div class="career-badge">
         <span data-lang="kr" class="active">경력</span>
-        <span data-lang="en">Background</span>
+        <span data-lang="en">Experience</span>
         <span data-lang="jp">経歴</span>
         <span data-lang="cn">经历</span>
-        <span data-lang="ne">पृष्ठभूमि</span>
-        <span data-lang="id">Latar belakang</span>
       </div>
       <div class="career-content">
         <h3>
-          <span data-lang="kr" class="active">영어강사 · 노르웨이 선박업체 근무</span>
-          <span data-lang="en">English instructor · Norwegian shipping company</span>
-          <span data-lang="jp">英語講師 · ノルウェー船舶会社勤務</span>
-          <span data-lang="cn">英语讲师 · 挪威船舶公司任职</span>
-          <span data-lang="ne">अंग्रेजी प्रशिक्षक · नर्वेली जहाज कम्पनीमा कार्यरत</span>
-          <span data-lang="id">Pengajar bahasa Inggris · Perusahaan kapal Norwegia</span>
+          <span data-lang="kr" class="active">반영구·속눈썹 전문 경력 20년</span>
+          <span data-lang="en">20 Years in Semi-Permanent &amp; Lash Specialization</span>
+          <span data-lang="jp">半永久・まつ毛専門歴20年</span>
+          <span data-lang="cn">半永久及睫毛专业经验20年</span>
         </h3>
         <p>
-          <span data-lang="kr" class="active">외국인 고객과 영어로 일해온 실무 경험이 비자 상담의 기본기가 되었습니다.</span>
-          <span data-lang="en">Years of working with foreign clients in English became the foundation of her visa consulting.</span>
-          <span data-lang="jp">外国人顧客と英語で働いてきた実務経験が、ビザ相談の基礎になりました。</span>
-          <span data-lang="cn">长期以英语与外国客户共事的实务经验，成为签证咨询的根基。</span>
-          <span data-lang="ne">विदेशी ग्राहकसँग अंग्रेजीमा काम गरेको अनुभव नै भिसा परामर्शको आधार बन्यो।</span>
-          <span data-lang="id">Pengalaman bertahun-tahun bekerja dengan klien asing dalam bahasa Inggris menjadi fondasi konsultasi visanya.</span>
+          <span data-lang="kr" class="active">반영구·속눈썹 시술 및 교육 분야에서 20년간 활동해왔습니다.</span>
+          <span data-lang="en">20 years of experience in semi-permanent makeup, lash treatments, and professional training.</span>
+          <span data-lang="jp">半永久メイク・まつ毛施術および教育分野で20年間活動してきました。</span>
+          <span data-lang="cn">在半永久化妆、睫毛施术与专业教育领域拥有20年从业经验。</span>
         </p>
       </div>
     </div>
-
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">성장</span>
+        <span data-lang="en">Growth</span>
+        <span data-lang="jp">成長</span>
+        <span data-lang="cn">成长</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">1평에서 50평까지</span>
+          <span data-lang="en">From 3㎡ to 165㎡</span>
+          <span data-lang="jp">1坪から50坪へ</span>
+          <span data-lang="cn">从1坪到50坪</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">1평 남짓한 작은 공간에서 시작해 현재는 50평 규모의 뷰티숍을 운영하고 있습니다.</span>
+          <span data-lang="en">Started in a tiny space of about 3㎡ and now operates a 165㎡ beauty shop.</span>
+          <span data-lang="jp">1坪ほどの小さな空間からスタートし、現在は50坪規模のビューティーショップを運営しています。</span>
+          <span data-lang="cn">从约1坪的小空间起步，如今经营着规模达50坪的美容工作室。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">확장</span>
+        <span data-lang="en">Expansion</span>
+        <span data-lang="jp">拡張</span>
+        <span data-lang="cn">扩展</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">가맹점 3곳 운영</span>
+          <span data-lang="en">Operated 3 Franchise Locations</span>
+          <span data-lang="jp">フランチャイズ3店舗運営</span>
+          <span data-lang="cn">运营3家加盟门店</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">이화춘뷰티랩 가맹점 3곳을 운영한 경험을 보유하고 있습니다.</span>
+          <span data-lang="en">Has experience running three LHC Beauty Lab franchise locations.</span>
+          <span data-lang="jp">イファチュンビューティーラボのフランチャイズを3店舗運営した経験があります。</span>
+          <span data-lang="cn">拥有运营三家李化春美妆实验室加盟店的经验。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">직책</span>
+        <span data-lang="en">Title</span>
+        <span data-lang="jp">役職</span>
+        <span data-lang="cn">职务</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">협회 임원 활동</span>
+          <span data-lang="en">Association Leadership</span>
+          <span data-lang="jp">協会役員活動</span>
+          <span data-lang="cn">行业协会任职</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">한국속눈썹교육협회 부회장과 글로벌 뷰티월드 부회장을 맡고 있습니다.</span>
+          <span data-lang="en">Serves as Vice President of the Korea Eyelash Education Association and Vice President of Global Beauty World.</span>
+          <span data-lang="jp">韓国まつ毛教育協会副会長、グローバルビューティーワールド副会長を務めています。</span>
+          <span data-lang="cn">现任韩国睫毛教育协会副会长、Global Beauty World副会长。</span>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- PORTFOLIO : 선택 섹션. portfolio1.jpg~N.jpg 없으면 이 <section> 통째로 삭제.
+     자동 3초 간격 슬라이드 + 터치 스와이프 + 수동 클릭 시 타이머 리셋 (표준 규칙) -->
+<section class="portfolio">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">작업 사례</span>
+    <span data-lang="en">Portfolio</span>
+    <span data-lang="jp">実績紹介</span>
+    <span data-lang="cn">作品案例</span>
+  </div>
+  <div class="portfolio-track-wrap">
+    <div class="portfolio-track" id="portfolio-track">
+      <div class="portfolio-slide"><img src="portfolio1.jpg" alt="portfolio 1"></div>
+      <div class="portfolio-slide"><img src="portfolio2.jpg" alt="portfolio 2"></div>
+    </div>
+  </div>
+  <div class="portfolio-nav">
+    <button class="portfolio-btn" onclick="portfolioSlide(-1)">‹</button>
+    <div class="portfolio-dots" id="portfolio-dots"></div>
+    <button class="portfolio-btn" onclick="portfolioSlide(1)">›</button>
+  </div>
+</section>
+
+<!-- CONTACT : 2열 그리드. 없는 항목은 <a> 통째로 삭제 (빈칸 금지) -->
 <section class="contact">
   <div class="section-label">Contact</div>
   <div class="section-title">
@@ -698,50 +700,24 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="en">Contact</span>
     <span data-lang="jp">お問い合わせ</span>
     <span data-lang="cn">联系方式</span>
-    <span data-lang="ne">सम्पर्क</span>
-    <span data-lang="id">Kontak</span>
   </div>
   <div class="contact-list">
-    <a class="contact-item" href="tel:010-9828-2212">
+    <a class="contact-item" href="tel:01038581534">
       <div class="contact-icon">📞</div>
       <div class="contact-label">
         <span data-lang="kr" class="active">전화</span>
         <span data-lang="en">Phone</span>
         <span data-lang="jp">電話</span>
         <span data-lang="cn">电话</span>
-        <span data-lang="ne">फोन</span>
-        <span data-lang="id">Telepon</span>
       </div>
-      <div class="contact-value">010-9828-2212</div>
+      <div class="contact-value">010-3858-1534</div>
     </a>
-    <a class="contact-item" href="mailto:achimgrim@naver.com">
+    <a class="contact-item" href="mailto:snpooy486@naver.com">
       <div class="contact-icon">✉️</div>
       <div class="contact-label">Email</div>
-      <div class="contact-value">achimgrim@naver.com</div>
+      <div class="contact-value">snpooy486@naver.com</div>
     </a>
-    <a class="contact-item" href="https://open.kakao.com/o/sHkiYupf" target="_blank">
-      <div class="contact-icon">💛</div>
-      <div class="contact-label">KakaoTalk</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">오픈채팅 상담</span>
-        <span data-lang="en">Open chat</span>
-        <span data-lang="jp">オープンチャット</span>
-        <span data-lang="cn">开放聊天咨询</span>
-        <span data-lang="ne">खुला च्याट</span>
-        <span data-lang="id">Open chat</span>
-      </div>
-    </a>
-    <a class="contact-item" href="https://blog.naver.com/achimgrim" target="_blank">
-      <div class="contact-icon">🌐</div>
-      <div class="contact-label">Blog</div>
-      <div class="contact-value">blog.naver.com/achimgrim</div>
-    </a>
-    <a class="contact-item" href="https://instagram.com/jung_yulchae" target="_blank">
-      <div class="contact-icon">📷</div>
-      <div class="contact-label">Instagram</div>
-      <div class="contact-value">@jung_yulchae</div>
-    </a>
-    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=jyc_kvisa" target="_blank">
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=lee-hwa-chun" target="_blank">
       <div class="contact-icon">💬</div>
       <div class="contact-label">MANDU</div>
       <div class="contact-value">
@@ -749,9 +725,132 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="en">Live translation chat</span>
         <span data-lang="jp">リアルタイム翻訳チャット</span>
         <span data-lang="cn">实时翻译聊天</span>
-        <span data-lang="ne">प्रत्यक्ष अनुवाद च्याट</span>
-        <span data-lang="id">Chat terjemahan langsung</span>
       </div>
+    </a>
+    <a class="contact-item" href="https://www.instagram.com/chunbeautylab/" target="_blank">
+      <div class="contact-icon">📷</div>
+      <div class="contact-label">Instagram</div>
+      <div class="contact-value">@chunbeautylab</div>
+    </a>
+    <a class="contact-item" href="https://www.youtube.com/@%EC%B6%98%ED%8B%B0%EB%B9%84" target="_blank">
+      <div class="contact-icon">▶️</div>
+      <div class="contact-label">YouTube</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">춘티비</span>
+        <span data-lang="en">Chun TV</span>
+        <span data-lang="jp">春TV</span>
+        <span data-lang="cn">春TV</span>
+      </div>
+    </a>
+    <a class="contact-item" href="https://share.google/G7cXOgqIvrpuMfTqL" target="_blank">
+      <div class="contact-icon">🧵</div>
+      <div class="contact-label">Threads</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">스레드</span>
+        <span data-lang="en">Threads</span>
+        <span data-lang="jp">スレッズ</span>
+        <span data-lang="cn">Threads</span>
+      </div>
+    </a>
+    <a class="contact-item" href="https://naver.me/FHVt2sGq" target="_blank">
+      <div class="contact-icon">📌</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">네이버 플레이스</span>
+        <span data-lang="en">Naver Place</span>
+        <span data-lang="jp">ネイバープレイス</span>
+        <span data-lang="cn">Naver地图店铺</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">매장 정보/리뷰</span>
+        <span data-lang="en">Store info &amp; reviews</span>
+        <span data-lang="jp">店舗情報・レビュー</span>
+        <span data-lang="cn">店铺信息与评价</span>
+      </div>
+    </a>
+    <a class="contact-item" href="https://blog.naver.com/snpooy486" target="_blank">
+      <div class="contact-icon">🌐</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">네이버 블로그</span>
+        <span data-lang="en">Naver Blog</span>
+        <span data-lang="jp">ネイバーブログ</span>
+        <span data-lang="cn">Naver博客</span>
+      </div>
+      <div class="contact-value">snpooy486</div>
+    </a>
+    <a class="contact-item" href="https://cafe.naver.com/leehwachunacademy" target="_blank">
+      <div class="contact-icon">☕</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">네이버 카페</span>
+        <span data-lang="en">Naver Cafe</span>
+        <span data-lang="jp">ネイバーカフェ</span>
+        <span data-lang="cn">Naver社群</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">아카데미 커뮤니티</span>
+        <span data-lang="en">Academy Community</span>
+        <span data-lang="jp">アカデミーコミュニティ</span>
+        <span data-lang="cn">学院社群</span>
+      </div>
+    </a>
+    <a class="contact-item" href="https://smartstore.naver.com/pinkeyelashes" target="_blank">
+      <div class="contact-icon">🛍️</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">스마트스토어</span>
+        <span data-lang="en">Smart Store</span>
+        <span data-lang="jp">スマートストア</span>
+        <span data-lang="cn">购物商城</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">제품/재료 구매</span>
+        <span data-lang="en">Shop products</span>
+        <span data-lang="jp">商品購入</span>
+        <span data-lang="cn">购买产品</span>
+      </div>
+    </a>
+    <a class="contact-item" href="https://pf.kakao.com/_xhxhxixbxj" target="_blank">
+      <div class="contact-icon">💛</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">카카오 오픈채팅</span>
+        <span data-lang="en">KakaoTalk Channel</span>
+        <span data-lang="jp">カカオトークチャンネル</span>
+        <span data-lang="cn">Kakao频道</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">상담 문의</span>
+        <span data-lang="en">Inquiries</span>
+        <span data-lang="jp">お問い合わせ</span>
+        <span data-lang="cn">咨询</span>
+      </div>
+    </a>
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%88%98%EC%98%81%EA%B5%AC%20%EC%9E%A5%EB%8C%80%EA%B3%A8%EB%A1%9C%207%EB%B2%88%EA%B8%B8%2050" target="_blank">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">본점 (탭하면 지도 열림)</span>
+        <span data-lang="en">Main Branch (tap to open map)</span>
+        <span data-lang="jp">本店（タップで地図）</span>
+        <span data-lang="cn">总店（点击打开地图）</span>
+      </div>
+      <div class="contact-value">부산광역시 수영구 장대골로 7번길 50</div>
+    </a>
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC%20%EA%B0%80%EC%BC%80%EA%B0%80%EC%9E%84%EB%A6%84%EB%A7%88%EB%A6%88" target="_blank">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">개금점 (탭하면 지도 열림)</span>
+        <span data-lang="en">Gaegeum Branch (tap to open map)</span>
+        <span data-lang="jp">開琴店（タップで地図）</span>
+        <span data-lang="cn">开琴店（点击打开地图）</span>
+      </div>
+      <div class="contact-value">부산광역시 부산진구 가야대로 450 상가동 112호</div>
+    </a>
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EC%96%91%EC%82%B0%EC%8B%9C%20%EB%AC%BC%EA%B7%88%EC%9D%8D%20%EC%A6%9D%EC%82%B0%EC%97%AD%EB%A1%9C%20146" target="_blank">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">양산점 (탭하면 지도 열림)</span>
+        <span data-lang="en">Yangsan Branch (tap to open map)</span>
+        <span data-lang="jp">梁山店（タップで地図）</span>
+        <span data-lang="cn">梁山店（点击打开地图）</span>
+      </div>
+      <div class="contact-value">양산시 물금읍 증산역로 146</div>
     </a>
   </div>
 </section>
@@ -764,37 +863,23 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="en">📞 Save contact</span>
       <span data-lang="jp">📞 連絡先を保存</span>
       <span data-lang="cn">📞 保存联系人</span>
-      <span data-lang="ne">📞 सम्पर्क सुरक्षित गर्नुहोस्</span>
-      <span data-lang="id">📞 Simpan kontak</span>
     </button>
-    <button class="btn btn-secondary" onclick="saveToCardbook({id:'jung_yulchae_kvisa',name:'정율채',nameEn:'JUNG YULCHAE',title:'대표 행정사',company:'K-VISA센터 행정사사무소',phone:'010-9828-2212',email:'achimgrim@naver.com',chapter:'BNI 자이언츠 챕터',bni:'행정사',url:window.location.href})">
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'lee-hwa-chun',name:'이화춘',nameEn:'Lee Hwa Chun',title:'대표',company:'(주)이화춘뷰티랩',phone:'010-3858-1534',email:'snpooy486@naver.com',chapter:'',bni:'',url:window.location.href})">
       <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
       <span data-lang="en">🗂️ Save to CardBook</span>
       <span data-lang="jp">🗂️ 名刺を保存</span>
       <span data-lang="cn">🗂️ 保存名片</span>
-      <span data-lang="ne">🗂️ CardBook मा सुरक्षित</span>
-      <span data-lang="id">🗂️ Simpan ke CardBook</span>
-    </button>
-    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?u=jyc_kvisa','_blank')">
-      <span data-lang="kr" class="active">💬 MANDU로 바로 연락</span>
-      <span data-lang="en">💬 Chat on MANDU</span>
-      <span data-lang="jp">💬 MANDUで連絡</span>
-      <span data-lang="cn">💬 通过MANDU联系</span>
-      <span data-lang="ne">💬 MANDU मा च्याट</span>
-      <span data-lang="id">💬 Chat via MANDU</span>
     </button>
     <button class="btn btn-share" onclick="shareCard()">
       <span data-lang="kr" class="active">📤 명함 전달하기</span>
       <span data-lang="en">📤 Share this card</span>
       <span data-lang="jp">📤 名刺を共有</span>
       <span data-lang="cn">📤 分享名片</span>
-      <span data-lang="ne">📤 यो कार्ड सेयर गर्नुहोस्</span>
-      <span data-lang="id">📤 Bagikan kartu ini</span>
     </button>
   </div>
 </div>
 
-<!-- 공유 바텀시트 -->
+<!-- 공유 바텀시트 (Web Share API 미지원 브라우저 폴백) -->
 <div class="share-sheet" id="shareSheet">
   <div class="share-backdrop" onclick="closeShare()"></div>
   <div class="share-panel">
@@ -818,25 +903,21 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   </div>
 </div>
 
+<!-- 만두 연결 (카드 주인 전용, 방문자는 무시해도 되는 위치) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(201,168,76,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
-  <div class="company">
-    <span data-lang="kr" class="active">K-VISA센터 행정사사무소</span>
-    <span data-lang="en">K-VISA Center</span>
-    <span data-lang="jp">K-VISAセンター行政士事務所</span>
-    <span data-lang="cn">K-VISA中心行政士事务所</span>
-    <span data-lang="ne">K-VISA केन्द्र</span>
-    <span data-lang="id">K-VISA Center</span>
-  </div>
-  <div class="gov">
-    <span data-lang="kr" class="active">법무부 등록 출입국민원 대행기관 (13101070338)</span>
-    <span data-lang="en">Immigration agency registered with the Ministry of Justice (13101070338)</span>
-    <span data-lang="jp">法務部登録 出入国民願代行機関 (13101070338)</span>
-    <span data-lang="cn">法务部登记出入境民愿代办机构 (13101070338)</span>
-    <span data-lang="ne">न्याय मन्त्रालयमा दर्ता (13101070338)</span>
-    <span data-lang="id">Terdaftar di Kementerian Kehakiman (13101070338)</span>
-  </div>
-  <div class="slogan-footer">Your tomorrow, my commitment.</div>
+  <img class="logo-img" src="logo.png" alt="LEEHWACHUN 春">
+  <div class="slogan-footer">Two decades of experience, designed for one person at a time.</div>
 </footer>
 
 <script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
@@ -851,18 +932,18 @@ function setLang(lang) {
   });
 }
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:정율채\nORG:K-VISA센터 행정사사무소\nTITLE:대표 행정사\nTEL:010-9828-2212\nEMAIL:achimgrim@naver.com\nURL:https://jinjjabg-hub.github.io/BNI-GIANTS/정율채/\nEND:VCARD`;
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:이화춘\nORG:(주)이화춘뷰티랩\nTITLE:대표\nTEL:010-3858-1534\nEMAIL:snpooy486@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/이화춘/\nADR:;;부산광역시 수영구 장대골로 7번길 50;;;;\nEND:VCARD`;
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'jung_yulchae.vcf';
+  a.download = '이화춘.vcf';
   a.click();
 }
 
 /* ── 명함 전달하기 ── */
-const CARD_URL = 'https://jinjjabg-hub.github.io/BNI-GIANTS/%EC%A0%95%EC%9C%A8%EC%B1%84/';
-const CARD_TITLE = '정율채 | K-VISA센터 행정사사무소';
-const CARD_TEXT = '외국인 투자·취업·결혼비자 전문 행정사 정율채입니다.';
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EC%9D%B4%ED%99%94%EC%B6%98/';
+const CARD_TITLE = '이화춘 | (주)이화춘뷰티랩';
+const CARD_TEXT = '이화춘뷰티랩 이화춘 대표의 디지털 명함입니다. 20년 경력의 반영구·속눈썹 전문가를 소개합니다.';
 
 function shareCard() {
   if (navigator.share) {
@@ -891,36 +972,126 @@ function copyLink() {
   closeShare();
 }
 function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
-</script>
-<script>
-(function(){
-  var LOG_URL = "https://script.google.com/macros/s/AKfycbz5VDYuWaAQiE9jxZ9r4dew_DgOyMuB_lj1P0K9YCtY1APweG-iKg7T5IZHqylLojbE/exec";
-  var SLUG = document.title;
-  function dicaLog(type){
-    try { fetch(LOG_URL + "?slug=" + encodeURIComponent(SLUG) + "&event=" + type, {mode:"no-cors"}); } catch(e){}
+
+/* ── PORTFOLIO 자동 슬라이드 (표준: 3초 간격, 터치 스와이프, 수동 조작 시 타이머 리셋) ──
+   portfolio 섹션이 없는 명함(HTML에서 <section class="portfolio"> 삭제한 경우)에는
+   아래 코드가 아무 일도 하지 않고 조용히 종료된다. */
+(function () {
+  const track = document.getElementById('portfolio-track');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.portfolio-slide');
+  const total = slides.length;
+  const dotsWrap = document.getElementById('portfolio-dots');
+  let idx = 0, timer = null;
+
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'portfolio-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => { go(i); reset(); };
+    dotsWrap.appendChild(dot);
   }
-  dicaLog('view');
 
-  document.addEventListener('DOMContentLoaded', function(){
-    var saveBtn = document.querySelector('.btn-primary');
-    var cardBtn = document.querySelector('.btn-secondary');
-    if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+  function render() {
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dotsWrap.querySelectorAll('.portfolio-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  function go(i) { idx = (i + total) % total; render(); }
+  window.portfolioSlide = function (dir) { go(idx + dir); reset(); };
+  function auto() { timer = setTimeout(() => { go(idx + 1); auto(); }, 3000); }
+  function reset() { clearTimeout(timer); auto(); }
 
-    var statBtn = document.createElement('div');
-    statBtn.textContent = '📊 카드 현황 보기';
-    statBtn.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.65);color:#fff;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;z-index:9999;font-family:sans-serif;box-shadow:0 2px 10px rgba(0,0,0,0.3);';
-    statBtn.onclick = function(){
-      statBtn.style.cursor = 'default';
-      statBtn.textContent = '불러오는 중...';
-      fetch(LOG_URL + "?action=stats&slug=" + encodeURIComponent(SLUG))
-        .then(function(r){ return r.json(); })
-        .then(function(d){
-          statBtn.textContent = '조회 ' + d.view + '회 · 저장 ' + d.save + '회';
-        });
-    };
-    document.body.appendChild(statBtn);
-  });
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; clearTimeout(timer); }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
+    auto();
+  }, { passive: true });
+
+  auto();
+})();
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ──────────────────────────
+   구글 로그인 1번 → manduid_index/lee-hwa-chun 문서에 uid 자동 등록.
+   MANDU 링크(?u=lee-hwa-chun)는 카드 제작 시점에 이미 고정돼 있으므로
+   *아무도(송승훈 포함) 링크를 중간에서 복사·전달·붙여넣기 할 필요가 없다.*
+   save-to-cardbook.js가 이미 firebase를 로드해두므로 그걸 재사용한다. */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'lee-hwa-chun';
+  const db = firebase.firestore();
+
+  // 이미 다른 uid로 연결돼 있으면 덮어쓰지 않음 (실수·장난 클릭으로부터 카드 보호)
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'lee-hwa-chun');
+      await auth.signInWithRedirect(provider);
+      return; // 리다이렉트 후 아래 즉시실행 블록에서 이어짐
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+// 모바일 리다이렉트 로그인 복귀 처리
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
 })();
 </script>
 </body>
