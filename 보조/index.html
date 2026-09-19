@@ -254,25 +254,26 @@ section { padding: 40px 20px; }
 .contact-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 8px;
 }
 .contact-item {
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 8px; text-align: center;
-  background: #fff; border-radius: 12px;
-  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
-  text-decoration: none; min-height: 100px;
+  display: flex; flex-direction: row;
+  align-items: center; justify-content: flex-start;
+  gap: 10px; text-align: left;
+  background: #fff; border-radius: 10px;
+  padding: 9px 12px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: unset;
 }
 .contact-item:active { transform: scale(0.97); }
 .contact-icon {
-  width: 42px; height: 42px; min-width:42px;
+  width: 30px; height: 30px; min-width:30px;
   border-radius: 50%; background: var(--navy);
   display: flex; align-items:center; justify-content:center;
-  font-size: 18px; flex-shrink: 0;
+  font-size: 13px; flex-shrink: 0;
 }
-.contact-label { font-size: 10px; color: #999; }
-.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+.contact-label { font-size: 9px; color: #999; line-height:1.3; }
+.contact-value { font-size: 11px; font-weight: 600; color: var(--text-light); line-height: 1.3; word-break: break-all; }
+.contact-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
 
 /* ── ACTION ── */
 .action { background: var(--navy2); padding: 32px 20px; }
@@ -681,8 +682,27 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   </div>
   <div class="portfolio-track-wrap">
     <div class="portfolio-track" id="portfolio-track">
+      <div class="portfolio-slide"><img src="portfolio0.jpg" alt="portfolio 0"></div>
       <div class="portfolio-slide"><img src="portfolio1.jpg" alt="portfolio 1"></div>
       <div class="portfolio-slide"><img src="portfolio2.jpg" alt="portfolio 2"></div>
+      <div class="portfolio-slide"><img src="portfolio3.jpg" alt="portfolio 3"></div>
+      <div class="portfolio-slide"><img src="portfolio4.jpg" alt="portfolio 4"></div>
+      <div class="portfolio-slide"><img src="portfolio5.jpg" alt="portfolio 5"></div>
+      <div class="portfolio-slide"><img src="portfolio6.jpg" alt="portfolio 6"></div>
+      <div class="portfolio-slide"><img src="portfolio7.jpg" alt="portfolio 7"></div>
+      <div class="portfolio-slide"><img src="portfolio8.jpg" alt="portfolio 8"></div>
+      <div class="portfolio-slide"><img src="portfolio9.jpg" alt="portfolio 9"></div>
+      <div class="portfolio-slide"><img src="portfolio10.jpg" alt="portfolio 10"></div>
+      <div class="portfolio-slide"><img src="portfolio11.jpg" alt="portfolio 11"></div>
+      <div class="portfolio-slide"><img src="portfolio12.jpg" alt="portfolio 12"></div>
+      <div class="portfolio-slide"><img src="portfolio13.jpg" alt="portfolio 13"></div>
+      <div class="portfolio-slide"><img src="portfolio14.jpg" alt="portfolio 14"></div>
+      <div class="portfolio-slide"><img src="portfolio15.jpg" alt="portfolio 15"></div>
+      <div class="portfolio-slide"><img src="portfolio16.jpg" alt="portfolio 16"></div>
+      <div class="portfolio-slide"><img src="portfolio17.jpg" alt="portfolio 17"></div>
+      <div class="portfolio-slide"><img src="portfolio18.jpg" alt="portfolio 18"></div>
+      <div class="portfolio-slide"><img src="portfolio19.jpg" alt="portfolio 19"></div>
+      <div class="portfolio-slide"><img src="portfolio20.jpg" alt="portfolio 20"></div>
     </div>
   </div>
   <div class="portfolio-nav">
@@ -704,57 +724,70 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="contact-list">
     <a class="contact-item" href="tel:01038581534">
       <div class="contact-icon">📞</div>
-      <div class="contact-label">
+      <div class="contact-text">
+        <div class="contact-label">
         <span data-lang="kr" class="active">전화</span>
         <span data-lang="en">Phone</span>
         <span data-lang="jp">電話</span>
         <span data-lang="cn">电话</span>
       </div>
       <div class="contact-value">010-3858-1534</div>
+      </div>
     </a>
     <a class="contact-item" href="mailto:snpooy486@naver.com">
       <div class="contact-icon">✉️</div>
-      <div class="contact-label">Email</div>
+      <div class="contact-text">
+        <div class="contact-label">Email</div>
       <div class="contact-value">snpooy486@naver.com</div>
+      </div>
     </a>
     <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=lee-hwa-chun" target="_blank">
       <div class="contact-icon">💬</div>
-      <div class="contact-label">MANDU</div>
+      <div class="contact-text">
+        <div class="contact-label">MANDU</div>
       <div class="contact-value">
         <span data-lang="kr" class="active">실시간 번역 메신저</span>
         <span data-lang="en">Live translation chat</span>
         <span data-lang="jp">リアルタイム翻訳チャット</span>
         <span data-lang="cn">实时翻译聊天</span>
       </div>
+      </div>
     </a>
     <a class="contact-item" href="https://www.instagram.com/chunbeautylab/" target="_blank">
       <div class="contact-icon">📷</div>
-      <div class="contact-label">Instagram</div>
+      <div class="contact-text">
+        <div class="contact-label">Instagram</div>
       <div class="contact-value">@chunbeautylab</div>
+      </div>
     </a>
     <a class="contact-item" href="https://www.youtube.com/@%EC%B6%98%ED%8B%B0%EB%B9%84" target="_blank">
       <div class="contact-icon">▶️</div>
-      <div class="contact-label">YouTube</div>
+      <div class="contact-text">
+        <div class="contact-label">YouTube</div>
       <div class="contact-value">
         <span data-lang="kr" class="active">춘티비</span>
         <span data-lang="en">Chun TV</span>
         <span data-lang="jp">春TV</span>
         <span data-lang="cn">春TV</span>
       </div>
+      </div>
     </a>
     <a class="contact-item" href="https://share.google/G7cXOgqIvrpuMfTqL" target="_blank">
       <div class="contact-icon">🧵</div>
-      <div class="contact-label">Threads</div>
+      <div class="contact-text">
+        <div class="contact-label">Threads</div>
       <div class="contact-value">
         <span data-lang="kr" class="active">스레드</span>
         <span data-lang="en">Threads</span>
         <span data-lang="jp">スレッズ</span>
         <span data-lang="cn">Threads</span>
       </div>
+      </div>
     </a>
     <a class="contact-item" href="https://naver.me/FHVt2sGq" target="_blank">
       <div class="contact-icon">📌</div>
-      <div class="contact-label">
+      <div class="contact-text">
+        <div class="contact-label">
         <span data-lang="kr" class="active">네이버 플레이스</span>
         <span data-lang="en">Naver Place</span>
         <span data-lang="jp">ネイバープレイス</span>
@@ -766,20 +799,24 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="jp">店舗情報・レビュー</span>
         <span data-lang="cn">店铺信息与评价</span>
       </div>
+      </div>
     </a>
     <a class="contact-item" href="https://blog.naver.com/snpooy486" target="_blank">
       <div class="contact-icon">🌐</div>
-      <div class="contact-label">
+      <div class="contact-text">
+        <div class="contact-label">
         <span data-lang="kr" class="active">네이버 블로그</span>
         <span data-lang="en">Naver Blog</span>
         <span data-lang="jp">ネイバーブログ</span>
         <span data-lang="cn">Naver博客</span>
       </div>
       <div class="contact-value">snpooy486</div>
+      </div>
     </a>
     <a class="contact-item" href="https://cafe.naver.com/leehwachunacademy" target="_blank">
       <div class="contact-icon">☕</div>
-      <div class="contact-label">
+      <div class="contact-text">
+        <div class="contact-label">
         <span data-lang="kr" class="active">네이버 카페</span>
         <span data-lang="en">Naver Cafe</span>
         <span data-lang="jp">ネイバーカフェ</span>
@@ -791,10 +828,12 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="jp">アカデミーコミュニティ</span>
         <span data-lang="cn">学院社群</span>
       </div>
+      </div>
     </a>
     <a class="contact-item" href="https://smartstore.naver.com/pinkeyelashes" target="_blank">
       <div class="contact-icon">🛍️</div>
-      <div class="contact-label">
+      <div class="contact-text">
+        <div class="contact-label">
         <span data-lang="kr" class="active">스마트스토어</span>
         <span data-lang="en">Smart Store</span>
         <span data-lang="jp">スマートストア</span>
@@ -806,10 +845,12 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="jp">商品購入</span>
         <span data-lang="cn">购买产品</span>
       </div>
+      </div>
     </a>
     <a class="contact-item" href="https://pf.kakao.com/_xhxhxixbxj" target="_blank">
       <div class="contact-icon">💛</div>
-      <div class="contact-label">
+      <div class="contact-text">
+        <div class="contact-label">
         <span data-lang="kr" class="active">카카오 오픈채팅</span>
         <span data-lang="en">KakaoTalk Channel</span>
         <span data-lang="jp">カカオトークチャンネル</span>
@@ -821,36 +862,43 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="jp">お問い合わせ</span>
         <span data-lang="cn">咨询</span>
       </div>
+      </div>
     </a>
     <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%88%98%EC%98%81%EA%B5%AC%20%EC%9E%A5%EB%8C%80%EA%B3%A8%EB%A1%9C%207%EB%B2%88%EA%B8%B8%2050" target="_blank">
       <div class="contact-icon">📍</div>
-      <div class="contact-label">
+      <div class="contact-text">
+        <div class="contact-label">
         <span data-lang="kr" class="active">본점 (탭하면 지도 열림)</span>
         <span data-lang="en">Main Branch (tap to open map)</span>
         <span data-lang="jp">本店（タップで地図）</span>
         <span data-lang="cn">总店（点击打开地图）</span>
       </div>
       <div class="contact-value">부산광역시 수영구 장대골로 7번길 50</div>
+      </div>
     </a>
     <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC%20%EA%B0%80%EC%BC%80%EA%B0%80%EC%9E%84%EB%A6%84%EB%A7%88%EB%A6%88" target="_blank">
       <div class="contact-icon">📍</div>
-      <div class="contact-label">
+      <div class="contact-text">
+        <div class="contact-label">
         <span data-lang="kr" class="active">개금점 (탭하면 지도 열림)</span>
         <span data-lang="en">Gaegeum Branch (tap to open map)</span>
         <span data-lang="jp">開琴店（タップで地図）</span>
         <span data-lang="cn">开琴店（点击打开地图）</span>
       </div>
       <div class="contact-value">부산광역시 부산진구 가야대로 450 상가동 112호</div>
+      </div>
     </a>
     <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EC%96%91%EC%82%B0%EC%8B%9C%20%EB%AC%BC%EA%B7%88%EC%9D%8D%20%EC%A6%9D%EC%82%B0%EC%97%AD%EB%A1%9C%20146" target="_blank">
       <div class="contact-icon">📍</div>
-      <div class="contact-label">
+      <div class="contact-text">
+        <div class="contact-label">
         <span data-lang="kr" class="active">양산점 (탭하면 지도 열림)</span>
         <span data-lang="en">Yangsan Branch (tap to open map)</span>
         <span data-lang="jp">梁山店（タップで地図）</span>
         <span data-lang="cn">梁山店（点击打开地图）</span>
       </div>
       <div class="contact-value">양산시 물금읍 증산역로 146</div>
+      </div>
     </a>
   </div>
 </section>
