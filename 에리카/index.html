@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>김득분 | 한화금융서비스</title>
+<meta property="og:title" content="김득분 | FP · 한화금융서비스">
+<meta property="og:description" content="26년간 헤어디자이너로 고객을 만나며 사람과 신뢰를 먼저 배웠습니다. 지금은 보험 FP로서 그 경험을 살려, 고객님의 보장과 미래를 함께 살펴드리고 있습니다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%EB%93%9D%EB%B6%84/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/김득분/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #16302a;
+  --navy2: #1c3d34;
+  --navy3: #234a3f;
+  --gold: #c4a668;
+  --gold2: #ddbf85;
+  --light: #f7f2e7;
+  --text-dark: #f2ede0;
+  --text-light: #262620;
+  --muted-dark: #a4926a;
+  --muted-light: #6b5c3a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(22,48,42,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(196,166,104,0.25);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(196,166,104,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(22,48,42,0.1) 0%,
+    rgba(22,48,42,0.15) 40%,
+    rgba(22,48,42,0.75) 75%,
+    rgba(22,48,42,0.95) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(196,166,104,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(196,166,104,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p strong { color: var(--navy); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(196,166,104,0.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.8; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+
+/* ── CAREER ── */
+.career {
+  position: relative;
+  background-color: #f2efe2;
+}
+.career .section-label { position: relative; z-index:1; color: var(--muted-light); }
+.career .section-title { color: var(--text-light); position: relative; z-index:1; }
+.career-list { display: flex; flex-direction: column; gap:18px; position: relative; z-index:1; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(196,166,104,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">한화금융서비스</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="hero.png" alt="김득분">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">보장분석 FP</span>
+      <span data-lang="en">Insurance Planning FP</span>
+      <span data-lang="jp">保障分析FP</span>
+      <span data-lang="cn">保障分析FP</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">김 득 분</span>
+      <span data-lang="en">KIM DEUKBUN</span>
+      <span data-lang="jp">キム・ドゥクブン</span>
+      <span data-lang="cn">金得分</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">FP · 한화금융서비스</span>
+      <span data-lang="en">FP · Hanwha Financial Service</span>
+      <span data-lang="jp">FP・ハンファ金融サービス</span>
+      <span data-lang="cn">FP · 韩华金融服务</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="김득분">
+  </div>
+  <div class="profile-info">
+    <h2>김득분 · KIM DEUKBUN</h2>
+    <p>
+      <span data-lang="kr" class="active">보장분석 FP · 헤어디자이너 26년</span>
+      <span data-lang="en">Insurance Planning FP · 26yrs Hair Designer</span>
+      <span data-lang="jp">保障分析FP・美容師歴26年</span>
+      <span data-lang="cn">保障分析FP · 26年美发经验</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">한 번의 계약이 아니라, 오래가는 인연을 만듭니다</span>
+    <span data-lang="en">Not just a policy — a relationship that lasts.</span>
+    <span data-lang="jp">一度の契約より、長く続く縁を大切にします</span>
+    <span data-lang="cn">不止一次签约,更愿与您长久相伴</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">26년간 헤어디자이너로 고객을 만나며 사람과 신뢰를 먼저 배웠습니다. 지금은 보험 FP로서 그 경험을 살려, 고객님의 보장과 미래를 함께 살펴드리고 있습니다. 한 번의 계약으로 끝내지 않고, 오래도록 곁에서 필요한 부분을 꼼꼼히 챙겨드리는 것이 제 방식입니다.</span>
+    <span data-lang="en">For 26 years, I met clients as a hair designer and learned that trust comes first. Now, as an insurance FP, I bring that experience to reviewing your coverage and future together. I don't stop at a single contract — I stay close and take care of what you need, for the long run.</span>
+    <span data-lang="jp">26年間、美容師として多くのお客様と出会い、何より信頼が大切だと学びました。今はFPとしてその経験を活かし、お客様の保障と将来を一緒に見つめています。一度の契約で終わらせず、長く寄り添いながら必要な部分を丁寧にサポートします。</span>
+    <span data-lang="cn">26年来,我以美发师的身份与顾客相遇,懂得了信任才是根本。如今作为保险FP,我把这份经验带入保障与未来规划的咨询中。不止于一次签约,而是长久相伴,细心照顾您所需要的一切。</span>
+  </p>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 김득분인가</span>
+    <span data-lang="en">Why Kim Deukbun?</span>
+    <span data-lang="jp">なぜ金得分なのか</span>
+    <span data-lang="cn">为什么选择金得分</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">① 26년, 사람을 마주해 온 시간</span>
+        <span data-lang="en">① 26 Years Facing People</span>
+        <span data-lang="jp">① 26年、人と向き合ってきた時間</span>
+        <span data-lang="cn">① 26年,与人相对的时光</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">오랫동안 헤어디자이너로 고객을 만나며 쌓아온 건 손기술이 아니라 신뢰였습니다. 그 신뢰를 바탕으로 보장 상담을 해드립니다.</span>
+        <span data-lang="en">What I built over 26 years as a hair designer wasn't just skill — it was trust. I bring that same trust into every coverage consultation.</span>
+        <span data-lang="jp">長年美容師としてお客様と向き合う中で培ったのは技術以上に信頼でした。その信頼を基盤に保障のご相談を行います。</span>
+        <span data-lang="cn">长期担任美发师积累下来的不只是手艺,更是信任。我将这份信任带入每一次保障咨询。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">② 가입보다 진단이 먼저</span>
+        <span data-lang="en">② Diagnosis Before Enrollment</span>
+        <span data-lang="jp">② 加入より先に診断</span>
+        <span data-lang="cn">② 先诊断,后投保</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">새 보험을 권하기 전에 기존 보장부터 꼼꼼히 살펴봅니다. 부족한 부분만 정확히 채워드립니다.</span>
+        <span data-lang="en">Before suggesting a new policy, I carefully review what you already have. I fill only what's actually missing.</span>
+        <span data-lang="jp">新しい保険をお勧めする前に、既存の保障をしっかり確認します。不足している部分だけを的確に補います。</span>
+        <span data-lang="cn">在推荐新保单之前,我会先仔细核查您现有的保障,只补充真正不足的部分。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">③ 계약 이후가 진짜 시작</span>
+        <span data-lang="en">③ It Starts After the Contract</span>
+        <span data-lang="jp">③ 契約後こそが本当のスタート</span>
+        <span data-lang="cn">③ 签约之后才是开始</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">한 번의 계약으로 끝내지 않고, 오래 인연을 이어가며 필요한 순간마다 챙겨드립니다.</span>
+        <span data-lang="en">A signed policy isn't the end. I stay in touch and take care of what you need, whenever you need it.</span>
+        <span data-lang="jp">一度の契約で終わらせず、長くご縁をつなぎながら必要な時に必要なサポートをいたします。</span>
+        <span data-lang="cn">签约并非终点,我会持续保持联系,在您需要的时候提供所需的帮助。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">What Makes Us Different</span>
+    <span data-lang="jp">差別化ポイント</span>
+    <span data-lang="cn">差异化优势</span>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">미용실에서 다져온 대면 신뢰</span>
+        <span data-lang="en">Trust Built Face-to-Face</span>
+        <span data-lang="jp">美容室で培った対面での信頼</span>
+        <span data-lang="cn">在美发店锤炼出的面对面信任</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">매일 얼굴 보고 이야기 나누며 26년을 보낸 만큼, 보험 이야기도 부담 없이 편하게 나눌 수 있습니다.</span>
+        <span data-lang="en">After 26 years of daily conversations at the salon, talking about insurance with me feels just as easy and comfortable.</span>
+        <span data-lang="jp">26年間、毎日お客様と顔を合わせてきた経験があるからこそ、保険のお話も気軽にしていただけます。</span>
+        <span data-lang="cn">26年来每天与顾客面对面交流,谈保险时您也能同样轻松自在。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">영업이 아니라 점검</span>
+        <span data-lang="en">A Check-up, Not a Sales Pitch</span>
+        <span data-lang="jp">営業ではなく点検から</span>
+        <span data-lang="cn">不做推销,先做检查</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">상품을 팔기보다, 지금 가진 보장이 제대로 되어 있는지부터 봐 드립니다.</span>
+        <span data-lang="en">Rather than selling a product, I start by checking whether your current coverage is actually working for you.</span>
+        <span data-lang="jp">商品を売り込む前に、今の保障がきちんと機能しているかを確認します。</span>
+        <span data-lang="cn">比起推销产品,我会先确认您现有的保障是否真正到位。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">단골처럼 이어가는 관계</span>
+        <span data-lang="en">A Relationship Like a Regular</span>
+        <span data-lang="jp">常連のように続く関係</span>
+        <span data-lang="cn">如老顾客般延续的关系</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">한번 정리해드리면 그걸로 끝이 아니라, 필요할 때마다 편하게 연락 주고받는 사이로 이어갑니다.</span>
+        <span data-lang="en">Once I help sort things out, it doesn't end there — we stay in easy contact whenever you need me.</span>
+        <span data-lang="jp">一度整理して終わりではなく、必要な時に気軽に連絡し合える関係を続けます。</span>
+        <span data-lang="cn">帮您整理一次并非结束,此后有需要随时都能轻松联系。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的客户</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+        <span data-lang="kr" class="active">보험을 여러 개 가입했지만, 내 보장이 제대로 되어 있는지 궁금하신 분</span>
+        <span data-lang="en">Someone with several policies who's unsure if their coverage is actually right</span>
+        <span data-lang="jp">複数の保険に加入しているが、保障が本当に十分か気になる方</span>
+        <span data-lang="cn">已投保多份保险,但不确定保障是否到位的朋友</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+        <span data-lang="kr" class="active">보험료가 부담되거나 오래된 보험을 한번 정리해서 점검받고 싶으신 분</span>
+        <span data-lang="en">Someone whose premiums feel heavy, or who wants an old policy reviewed</span>
+        <span data-lang="jp">保険料が負担だったり、古い保険を一度整理・点検したい方</span>
+        <span data-lang="cn">觉得保费负担重,或想整理检查旧保单的朋友</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+        <span data-lang="kr" class="active">40~60대로, 암·수술·간병·노후 보장을 미리 준비하고 싶으신 분</span>
+        <span data-lang="en">Someone in their 40s–60s preparing ahead for cancer, surgery, care, or retirement coverage</span>
+        <span data-lang="jp">40〜60代で、がん・手術・介護・老後の保障を事前に準備したい方</span>
+        <span data-lang="cn">40至60岁,希望提前准备癌症、手术、护理、养老保障的朋友</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 전문 분야</span>
+    <span data-lang="en">Career &amp; Expertise</span>
+    <span data-lang="jp">経歴・専門分野</span>
+    <span data-lang="cn">经历与专业领域</span>
+  </div>
+  <div class="career-list">
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">현재</span>
+        <span data-lang="en">Current</span>
+        <span data-lang="jp">現在</span>
+        <span data-lang="cn">现在</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">FP · 한화금융서비스</span>
+          <span data-lang="en">FP · Hanwha Financial Service</span>
+          <span data-lang="jp">FP・ハンファ金融サービス</span>
+          <span data-lang="cn">FP · 韩华金融服务</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">보장분석·설계 상담, 3년째 활동 중</span>
+          <span data-lang="en">Coverage analysis &amp; planning consultation, 3rd year</span>
+          <span data-lang="jp">保障分析・設計コンサルティング、3年目</span>
+          <span data-lang="cn">保障分析与规划咨询,从业第3年</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">경력</span>
+        <span data-lang="en">Career</span>
+        <span data-lang="jp">経歴</span>
+        <span data-lang="cn">经历</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">헤어디자이너 26년 · 에리카헤어 사상덕포점 원장</span>
+          <span data-lang="en">26yrs Hair Designer · Director, Erica Hair Sasang-Deokpo</span>
+          <span data-lang="jp">美容師歴26年・エリカヘア沙上徳浦店 院長</span>
+          <span data-lang="cn">26年美发师经历 · Erica Hair沙上德浦店院长</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">오랜 시간 고객을 직접 만나며 쌓은 대면 신뢰가 지금의 상담 방식으로 이어지고 있습니다.</span>
+          <span data-lang="en">The face-to-face trust built over many years now shapes the way I consult today.</span>
+          <span data-lang="jp">長年お客様と直接向き合って培った信頼が、今の相談スタイルにつながっています。</span>
+          <span data-lang="cn">多年来与顾客面对面积累的信任,延续到了今天的咨询方式中。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">강점</span>
+        <span data-lang="en">Strength</span>
+        <span data-lang="jp">強み</span>
+        <span data-lang="cn">优势</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">사람 중심의 꾸준한 관계 관리</span>
+          <span data-lang="en">People-First, Long-Term Care</span>
+          <span data-lang="jp">人中心の継続的な関係管理</span>
+          <span data-lang="cn">以人为本的持续关系维护</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">한 번의 만남으로 끝내지 않고, 오래도록 곁에서 필요한 부분을 챙겨드립니다.</span>
+          <span data-lang="en">I don't stop at one meeting — I stay close and take care of what you need over time.</span>
+          <span data-lang="jp">一度の出会いで終わらせず、長くそばで必要な部分をサポートします。</span>
+          <span data-lang="cn">不止于一次见面,而是长期在您身边,照顾您所需要的一切。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">이력</span>
+        <span data-lang="en">Featured</span>
+        <span data-lang="jp">実績</span>
+        <span data-lang="cn">履历</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">SNS 소개 이력</span>
+          <span data-lang="en">Featured on Social Media</span>
+          <span data-lang="jp">SNSでの紹介歴</span>
+          <span data-lang="cn">社交媒体报道经历</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">인스타그램 릴스를 통해 소개된 바 있습니다.</span>
+          <span data-lang="en">Featured in an Instagram reel.</span>
+          <span data-lang="jp">インスタグラムのリールで紹介されたことがあります。</span>
+          <span data-lang="cn">曾在Instagram短视频中被报道介绍。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-3581-2832">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-3581-2832</div>
+    </a>
+    <a class="contact-item" href="mailto:cg1523@naver.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">cg1523@naver.com</div>
+    </a>
+    <a class="contact-item" href="https://m.blog.naver.com/cg1523" target="_blank">
+      <div class="contact-icon">🌐</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">블로그</span>
+        <span data-lang="en">Blog</span>
+        <span data-lang="jp">ブログ</span>
+        <span data-lang="cn">博客</span>
+      </div>
+      <div class="contact-value">Naver Blog</div>
+    </a>
+    <a class="contact-item" href="https://www.instagram.com/deuk_boon" target="_blank">
+      <div class="contact-icon">📷</div>
+      <div class="contact-label">Instagram</div>
+      <div class="contact-value">@deuk_boon</div>
+    </a>
+    <a class="contact-item" href="https://www.threads.com/@deuk_boon" target="_blank">
+      <div class="contact-icon">🧵</div>
+      <div class="contact-label">Threads</div>
+      <div class="contact-value">@deuk_boon</div>
+    </a>
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=kim-deukbun" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Live translation chat</span>
+        <span data-lang="jp">リアルタイム翻訳チャット</span>
+        <span data-lang="cn">实时翻译聊天</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'kim-deukbun',name:'김득분',nameEn:'KIM DEUKBUN',title:'FP',company:'한화금융서비스',phone:'010-3581-2832',email:'cg1523@naver.com',chapter:'',bni:'',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ 名刺を保存</span>
+      <span data-lang="cn">🗂️ 保存名片</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="jp">📤 名刺を共有</span>
+      <span data-lang="cn">📤 分享名片</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#16302a;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- 만두 연결 -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(196,166,104,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">한화금융서비스</span>
+    <span data-lang="en">Hanwha Financial Service</span>
+    <span data-lang="jp">ハンファ金融サービス</span>
+    <span data-lang="cn">韩华金融服务</span>
+  </div>
+  <div class="slogan-footer">Not just a policy — a relationship that lasts.</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:김득분\nORG:한화금융서비스\nTITLE:FP\nTEL:010-3581-2832\nEMAIL:cg1523@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/김득분/\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '김득분.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%EB%93%9D%EB%B6%84/';
+const CARD_TITLE = '김득분 | 한화금융서비스';
+const CARD_TEXT = '보장분석 FP 김득분입니다. 명함을 확인해 주세요.';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── 만두 원클릭 연결 ── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'kim-deukbun';
+  const db = firebase.firestore();
+
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'kim-deukbun');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
+</script>
+</body>
+</html>
