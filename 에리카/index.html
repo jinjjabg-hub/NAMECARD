@@ -6,11 +6,11 @@
 <title>김득분 | 한화금융서비스</title>
 <meta property="og:title" content="김득분 | FP · 한화금융서비스">
 <meta property="og:description" content="26년간 헤어디자이너로 고객을 만나며 사람과 신뢰를 먼저 배웠습니다. 지금은 보험 FP로서 그 경험을 살려, 고객님의 보장과 미래를 함께 살펴드리고 있습니다.">
-<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%EB%93%9D%EB%B6%84/og.png">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EC%97%90%EB%A6%AC%EC%B9%B4/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/김득분/">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/에리카/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -655,7 +655,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-label">Threads</div>
       <div class="contact-value">@deuk_boon</div>
     </a>
-    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=kim-deukbun" target="_blank">
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=erica" target="_blank">
       <div class="contact-icon">💬</div>
       <div class="contact-label">MANDU</div>
       <div class="contact-value">
@@ -677,7 +677,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="jp">📞 連絡先を保存</span>
       <span data-lang="cn">📞 保存联系人</span>
     </button>
-    <button class="btn btn-secondary" onclick="saveToCardbook({id:'kim-deukbun',name:'김득분',nameEn:'KIM DEUKBUN',title:'FP',company:'한화금융서비스',phone:'010-3581-2832',email:'cg1523@naver.com',chapter:'',bni:'',url:window.location.href})">
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'erica',name:'김득분',nameEn:'KIM DEUKBUN',title:'FP',company:'한화금융서비스',phone:'010-3581-2832',email:'cg1523@naver.com',chapter:'',bni:'',url:window.location.href})">
       <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
       <span data-lang="en">🗂️ Save to CardBook</span>
       <span data-lang="jp">🗂️ 名刺を保存</span>
@@ -750,7 +750,7 @@ function setLang(lang) {
   });
 }
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:김득분\nORG:한화금융서비스\nTITLE:FP\nTEL:010-3581-2832\nEMAIL:cg1523@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/김득분/\nEND:VCARD`;
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:김득분\nORG:한화금융서비스\nTITLE:FP\nTEL:010-3581-2832\nEMAIL:cg1523@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/에리카/\nEND:VCARD`;
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -759,7 +759,7 @@ function saveContact() {
 }
 
 /* ── 명함 전달하기 ── */
-const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%EB%93%9D%EB%B6%84/';
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EC%97%90%EB%A6%AC%EC%B9%B4/';
 const CARD_TITLE = '김득분 | 한화금융서비스';
 const CARD_TEXT = '보장분석 FP 김득분입니다. 명함을 확인해 주세요.';
 
@@ -802,7 +802,7 @@ async function _manduWaitFirebase(maxTries) {
 }
 
 async function _manduFinishActivate(user) {
-  const slug = 'kim-deukbun';
+  const slug = 'erica';
   const db = firebase.firestore();
 
   const existing = await db.collection('manduid_index').doc(slug).get();
@@ -843,7 +843,7 @@ async function activateMandu() {
     const provider = new firebase.auth.GoogleAuthProvider();
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (isMobile) {
-      sessionStorage.setItem('_manduPendingSlug', 'kim-deukbun');
+      sessionStorage.setItem('_manduPendingSlug', 'erica');
       await auth.signInWithRedirect(provider);
       return;
     }
