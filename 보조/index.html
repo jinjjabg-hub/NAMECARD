@@ -152,6 +152,25 @@ section { padding: 40px 20px; }
 }
 .about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
 .about-text [data-lang="ur"] { font-size: 15px; line-height: 2.2; }
+.about-text.brand-direction { margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08); font-size: 13px; opacity: 0.75; }
+.vision-tag {
+  font-size: 11px; letter-spacing: 0.5px; color: var(--gold);
+  font-weight: 700; margin-bottom: 10px; text-transform: uppercase;
+}
+.core-values { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+.core-value {
+  background: #fff; border-radius: 12px; padding: 16px 18px;
+  border: 1px solid rgba(0,0,0,0.05); position: relative;
+}
+.cv-num {
+  position: absolute; top: 14px; right: 16px;
+  font-size: 26px; font-weight: 800; color: rgba(201,168,76,0.18);
+  font-family: Georgia, serif;
+}
+.cv-tag { font-size: 15px; font-weight: 800; color: var(--navy); letter-spacing: 0.5px; }
+.cv-tag span { color: var(--gold); font-weight: 500; font-style: italic; }
+.cv-title { font-size: 12px; color: #999; margin-top: 4px; margin-bottom: 6px; }
+.cv-desc { font-size: 13px; color: var(--text-dark); line-height: 1.6; opacity: 0.85; }
 
 /* ── WHY ── */
 .why { background: var(--light); }
@@ -362,10 +381,10 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="profile-info">
     <h2>이화춘 · Lee Hwa Chun</h2>
     <p>
-      <span data-lang="kr" class="active">속눈썹연장 · 속눈썹펌 · 속눈썹교육 · 반영구교육 · 수정눈썹 · 남자눈썹 · 교정눈썹</span>
-      <span data-lang="en">Lash Extensions · Lash Perm · Lash Training · Semi-Permanent Makeup Training · Corrective Brows · Men's Brows</span>
-      <span data-lang="jp">まつ毛エクステ · まつ毛パーマ · まつ毛教育 · 半永久教育 · 修正眉 · 男性眉</span>
-      <span data-lang="cn">睫毛嫁接 · 睫毛烫翘 · 睫毛培训 · 半永久培训 · 修复眉 · 男士眉</span>
+      <span data-lang="kr" class="active">반영구 수정눈썹 · 비대칭눈썹 · 교정눈썹 · 남자눈썹 전문 / 속눈썹 연장 · 속눈썹 펌 / 반영구 · 속눈썹 전문가 양성 교육 및 가맹점 모집</span>
+      <span data-lang="en">Semi-permanent corrective, asymmetric &amp; men's brows / Lash extensions &amp; perms / Semi-permanent &amp; lash professional training, franchise recruitment</span>
+      <span data-lang="jp">半永久修正眉・左右差眉・男性眉専門 / まつ毛エクステ・パーマ / 半永久・まつ毛専門家養成教育及びフランチャイズ募集</span>
+      <span data-lang="cn">半永久修复眉·不对称眉·男士眉专业 / 睫毛嫁接·烫翘 / 半永久及睫毛专业培训与加盟招募</span>
     </p>
   </div>
 </div>
@@ -373,6 +392,13 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 <!-- ABOUT -->
 <section class="about">
   <div class="section-label">About</div>
+  <div class="vision-tag">
+    <span data-lang="kr" class="active">회사 비전</span>
+    <span data-lang="en">Vision</span>
+    <span data-lang="jp">ビジョン</span>
+    <span data-lang="cn">愿景</span>
+    &nbsp;·&nbsp;Value Up Beauty, Design Your Life
+  </div>
   <div class="slogan">
     <span data-lang="kr" class="active">20년의 경험으로, 한 사람만을 위한 아름다움을 디자인합니다.</span>
     <span data-lang="en">Two decades of experience — designing beauty for one person at a time.</span>
@@ -380,10 +406,68 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="cn">以二十年经验，为每一位顾客量身设计专属美丽。</span>
   </div>
   <p class="about-text">
-    <span data-lang="kr" class="active">(주)이화춘뷰티랩은 반영구 눈썹·아이라인·입술, 속눈썹 연장·펌, 전문 교육을 운영하는 뷰티 브랜드입니다. 얼굴형과 근육 움직임, 눈썹의 모량과 기존 잔흔을 세밀하게 분석하여 고객 한 분 한 분에게 어울리는 디자인을 제안합니다. 현장에서 축적한 노하우를 바탕으로 스피드 갓 디자인, 힐링 브로우, LED 속눈썹 등 실전 중심의 시술과 교육을 진행합니다.</span>
-    <span data-lang="en">LHC Beauty Lab is a beauty brand specializing in semi-permanent brows, eyeliner and lips, eyelash extensions and perms, and professional training. We carefully analyze each client's face shape, muscle movement, brow density, and existing marks to design a look that truly suits them. Drawing on years of hands-on experience, we offer practical, field-tested treatments and courses such as Speed God Design, Healing Brow, and LED lashes.</span>
-    <span data-lang="jp">(株)イファチュンビューティーラボは、半永久眉・アイライン・リップ、まつ毛エクステ・パーマ、専門教育を運営するビューティーブランドです。顔の形や筋肉の動き、眉の毛量や既存の跡を細かく分析し、お客様一人ひとりに似合うデザインをご提案します。現場で培ったノウハウをもとに、スピードゴッドデザイン、ヒーリングブロウ、LEDまつ毛など、実践中心の施術と教育を行っています。</span>
-    <span data-lang="cn">李化春美妆实验室是一家专注于半永久眉毛、眼线、唇部，睫毛嫁接与烫翘，以及专业教育培训的美容品牌。我们会细致分析每位顾客的脸型、肌肉走向、眉毛密度与原有痕迹，为每一位客人设计最适合的造型。凭借多年一线积累的经验，提供以实战为中心的施术与培训课程，如速效女神设计、修复眉、LED睫毛等。</span>
+    <span data-lang="kr" class="active">(주)이화춘뷰티랩은 반영구 눈썹 · 아이라인 · 입술 전문 컨설팅, 속눈썹연장 · 속눈썹 펌 시술 서비스 그리고 페이스 반영구와 속눈썹 전문가를 양성시키는 아카데미를 운영하는 뷰티 종합 브랜드입니다.<br><br>개개인의 얼굴형, 근육 움직임, 눈썹의 모량과 기존 잔흔을 세밀하게 분석하여 고객 한 분 한 분에게 어울리는 컨설팅 서비스를 제공합니다.<br><br>일반 속눈썹 연장 · 속눈썹 펌, 교정 속눈썹 연장 · 속눈썹 펌으로 특별한 날 더 특별한 아름다움을 챙기시도록 편안하게 받으실 수 있는 시술 서비스를 제공합니다.<br><br>또한 현장에서 축적한 노하우를 바탕으로 이화춘뷰티랩만의 증명된 기술력을 전달하고 실전 중심의 시술 교육이 진행되는 아카데미도 운영하고 있습니다. 졸업 후 바로 창업 가능하도록 가맹 컨설팅 서비스까지 완벽하게 준비되어 있습니다.</span>
+    <span data-lang="en">LHC Beauty Lab is a comprehensive beauty brand offering expert consulting for semi-permanent brows, eyeliner and lips, eyelash extension and perm treatments, and an academy that trains face semi-permanent and lash professionals.<br><br>We carefully analyze each individual's face shape, muscle movement, brow density, and existing marks to provide consulting tailored to every client.<br><br>With general and corrective eyelash extensions and perms, we provide comfortable treatments that add extra beauty to your special days.<br><br>Building on hands-on experience in the field, we also run an academy that passes on LHC Beauty Lab's proven expertise through practice-focused training. Franchise consulting is fully prepared so graduates can start their own business right after graduation.</span>
+    <span data-lang="jp">(株)イファチュンビューティーラボは、半永久眉・アイライン・リップの専門コンサルティング、まつ毛エクステ・まつ毛パーマの施術サービス、そしてフェイス半永久とまつ毛の専門家を養成するアカデミーを運営する総合ビューティーブランドです。<br><br>一人ひとりの顔の形、筋肉の動き、眉の毛量や既存の跡を細かく分析し、お客様に似合うコンサルティングサービスを提供します。<br><br>一般まつ毛エクステ・まつ毛パーマ、矯正まつ毛エクステ・まつ毛パーマで、特別な日をより特別な美しさで迎えられるよう、安心して受けられる施術サービスを提供します。<br><br>また、現場で培ったノウハウをもとに、イファチュンビューティーラボならではの実証された技術力を伝える実践中心の施術教育を行うアカデミーも運営しています。卒業後すぐに創業できるよう、フランチャイズコンサルティングサービスまで万全に整えています。</span>
+    <span data-lang="cn">李化春美妆实验室是一家综合性美容品牌，提供半永久眉毛·眼线·唇部专业咨询，睫毛嫁接·睫毛烫翘施术服务，并运营培养面部半永久及睫毛专家的教育学院。<br><br>细致分析每一位顾客的脸型、肌肉走向、眉毛密度与原有痕迹，提供最适合个人的咨询服务。<br><br>提供一般睫毛嫁接·烫翘及矫正睫毛嫁接·烫翘服务，让您在特别的日子里舒适地拥有更加特别的美丽。<br><br>此外，我们凭借一线积累的经验，运营以实战为中心的施术教育学院，传授李化春美妆实验室独有的成熟技术。毕业后即可创业，加盟咨询服务也已完善准备。</span>
+  </p>
+
+  <div class="core-values">
+    <div class="core-value">
+      <div class="cv-num">1</div>
+      <div class="cv-tag">LOVE <span>the</span> PERSON</div>
+      <div class="cv-title">
+        <span data-lang="kr" class="active">고객 중심 (시술 기반)</span>
+        <span data-lang="en">Customer-Centered (Treatment)</span>
+        <span data-lang="jp">顧客中心（施術基盤）</span>
+        <span data-lang="cn">顾客为中心（施术基础）</span>
+      </div>
+      <div class="cv-desc">
+        <span data-lang="kr" class="active">고객님 고유의 톤앤매너를 존중하고 사랑하며 힐링공간을 제공합니다.</span>
+        <span data-lang="en">We respect and love each customer's unique tone &amp; manner, providing a healing space.</span>
+        <span data-lang="jp">お客様固有のトーン&amp;マナーを尊重し、愛し、癒しの空間を提供します。</span>
+        <span data-lang="cn">尊重并珍视每位顾客独特的气质风格，提供疗愈空间。</span>
+      </div>
+    </div>
+    <div class="core-value">
+      <div class="cv-num">2</div>
+      <div class="cv-tag">HIGH <span>the</span> FUTURE</div>
+      <div class="cv-title">
+        <span data-lang="kr" class="active">미래 중심 (아카데미 기반)</span>
+        <span data-lang="en">Future-Centered (Academy)</span>
+        <span data-lang="jp">未来中心（アカデミー基盤）</span>
+        <span data-lang="cn">未来为中心（学院基础）</span>
+      </div>
+      <div class="cv-desc">
+        <span data-lang="kr" class="active">차별화된 시스템으로 강력한 브랜드를 만들어드립니다.</span>
+        <span data-lang="en">We build a powerful brand through a differentiated system.</span>
+        <span data-lang="jp">差別化されたシステムで強力なブランドを作り上げます。</span>
+        <span data-lang="cn">以差异化体系打造强势品牌。</span>
+      </div>
+    </div>
+    <div class="core-value">
+      <div class="cv-num">3</div>
+      <div class="cv-tag">CARE <span>the</span> FACE</div>
+      <div class="cv-title">
+        <span data-lang="kr" class="active">서비스 중심 (제품/수출 기반)</span>
+        <span data-lang="en">Service-Centered (Product/Export)</span>
+        <span data-lang="jp">サービス中心（製品・輸出基盤）</span>
+        <span data-lang="cn">服务为中心（产品/出口基础）</span>
+      </div>
+      <div class="cv-desc">
+        <span data-lang="kr" class="active">피부 속은 건강하게, 피부결은 눈부시게 해 드립니다.</span>
+        <span data-lang="en">Healthy skin from within, radiant skin on the surface.</span>
+        <span data-lang="jp">肌の内側は健康に、肌の質感は輝くように仕上げます。</span>
+        <span data-lang="cn">由内养护健康肌肤，由外呈现光彩肌理。</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="about-text brand-direction">
+    <span data-lang="kr" class="active">이화춘뷰티랩은 한국의 프리미엄 뷰티 기술을 기반으로 국내외 고객, 원장님, 교육생, 미용샵을 연결하는 K-뷰티 글로벌 프리미엄 브랜드로 성장하고자 합니다. 단순히 시술을 제공하는 공간을 넘어, 반영구·속눈썹·화장품·교육·제품 유통·해외 아카데미를 아우르는 K-뷰티 전문 그룹으로 도약하는 것이 목표입니다.</span>
+    <span data-lang="en">Built on Korea's premium beauty expertise, LHC Beauty Lab aims to grow into a global premium K-beauty brand connecting clients, salon owners, trainees, and beauty shops at home and abroad. Beyond simply offering treatments, our goal is to become a K-beauty specialist group spanning semi-permanent makeup, lashes, cosmetics, education, product distribution, and overseas academies.</span>
+    <span data-lang="jp">イファチュンビューティーラボは、韓国のプレミアムビューティー技術を基盤に、国内外の顧客、院長、受講生、ビューティーショップをつなぐK-ビューティー・グローバルプレミアムブランドへと成長することを目指します。単に施術を提供する空間を超え、半永久・まつ毛・化粧品・教育・製品流通・海外アカデミーを網羅するK-ビューティー専門グループへ飛躍することが目標です。</span>
+    <span data-lang="cn">李化春美妆实验室以韩国顶级美容技术为基础，致力于成长为连接国内外顾客、院长、学员与美容店的K-Beauty全球高端品牌。我们的目标不仅是提供施术的空间，更要跃升为涵盖半永久、睫毛、化妆品、教育、产品流通及海外学院的K-Beauty专业集团。</span>
   </p>
 </section>
 
@@ -474,10 +558,10 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="cn">修复眉</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">기존 눈썹의 잔흔과 변색을 세밀하게 분석해 자연스럽게 되살리는 수정눈썹 전문 기법입니다.</span>
-        <span data-lang="en">A corrective brow technique that analyzes existing marks and discoloration to naturally restore the eyebrows.</span>
-        <span data-lang="jp">既存の眉の跡や変色を細かく分析し、自然に蘇らせる修正眉専門技法です。</span>
-        <span data-lang="cn">细致分析原有眉毛的痕迹与变色，以自然方式修复重塑的专业修眉技法。</span>
+        <span data-lang="kr" class="active">항암치료로 아름다움을 포기하셨던 분들에게 전문적으로 디자인 해 드리는 수정눈썹 전문 기법입니다.</span>
+        <span data-lang="en">A corrective brow technique specially designed for those who gave up on their beauty due to cancer treatment.</span>
+        <span data-lang="jp">抗がん治療で美しさを諦めていた方々に、専門的にデザインして差し上げる修正眉専門技法です。</span>
+        <span data-lang="cn">为因抗癌治疗而放弃美丽的顾客，专业设计修复眉形的专属技法。</span>
       </p>
     </div>
     <div class="diff-card">
@@ -488,10 +572,10 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="cn">LED睫毛嫁接·烫翘</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">유지력과 완성도를 함께 고려한 LED 속눈썹 연장과 속눈썹 펌으로 오래가는 결과를 제공합니다.</span>
-        <span data-lang="en">LED lash extensions and perms designed for both durability and finish, giving results that last longer.</span>
-        <span data-lang="jp">持続力と完成度を両立させたLEDまつ毛エクステとまつ毛パーマで、長持ちする仕上がりをご提供します。</span>
-        <span data-lang="cn">兼顾持久度与完成度的LED睫毛嫁接与烫翘，带来持久靓丽的效果。</span>
+        <span data-lang="kr" class="active">부산 최초로 LED 기법 도입. 유지력과 완성도를 높였습니다.</span>
+        <span data-lang="en">Busan's first to introduce the LED technique, raising both durability and finish.</span>
+        <span data-lang="jp">釜山で初めてLED技法を導入。持続力と完成度を高めました。</span>
+        <span data-lang="cn">釜山首创引入LED技法，提升了持久度与完成度。</span>
       </p>
     </div>
     <div class="diff-card">
@@ -502,10 +586,10 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="cn">模拟练习+真人模特实战教学体系</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">시뮬레이션 연습과 실제 모델 실습을 병행하는 체계적인 교육 시스템으로 실전 감각을 빠르게 키웁니다.</span>
-        <span data-lang="en">A structured curriculum combining simulation practice with hands-on live-model sessions to quickly build real-world skill.</span>
-        <span data-lang="jp">シミュレーション練習と実際のモデル実習を並行する体系的な教育システムで、実践力を素早く育てます。</span>
-        <span data-lang="cn">结合模拟练习与真人模特实操的系统化教学体系，快速培养实战能力。</span>
+        <span data-lang="kr" class="active">시뮬레이션 연습과 실제 모델 실습을 병행하는 체계적인 교육 시스템으로 실전감각을 빠르게 키우고, 창업까지 바로 가능한 가맹시스템을 갖추고 있습니다.</span>
+        <span data-lang="en">A structured curriculum combining simulation practice with hands-on live-model sessions quickly builds real-world skill, backed by a franchise system that lets graduates start a business right away.</span>
+        <span data-lang="jp">シミュレーション練習と実際のモデル実習を並行する体系的な教育システムで実践力を素早く育て、そのまま創業できるフランチャイズシステムを備えています。</span>
+        <span data-lang="cn">结合模拟练习与真人模特实操的系统化教学体系，快速培养实战能力，并配备可直接创业的加盟体系。</span>
       </p>
     </div>
   </div>
@@ -682,7 +766,6 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   </div>
   <div class="portfolio-track-wrap">
     <div class="portfolio-track" id="portfolio-track">
-      <div class="portfolio-slide"><img src="portfolio0.jpg" alt="portfolio 0"></div>
       <div class="portfolio-slide"><img src="portfolio1.jpg" alt="portfolio 1"></div>
       <div class="portfolio-slide"><img src="portfolio2.jpg" alt="portfolio 2"></div>
       <div class="portfolio-slide"><img src="portfolio3.jpg" alt="portfolio 3"></div>
@@ -693,7 +776,6 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="portfolio-slide"><img src="portfolio8.jpg" alt="portfolio 8"></div>
       <div class="portfolio-slide"><img src="portfolio9.jpg" alt="portfolio 9"></div>
       <div class="portfolio-slide"><img src="portfolio10.jpg" alt="portfolio 10"></div>
-      <div class="portfolio-slide"><img src="portfolio11.jpg" alt="portfolio 11"></div>
       <div class="portfolio-slide"><img src="portfolio12.jpg" alt="portfolio 12"></div>
       <div class="portfolio-slide"><img src="portfolio13.jpg" alt="portfolio 13"></div>
       <div class="portfolio-slide"><img src="portfolio14.jpg" alt="portfolio 14"></div>
@@ -702,7 +784,6 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="portfolio-slide"><img src="portfolio17.jpg" alt="portfolio 17"></div>
       <div class="portfolio-slide"><img src="portfolio18.jpg" alt="portfolio 18"></div>
       <div class="portfolio-slide"><img src="portfolio19.jpg" alt="portfolio 19"></div>
-      <div class="portfolio-slide"><img src="portfolio20.jpg" alt="portfolio 20"></div>
     </div>
   </div>
   <div class="portfolio-nav">
