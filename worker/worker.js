@@ -26,7 +26,7 @@ const COMMIT_PREFIX = "내 명함 관리";
 const EDIT_SCRIPT_SRC = "https://jinjjabg-hub.github.io/NAMECARD/dica-edit.js";
 const TRANSLATE_MODEL = "claude-haiku-4-5";
 // 배포 확인용 — 브라우저에서 https://dica-editor.jinjjabg.workers.dev/health 를 열면 이 값이 보인다
-const WORKER_VERSION = "2026-09-28 셀프수정 v2 (월1회·덮어쓰기방지·줄단위번역)";
+const WORKER_VERSION = "2026-09-28 셀프수정 v3 (저장 즉시 전체 언어 반환)";
 
 /* ── HTTP 공통 ───────────────────────────────────── */
 function cors(res) {
@@ -281,7 +281,8 @@ async function handleSave(env, req) {
   await translateChanges(env, changes, current);
   const updated = applyChanges(content, changes);
   await githubPutFile(env, repo, path, updated, sha, `${COMMIT_PREFIX}: ${slug} 문구 수정 (${email})`);
-  return json({ ok: true, count: Object.keys(changes).length, admin: isAdmin });
+  // 저장된 전체 언어 문구를 돌려줘서, 카드 화면이 새로고침 없이 바로 보여줄 수 있게 한다
+  return json({ ok: true, count: Object.keys(changes).length, admin: isAdmin, changes });
 }
 
 /* ── 관리자: 카드에 공통 수정 스크립트 설치 ─────── */
