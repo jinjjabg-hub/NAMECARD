@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내 명함 수정하기 | DiCA</title>
+<meta name="robots" content="noindex">
+<meta property="og:title" content="내 명함 수정하기 | DiCA">
+<meta property="og:description" content="내 이름을 누르면 내 명함이 열리고, 맨 아래에 [✏️ 내 명함 수정] 버튼이 보여요.">
+<style>
+  :root { --paper:#F5F6F8; --card:#fff; --ink:#17202B; --ink2:#5A6472; --line:#DDE1E7; --accent:#2F5BEA; --soft:#E8EEFD; --mark:#FFF6CC; }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper:#11151B; --card:#1A2029; --ink:#E9EDF2; --ink2:#A7B0BC; --line:#2C3440; --accent:#7C9BFF; --soft:#1E2A4A; --mark:#3A3413; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:400 15.5px/1.65 -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; padding:24px 16px 48px; }
+  .wrap { max-width:560px; margin:0 auto; display:grid; gap:22px; }
+  h1 { margin:0; font-size:26px; line-height:1.3; letter-spacing:-0.02em; }
+  h2 { margin:0 0 8px; font-size:13px; letter-spacing:0.06em; color:var(--ink2); }
+  p { margin:0; }
+  .lead { color:var(--ink2); }
+  .how { background:var(--soft); border-radius:12px; padding:14px 16px; display:grid; gap:4px; font-size:14.5px; }
+  input { width:100%; font:inherit; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:var(--card); color:var(--ink); }
+  input:focus-visible, a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; }
+  @media (max-width:360px) { .grid { grid-template-columns:repeat(2, 1fr); } }
+  .grid a { display:block; text-align:center; text-decoration:none; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 6px; font-weight:700; font-size:15.5px; }
+  .grid a:active { background:var(--mark); }
+  .empty { color:var(--ink2); font-size:14px; }
+  .foot { color:var(--ink2); font-size:13.5px; border-top:1px solid var(--line); padding-top:14px; display:grid; gap:6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="display:grid; gap:8px;">
+    <h1>✏️ 내 명함 수정하기</h1>
+    <p class="lead">아래에서 <b>내 이름</b>을 누르세요. 내 명함이 열리고, 맨 아래에 <b>[✏️ 내 명함 수정]</b> 버튼이 보입니다.</p>
+  </header>
+
+  <div class="how">
+    <p>① 내 이름 누르기 → ② 명함 맨 아래 <b>✏️ 내 명함 수정</b></p>
+    <p>③ 구글 로그인 → ④ 고칠 곳 모두 고치고 <b>저장</b> (한 달에 1번)</p>
+  </div>
+
+  <label for="q" style="display:grid; gap:6px;">
+    <span style="font-size:13px; color:var(--ink2);">이름 검색</span>
+    <input id="q" type="search" placeholder="예: 송승훈" autocomplete="off">
+  </label>
+
+  <div id="list" style="display:grid; gap:20px;"></div>
+
+  <div class="foot">
+    <p>로그인했는데 <b>"등록된 계정이 없습니다"</b>가 나오면, 이름과 <b>구글(Gmail) 주소</b>를 관리자 송승훈에게 카톡으로 보내주세요.</p>
+    <p>카톡 안에서 로그인이 안 되면 메뉴(⋮) → <b>다른 브라우저로 열기</b>를 눌러주세요.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var BASE = 'https://jinjjabg-hub.github.io/';
+  var GROUPS = [
+    { repo: 'BNI-PIONEER-cards', title: '파이오니어 챕터' },
+    { repo: 'bni-giants', title: '자이언츠 챕터' },
+    { repo: 'NAMECARD', title: 'DiCA 고객' },
+  ];
+  // 셀프 수정이 적용된 카드 (2026-09-28 기준). 새 카드는 아래 자동 확인으로 추가된다.
+  var KNOWN = {
+    'BNI-PIONEER-cards': ['김경태','김지현','김효정','박미성','박선영','박진성','송승훈','윤민수','이채홍','이화춘','임춘식','정상현','조은영'],
+    'bni-giants': ['강라감','김은지','김준래','박성준','박영심','박진호','방수근','서랑선','우완용','윤현석','이정환','정율채'],
+    'NAMECARD': ['강미경','김정임','김태연','박주해','보조','보험왕','에리카','유진석','이서원','이지수','전광일'],
+  };
+  var SKIP = ['TM', 'allcare', '트래픽', 'fonts', 'worker', 'edit'];
+  var cards = {};
+  GROUPS.forEach(function (g) { cards[g.repo] = KNOWN[g.repo].slice(); });
+
+  function cardUrl(repo, slug) { return BASE + repo + '/' + encodeURIComponent(slug) + '/?edit'; }
+
+  function render() {
+    var q = document.getElementById('q').value.trim();
+    var list = document.getElementById('list');
+    list.innerHTML = '';
+    GROUPS.forEach(function (g) {
+      var names = cards[g.repo].filter(function (n) { return !q || n.indexOf(q) >= 0; }).sort();
+      if (!names.length) return;
+      var sec = document.createElement('section');
+      var h = document.createElement('h2'); h.textContent = g.title;
+      var grid = document.createElement('div'); grid.className = 'grid';
+      names.forEach(function (n) {
+        var a = document.createElement('a');
+        a.href = cardUrl(g.repo, n);
+        a.textContent = n;
+        grid.appendChild(a);
+      });
+      sec.appendChild(h); sec.appendChild(grid); list.appendChild(sec);
+    });
+    if (!list.children.length) {
+      var p = document.createElement('p'); p.className = 'empty';
+      p.textContent = '"' + q + '" 이름의 명함이 없어요. 관리자에게 문의해주세요.';
+      list.appendChild(p);
+    }
+  }
+
+  // 새로 만든 명함이 있으면 자동으로 목록에 추가 (셀프 수정 스크립트가 들어간 카드만)
+  function discover() {
+    GROUPS.forEach(function (g) {
+      fetch('https://api.github.com/repos/jinjjabg-hub/' + g.repo + '/contents/')
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (items) {
+          var fresh = (items || []).filter(function (it) {
+            return it.type === 'dir' && SKIP.indexOf(it.name) < 0 && it.name.charAt(0) !== '.' && cards[g.repo].indexOf(it.name) < 0;
+          });
+          fresh.forEach(function (it) {
+            fetch(BASE + g.repo + '/' + encodeURIComponent(it.name) + '/', { cache: 'no-store' })
+              .then(function (r) { return r.ok ? r.text() : ''; })
+              .then(function (html) {
+                if (html.indexOf('dica-edit.js') >= 0 && cards[g.repo].indexOf(it.name) < 0) {
+                  cards[g.repo].push(it.name);
+                  render();
+                }
+              })
+              .catch(function () {});
+          });
+        })
+        .catch(function () {});
+    });
+  }
+
+  document.getElementById('q').addEventListener('input', render);
+  render();
+  discover();
+})();
+</script>
+</body>
+</html>
