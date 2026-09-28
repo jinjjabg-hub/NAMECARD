@@ -1,0 +1,14 @@
+# Cloudflare Workers Builds(GitHub 자동 배포) 설정
+# NAMECARD 레포 main 에 worker/ 폴더 변경이 합쳐지면 자동으로 배포된다.
+name = "dica-editor"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+# 대시보드에 있는 환경 변수(FIREBASE_PROJECT_ID, ADMIN_EMAILS 등)를 배포 때 지우지 않고 유지한다.
+# 비밀 값(GITHUB_TOKEN, ANTHROPIC_API_KEY, ADMIN_KEY)은 원래 배포로 지워지지 않는다.
+keep_vars = true
+
+[[kv_namespaces]]
+binding = "DICA_OWNERS"
+id = "4971564bb27e4d8e80241774a03528d8"
