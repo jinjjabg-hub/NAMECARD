@@ -11,6 +11,9 @@
 <script src="https://jinjjabg-hub.github.io/NAMECARD/dica-edit.js" data-repo="레포이름" data-slug="폴더이름" defer></script>
 ```
 
+**버튼 표시** — 방문자에게는 보이지 않습니다. 주인에게 `카드주소?edit` 링크를 한 번 보내주면, 그 링크로 들어왔을 때 버튼이 보이고,
+주인 인증에 한 번 성공한 기기에서는 이후 `?edit` 없이도 보입니다.
+
 **규칙**
 - 수정 가능: `<span data-lang="kr" class="active">…</span>` 묶음(2개 언어 이상)의 문구. 사진·링크·연락처는 불가.
 - 한 달(한국시간 달력 기준)에 1번 저장. 관리자 계정(jinjjabg@gmail.com)은 제한 없음, 관리자가 대신 고친 건 주인 횟수에서 빠짐.

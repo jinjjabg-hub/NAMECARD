@@ -8,6 +8,10 @@
  * 왜 공통 파일인가: 카드마다 코드를 복사하면 버그 하나에 39곳을 고쳐야 한다.
  * 이 파일 하나만 고치면 모든 카드에 즉시 반영된다.
  *
+ * 버튼 표시
+ *  - 방문자에게는 안 보임. 주인 전용 링크(카드주소?edit)로 열면 보임.
+ *  - 주인 인증에 한 번 성공하면 그 기기에서는 다음부터 ?edit 없이도 보임.
+ *
  * 규칙
  *  - 텍스트(<span data-lang> 묶음)만 수정 가능. 사진·링크·레이아웃은 불가.
  *  - 카드 1장당 한 달(달력 기준, 한국시간)에 1회 저장. 관리자 계정은 예외.
@@ -87,6 +91,17 @@
     var s = kstMonthStart();
     var nm = (s.m + 1) % 12 + 1;
     return nm + '월 1일';
+  }
+
+  function ownerKey() { return 'dica-owner:' + CFG.repo + '/' + CFG.slug; }
+  function canShowButton() {
+    if (/[?&]edit(=|&|$)/.test(location.search)) return true;
+    try { return localStorage.getItem(ownerKey()) === '1'; } catch (e) { return false; }
+  }
+  function rememberOwner() {
+    try { localStorage.setItem(ownerKey(), '1'); } catch (e) {}
+    var w = document.getElementById('dica-edit-wrap');
+    if (w) w.style.display = '';
   }
 
   function localKey() { return 'dica-edit:' + CFG.repo + '/' + CFG.slug; }
@@ -208,6 +223,8 @@
     else if (footer) footer.parentElement.insertBefore(wrap, footer);
     else document.body.appendChild(wrap);
     wrap.querySelector('button').addEventListener('click', openEdit);
+    // 방문자에게는 숨긴다. 주인 전용 링크(?edit)로 들어왔거나, 이 기기에서 주인 인증을 한 적이 있을 때만 보인다.
+    if (!canShowButton()) wrap.style.display = 'none';
 
     var modal = document.createElement('div');
     modal.id = 'dica-edit-modal';
@@ -350,6 +367,7 @@
           return null;
         }
         if (check.admin) state.isAdmin = true;
+        else rememberOwner(); // 주인 인증 성공 → 다음부터 이 기기에서는 ?edit 없이도 버튼이 보임
         return Promise.all([state.isAdmin ? false : usedThisMonth(), fetchSource()]);
       })
       .then(function (res) {
