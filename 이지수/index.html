@@ -248,7 +248,7 @@
     .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.55s, transform 0.55s; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    [data-lang]:not(.on) { display: none; }
+    [data-lang]:not(.active) { display: none; }
   </style>
 </head>
 <body>
@@ -275,21 +275,21 @@
 
   <div class="hero-label">
     <div class="hero-tag">
-      <span data-lang="kr" class="on">용접전문회사</span>
+      <span data-lang="kr" class="active">용접전문회사</span>
       <span data-lang="en">WELDING SPECIALIST</span>
       <span data-lang="jp">溶接専門会社</span>
       <span data-lang="cn">焊接专业公司</span>
     </div>
     <div class="hero-company">SCHWEISS</div>
     <div class="hero-name">
-      <span data-lang="kr" class="on">이지수</span>
+      <span data-lang="kr" class="active">이지수</span>
       <span data-lang="en">Jisu Lee</span>
       <span data-lang="jp">イ・ジス</span>
       <span data-lang="cn">李智樹</span>
-      <small><span data-lang="kr" class="on">대표</span><span data-lang="en">CEO</span><span data-lang="jp">代表</span><span data-lang="cn">代表</span></small>
+      <small><span data-lang="kr" class="active">대표</span><span data-lang="en">CEO</span><span data-lang="jp">代表</span><span data-lang="cn">代表</span></small>
     </div>
     <div class="hero-slogan">
-      <span data-lang="kr" class="on">검증된 기술력과 책임감으로,<br>가치를 증명해드립니다.</span>
+      <span data-lang="kr" class="active">검증된 기술력과 책임감으로,<br>가치를 증명해드립니다.</span>
       <span data-lang="en">Proving value through verified expertise and accountability.</span>
       <span data-lang="jp">実証された技術力と責任感で、価値を証明します。</span>
       <span data-lang="cn">凭借经过验证的技术实力与责任感，为您证明价值。</span>
@@ -302,7 +302,7 @@
 <section class="about-sec fade-in">
   <div class="sec-label">About</div>
   <div class="sec-title">
-    <span data-lang="kr" class="on">세상을 잇다.<br>기술의 기준을 세우다.</span>
+    <span data-lang="kr" class="active">세상을 잇다.<br>기술의 기준을 세우다.</span>
     <span data-lang="en">Connecting the World.<br>Setting the Standard.</span>
     <span data-lang="jp">世界をつなぐ。技術の基準を打ち立てる。</span>
     <span data-lang="cn">连接世界。树立技术标准。</span>
@@ -311,7 +311,7 @@
     <div class="why-card">
       <div class="why-icon">🎯</div>
       <div class="why-title">
-        <span data-lang="kr" class="on">결과 중심<br>전문성</span>
+        <span data-lang="kr" class="active">결과 중심<br>전문성</span>
         <span data-lang="en">Results-Driven<br>Expertise</span>
         <span data-lang="jp">成果重視の<br>専門性</span>
         <span data-lang="cn">以结果为中心<br>的专业性</span>
@@ -320,7 +320,7 @@
     <div class="why-card">
       <div class="why-icon">🔩</div>
       <div class="why-title">
-        <span data-lang="kr" class="on">맞춤형<br>솔루션</span>
+        <span data-lang="kr" class="active">맞춤형<br>솔루션</span>
         <span data-lang="en">Tailored<br>Solutions</span>
         <span data-lang="jp">差別化された<br>カスタム対応</span>
         <span data-lang="cn">差异化<br>定制解决方案</span>
@@ -329,7 +329,7 @@
     <div class="why-card">
       <div class="why-icon">🤝</div>
       <div class="why-title">
-        <span data-lang="kr" class="on">신뢰 기반<br>지속 케어</span>
+        <span data-lang="kr" class="active">신뢰 기반<br>지속 케어</span>
         <span data-lang="en">Trust &<br>Ongoing Care</span>
         <span data-lang="jp">信頼を築く<br>継続ケア</span>
         <span data-lang="cn">建立信任的<br>持续关怀</span>
@@ -338,7 +338,7 @@
   </div>
   <div class="quote-box">
     <div class="quote-text">
-      <span data-lang="kr" class="on">"단순 용접이 아닙니다.<br>기능선수 출신 전문가가 직접 설계하고 시공하는<br><strong>기술 기반 솔루션</strong>입니다."</span>
+      <span data-lang="kr" class="active">"단순 용접이 아닙니다.<br>기능선수 출신 전문가가 직접 설계하고 시공하는<br><strong>기술 기반 솔루션</strong>입니다."</span>
       <span data-lang="en">"Not just welding — a <strong>technology-driven solution</strong> designed and built by a skilled craftsman."</span>
       <span data-lang="jp">"単なる溶接ではありません。技能選手出身の専門家による<strong>技術ベースのソリューション</strong>です。"</span>
       <span data-lang="cn">"不仅仅是焊接，而是由技能竞赛出身专家亲自设计施工的<strong>技术驱动解决方案</strong>。"</span>
@@ -352,19 +352,19 @@
   <div class="stat-grid">
     <div class="stat-item">
       <div class="stat-num">10<span class="stat-unit">+</span></div>
-      <div class="stat-label"><span data-lang="kr" class="on">업력 (년)</span><span data-lang="en">Years</span><span data-lang="jp">業歴（年）</span><span data-lang="cn">从业年限</span></div>
+      <div class="stat-label"><span data-lang="kr" class="active">업력 (년)</span><span data-lang="en">Years</span><span data-lang="jp">業歴（年）</span><span data-lang="cn">从业年限</span></div>
     </div>
     <div class="stat-item">
       <div class="stat-num">5<span class="stat-unit">개</span></div>
-      <div class="stat-label"><span data-lang="kr" class="on">전문 분야</span><span data-lang="en">Specialties</span><span data-lang="jp">専門分野</span><span data-lang="cn">专业领域</span></div>
+      <div class="stat-label"><span data-lang="kr" class="active">전문 분야</span><span data-lang="en">Specialties</span><span data-lang="jp">専門分野</span><span data-lang="cn">专业领域</span></div>
     </div>
     <div class="stat-item">
       <div class="stat-num">2<span class="stat-unit">기</span></div>
-      <div class="stat-label"><span data-lang="kr" class="on">BNI 부의장</span><span data-lang="en">VP</span><span data-lang="jp">BNI 副議長</span><span data-lang="cn">BNI副主席</span></div>
+      <div class="stat-label"><span data-lang="kr" class="active">BNI 부의장</span><span data-lang="en">VP</span><span data-lang="jp">BNI 副議長</span><span data-lang="cn">BNI副主席</span></div>
     </div>
     <div class="stat-item">
       <div class="stat-num">100<span class="stat-unit">%</span></div>
-      <div class="stat-label"><span data-lang="kr" class="on">현장 책임 완료</span><span data-lang="en">Completion</span><span data-lang="jp">現場責任完了</span><span data-lang="cn">现场完成率</span></div>
+      <div class="stat-label"><span data-lang="kr" class="active">현장 책임 완료</span><span data-lang="en">Completion</span><span data-lang="jp">現場責任完了</span><span data-lang="cn">现场完成率</span></div>
     </div>
   </div>
 </section>
@@ -373,7 +373,7 @@
 <section class="diff-sec fade-in">
   <div class="sec-label">Difference</div>
   <div class="sec-title">
-    <span data-lang="kr" class="on">스바이즈만의 차별점</span>
+    <span data-lang="kr" class="active">스바이즈만의 차별점</span>
     <span data-lang="en">What Sets Us Apart</span>
     <span data-lang="jp">スバイズだけの差別化</span>
     <span data-lang="cn">斯拜兹的独特优势</span>
@@ -382,29 +382,29 @@
     <div class="diff-item">
       <div class="diff-num">01</div>
       <div>
-        <div class="diff-title"><span data-lang="kr" class="on">기술 중심 솔루션 제안</span><span data-lang="en">Technology-Centered Proposals</span><span data-lang="jp">技術中心のソリューション提案</span><span data-lang="cn">以技术为核心的方案提案</span></div>
-        <div class="diff-desc"><span data-lang="kr" class="on">단순 납품이 아닌, 현장 환경과 목적에 맞는 최적의 기술 방향을 함께 제안합니다.</span><span data-lang="en">Beyond simple supply — we co-develop the optimal technical direction for your site.</span><span data-lang="jp">単なる納品ではなく、現場環境と目的に合った最適な技術方向を共に提案します。</span><span data-lang="cn">不只是简单供货，而是根据现场环境与目的共同提出最优技术方向。</span></div>
+        <div class="diff-title"><span data-lang="kr" class="active">기술 중심 솔루션 제안</span><span data-lang="en">Technology-Centered Proposals</span><span data-lang="jp">技術中心のソリューション提案</span><span data-lang="cn">以技术为核心的方案提案</span></div>
+        <div class="diff-desc"><span data-lang="kr" class="active">단순 납품이 아닌, 현장 환경과 목적에 맞는 최적의 기술 방향을 함께 제안합니다.</span><span data-lang="en">Beyond simple supply — we co-develop the optimal technical direction for your site.</span><span data-lang="jp">単なる納品ではなく、現場環境と目的に合った最適な技術方向を共に提案します。</span><span data-lang="cn">不只是简单供货，而是根据现场环境与目的共同提出最优技术方向。</span></div>
       </div>
     </div>
     <div class="diff-item">
       <div class="diff-num">02</div>
       <div>
-        <div class="diff-title"><span data-lang="kr" class="on">품질과 안정성 우선 제작</span><span data-lang="en">Quality & Durability First</span><span data-lang="jp">品質と安定性を最優先に</span><span data-lang="cn">以质量与稳定性为优先</span></div>
-        <div class="diff-desc"><span data-lang="kr" class="on">가격이 아닌 내구성·완성도 중심의 품질 프로세스로 고객 신뢰를 만듭니다.</span><span data-lang="en">Trust built on durability and craftsmanship — not on price competition.</span><span data-lang="jp">価格ではなく耐久性・完成度中心の品質プロセスで顧客信頼を築きます。</span><span data-lang="cn">以耐久性和完成度为核心的品质流程构建客户信任。</span></div>
+        <div class="diff-title"><span data-lang="kr" class="active">품질과 안정성 우선 제작</span><span data-lang="en">Quality & Durability First</span><span data-lang="jp">品質と安定性を最優先に</span><span data-lang="cn">以质量与稳定性为优先</span></div>
+        <div class="diff-desc"><span data-lang="kr" class="active">가격이 아닌 내구성·완성도 중심의 품질 프로세스로 고객 신뢰를 만듭니다.</span><span data-lang="en">Trust built on durability and craftsmanship — not on price competition.</span><span data-lang="jp">価格ではなく耐久性・完成度中心の品質プロセスで顧客信頼を築きます。</span><span data-lang="cn">以耐久性和完成度为核心的品质流程构建客户信任。</span></div>
       </div>
     </div>
     <div class="diff-item">
       <div class="diff-num">03</div>
       <div>
-        <div class="diff-title"><span data-lang="kr" class="on">빠른 대응 & 사후관리</span><span data-lang="en">Rapid Response & After-Service</span><span data-lang="jp">迅速対応とアフターサービス</span><span data-lang="cn">快速响应与完善售后管理</span></div>
-        <div class="diff-desc"><span data-lang="kr" class="on">진행부터 납품 후까지 지속적인 소통·대응으로 고객 불편을 최소화합니다.</span><span data-lang="en">From kickoff to post-delivery, continuous communication keeps you worry-free.</span><span data-lang="jp">進行中から納品後まで継続的なコミュニケーションで不便を最小化します。</span><span data-lang="cn">从启动到交付后，持续沟通响应，将客户不便降至最低。</span></div>
+        <div class="diff-title"><span data-lang="kr" class="active">빠른 대응 & 사후관리</span><span data-lang="en">Rapid Response & After-Service</span><span data-lang="jp">迅速対応とアフターサービス</span><span data-lang="cn">快速响应与完善售后管理</span></div>
+        <div class="diff-desc"><span data-lang="kr" class="active">진행부터 납품 후까지 지속적인 소통·대응으로 고객 불편을 최소화합니다.</span><span data-lang="en">From kickoff to post-delivery, continuous communication keeps you worry-free.</span><span data-lang="jp">進行中から納品後まで継続的なコミュニケーションで不便を最小化します。</span><span data-lang="cn">从启动到交付后，持续沟通响应，将客户不便降至最低。</span></div>
       </div>
     </div>
     <div class="diff-item">
       <div class="diff-num">04</div>
       <div>
-        <div class="diff-title"><span data-lang="kr" class="on">기능선수 출신 기능장 보유</span><span data-lang="en">Skilled-Craftsman Background</span><span data-lang="jp">技能選手出身の専門家</span><span data-lang="cn">技能竞赛出身的专家</span></div>
-        <div class="diff-desc"><span data-lang="kr" class="on">기능선수 출신으로 기능장 자격을 보유한 대표가 직접 품질을 관리합니다. 현장 기술부터 교육 콘텐츠까지, 검증된 경험이 표준입니다.</span><span data-lang="en">The CEO, a former skilled craftsman with a master craftsman license, personally oversees quality. Proven expertise from field to training content.</span><span data-lang="jp">技能選手出身で技能士資格を持つ代表が直接品質管理します。現場技術から教育まで実証された経験が標準です。</span><span data-lang="cn">拥有技能竞赛背景及技能师资格的代表亲自管控质量，从现场技术到教育内容，经验即标准。</span></div>
+        <div class="diff-title"><span data-lang="kr" class="active">기능선수 출신 기능장 보유</span><span data-lang="en">Skilled-Craftsman Background</span><span data-lang="jp">技能選手出身の専門家</span><span data-lang="cn">技能竞赛出身的专家</span></div>
+        <div class="diff-desc"><span data-lang="kr" class="active">기능선수 출신으로 기능장 자격을 보유한 대표가 직접 품질을 관리합니다. 현장 기술부터 교육 콘텐츠까지, 검증된 경험이 표준입니다.</span><span data-lang="en">The CEO, a former skilled craftsman with a master craftsman license, personally oversees quality. Proven expertise from field to training content.</span><span data-lang="jp">技能選手出身で技能士資格を持つ代表が直接品質管理します。現場技術から教育まで実証された経験が標準です。</span><span data-lang="cn">拥有技能竞赛背景及技能师资格的代表亲自管控质量，从现场技术到教育内容，经验即标准。</span></div>
       </div>
     </div>
   </div>
@@ -418,26 +418,26 @@
       <img src="이지수.png" alt="이지수 대표">
     </div>
     <div>
-      <div class="bni-name"><span data-lang="kr" class="on">이지수</span><span data-lang="en">Jisu Lee</span><span data-lang="jp">イ・ジス</span><span data-lang="cn">李智秀</span></div>
-      <div class="bni-role-txt"><span data-lang="kr" class="on">SCHWEISS 대표 · 토파즈 챕터</span><span data-lang="en">CEO, SCHWEISS · Topaz Chapter</span><span data-lang="jp">SCHWEISS 代表 · トパーズ支部</span><span data-lang="cn">SCHWEISS 代表 · 托帕兹分会</span></div>
+      <div class="bni-name"><span data-lang="kr" class="active">이지수</span><span data-lang="en">Jisu Lee</span><span data-lang="jp">イ・ジス</span><span data-lang="cn">李智秀</span></div>
+      <div class="bni-role-txt"><span data-lang="kr" class="active">SCHWEISS 대표 · 토파즈 챕터</span><span data-lang="en">CEO, SCHWEISS · Topaz Chapter</span><span data-lang="jp">SCHWEISS 代表 · トパーズ支部</span><span data-lang="cn">SCHWEISS 代表 · 托帕兹分会</span></div>
       <div class="bni-tags">
-        <span class="bni-tag"><span data-lang="kr" class="on">🏆 2기 부의장</span><span data-lang="en">🏆 2nd VP</span><span data-lang="jp">🏆 2期 副議長</span><span data-lang="cn">🏆 2期 副主席</span></span>
-        <span class="bni-tag"><span data-lang="kr" class="on">용접전문</span><span data-lang="en">Welding Expert</span><span data-lang="jp">溶接専門</span><span data-lang="cn">焊接专家</span></span>
+        <span class="bni-tag"><span data-lang="kr" class="active">🏆 2기 부의장</span><span data-lang="en">🏆 2nd VP</span><span data-lang="jp">🏆 2期 副議長</span><span data-lang="cn">🏆 2期 副主席</span></span>
+        <span class="bni-tag"><span data-lang="kr" class="active">용접전문</span><span data-lang="en">Welding Expert</span><span data-lang="jp">溶接専門</span><span data-lang="cn">焊接专家</span></span>
       </div>
     </div>
   </div>
   <div class="bni-timeline">
     <div class="tl-node">
       <div class="tl-dot">1기</div>
-      <div class="tl-label"><span data-lang="kr" class="on">비지터호스트<br>리더</span><span data-lang="en">Visitor Host<br>Leader</span><span data-lang="jp">ビジターホスト<br>リーダー</span><span data-lang="cn">访客主持<br>领袖</span></div>
+      <div class="tl-label"><span data-lang="kr" class="active">비지터호스트<br>리더</span><span data-lang="en">Visitor Host<br>Leader</span><span data-lang="jp">ビジターホスト<br>リーダー</span><span data-lang="cn">访客主持<br>领袖</span></div>
     </div>
     <div class="tl-node">
       <div class="tl-dot now">2기</div>
-      <div class="tl-label"><span data-lang="kr" class="on">부의장 ⭐<br>현재</span><span data-lang="en">VP ⭐<br>Current</span><span data-lang="jp">副議長 ⭐<br>現職</span><span data-lang="cn">副主席 ⭐<br>现任</span></div>
+      <div class="tl-label"><span data-lang="kr" class="active">부의장 ⭐<br>현재</span><span data-lang="en">VP ⭐<br>Current</span><span data-lang="jp">副議長 ⭐<br>現職</span><span data-lang="cn">副主席 ⭐<br>现任</span></div>
     </div>
   </div>
   <div class="bni-history">
-    <span data-lang="kr" class="on">🏆 Givers Gain — 먼저 주는 사람이 결국 얻는다.<br>토파즈 챕터에서 꾸준한 신뢰와 레퍼럴로 함께 성장하고 있습니다.</span>
+    <span data-lang="kr" class="active">🏆 Givers Gain — 먼저 주는 사람이 결국 얻는다.<br>토파즈 챕터에서 꾸준한 신뢰와 레퍼럴로 함께 성장하고 있습니다.</span>
     <span data-lang="en">🏆 Givers Gain — Those who give first ultimately receive.<br>Growing through consistent trust and referrals in Topaz Chapter.</span>
     <span data-lang="jp">🏆 Givers Gain — 先に与える者が最終的に得る。<br>トパーズ支部で継続的な信頼とリファーラルを通じて共に成長しています。</span>
     <span data-lang="cn">🏆 Givers Gain — 先给予者终将获得。<br>在托帕兹分会通过持续的信任与推介共同成长。</span>
@@ -447,7 +447,7 @@
 <!-- ═══ 철학 ═══ -->
 <section class="philo-sec fade-in">
   <div class="philo-text">
-    <span data-lang="kr" class="on">"세상을 잇고,<br>기술의 기준을 세운다"</span>
+    <span data-lang="kr" class="active">"세상을 잇고,<br>기술의 기준을 세운다"</span>
     <span data-lang="en">"Connecting the World,<br>Setting the Standard"</span>
     <span data-lang="jp">"世界をつなぎ、<br>技術の基準を打ち立てる"</span>
     <span data-lang="cn">"连接世界，<br>树立技术标准"</span>
@@ -459,31 +459,31 @@
 <section class="ref-sec fade-in">
   <div class="sec-label">Ideal Referrals</div>
   <div class="sec-title">
-    <span data-lang="kr" class="on">이런 분을 소개해주세요</span>
+    <span data-lang="kr" class="active">이런 분을 소개해주세요</span>
     <span data-lang="en">Who to Refer</span>
     <span data-lang="jp">こんな方をご紹介ください</span>
     <span data-lang="cn">欢迎介绍以下类型客户</span>
   </div>
   <div class="ref-list">
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">🏭</span><span class="ref-title"><span data-lang="kr" class="on">공장 증축·신축 제조업체</span><span data-lang="en">Factory Expansion Manufacturers</span><span data-lang="jp">工場増設・新築の製造業者</span><span data-lang="cn">工厂扩建·新建制造商</span></span></div>
-      <div class="ref-desc"><span data-lang="kr" class="on">공장 내부 계단·난간·H빔·작업대·구조물 제작. 철골 구조 신축 또는 증설을 검토 중인 제조사.</span><span data-lang="en">Stairs, railings, H-beams, workbenches, and structures. Manufacturers planning new or expanded steel-frame buildings.</span><span data-lang="jp">工場内部の階段・手すり・H鋼・作業台・構造物製作。鉄骨構造の新築または増設を検討中の製造業者。</span><span data-lang="cn">制作工厂内部楼梯、栏杆、H型钢、工作台、结构件，适合考虑新建或扩建钢结构的制造商。</span></div>
+      <div class="ref-header"><span class="ref-icon">🏭</span><span class="ref-title"><span data-lang="kr" class="active">공장 증축·신축 제조업체</span><span data-lang="en">Factory Expansion Manufacturers</span><span data-lang="jp">工場増設・新築の製造業者</span><span data-lang="cn">工厂扩建·新建制造商</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="active">공장 내부 계단·난간·H빔·작업대·구조물 제작. 철골 구조 신축 또는 증설을 검토 중인 제조사.</span><span data-lang="en">Stairs, railings, H-beams, workbenches, and structures. Manufacturers planning new or expanded steel-frame buildings.</span><span data-lang="jp">工場内部の階段・手すり・H鋼・作業台・構造物製作。鉄骨構造の新築または増設を検討中の製造業者。</span><span data-lang="cn">制作工厂内部楼梯、栏杆、H型钢、工作台、结构件，适合考虑新建或扩建钢结构的制造商。</span></div>
     </div>
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">📦</span><span class="ref-title"><span data-lang="kr" class="on">물류창고·공장 시공사</span><span data-lang="en">Warehouse & Factory Contractors</span><span data-lang="jp">物流倉庫・工場施工会社</span><span data-lang="cn">物流仓库·工厂施工商</span></span></div>
-      <div class="ref-desc"><span data-lang="kr" class="on">철골 구조·보강·캐노피·안전구조물 제작. 대형 물류센터 또는 창고 신축·리모델링이 필요한 업체.</span><span data-lang="en">Steel structures, reinforcements, canopies, and safety frames. Logistics companies needing new or renovated warehouses.</span><span data-lang="jp">鉄骨構造・補強・キャノピー・安全構造物製作。大型物流センターや倉庫の新築・リモデリングが必要な企業。</span><span data-lang="cn">钢结构、加固件、雨篷及安全构件，适合需要新建或改造大型仓储设施的物流企业。</span></div>
+      <div class="ref-header"><span class="ref-icon">📦</span><span class="ref-title"><span data-lang="kr" class="active">물류창고·공장 시공사</span><span data-lang="en">Warehouse & Factory Contractors</span><span data-lang="jp">物流倉庫・工場施工会社</span><span data-lang="cn">物流仓库·工厂施工商</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="active">철골 구조·보강·캐노피·안전구조물 제작. 대형 물류센터 또는 창고 신축·리모델링이 필요한 업체.</span><span data-lang="en">Steel structures, reinforcements, canopies, and safety frames. Logistics companies needing new or renovated warehouses.</span><span data-lang="jp">鉄骨構造・補強・キャノピー・安全構造物製作。大型物流センターや倉庫の新築・リモデリングが必要な企業。</span><span data-lang="cn">钢结构、加固件、雨篷及安全构件，适合需要新建或改造大型仓储设施的物流企业。</span></div>
     </div>
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">🏗️</span><span class="ref-title"><span data-lang="kr" class="on">건설사 및 전문건설업체</span><span data-lang="en">Construction & Specialty Firms</span><span data-lang="jp">建設会社・専門建設業者</span><span data-lang="cn">建设公司及专业施工企业</span></span></div>
-      <div class="ref-desc"><span data-lang="kr" class="on">철골·계단·난간·데크·구조 보강. 도면 기반 정밀 제작과 현장 설치를 외주로 필요로 하는 건설사.</span><span data-lang="en">Steel, stairs, railings, decks, structural reinforcement. General contractors needing outsourced precision fabrication and on-site installation.</span><span data-lang="jp">鉄骨・階段・手すり・デッキ・構造補強。図面ベースの精密製作と現場設置を外注する建設会社。</span><span data-lang="cn">钢结构、楼梯、栏杆、甲板及结构加固，适合需要外包精密制造和现场安装的建设公司。</span></div>
+      <div class="ref-header"><span class="ref-icon">🏗️</span><span class="ref-title"><span data-lang="kr" class="active">건설사 및 전문건설업체</span><span data-lang="en">Construction & Specialty Firms</span><span data-lang="jp">建設会社・専門建設業者</span><span data-lang="cn">建设公司及专业施工企业</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="active">철골·계단·난간·데크·구조 보강. 도면 기반 정밀 제작과 현장 설치를 외주로 필요로 하는 건설사.</span><span data-lang="en">Steel, stairs, railings, decks, structural reinforcement. General contractors needing outsourced precision fabrication and on-site installation.</span><span data-lang="jp">鉄骨・階段・手すり・デッキ・構造補強。図面ベースの精密製作と現場設置を外注する建設会社。</span><span data-lang="cn">钢结构、楼梯、栏杆、甲板及结构加固，适合需要外包精密制造和现场安装的建设公司。</span></div>
     </div>
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">🔬</span><span class="ref-title"><span data-lang="kr" class="on">식품·제약·반도체 공장</span><span data-lang="en">Food / Pharma / Semiconductor</span><span data-lang="jp">食品・製薬・半導体工場</span><span data-lang="cn">食品·制药·半导体工厂</span></span></div>
-      <div class="ref-desc"><span data-lang="kr" class="on">스테인리스 작업대·구조물·설비 보강. 위생 기준이 엄격한 공장이나 반도체 장비 프레임 제작이 필요한 업체.</span><span data-lang="en">Stainless workbenches, structures, equipment reinforcement. Facilities with strict hygiene standards or needing semiconductor equipment frames.</span><span data-lang="jp">ステンレス作業台・構造物・設備補強。衛生基準が厳しい工場や半導体装置フレームが必要な企業。</span><span data-lang="cn">不锈钢工作台、结构件及设备加固，适合卫生标准严格的工厂或需要半导体设备框架的企业。</span></div>
+      <div class="ref-header"><span class="ref-icon">🔬</span><span class="ref-title"><span data-lang="kr" class="active">식품·제약·반도체 공장</span><span data-lang="en">Food / Pharma / Semiconductor</span><span data-lang="jp">食品・製薬・半導体工場</span><span data-lang="cn">食品·制药·半导体工厂</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="active">스테인리스 작업대·구조물·설비 보강. 위생 기준이 엄격한 공장이나 반도체 장비 프레임 제작이 필요한 업체.</span><span data-lang="en">Stainless workbenches, structures, equipment reinforcement. Facilities with strict hygiene standards or needing semiconductor equipment frames.</span><span data-lang="jp">ステンレス作業台・構造物・設備補強。衛生基準が厳しい工場や半導体装置フレームが必要な企業。</span><span data-lang="cn">不锈钢工作台、结构件及设备加固，适合卫生标准严格的工厂或需要半导体设备框架的企业。</span></div>
     </div>
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">🏛️</span><span class="ref-title"><span data-lang="kr" class="on">군부대·관공서·학교 유지보수</span><span data-lang="en">Gov / Military / School Maintenance</span><span data-lang="jp">軍・官公庁・学校メンテナンス</span><span data-lang="cn">军队·政府·学校维保</span></span></div>
-      <div class="ref-desc"><span data-lang="kr" class="on">울타리·캐노피·계단·안전시설 보수. 공공기관 철제 구조물의 교체·보수 담당자. 공공 입찰 경험 보유.</span><span data-lang="en">Fences, canopies, stairs, safety facility repairs. Public institution managers handling steel structure maintenance. Experienced in public procurement.</span><span data-lang="jp">フェンス・キャノピー・階段・安全施設補修。公共機関の鉄製構造物担当者。公共入札の経験あり。</span><span data-lang="cn">围栏、雨篷、楼梯及安全设施修缮，适合公共机构构造物负责人，具有公共招标经验。</span></div>
+      <div class="ref-header"><span class="ref-icon">🏛️</span><span class="ref-title"><span data-lang="kr" class="active">군부대·관공서·학교 유지보수</span><span data-lang="en">Gov / Military / School Maintenance</span><span data-lang="jp">軍・官公庁・学校メンテナンス</span><span data-lang="cn">军队·政府·学校维保</span></span></div>
+      <div class="ref-desc"><span data-lang="kr" class="active">울타리·캐노피·계단·안전시설 보수. 공공기관 철제 구조물의 교체·보수 담당자. 공공 입찰 경험 보유.</span><span data-lang="en">Fences, canopies, stairs, safety facility repairs. Public institution managers handling steel structure maintenance. Experienced in public procurement.</span><span data-lang="jp">フェンス・キャノピー・階段・安全施設補修。公共機関の鉄製構造物担当者。公共入札の経験あり。</span><span data-lang="cn">围栏、雨篷、楼梯及安全设施修缮，适合公共机构构造物负责人，具有公共招标经验。</span></div>
     </div>
   </div>
 </section>
@@ -523,36 +523,36 @@
   <div class="connect-grid">
     <a href="tel:01021697247" class="connect-btn main-call">
       <span class="c-icon" style="filter:brightness(0) invert(1);">📞</span>
-      <span data-lang="kr" class="on">010-2169-7247</span><span data-lang="en">Call Now</span><span data-lang="jp">電話する</span><span data-lang="cn">立即致电</span>
+      <span data-lang="kr" class="active">010-2169-7247</span><span data-lang="en">Call Now</span><span data-lang="jp">電話する</span><span data-lang="cn">立即致电</span>
     </a>
     <a href="mailto:schweiss0510@naver.com" class="connect-btn sub">
       <span class="c-icon">✉️</span>
-      <span data-lang="kr" class="on">이메일</span><span data-lang="en">Email</span><span data-lang="jp">メール</span><span data-lang="cn">邮件</span>
+      <span data-lang="kr" class="active">이메일</span><span data-lang="en">Email</span><span data-lang="jp">メール</span><span data-lang="cn">邮件</span>
     </a>
     <a href="http://weld001.iptime.org/schweiss/" target="_blank" class="connect-btn sub">
       <span class="c-icon">🌐</span>
-      <span data-lang="kr" class="on">홈페이지</span><span data-lang="en">Website</span><span data-lang="jp">サイト</span><span data-lang="cn">官网</span>
+      <span data-lang="kr" class="active">홈페이지</span><span data-lang="en">Website</span><span data-lang="jp">サイト</span><span data-lang="cn">官网</span>
     </a>
     <a href="https://www.instagram.com/en_schweiss0510/" target="_blank" class="connect-btn sub">
       <span class="c-icon">📸</span>
-      <span data-lang="kr" class="on">인스타그램</span><span data-lang="en">Instagram</span><span data-lang="jp">インスタ</span><span data-lang="cn">Instagram</span>
+      <span data-lang="kr" class="active">인스타그램</span><span data-lang="en">Instagram</span><span data-lang="jp">インスタ</span><span data-lang="cn">Instagram</span>
     </a>
     <a href="https://www.youtube.com/@%EC%8A%A4%EB%B0%94%EC%9D%B4%EC%A6%88_%EC%BD%94%EB%A6%AC%EC%95%84" target="_blank" class="connect-btn sub">
       <span class="c-icon">▶️</span>
-      <span data-lang="kr" class="on">유튜브</span><span data-lang="en">YouTube</span><span data-lang="jp">YouTube</span><span data-lang="cn">YouTube</span>
+      <span data-lang="kr" class="active">유튜브</span><span data-lang="en">YouTube</span><span data-lang="jp">YouTube</span><span data-lang="cn">YouTube</span>
     </a>
     <a href="tel:05071322-2169" class="connect-btn sub">
       <span class="c-icon">📟</span>
-      <span data-lang="kr" class="on">대표번호</span><span data-lang="en">Office</span><span data-lang="jp">代表番号</span><span data-lang="cn">总机</span>
+      <span data-lang="kr" class="active">대표번호</span><span data-lang="en">Office</span><span data-lang="jp">代表番号</span><span data-lang="cn">总机</span>
     </a>
     <a href="https://jinjjabg-hub.github.io/MANDU/?u=lee-jisu-schweiss" target="_blank" class="connect-btn sub">
       <span class="c-icon">💬</span>
-      <span data-lang="kr" class="on">만두 · 실시간 번역</span><span data-lang="en">MANDU · Live Chat</span><span data-lang="jp">MANDU・翻訳チャット</span><span data-lang="cn">MANDU·实时翻译</span>
+      <span data-lang="kr" class="active">만두 · 실시간 번역</span><span data-lang="en">MANDU · Live Chat</span><span data-lang="jp">MANDU・翻訳チャット</span><span data-lang="cn">MANDU·实时翻译</span>
     </a>
   </div>
   <div class="qr-wrap">
     <img src="qr.png" alt="QR코드">
-    <div class="qr-label"><span data-lang="kr" class="on">📱 QR 스캔으로 이 명함 바로 열기</span><span data-lang="en">📱 Scan QR to open this card</span><span data-lang="jp">📱 QRスキャンでこの名刺を開く</span><span data-lang="cn">📱 扫描QR码直接打开此名片</span></div>
+    <div class="qr-label"><span data-lang="kr" class="active">📱 QR 스캔으로 이 명함 바로 열기</span><span data-lang="en">📱 Scan QR to open this card</span><span data-lang="jp">📱 QRスキャンでこの名刺を開く</span><span data-lang="cn">📱 扫描QR码直接打开此名片</span></div>
   </div>
 </section>
 
@@ -570,7 +570,7 @@
   <div>
     <div class="footer-co">SCHWEISS</div>
     <div class="footer-sub">
-      <span data-lang="kr" class="on">금속임가공 · 반도체 · 건설 | 경기도 화성시</span>
+      <span data-lang="kr" class="active">금속임가공 · 반도체 · 건설 | 경기도 화성시</span>
       <span data-lang="en">Metal Fab · Semiconductor · Construction</span>
       <span data-lang="jp">金属加工 · 半導体 · 建設 | 京畿道 華城市</span>
       <span data-lang="cn">金属加工 · 半导体 · 建设 | 京畿道 华城市</span>
@@ -585,7 +585,7 @@ function setLang(lang, btn) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
   document.querySelectorAll('[data-lang]').forEach(el => {
-    el.classList.toggle('on', el.getAttribute('data-lang') === lang);
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
   });
 }
 
@@ -737,5 +737,6 @@ async function activateMandu() {
   });
 })();
 </script>
+<script src="https://jinjjabg-hub.github.io/NAMECARD/dica-edit.js" data-repo="NAMECARD" data-slug="이지수" defer></script>
 </body>
 </html>
