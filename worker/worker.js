@@ -25,6 +25,8 @@ const ALLOWED_REPOS = ["NAMECARD", "BNI-PIONEER-cards", "bni-giants"];
 const COMMIT_PREFIX = "내 명함 관리";
 const EDIT_SCRIPT_SRC = "https://jinjjabg-hub.github.io/NAMECARD/dica-edit.js";
 const TRANSLATE_MODEL = "claude-haiku-4-5";
+// 배포 확인용 — 브라우저에서 https://dica-editor.jinjjabg.workers.dev/health 를 열면 이 값이 보인다
+const WORKER_VERSION = "2026-09-28 셀프수정 v2 (월1회·덮어쓰기방지·줄단위번역)";
 
 /* ── HTTP 공통 ───────────────────────────────────── */
 function cors(res) {
@@ -349,6 +351,7 @@ export default {
     if (req.method === "OPTIONS") return cors(new Response(null, { status: 204 }));
     const url = new URL(req.url);
     try {
+      if (url.pathname === "/health") return json({ ok: true, version: WORKER_VERSION });
       if (url.pathname === "/owner-check" && req.method === "GET") {
         try {
           const { isAdmin } = await authorize(env, req, url.searchParams.get("repo"), url.searchParams.get("slug"));
