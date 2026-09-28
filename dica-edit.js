@@ -25,7 +25,6 @@
     branch: (me && me.dataset.branch) || 'main',
     admins: ['jinjjabg@gmail.com'],
     commitPrefix: '내 명함 관리',
-    cardbookJs: 'https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js',
   };
   if (!CFG.repo || !CFG.slug) {
     console.warn('[dica-edit] data-repo / data-slug 가 없어 수정 버튼을 만들지 않습니다.');
@@ -264,22 +263,48 @@
   }
 
   /* ── 로그인 ───────────────────────────────────────── */
-  function waitFirebase(maxTries) {
-    return new Promise(function (resolve) {
-      var tries = 0;
-      (function loop() {
-        if (typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length && firebase.auth) return resolve(true);
-        if (tries === 0 && !document.querySelector('script[src*="save-to-cardbook"]')) {
-          // Firebase 를 로드하는 CardBook 스크립트가 없는 카드 → 직접 불러온다
-          var s = document.createElement('script');
-          s.src = CFG.cardbookJs;
-          document.head.appendChild(s);
-        }
-        if (++tries > (maxTries || 80)) return resolve(false);
-        setTimeout(loop, 150);
-      })();
+  var FIREBASE_CONFIG = {
+    apiKey: 'AIzaSyAZoWSGSA81daZydNgzegct2aaeFbDajr0',
+    authDomain: 'mandu-e7c3c.firebaseapp.com',
+    projectId: 'mandu-e7c3c',
+    storageBucket: 'mandu-e7c3c.firebasestorage.app',
+    messagingSenderId: '196338490174',
+    appId: '1:196338490174:web:78dc77e684945aca362a6f',
+  };
+  function loadScript(src) {
+    return new Promise(function (res) {
+      if (document.querySelector('script[src="' + src + '"]')) return res();
+      var el = document.createElement('script');
+      el.src = src; el.onload = res; el.onerror = res;
+      document.head.appendChild(el);
     });
   }
+  // 보통은 카드의 save-to-cardbook.js 가 Firebase 를 준비한다. 그게 없는 카드면 직접 불러와 초기화.
+  function waitFirebase() {
+    var hasCardbook = !!document.querySelector('script[src*="save-to-cardbook"]');
+    var boot = (typeof firebase === 'undefined' && !hasCardbook)
+      ? loadScript('https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js')
+          .then(function () { return loadScript('https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js'); })
+      : Promise.resolve();
+    return boot.then(function () {
+      return new Promise(function (resolve) {
+        var tries = 0;
+        (function loop() {
+          if (typeof firebase !== 'undefined' && firebase.apps) {
+            if (!firebase.apps.length && (!hasCardbook || tries > 30)) {
+              try { firebase.initializeApp(FIREBASE_CONFIG); } catch (e) { /* 다른 스크립트가 먼저 초기화 */ }
+            }
+            if (firebase.apps.length && firebase.auth) return resolve(true);
+          }
+          if (++tries > 80) return resolve(false);
+          setTimeout(loop, 150);
+        })();
+      });
+    });
+  }
+
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  var PENDING_KEY = '_dicaPending:' + CFG.repo + '/' + CFG.slug;
 
   function openEdit() {
     var btn = document.getElementById('dica-edit-btn');
@@ -290,17 +315,29 @@
       .then(function (ready) {
         if (!ready) throw new Error('로그인 준비 실패. 잠시 후 다시 시도해주세요.');
         var auth = firebase.auth();
-        return auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-          .then(function () { return auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); });
+        return auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(function () {
+          var provider = new firebase.auth.GoogleAuthProvider();
+          // 휴대폰(특히 카톡 안 브라우저)은 팝업이 막히는 경우가 많아 화면 전환 방식으로 로그인한다.
+          // 돌아오면 아래 resumeAfterRedirect() 가 이어서 편집창을 연다.
+          if (isMobile) {
+            try { sessionStorage.setItem(PENDING_KEY, '1'); } catch (e) {}
+            return auth.signInWithRedirect(provider).then(function () { return null; });
+          }
+          return auth.signInWithPopup(provider).then(function (r) { return afterLogin(r.user, btn); });
+        });
       })
-      .then(function (result) {
-        state.email = (result.user.email || '').toLowerCase();
-        state.isAdmin = CFG.admins.indexOf(state.email) >= 0;
-        return result.user.getIdToken();
-      })
+      .catch(function (e) { alert('로그인/불러오기 실패: ' + e.message); })
+      .then(function () { btn.disabled = false; btn.textContent = orig; });
+  }
+
+  // 로그인 후: 주인 확인 → 이번 달 사용 여부 → 원본 불러와 편집창 열기
+  function afterLogin(user, btn) {
+    state.email = (user.email || '').toLowerCase();
+    state.isAdmin = CFG.admins.indexOf(state.email) >= 0;
+    if (btn) btn.textContent = '확인 중...';
+    return user.getIdToken()
       .then(function (token) {
         state.token = token;
-        btn.textContent = '확인 중...';
         return fetch(CFG.workerUrl + '/owner-check?repo=' + encodeURIComponent(CFG.repo) + '&slug=' + encodeURIComponent(CFG.slug), {
           headers: { Authorization: 'Bearer ' + token },
         }).then(function (r) { return r.json(); });
@@ -312,12 +349,12 @@
             : '이 명함의 주인 계정으로 로그인해주세요.');
           return null;
         }
+        if (check.admin) state.isAdmin = true;
         return Promise.all([state.isAdmin ? false : usedThisMonth(), fetchSource()]);
       })
       .then(function (res) {
         if (!res) return;
-        var used = res[0];
-        if (used) {
+        if (res[0]) {
           alert('이번 달 수정은 이미 사용하셨어요.\n' + nextMonthLabel() + '부터 다시 수정할 수 있어요.\n\n급한 수정은 관리자(송승훈)에게 문의해주세요.');
           return;
         }
@@ -329,9 +366,23 @@
           ? '🔑 관리자 계정 — 횟수 제한 없음'
           : '📅 수정은 <b>한 달에 1번</b> 저장할 수 있어요. 고칠 곳을 모두 고친 뒤 한 번에 저장해주세요.';
         openModalOnly();
-      })
-      .catch(function (e) { alert('로그인/불러오기 실패: ' + e.message); })
-      .then(function () { btn.disabled = false; btn.textContent = orig; });
+      });
+  }
+
+  // 휴대폰에서 구글 로그인하고 돌아왔을 때 이어서 편집창 열기
+  function resumeAfterRedirect() {
+    var pending = false;
+    try { pending = sessionStorage.getItem(PENDING_KEY) === '1'; } catch (e) {}
+    if (!pending) return;
+    try { sessionStorage.removeItem(PENDING_KEY); } catch (e) {}
+    waitFirebase().then(function (ready) {
+      if (!ready) return;
+      var unsub = firebase.auth().onAuthStateChanged(function (user) {
+        if (!user) return;
+        unsub();
+        afterLogin(user, null).catch(function (e) { alert('편집창 열기 실패: ' + e.message); });
+      });
+    });
   }
 
   /* ── 저장 ─────────────────────────────────────────── */
@@ -344,7 +395,8 @@
       var newVal = toSavable(ta.value, g.langs.kr || '');
       if (newVal === (g.langs.kr || '')) return; // 안 바뀐 항목은 건너뜀
       if (!newVal.trim()) return;               // 빈칸으로 지우는 건 막는다 (레이아웃 깨짐 방지)
-      changes[g.key] = { kr: newVal, _langs: Object.keys(g.langs).filter(function (l) { return l !== 'kr'; }) };
+      // _base: 내가 불러온 원래 문구 — 서버가 현재 문구와 다르면 저장을 거절한다 (덮어쓰기 방지)
+      changes[g.key] = { kr: newVal, _base: g.langs.kr, _langs: Object.keys(g.langs).filter(function (l) { return l !== 'kr'; }) };
       edited.push({ g: g, val: newVal });
     });
     if (!edited.length) { alert('바뀐 내용이 없습니다.'); return; }
@@ -379,6 +431,7 @@
       .then(function () { btn.disabled = false; btn.textContent = '저장하기'; });
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', buildUI);
-  else buildUI();
+  function start() { buildUI(); resumeAfterRedirect(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
 })();

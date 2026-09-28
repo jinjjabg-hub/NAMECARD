@@ -19,3 +19,11 @@
 
 **새 카드 만들 때 지켜야 할 것** — 다국어는 반드시 `<span data-lang="xx">` 방식, 한국어 span에만 `class="active"`,
 span 안에 span을 중첩하지 말 것(강조는 `<strong>`/`<em>`). 이 형식이 아니면 수정 기능이 동작하지 않습니다.
+
+### 서버 (worker/worker.js)
+
+`dica-editor.jinjjabg.workers.dev` 에서 돌아가는 Cloudflare Worker 원본입니다. 비밀 값(토큰·API 키)은 코드에 없고 Cloudflare 환경 변수에만 있습니다.
+
+**배포**: Cloudflare 대시보드 → Workers & Pages → dica-editor → Edit code → `worker/worker.js` 전체 붙여넣기 → Deploy.
+
+서버가 막는 것: 주인·관리자 외 저장, 월 1회 초과, 그 사이 바뀐 문구 덮어쓰기, 명함 레포 밖 파일 쓰기, 허용 외 HTML, 줄이 빠진 번역(재시도 후에도 빠지면 저장 안 함).
