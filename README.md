@@ -27,6 +27,8 @@ span 안에 span을 중첩하지 말 것(강조는 `<strong>`/`<em>`). 이 형�
 
 `dica-editor.jinjjabg.workers.dev` 에서 돌아가는 Cloudflare Worker 원본입니다. 비밀 값(토큰·API 키)은 코드에 없고 Cloudflare 환경 변수에만 있습니다.
 
-**배포**: Cloudflare 대시보드 → Workers & Pages → dica-editor → Edit code → `worker/worker.js` 전체 붙여넣기 → Deploy.
+**배포**: Cloudflare Workers Builds(GitHub 자동 배포)에 연결돼 있으면, `worker/` 폴더 변경이 main 에 합쳐질 때 자동 배포됩니다
+(설정: `worker/wrangler.toml`, 루트 폴더 `worker`, 변경 감지 경로 `worker/*`).
+연결 전이거나 급할 때: 대시보드 → Workers & Pages → dica-editor → Edit code → `worker/worker.js` 전체 붙여넣기 → Deploy.
 
 서버가 막는 것: 주인·관리자 외 저장, 월 1회 초과, 그 사이 바뀐 문구 덮어쓰기, 명함 레포 밖 파일 쓰기, 허용 외 HTML, 줄이 빠진 번역(재시도 후에도 빠지면 저장 안 함).
