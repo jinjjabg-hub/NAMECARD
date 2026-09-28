@@ -441,15 +441,54 @@
       .then(function (j) {
         if (!j.ok) throw new Error(j.error || '저장 실패');
         try { localStorage.setItem(localKey(), new Date().toISOString()); } catch (e) {}
-        edited.forEach(function (e) { if (e.g.el) e.g.el.innerHTML = e.val; e.g.langs.kr = e.val; });
-        alert('저장됐습니다! 다른 언어 번역까지 반영되기까지 1~2분 정도 걸릴 수 있어요.');
+        var pending = [];
+        edited.forEach(function (e) {
+          // 서버가 돌려준 전체 언어 문구 (예전 서버면 한국어만)
+          var langs = (j.changes && j.changes[e.g.key]) || { kr: e.val };
+          if (e.g.el) applyLangs(e.g.el, langs);
+          pending.push({ oldKr: plain(e.g.langs.kr || ''), langs: langs });
+          e.g.langs = Object.assign({}, e.g.langs, langs);
+        });
+        savePending(pending);
+        alert('저장됐습니다! 이 화면에는 바로 반영했어요.\n다른 사람에게는 5~10분 뒤부터 새 문구가 보여요.');
         closeModal();
       })
       .catch(function (e) { alert('저장 실패: ' + e.message); })
       .then(function () { btn.disabled = false; btn.textContent = '저장하기'; });
   }
 
-  function start() { buildUI(); resumeAfterRedirect(); }
+
+  /* ── 저장 직후 즉시 반영 ─────────────────────────────
+   * 명함 파일이 실제 사이트에 퍼지기까지 5~10분 걸린다. 그 사이 주인이 새로고침해도
+   * 옛 문구가 보이지 않도록, 방금 저장한 문구를 10분간 이 기기에 기억해 두었다가 다시 덮어 보여준다. */
+  var PENDING_MS = 10 * 60 * 1000;
+  function pendingKey() { return 'dica-pending:' + CFG.repo + '/' + CFG.slug; }
+
+  // kr span 이 속한 묶음(바로 이웃한 data-lang span 들)의 각 언어 내용을 바꾼다
+  function applyLangs(krEl, langs) {
+    var first = krEl;
+    while (first.previousElementSibling && first.previousElementSibling.matches('span[data-lang]')) first = first.previousElementSibling;
+    for (var el = first; el && el.matches('span[data-lang]'); el = el.nextElementSibling) {
+      var l = el.getAttribute('data-lang');
+      if (langs[l] !== undefined) el.innerHTML = langs[l];
+    }
+  }
+  function savePending(list) {
+    try { localStorage.setItem(pendingKey(), JSON.stringify({ at: Date.now(), list: list })); } catch (e) {}
+  }
+  function restorePending() {
+    var data;
+    try { data = JSON.parse(localStorage.getItem(pendingKey()) || 'null'); } catch (e) { return; }
+    if (!data || Date.now() - data.at > PENDING_MS) { try { localStorage.removeItem(pendingKey()); } catch (e) {} return; }
+    var krs = Array.from(document.querySelectorAll('span[data-lang="kr"]'));
+    data.list.forEach(function (p) {
+      // 아직 옛 문구가 보이는 곳만 덮는다 (사이트가 이미 갱신됐으면 그대로 둠)
+      var el = krs.find(function (k) { return plain(k.innerHTML) === p.oldKr; });
+      if (el) applyLangs(el, p.langs);
+    });
+  }
+
+  function start() { restorePending(); buildUI(); resumeAfterRedirect(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
 })();
