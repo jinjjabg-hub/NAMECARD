@@ -497,7 +497,7 @@ async function handleNewsPost(env, req) {
 // 올린 소식 목록 (숨긴 것 포함)
 async function handleNewsList(env, req) {
   const body = await req.json();
-  await authorizePremium(env, req, body.repo, body.slug);
+  const { isAdmin } = await authorizePremium(env, req, body.repo, body.slug);
   let data;
   try { data = JSON.parse((await githubGetFile(env, body.repo, `${body.slug}/news.json`)).content); }
   catch (e) { if (e.code !== "notfound") throw e; data = { items: [] }; }
@@ -506,7 +506,8 @@ async function handleNewsList(env, req) {
     id: it.id, type: it.type, date: it.date,
     title: (it.title && (it.title.kr || Object.values(it.title)[0])) || "",
     hidden: !!it.hidden, expired: !!(it.until && it.until < today),
-    mine: !!it.owner_post, // 삭제는 고객이 직접 올린 글만
+    mine: !!it.owner_post,
+    canDelete: !!it.owner_post || isAdmin, // 삭제는 고객이 직접 올린 글만 (관리자는 전부)
   }));
   return json({ ok: true, items });
 }
