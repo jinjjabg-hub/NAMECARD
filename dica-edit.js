@@ -599,7 +599,7 @@
         row.appendChild(b);
       }
       btn(it.hidden ? '보이기' : '숨기기', '#3b82f6', function () { manage(box, it.hidden ? 'show' : 'hide', it.id); });
-      if (it.mine) btn('삭제', '#e5484d', function () {
+      if (it.canDelete) btn('삭제', '#e5484d', function () {
         if (confirm('"' + (it.title || '이 소식') + '"을(를) 삭제할까요?\n삭제하면 되돌릴 수 없어요. (잠깐 내리고 싶다면 "숨기기")')) manage(box, 'delete', it.id);
       });
       box.appendChild(row);
