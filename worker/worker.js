@@ -18,6 +18,10 @@
  *   - 저장 직전 원본 문구가 바뀌었으면 거절 (다른 칸 덮어쓰기 방지)
  *   - 허용 태그 외 HTML 은 글자로 바꿔 저장
  *   - 번역은 <br> 줄 단위로 맞춰서 받는다 (줄 누락 방지)
+ *
+ * 내 소식판 올리기 (프리미엄 전용, 횟수 제한 없음)
+ *   - KV DICA_OWNERS 에 "premium:레포/폴더" = "1" 이 있는 카드만 허용 (관리자: /admin/premium)
+ *   - POST /news/draft  설명 초안(AI)   POST /news/post  번역 후 폴더/news.json + 폴더/news/이미지 커밋
  * ───────────────────────────────────────────────────────────── */
 
 const OWNER = "jinjjabg-hub";
@@ -26,7 +30,7 @@ const COMMIT_PREFIX = "내 명함 관리";
 const EDIT_SCRIPT_SRC = "https://jinjjabg-hub.github.io/NAMECARD/dica-edit.js";
 const TRANSLATE_MODEL = "claude-haiku-4-5";
 // 배포 확인용 — 브라우저에서 https://dica-editor.jinjjabg.workers.dev/health 를 열면 이 값이 보인다
-const WORKER_VERSION = "2026-09-28 셀프수정 v3 (저장 즉시 전체 언어 반환)";
+const WORKER_VERSION = "2026-10-03 셀프수정 v3 + 소식 올리기 v1";
 
 /* ── HTTP 공통 ───────────────────────────────────── */
 function cors(res) {
@@ -96,7 +100,7 @@ function ghHeaders(env) {
 }
 async function githubGetFile(env, repo, path) {
   const res = await fetch(`https://api.github.com/repos/${OWNER}/${repo}/contents/${encodePath(path)}`, { headers: ghHeaders(env) });
-  if (!res.ok) throw new HttpError(502, `GitHub 조회 실패 (${res.status})`);
+  if (!res.ok) throw new HttpError(502, `GitHub 조회 실패 (${res.status})`, res.status === 404 ? "notfound" : undefined);
   const data = await res.json();
   const bin = atob(data.content.replace(/\n/g, ""));
   return { content: new TextDecoder().decode(Uint8Array.from(bin, (c) => c.charCodeAt(0))), sha: data.sha };
@@ -112,6 +116,16 @@ async function githubPutFile(env, repo, path, content, sha, message) {
   });
   if (res.status === 409) throw new HttpError(409, "그 사이 명함이 업데이트됐어요. 다시 열어 수정해주세요.", "stale");
   if (!res.ok) throw new HttpError(502, `GitHub 저장 실패 (${res.status}) ${(await res.text()).slice(0, 200)}`);
+}
+
+// 이미 base64 인 파일(이미지) 새로 올리기
+async function githubPutBase64(env, repo, path, b64, message) {
+  const res = await fetch(`https://api.github.com/repos/${OWNER}/${repo}/contents/${encodePath(path)}`, {
+    method: "PUT",
+    headers: ghHeaders(env),
+    body: JSON.stringify({ message, content: b64 }),
+  });
+  if (!res.ok) throw new HttpError(502, `이미지 저장 실패 (${res.status}) ${(await res.text()).slice(0, 200)}`);
 }
 
 /* ── 월 1회 제한 (한국시간 달력 기준) ─────────────── */
@@ -186,11 +200,11 @@ const splitLines = (s) => s.split(BR);
 /* ── 번역 (Claude, 구조화 출력) ──────────────────── */
 const LANG_NAMES = {
   en: "English", jp: "Japanese", cn: "Chinese (Simplified)", mn: "Mongolian", vi: "Vietnamese",
-  ur: "Urdu", si: "Sinhala", th: "Thai", id: "Indonesian", ru: "Russian",
+  ur: "Urdu", si: "Sinhala", th: "Thai", id: "Indonesian", ru: "Russian", hi: "Hindi",
 };
 
 // items: [[줄1, 줄2, ...], ...] → 같은 모양의 번역 배열
-async function translateLines(env, items, langName) {
+async function translateLines(env, items, langName, kind = "business-card") {
   const schema = {
     type: "object",
     properties: { translations: { type: "array", items: { type: "array", items: { type: "string" } } } },
@@ -198,7 +212,7 @@ async function translateLines(env, items, langName) {
     additionalProperties: false,
   };
   const prompt =
-    `Translate the Korean business-card text below into ${langName}.\n` +
+    `Translate the Korean ${kind} text below into ${langName}.\n` +
     `The input is a JSON array of items; each item is an array of lines. Return the same shape: ` +
     `exactly ${items.length} items, and each item must have exactly as many lines as the input item — ` +
     `never merge, drop, or add lines. Keep numbers, license codes, and proper nouns (company and product names) as they are. ` +
@@ -285,6 +299,190 @@ async function handleSave(env, req) {
   return json({ ok: true, count: Object.keys(changes).length, admin: isAdmin, changes });
 }
 
+/* ── 내 소식판 올리기 ───────────────────────────── */
+const NEWS_LANGS = ["en", "jp", "cn", "hi"]; // 소식판(news-board.js)이 지원하는 언어. kr 은 원문
+const NEWS_TYPES = ["product", "event", "case", "news"];
+const NEWS_MAX_ITEMS = 200;
+const NEWS_MAX_IMAGE_BYTES = 1.5 * 1024 * 1024; // 클라이언트가 1200px 로 줄여 보내므로 보통 100KB 안팎
+
+async function isPremium(env, repo, slug) {
+  return (await env.DICA_OWNERS.get(`premium:${repo}/${slug}`)) === "1";
+}
+async function authorizePremium(env, req, repo, slug) {
+  const auth = await authorize(env, req, repo, slug);
+  if (!(await isPremium(env, repo, slug))) {
+    throw new HttpError(403, "내 소식판 올리기는 프리미엄 전용 기능이에요.", "not-premium");
+  }
+  return auth;
+}
+
+const todayKst = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+
+function cleanText(v, max, label, required) {
+  const t = String(v == null ? "" : v).replace(/\r/g, "").replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, "").trim();
+  if (required && !t) throw new HttpError(400, `${label}을(를) 입력해주세요.`);
+  if (t.length > max) throw new HttpError(400, `${label}이(가) 너무 길어요. (${max}자 이내)`);
+  return t;
+}
+function cleanUrl(v, label) {
+  const t = String(v || "").trim();
+  if (!t) return "";
+  let u;
+  try { u = new URL(t); } catch (e) { throw new HttpError(400, `${label} 주소 형식이 올바르지 않아요.`); }
+  if (!/^https?:$/.test(u.protocol) || t.length > 300) throw new HttpError(400, `${label}은(는) http(s):// 로 시작하는 주소만 쓸 수 있어요.`);
+  return u.href;
+}
+function youtubeUrl(v) {
+  const t = String(v || "").trim();
+  if (!t) return "";
+  const m = t.match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/);
+  if (!m) throw new HttpError(400, "유튜브 링크 형식이 올바르지 않아요.");
+  return `https://youtu.be/${m[1]}`;
+}
+
+// 'data:image/webp;base64,...' → { ext, b64 }  (파일 앞부분 서명까지 확인해 이미지가 아닌 파일은 막는다)
+function parseImage(dataUrl) {
+  if (!dataUrl) return null;
+  const m = /^data:image\/(webp|jpeg|png);base64,([A-Za-z0-9+/=]+)$/.exec(String(dataUrl));
+  if (!m) throw new HttpError(400, "사진은 JPG·PNG·WEBP 만 올릴 수 있어요.");
+  const b64 = m[2];
+  if (b64.length * 0.75 > NEWS_MAX_IMAGE_BYTES) throw new HttpError(400, "사진 용량이 너무 커요. 더 작은 사진을 골라주세요.");
+  const head = atob(b64.slice(0, 24));
+  const ok = m[1] === "webp" ? head.startsWith("RIFF") && head.slice(8, 12) === "WEBP"
+    : m[1] === "png" ? head.startsWith("\x89PNG")
+    : head.startsWith("\xff\xd8\xff");
+  if (!ok) throw new HttpError(400, "올바른 사진 파일이 아니에요.");
+  return { ext: m[1] === "jpeg" ? "jpg" : m[1], b64 };
+}
+
+async function callClaudeText(env, prompt, maxTokens) {
+  if (!env.ANTHROPIC_API_KEY) throw new HttpError(500, "AI 키(ANTHROPIC_API_KEY)가 설정되지 않았어요.");
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "Content-Type": "application/json" },
+    body: JSON.stringify({ model: TRANSLATE_MODEL, max_tokens: maxTokens, messages: [{ role: "user", content: prompt }] }),
+  });
+  const data = await res.json();
+  if (!res.ok || data.error) throw new HttpError(502, `AI 호출 실패: ${data.error ? data.error.message : res.status}`);
+  return data.content.filter((b) => b.type === "text").map((b) => b.text).join("").trim();
+}
+
+// 제목·메모로 설명 초안을 만든다. 사실을 지어내지 않도록 입력에 없는 가격·날짜·수치는 쓰지 않게 한다.
+async function handleNewsDraft(env, req) {
+  const body = await req.json();
+  await authorizePremium(env, req, body.repo, body.slug);
+  const title = cleanText(body.title, 80, "제목", true);
+  const memo = cleanText(body.memo, 600, "메모", false);
+  const typeLabel = { product: "상품 소개", event: "이벤트", case: "고객 사례", news: "소식" }[body.type] || "소식";
+  const text = await callClaudeText(env,
+    `당신은 소상공인·영업인의 디지털 명함에 올라가는 "${typeLabel}" 글을 돕는 카피라이터입니다.\n` +
+    `아래 제목과 메모만 근거로 한국어 설명 초안을 2~3문장(200자 안팎)으로 쓰세요.\n` +
+    `규칙: 메모에 없는 가격·날짜·수치·효과를 지어내지 말 것. 과장 광고 문구, 이모지, 따옴표, 머리말 없이 본문만 출력. ` +
+    `읽는 사람이 "그래서 나에게 무슨 도움이 되는지"가 보이게 쓸 것.\n\n` +
+    `제목: ${title}\n메모: ${memo || "(없음)"}`, 600);
+  return json({ ok: true, draft: text.replace(/^["“]|["”]$/g, "") });
+}
+
+async function translateNews(env, fields) {
+  // fields: { title, desc, price, labels:[...] }  → 언어별로 같은 모양의 번역
+  if (!env.ANTHROPIC_API_KEY) throw new HttpError(500, "번역 키(ANTHROPIC_API_KEY)가 설정되지 않았어요.");
+  const items = [[fields.title], fields.desc.split("\n")];
+  if (fields.price) items.push([fields.price]);
+  fields.labels.forEach((l) => items.push([l]));
+  const out = {};
+  for (const lang of NEWS_LANGS) {
+    let result, lastErr;
+    for (let attempt = 0; attempt < 2 && !result; attempt++) {
+      try { result = await translateLines(env, items, LANG_NAMES[lang], "news-post"); } catch (e) { lastErr = e; }
+    }
+    if (!result) throw new HttpError(502, `${LANG_NAMES[lang]} 번역 실패: ${lastErr.message}. 잠시 후 다시 올려주세요.`);
+    out[lang] = result;
+  }
+  return out;
+}
+
+async function handleNewsPost(env, req) {
+  const body = await req.json();
+  const { repo, slug } = body;
+  const { email } = await authorizePremium(env, req, repo, slug);
+
+  const type = NEWS_TYPES.includes(body.type) ? body.type : "news";
+  const title = cleanText(body.title, 80, "제목", true);
+  const desc = cleanText(body.desc, 1200, "설명", false);
+  const price = cleanText(body.price, 60, "가격", false);
+  const video = youtubeUrl(body.video);
+  const image = parseImage(body.image);
+  const links = (Array.isArray(body.links) ? body.links : []).slice(0, 3).map((l, i) => ({
+    url: cleanUrl(l && l.url, `링크 ${i + 1}`),
+    label: cleanText(l && l.label, 40, `링크 ${i + 1} 이름`, false),
+  })).filter((l) => l.url);
+  let until = String(body.until || "").trim();
+  if (until && !/^\d{4}-\d{2}-\d{2}$/.test(until)) throw new HttpError(400, "노출 기간 날짜 형식이 올바르지 않아요.");
+  if (until && until < todayKst()) throw new HttpError(400, "노출 기간이 이미 지난 날짜예요.");
+  if (!desc && !image && !video) throw new HttpError(400, "사진, 설명, 유튜브 중 하나는 있어야 해요.");
+
+  // 번역을 먼저 끝낸다 → 실패하면 아무것도 저장하지 않음
+  const labelsToTranslate = links.filter((l) => l.label).map((l) => l.label);
+  const tr = await translateNews(env, { title, desc: desc || title, price, labels: labelsToTranslate });
+  const ml = (kr, pick) => {
+    const o = { kr };
+    NEWS_LANGS.forEach((lang) => { o[lang] = pick(tr[lang]); });
+    return o;
+  };
+  const hasDesc = !!desc, hasPrice = !!price;
+  const item = {
+    id: "n" + Date.now().toString(36),
+    type,
+    date: todayKst(),
+    title: ml(title, (t) => t[0][0]),
+    owner_post: true,
+  };
+  if (hasDesc) item.desc = ml(desc, (t) => t[1].join("\n"));
+  if (hasPrice) item.price = ml(price, (t) => t[2][0]);
+  if (video) item.video = video;
+  if (until) item.until = until;
+  let li = 0;
+  const labelBase = 2 + (hasPrice ? 1 : 0);
+  item.links = links.map((l) => {
+    const label = l.label
+      ? ml(l.label, (t) => t[labelBase + li][0])
+      : (() => { try { return new URL(l.url).hostname.replace(/^www\./, ""); } catch (e) { return l.url; } })();
+    if (l.label) li++;
+    return { url: l.url, label };
+  });
+  if (!item.links.length) delete item.links;
+
+  const msg = `${COMMIT_PREFIX}: ${slug} 소식 올리기 (${email})`;
+  if (image) {
+    const rel = `news/${item.id}.${image.ext}`;
+    await githubPutBase64(env, repo, `${slug}/${rel}`, image.b64, msg);
+    item.images = [rel];
+  }
+
+  // news.json 갱신 — 그 사이 다른 커밋이 있으면 (409) 다시 읽어 최대 3번 재시도
+  const path = `${slug}/news.json`;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    let data, sha;
+    try {
+      const f = await githubGetFile(env, repo, path);
+      data = JSON.parse(f.content);
+      sha = f.sha;
+    } catch (e) {
+      if (e.code !== "notfound") throw e;
+      data = { version: 1, maxVisible: 10, items: [] };
+    }
+    if (!Array.isArray(data.items)) data.items = [];
+    if (data.items.length >= NEWS_MAX_ITEMS) throw new HttpError(400, "소식이 너무 많이 쌓였어요. 관리자에게 정리를 요청해주세요.");
+    data.items.unshift(item);
+    try {
+      await githubPutFile(env, repo, path, JSON.stringify(data, null, 2) + "\n", sha, msg);
+      return json({ ok: true, id: item.id });
+    } catch (e) {
+      if (e.code !== "stale" || attempt === 2) throw e;
+    }
+  }
+}
+
 /* ── 관리자: 카드에 공통 수정 스크립트 설치 ─────── */
 function installEditScript(html, repo, slug) {
   // 예전 방식(카드 안에 통째로 넣은 수정 코드)은 제거
@@ -306,6 +504,15 @@ async function handleAdmin(env, req, url) {
     return json({ ok: true });
   }
 
+  // 프리미엄(소식 올리기) 켜기/끄기: { repo, slug, on: true|false }
+  if (url.pathname === "/admin/premium" && req.method === "POST") {
+    const { repo, slug, on } = await req.json();
+    checkTarget(repo, slug);
+    if (on === false) await env.DICA_OWNERS.delete(`premium:${repo}/${slug}`);
+    else await env.DICA_OWNERS.put(`premium:${repo}/${slug}`, "1");
+    return json({ ok: true, premium: on !== false });
+  }
+
   if (url.pathname === "/admin/list" && req.method === "GET") {
     const list = await env.DICA_OWNERS.list();
     const rows = await Promise.all(list.keys.map(async (k) => ({ key: k.name, email: await env.DICA_OWNERS.get(k.name) })));
@@ -322,7 +529,7 @@ async function handleAdmin(env, req, url) {
     let targets;
     if (body.all) {
       const list = await env.DICA_OWNERS.list();
-      targets = list.keys.map((k) => ({ repo: k.name.slice(0, k.name.indexOf("/")), slug: k.name.slice(k.name.indexOf("/") + 1) }));
+      targets = list.keys.filter((k) => !k.name.startsWith("premium:")).map((k) => ({ repo: k.name.slice(0, k.name.indexOf("/")), slug: k.name.slice(k.name.indexOf("/") + 1) }));
     } else if (Array.isArray(body.targets)) targets = body.targets;
     else if (body.repo && body.slug) targets = [{ repo: body.repo, slug: body.slug }];
     else throw new HttpError(400, "repo/slug 또는 all:true 또는 targets 배열이 필요합니다.");
@@ -355,14 +562,17 @@ export default {
       if (url.pathname === "/health") return json({ ok: true, version: WORKER_VERSION });
       if (url.pathname === "/owner-check" && req.method === "GET") {
         try {
-          const { isAdmin } = await authorize(env, req, url.searchParams.get("repo"), url.searchParams.get("slug"));
-          return json({ ok: true, admin: isAdmin });
+          const repo = url.searchParams.get("repo"), slug = url.searchParams.get("slug");
+          const { isAdmin } = await authorize(env, req, repo, slug);
+          return json({ ok: true, admin: isAdmin, premium: await isPremium(env, repo, slug) });
         } catch (e) {
           if (e.code === "not-registered" || e.code === "mismatch") return json({ ok: false, reason: e.code });
           throw e;
         }
       }
       if (url.pathname === "/save" && req.method === "POST") return await handleSave(env, req);
+      if (url.pathname === "/news/draft" && req.method === "POST") return await handleNewsDraft(env, req);
+      if (url.pathname === "/news/post" && req.method === "POST") return await handleNewsPost(env, req);
       if (url.pathname.startsWith("/admin/")) return await handleAdmin(env, req, url);
       return json({ ok: false, error: "not found" }, 404);
     } catch (e) {
