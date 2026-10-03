@@ -16,6 +16,10 @@
  *  - 텍스트(<span data-lang> 묶음)만 수정 가능. 사진·링크·레이아웃은 불가.
  *  - 카드 1장당 한 달(달력 기준, 한국시간)에 1회 저장. 관리자 계정은 예외.
  *  - 한국어만 고치면 나머지 언어는 Worker가 자동 번역.
+ *
+ * 소식 올리기 (프리미엄 카드 전용)
+ *  - 주인 인증 때 서버가 premium:true 를 알려준 카드에서만 "📣 소식 올리기" 가 나타남.
+ *  - 사진은 브라우저에서 1200px 로 줄여 보내고, 번역·저장은 Worker 가 한다 (횟수 제한 없음).
  * ───────────────────────────────────────────────────────────── */
 (function () {
   'use strict';
@@ -204,7 +208,22 @@
     '#dica-edit-foot{padding:12px 18px 18px;border-top:1px solid #eee;}' +
     '#dica-edit-save{width:100%;padding:12px;border:none;border-radius:10px;background:#111;color:#fff;font-size:14px;cursor:pointer;font-family:inherit;}' +
     '#dica-edit-save:disabled{opacity:.5;cursor:default;}' +
-    '#dica-edit-note{font-size:10.5px;color:#999;text-align:center;margin-top:8px;line-height:1.5;}';
+    '#dica-edit-note{font-size:10.5px;color:#999;text-align:center;margin-top:8px;line-height:1.5;}' +
+    '#dica-edit-wrap .dn-open{margin-left:6px;}' +
+    '#dica-edit-info .dn-open2{display:block;margin-top:8px;background:#111;color:#fff;border:0;border-radius:8px;padding:8px 12px;font-size:12px;cursor:pointer;font-family:inherit;}' +
+    '#dica-news-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2147483001;align-items:flex-end;justify-content:center;}' +
+    '#dica-news-modal.open{display:flex;}' +
+    '#dica-news-sheet{background:#fff;color:#111;width:100%;max-width:480px;max-height:90vh;border-radius:16px 16px 0 0;display:flex;flex-direction:column;font-family:inherit;}' +
+    '#dica-news-body{overflow-y:auto;padding:12px 18px;flex:1;}' +
+    '#dica-news-body label{display:block;font-size:11px;color:#777;margin:12px 0 4px;}' +
+    '#dica-news-body input[type=text],#dica-news-body input[type=url],#dica-news-body input[type=date],#dica-news-body select,#dica-news-body textarea{width:100%;box-sizing:border-box;border:1px solid #ddd;border-radius:8px;padding:9px 10px;font-size:14px;font-family:inherit;color:#111;background:#fff;}' +
+    '#dica-news-body textarea{min-height:96px;resize:vertical;}' +
+    '#dica-news-body .dn-row{display:flex;gap:6px;margin-bottom:6px;}' +
+    '#dica-news-body .dn-row input:first-child{flex:3;}#dica-news-body .dn-row input:last-child{flex:2;}' +
+    '#dica-news-body .dn-ai{background:none;border:1px solid #3b82f6;color:#3b82f6;border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer;margin-top:6px;font-family:inherit;}' +
+    '#dica-news-body .dn-ai:disabled{opacity:.5;}' +
+    '#dica-news-prev{display:none;width:100%;border-radius:8px;margin-top:8px;aspect-ratio:40/21;object-fit:cover;background:#eee;}' +
+    '#dica-news-body .dn-hint{font-size:10.5px;color:#999;margin-top:3px;line-height:1.4;}';
 
   function buildUI() {
     var style = document.createElement('style');
@@ -214,7 +233,8 @@
     // 버튼: 카드에 #dica-edit-slot 이 있으면 그 자리, 없으면 만두 버튼 아래 → 푸터 위 → body 끝
     var wrap = document.createElement('div');
     wrap.id = 'dica-edit-wrap';
-    wrap.innerHTML = '<button id="dica-edit-btn" type="button">✏️ 내 명함 수정</button>';
+    wrap.innerHTML = '<button id="dica-edit-btn" type="button">✏️ 내 명함 수정</button>' +
+      '<button id="dica-news-btn" class="dn-open" type="button" style="display:none;background:none;border:1px solid rgba(128,128,128,.35);color:#888;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:inherit;">📣 소식 올리기</button>';
     var slot = document.getElementById('dica-edit-slot');
     var mandu = document.getElementById('mandu-activate-btn');
     var footer = document.querySelector('footer');
@@ -222,7 +242,10 @@
     else if (mandu && mandu.parentElement) mandu.parentElement.insertAdjacentElement('afterend', wrap);
     else if (footer) footer.parentElement.insertBefore(wrap, footer);
     else document.body.appendChild(wrap);
-    wrap.querySelector('button').addEventListener('click', openEdit);
+    wrap.querySelector('#dica-edit-btn').addEventListener('click', openEdit);
+    var nbtn = wrap.querySelector('#dica-news-btn');
+    nbtn.addEventListener('click', function () { openNews(nbtn); });
+    if (isPremiumKnown()) nbtn.style.display = '';
     // 방문자에게는 숨긴다. 주인 전용 링크(?edit)로 들어왔거나, 이 기기에서 주인 인증을 한 적이 있을 때만 보인다.
     if (!canShowButton()) wrap.style.display = 'none';
 
@@ -242,6 +265,7 @@
     modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
     document.getElementById('dica-edit-close').addEventListener('click', closeModal);
     document.getElementById('dica-edit-save').addEventListener('click', save);
+    buildNewsUI();
   }
 
   function openModalOnly() { document.getElementById('dica-edit-modal').classList.add('open'); }
@@ -348,7 +372,7 @@
   }
 
   // 로그인 후: 주인 확인 → 이번 달 사용 여부 → 원본 불러와 편집창 열기
-  function afterLogin(user, btn) {
+  function afterLogin(user, btn, mode) {
     state.email = (user.email || '').toLowerCase();
     state.isAdmin = CFG.admins.indexOf(state.email) >= 0;
     if (btn) btn.textContent = '확인 중...';
@@ -368,6 +392,12 @@
         }
         if (check.admin) state.isAdmin = true;
         else rememberOwner(); // 주인 인증 성공 → 다음부터 이 기기에서는 ?edit 없이도 버튼이 보임
+        setPremium(!!check.premium);
+        if (mode === 'news') {
+          if (!check.premium) alert('📣 소식 올리기는 프리미엄 전용 기능이에요.\n관리자(송승훈)에게 문의해주세요.');
+          else openNewsModal();
+          return null;
+        }
         return Promise.all([state.isAdmin ? false : usedThisMonth(), fetchSource()]);
       })
       .then(function (res) {
@@ -383,14 +413,18 @@
         document.getElementById('dica-edit-info').innerHTML = state.isAdmin
           ? '🔑 관리자 계정 — 횟수 제한 없음'
           : '📅 수정은 <b>한 달에 1번</b> 저장할 수 있어요. 고칠 곳을 모두 고친 뒤 한 번에 저장해주세요.';
+        if (isPremiumKnown()) {
+          document.getElementById('dica-edit-info').insertAdjacentHTML('beforeend', '<button type="button" class="dn-open2" id="dica-news-open2">📣 소식 올리기 (횟수 제한 없음)</button>');
+          document.getElementById('dica-news-open2').addEventListener('click', function () { closeModal(); openNewsModal(); });
+        }
         openModalOnly();
       });
   }
 
   // 휴대폰에서 구글 로그인하고 돌아왔을 때 이어서 편집창 열기
   function resumeAfterRedirect() {
-    var pending = false;
-    try { pending = sessionStorage.getItem(PENDING_KEY) === '1'; } catch (e) {}
+    var pending = null;
+    try { pending = sessionStorage.getItem(PENDING_KEY); } catch (e) {}
     if (!pending) return;
     try { sessionStorage.removeItem(PENDING_KEY); } catch (e) {}
     waitFirebase().then(function (ready) {
@@ -398,7 +432,7 @@
       var unsub = firebase.auth().onAuthStateChanged(function (user) {
         if (!user) return;
         unsub();
-        afterLogin(user, null).catch(function (e) { alert('편집창 열기 실패: ' + e.message); });
+        afterLogin(user, null, pending === 'news' ? 'news' : '').catch(function (e) { alert('편집창 열기 실패: ' + e.message); });
       });
     });
   }
@@ -486,6 +520,145 @@
       var el = krs.find(function (k) { return plain(k.innerHTML) === p.oldKr; });
       if (el) applyLangs(el, p.langs);
     });
+  }
+
+  /* ── 소식 올리기 (프리미엄) ─────────────────────────── */
+  function premKey() { return 'dica-premium:' + CFG.repo + '/' + CFG.slug; }
+  function isPremiumKnown() { try { return localStorage.getItem(premKey()) === '1'; } catch (e) { return false; } }
+  function setPremium(on) {
+    try { if (on) localStorage.setItem(premKey(), '1'); else localStorage.removeItem(premKey()); } catch (e) {}
+    var b = document.getElementById('dica-news-btn');
+    if (b) b.style.display = on ? '' : 'none';
+  }
+
+  var newsImage = ''; // 줄인 사진 (data URL)
+
+  function buildNewsUI() {
+    var m = document.createElement('div');
+    m.id = 'dica-news-modal';
+    m.innerHTML =
+      '<div id="dica-news-sheet">' +
+      '  <div id="dica-edit-head"><b>📣 소식 올리기</b><button id="dica-news-close" type="button">✕</button></div>' +
+      '  <div id="dica-news-body">' +
+      '    <label>종류</label><select id="dn-type"><option value="news">소식</option><option value="product">상품</option><option value="event">이벤트</option><option value="case">사례</option></select>' +
+      '    <label>사진 (가로로 긴 사진이 가장 예뻐요)</label><input id="dn-img" type="file" accept="image/*"><img id="dica-news-prev" alt="">' +
+      '    <label>제목 *</label><input id="dn-title" type="text" maxlength="80" placeholder="예: 가을 신상품 출시">' +
+      '    <label>설명</label><textarea id="dn-desc" maxlength="1200" placeholder="직접 쓰거나, 제목과 메모를 적고 아래 AI 초안을 눌러보세요."></textarea>' +
+      '    <button class="dn-ai" id="dn-ai" type="button">✨ AI 초안 만들기</button>' +
+      '    <div class="dn-hint">AI가 만든 초안은 꼭 읽고 고쳐주세요. 설명 칸에 적은 메모를 바탕으로 써줍니다.</div>' +
+      '    <label>링크 (최대 3개 · 이름은 비워도 돼요)</label>' +
+      '    <div class="dn-row"><input type="url" class="dn-lu" placeholder="https://…"><input type="text" class="dn-ll" maxlength="40" placeholder="이름"></div>' +
+      '    <div class="dn-row"><input type="url" class="dn-lu" placeholder="https://…"><input type="text" class="dn-ll" maxlength="40" placeholder="이름"></div>' +
+      '    <div class="dn-row"><input type="url" class="dn-lu" placeholder="https://…"><input type="text" class="dn-ll" maxlength="40" placeholder="이름"></div>' +
+      '    <label>유튜브 링크</label><input id="dn-video" type="url" placeholder="https://youtu.be/…">' +
+      '    <label>가격 / 혜택</label><input id="dn-price" type="text" maxlength="60" placeholder="예: 5,900원부터">' +
+      '    <label>노출 기간 (이 날짜까지 보여요 · 비우면 계속)</label><input id="dn-until" type="date">' +
+      '  </div>' +
+      '  <div id="dica-edit-foot"><button id="dn-post" type="button" style="width:100%;padding:12px;border:none;border-radius:10px;background:#111;color:#fff;font-size:14px;cursor:pointer;font-family:inherit;">올리기</button>' +
+      '    <div id="dica-edit-note">한국어로만 쓰면 다른 언어는 자동 번역돼요.<br>올린 뒤 반영까지 1~2분 걸릴 수 있어요.</div></div>' +
+      '</div>';
+    document.body.appendChild(m);
+    m.addEventListener('click', function (e) { if (e.target === m) closeNews(); });
+    document.getElementById('dica-news-close').addEventListener('click', closeNews);
+    document.getElementById('dn-img').addEventListener('change', onPickImage);
+    document.getElementById('dn-ai').addEventListener('click', aiDraft);
+    document.getElementById('dn-post').addEventListener('click', postNews);
+  }
+  function openNewsModal() { document.getElementById('dica-news-modal').classList.add('open'); }
+  function closeNews() { document.getElementById('dica-news-modal').classList.remove('open'); }
+
+  // 로그인이 이미 돼 있으면 바로, 아니면 로그인 후 열기
+  function openNews(btn) {
+    if (isPremiumKnown() && window.firebase && firebase.auth && firebase.auth().currentUser) { openNewsModal(); return; }
+    var orig = btn.textContent;
+    btn.disabled = true; btn.textContent = '로그인 중...';
+    waitFirebase().then(function (ready) {
+      if (!ready) throw new Error('로그인 준비 실패. 잠시 후 다시 시도해주세요.');
+      var auth = firebase.auth();
+      return auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(function () {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        if (isMobile) {
+          try { sessionStorage.setItem(PENDING_KEY, 'news'); } catch (e) {}
+          return auth.signInWithRedirect(provider).then(function () { return null; });
+        }
+        return (auth.currentUser ? Promise.resolve({ user: auth.currentUser }) : auth.signInWithPopup(provider))
+          .then(function (r) { return afterLogin(r.user, null, 'news'); });
+      });
+    }).catch(function (e) { alert('로그인/불러오기 실패: ' + e.message); })
+      .then(function () { btn.disabled = false; btn.textContent = orig; });
+  }
+
+  // 사진 → 가로 1200px 이하로 줄여 WEBP(안 되면 JPEG)로 변환. 원본 용량이 커도 서버로는 가볍게 보낸다.
+  function onPickImage(e) {
+    var f = e.target.files && e.target.files[0];
+    var prev = document.getElementById('dica-news-prev');
+    newsImage = ''; prev.style.display = 'none';
+    if (!f) return;
+    var url = URL.createObjectURL(f), img = new Image();
+    img.onload = function () {
+      var MAX = 1200, r = Math.min(1, MAX / Math.max(img.width, img.height));
+      var c = document.createElement('canvas');
+      c.width = Math.round(img.width * r); c.height = Math.round(img.height * r);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      var out = c.toDataURL('image/webp', 0.82);
+      if (out.indexOf('data:image/webp') !== 0) out = c.toDataURL('image/jpeg', 0.85);
+      URL.revokeObjectURL(url);
+      newsImage = out; prev.src = out; prev.style.display = 'block';
+    };
+    img.onerror = function () { URL.revokeObjectURL(url); alert('이 사진은 열 수 없어요. 다른 사진을 골라주세요.'); e.target.value = ''; };
+    img.src = url;
+  }
+
+  function freshToken() {
+    var u = window.firebase && firebase.auth && firebase.auth().currentUser;
+    return u ? u.getIdToken() : Promise.resolve(state.token);
+  }
+  function callWorker(path, payload) {
+    return freshToken().then(function (token) {
+      return fetch(CFG.workerUrl + path, {
+        method: 'POST',
+        headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.assign({ repo: CFG.repo, slug: CFG.slug }, payload)),
+      }).then(function (r) { return r.json(); });
+    }).then(function (j) { if (!j.ok) throw new Error(j.error || '요청 실패'); return j; });
+  }
+
+  function aiDraft() {
+    var title = document.getElementById('dn-title').value.trim();
+    if (!title) { alert('제목을 먼저 적어주세요.'); return; }
+    var btn = document.getElementById('dn-ai'), ta = document.getElementById('dn-desc');
+    btn.disabled = true; btn.textContent = '쓰는 중...';
+    callWorker('/news/draft', { type: document.getElementById('dn-type').value, title: title, memo: ta.value.trim() })
+      .then(function (j) { ta.value = j.draft; })
+      .catch(function (e) { alert('AI 초안 실패: ' + e.message); })
+      .then(function () { btn.disabled = false; btn.textContent = '✨ AI 초안 만들기'; });
+  }
+
+  function postNews() {
+    var title = document.getElementById('dn-title').value.trim();
+    if (!title) { alert('제목을 입력해주세요.'); return; }
+    var links = [].map.call(document.querySelectorAll('.dn-row'), function (row) {
+      return { url: row.querySelector('.dn-lu').value.trim(), label: row.querySelector('.dn-ll').value.trim() };
+    }).filter(function (l) { return l.url; });
+    var btn = document.getElementById('dn-post');
+    btn.disabled = true; btn.textContent = '올리는 중... (번역 포함, 20초쯤 걸려요)';
+    callWorker('/news/post', {
+      type: document.getElementById('dn-type').value,
+      title: title,
+      desc: document.getElementById('dn-desc').value.trim(),
+      price: document.getElementById('dn-price').value.trim(),
+      video: document.getElementById('dn-video').value.trim(),
+      until: document.getElementById('dn-until').value,
+      links: links,
+      image: newsImage,
+    }).then(function () {
+      alert('올렸어요! 1~2분 뒤부터 내 비즈홈 소식판에 보여요.');
+      ['dn-title', 'dn-desc', 'dn-price', 'dn-video', 'dn-until', 'dn-img'].forEach(function (id) { document.getElementById(id).value = ''; });
+      [].forEach.call(document.querySelectorAll('#dica-news-body .dn-row input'), function (i) { i.value = ''; });
+      newsImage = ''; document.getElementById('dica-news-prev').style.display = 'none';
+      closeNews();
+    }).catch(function (e) { alert('올리기 실패: ' + e.message); })
+      .then(function () { btn.disabled = false; btn.textContent = '올리기'; });
   }
 
   function start() { restorePending(); buildUI(); resumeAfterRedirect(); }
