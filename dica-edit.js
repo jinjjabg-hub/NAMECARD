@@ -540,6 +540,8 @@
       '<div id="dica-news-sheet">' +
       '  <div id="dica-edit-head"><b>📣 소식 올리기</b><button id="dica-news-close" type="button">✕</button></div>' +
       '  <div id="dica-news-body">' +
+      '    <button class="dn-ai" id="dn-manage" type="button" style="margin:0 0 4px">📋 올린 소식 관리 (숨기기·삭제)</button>' +
+      '    <div id="dn-list" style="display:none"></div>' +
       '    <label>종류</label><select id="dn-type"><option value="news">소식</option><option value="product">상품</option><option value="event">이벤트</option><option value="case">사례</option></select>' +
       '    <label>사진 (가로로 긴 사진이 가장 예뻐요)</label><input id="dn-img" type="file" accept="image/*"><img id="dica-news-prev" alt="">' +
       '    <label>제목 *</label><input id="dn-title" type="text" maxlength="80" placeholder="예: 가을 신상품 출시">' +
@@ -563,6 +565,52 @@
     document.getElementById('dn-img').addEventListener('change', onPickImage);
     document.getElementById('dn-ai').addEventListener('click', aiDraft);
     document.getElementById('dn-post').addEventListener('click', postNews);
+    document.getElementById('dn-manage').addEventListener('click', toggleManage);
+  }
+
+  /* 올린 소식 관리: 목록 · 숨기기/보이기 · 삭제(내가 올린 글만) */
+  function toggleManage() {
+    var box = document.getElementById('dn-list');
+    if (box.style.display !== 'none') { box.style.display = 'none'; return; }
+    box.style.display = 'block';
+    box.innerHTML = '<div class="dn-hint">불러오는 중...</div>';
+    callWorker('/news/list', {}).then(function (j) { renderManage(box, j.items); })
+      .catch(function (e) { box.innerHTML = ''; alert('목록 불러오기 실패: ' + e.message); box.style.display = 'none'; });
+  }
+  function renderManage(box, items) {
+    if (!items.length) { box.innerHTML = '<div class="dn-hint">올린 소식이 없어요.</div>'; return; }
+    box.innerHTML = '';
+    items.forEach(function (it) {
+      var row = document.createElement('div');
+      row.style.cssText = 'display:flex;gap:6px;align-items:center;padding:8px 0;border-bottom:1px solid #eee;font-size:13px;';
+      var t = document.createElement('div');
+      t.style.cssText = 'flex:1;min-width:0;' + (it.hidden || it.expired ? 'opacity:.5;' : '');
+      t.textContent = it.title || '(제목 없음)';
+      var sub = document.createElement('div');
+      sub.style.cssText = 'font-size:10.5px;color:#999;';
+      sub.textContent = it.date + (it.hidden ? ' · 숨김' : '') + (it.expired ? ' · 기간 종료' : '');
+      t.appendChild(sub);
+      row.appendChild(t);
+      function btn(label, color, fn) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = label;
+        b.style.cssText = 'background:none;border:1px solid ' + color + ';color:' + color + ';border-radius:8px;padding:5px 9px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap;';
+        b.addEventListener('click', fn);
+        row.appendChild(b);
+      }
+      btn(it.hidden ? '보이기' : '숨기기', '#3b82f6', function () { manage(box, it.hidden ? 'show' : 'hide', it.id); });
+      if (it.mine) btn('삭제', '#e5484d', function () {
+        if (confirm('"' + (it.title || '이 소식') + '"을(를) 삭제할까요?\n삭제하면 되돌릴 수 없어요. (잠깐 내리고 싶다면 "숨기기")')) manage(box, 'delete', it.id);
+      });
+      box.appendChild(row);
+    });
+  }
+  function manage(box, action, id) {
+    box.style.opacity = '.5';
+    callWorker('/news/manage', { action: action, id: id })
+      .then(function () { return callWorker('/news/list', {}); })
+      .then(function (j) { box.style.opacity = ''; renderManage(box, j.items); alert('반영했어요! 1~2분 뒤부터 비즈홈에 적용돼요.'); })
+      .catch(function (e) { box.style.opacity = ''; alert('실패: ' + e.message); });
   }
   function openNewsModal() { document.getElementById('dica-news-modal').classList.add('open'); }
   function closeNews() { document.getElementById('dica-news-modal').classList.remove('open'); }
