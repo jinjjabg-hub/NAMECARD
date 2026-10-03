@@ -22,6 +22,7 @@
  * 내 소식판 올리기 (프리미엄 전용, 횟수 제한 없음)
  *   - KV DICA_OWNERS 에 "premium:레포/폴더" = "1" 이 있는 카드만 허용 (관리자: /admin/premium)
  *   - POST /news/draft  설명 초안(AI)   POST /news/post  번역 후 폴더/news.json + 폴더/news/이미지 커밋
+ *   - POST /news/list   올린 소식 목록   POST /news/manage  숨기기·보이기·삭제 (삭제는 고객이 올린 글만)
  * ───────────────────────────────────────────────────────────── */
 
 const OWNER = "jinjjabg-hub";
@@ -30,7 +31,7 @@ const COMMIT_PREFIX = "내 명함 관리";
 const EDIT_SCRIPT_SRC = "https://jinjjabg-hub.github.io/NAMECARD/dica-edit.js";
 const TRANSLATE_MODEL = "claude-haiku-4-5";
 // 배포 확인용 — 브라우저에서 https://dica-editor.jinjjabg.workers.dev/health 를 열면 이 값이 보인다
-const WORKER_VERSION = "2026-10-03 셀프수정 v3 + 소식 올리기 v1";
+const WORKER_VERSION = "2026-10-03 셀프수정 v3 + 소식 올리기 v2 (목록·숨기기·삭제)";
 
 /* ── HTTP 공통 ───────────────────────────────────── */
 function cors(res) {
@@ -126,6 +127,16 @@ async function githubPutBase64(env, repo, path, b64, message) {
     body: JSON.stringify({ message, content: b64 }),
   });
   if (!res.ok) throw new HttpError(502, `이미지 저장 실패 (${res.status}) ${(await res.text()).slice(0, 200)}`);
+}
+
+async function githubDeleteFile(env, repo, path, message) {
+  const { sha } = await githubGetFile(env, repo, path);
+  const res = await fetch(`https://api.github.com/repos/${OWNER}/${repo}/contents/${encodePath(path)}`, {
+    method: "DELETE",
+    headers: ghHeaders(env),
+    body: JSON.stringify({ message, sha }),
+  });
+  if (!res.ok) throw new HttpError(502, `파일 삭제 실패 (${res.status})`);
 }
 
 /* ── 월 1회 제한 (한국시간 달력 기준) ─────────────── */
@@ -483,6 +494,59 @@ async function handleNewsPost(env, req) {
   }
 }
 
+// 올린 소식 목록 (숨긴 것 포함)
+async function handleNewsList(env, req) {
+  const body = await req.json();
+  await authorizePremium(env, req, body.repo, body.slug);
+  let data;
+  try { data = JSON.parse((await githubGetFile(env, body.repo, `${body.slug}/news.json`)).content); }
+  catch (e) { if (e.code !== "notfound") throw e; data = { items: [] }; }
+  const today = todayKst();
+  const items = (data.items || []).map((it) => ({
+    id: it.id, type: it.type, date: it.date,
+    title: (it.title && (it.title.kr || Object.values(it.title)[0])) || "",
+    hidden: !!it.hidden, expired: !!(it.until && it.until < today),
+    mine: !!it.owner_post, // 삭제는 고객이 직접 올린 글만
+  }));
+  return json({ ok: true, items });
+}
+
+// 숨기기·보이기·삭제. 숨기기는 모든 글, 삭제는 고객이 올린 글(owner_post)만 (관리자는 전부)
+async function handleNewsManage(env, req) {
+  const body = await req.json();
+  const { repo, slug } = body;
+  const { email, isAdmin } = await authorizePremium(env, req, repo, slug);
+  const action = body.action, id = String(body.id || "");
+  if (!["hide", "show", "delete"].includes(action) || !id) throw new HttpError(400, "잘못된 요청이에요.");
+  const path = `${slug}/news.json`;
+  let removedImages = [];
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const f = await githubGetFile(env, repo, path);
+    const data = JSON.parse(f.content);
+    const idx = (data.items || []).findIndex((it) => it.id === id);
+    if (idx < 0) throw new HttpError(404, "이미 없는 소식이에요. 목록을 새로고침해주세요.");
+    const it = data.items[idx];
+    if (action === "delete") {
+      if (!it.owner_post && !isAdmin) throw new HttpError(403, "관리자가 올린 소식은 삭제할 수 없어요. 숨기기를 사용해주세요.");
+      removedImages = (it.images || []).filter((p) => /^news\/[\w.-]+$/.test(p));
+      data.items.splice(idx, 1);
+    } else if (action === "hide") it.hidden = true;
+    else delete it.hidden;
+    const verb = { hide: "숨기기", show: "보이기", delete: "삭제" }[action];
+    try {
+      await githubPutFile(env, repo, path, JSON.stringify(data, null, 2) + "\n", f.sha, `${COMMIT_PREFIX}: ${slug} 소식 ${verb} (${email})`);
+      break;
+    } catch (e) {
+      if (e.code !== "stale" || attempt === 2) throw e;
+    }
+  }
+  // 삭제한 소식의 사진도 함께 정리 (실패해도 소식 삭제는 이미 끝났으므로 무시)
+  for (const rel of removedImages) {
+    try { await githubDeleteFile(env, repo, `${slug}/${rel}`, `${COMMIT_PREFIX}: ${slug} 소식 사진 삭제 (${email})`); } catch (e) { /* ignore */ }
+  }
+  return json({ ok: true });
+}
+
 /* ── 관리자: 카드에 공통 수정 스크립트 설치 ─────── */
 function installEditScript(html, repo, slug) {
   // 예전 방식(카드 안에 통째로 넣은 수정 코드)은 제거
@@ -573,6 +637,8 @@ export default {
       if (url.pathname === "/save" && req.method === "POST") return await handleSave(env, req);
       if (url.pathname === "/news/draft" && req.method === "POST") return await handleNewsDraft(env, req);
       if (url.pathname === "/news/post" && req.method === "POST") return await handleNewsPost(env, req);
+      if (url.pathname === "/news/list" && req.method === "POST") return await handleNewsList(env, req);
+      if (url.pathname === "/news/manage" && req.method === "POST") return await handleNewsManage(env, req);
       if (url.pathname.startsWith("/admin/")) return await handleAdmin(env, req, url);
       return json({ ok: false, error: "not found" }, 404);
     } catch (e) {
