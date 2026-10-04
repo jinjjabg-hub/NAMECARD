@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────
- * dica-editor — DiCA 명함 셀프 수정 서버 (Cloudflare Worker)
+ * dica-editor — DiCA 비즈홈 셀프 수정 서버 (Cloudflare Worker)
  *
  * 배포: Cloudflare 대시보드 → Workers & Pages → dica-editor → Edit code
  *       → 이 파일 내용 전체를 붙여넣고 Deploy.
@@ -79,9 +79,9 @@ function adminEmails(env) {
   return (env.ADMIN_EMAILS || "jinjjabg@gmail.com").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
 }
 function checkTarget(repo, slug) {
-  // 토큰이 레포 쓰기 권한을 가지고 있으므로, 명함 레포/폴더 밖으로는 절대 못 나가게 막는다
+  // 토큰이 레포 쓰기 권한을 가지고 있으므로, 비즈홈 레포/폴더 밖으로는 절대 못 나가게 막는다
   if (!ALLOWED_REPOS.includes(repo)) throw new HttpError(400, "허용되지 않은 레포");
-  if (!slug || /[\/\\]|\.\./.test(slug)) throw new HttpError(400, "잘못된 명함 이름");
+  if (!slug || /[\/\\]|\.\./.test(slug)) throw new HttpError(400, "잘못된 비즈홈 이름");
 }
 async function authorize(env, req, repo, slug) {
   checkTarget(repo, slug);
@@ -89,8 +89,8 @@ async function authorize(env, req, repo, slug) {
   const isAdmin = adminEmails(env).includes(email);
   const owner = await env.DICA_OWNERS.get(`${repo}/${slug}`);
   if (isAdmin) return { email, isAdmin, owner };
-  if (!owner) throw new HttpError(403, "이 명함에 등록된 계정이 없습니다.", "not-registered");
-  if (owner.toLowerCase() !== email) throw new HttpError(403, "본인 명함이 아닙니다.", "mismatch");
+  if (!owner) throw new HttpError(403, "이 비즈홈에 등록된 계정이 없습니다.", "not-registered");
+  if (owner.toLowerCase() !== email) throw new HttpError(403, "본인 비즈홈이 아닙니다.", "mismatch");
   return { email, isAdmin, owner };
 }
 
@@ -115,7 +115,7 @@ async function githubPutFile(env, repo, path, content, sha, message) {
     headers: ghHeaders(env),
     body: JSON.stringify({ message, content: btoa(bin), sha }),
   });
-  if (res.status === 409) throw new HttpError(409, "그 사이 명함이 업데이트됐어요. 다시 열어 수정해주세요.", "stale");
+  if (res.status === 409) throw new HttpError(409, "그 사이 비즈홈이 업데이트됐어요. 다시 열어 수정해주세요.", "stale");
   if (!res.ok) throw new HttpError(502, `GitHub 저장 실패 (${res.status}) ${(await res.text()).slice(0, 200)}`);
 }
 
@@ -291,9 +291,9 @@ async function handleSave(env, req) {
   const changes = {};
   for (const [key, patch] of Object.entries(body.changes || {})) {
     const cur = current[key];
-    if (!cur || cur.kr === undefined) throw new HttpError(409, "명함 구조가 바뀌었어요. 다시 열어 수정해주세요.", "stale");
+    if (!cur || cur.kr === undefined) throw new HttpError(409, "비즈홈 구조가 바뀌었어요. 다시 열어 수정해주세요.", "stale");
     if (typeof patch._base === "string" && patch._base !== cur.kr) {
-      throw new HttpError(409, "그 사이 명함이 업데이트됐어요. 다시 열어 수정해주세요.", "stale");
+      throw new HttpError(409, "그 사이 비즈홈이 업데이트됐어요. 다시 열어 수정해주세요.", "stale");
     }
     const kr = sanitize(String(patch.kr || ""), cur.kr);
     if (!kr.replace(/<[^>]*>/g, "").trim()) throw new HttpError(400, "빈 칸으로는 저장할 수 없어요.");
@@ -386,7 +386,7 @@ async function handleNewsDraft(env, req) {
   const memo = cleanText(body.memo, 600, "메모", false);
   const typeLabel = { product: "상품 소개", event: "이벤트", case: "고객 사례", news: "소식" }[body.type] || "소식";
   const text = await callClaudeText(env,
-    `당신은 소상공인·영업인의 디지털 명함에 올라가는 "${typeLabel}" 글을 돕는 카피라이터입니다.\n` +
+    `당신은 소상공인·영업인의 디지털 비즈홈에 올라가는 "${typeLabel}" 글을 돕는 카피라이터입니다.\n` +
     `아래 제목과 메모만 근거로 한국어 설명 초안을 2~3문장(200자 안팎)으로 쓰세요.\n` +
     `규칙: 메모에 없는 가격·날짜·수치·효과를 지어내지 말 것. 과장 광고 문구, 이모지, 따옴표, 머리말 없이 본문만 출력. ` +
     `읽는 사람이 "그래서 나에게 무슨 도움이 되는지"가 보이게 쓸 것.\n\n` +
