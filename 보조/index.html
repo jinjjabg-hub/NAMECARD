@@ -1036,7 +1036,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 <div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
   <button id="mandu-activate-btn" onclick="activateMandu()"
     style="background:none;border:1px solid rgba(201,168,76,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
-    💬 본인 명함이신가요? 만두 연결하기 (1회)
+    💬 본인 비즈홈이신가요? 만두 연결하기 (1회)
   </button>
   <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
     ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
@@ -1072,7 +1072,7 @@ function saveContact() {
 /* ── 비즈홈 공유 ── */
 const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EC%9D%B4%ED%99%94%EC%B6%98/';
 const CARD_TITLE = '이화춘 | (주)이화춘뷰티랩';
-const CARD_TEXT = '이화춘뷰티랩 이화춘 대표의 디지털 명함입니다. 20년 경력의 반영구·속눈썹 전문가를 소개합니다.';
+const CARD_TEXT = '이화춘뷰티랩 이화춘 대표의 디지털 비즈홈입니다. 20년 경력의 반영구·속눈썹 전문가를 소개합니다.';
 
 function shareCard() {
   if (navigator.share) {
@@ -1103,7 +1103,7 @@ function copyLink() {
 function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
 
 /* ── PORTFOLIO 자동 슬라이드 (표준: 3초 간격, 터치 스와이프, 수동 조작 시 타이머 리셋) ──
-   portfolio 섹션이 없는 명함(HTML에서 <section class="portfolio"> 삭제한 경우)에는
+   portfolio 섹션이 없는 비즈홈(HTML에서 <section class="portfolio"> 삭제한 경우)에는
    아래 코드가 아무 일도 하지 않고 조용히 종료된다. */
 (function () {
   const track = document.getElementById('portfolio-track');
@@ -1165,7 +1165,7 @@ async function _manduFinishActivate(user) {
     const btn = document.getElementById('mandu-activate-btn');
     if (btn) btn.style.display = 'none';
     const done = document.getElementById('mandu-activate-done');
-    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
     return;
   }
 
@@ -1183,12 +1183,12 @@ async function _manduFinishActivate(user) {
 }
 
 async function activateMandu() {
-  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
   const btn = document.getElementById('mandu-activate-btn');
   if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
   const ready = await _manduWaitFirebase();
   if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 실패. 잠시 후 다시 시도해주세요.');
     return;
   }
@@ -1206,7 +1206,7 @@ async function activateMandu() {
     await _manduFinishActivate(result.user);
   } catch (e) {
     console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 중 오류가 발생했어요.');
   }
 }

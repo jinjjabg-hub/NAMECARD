@@ -700,7 +700,7 @@ footer {
 
 <div style="padding:14px 20px 4px;text-align:center;">
   <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(255,255,255,0.2);color:#aaa;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;">
-    💬 본인 명함이신가요? 만두 연결하기 (1회)
+    💬 본인 비즈홈이신가요? 만두 연결하기 (1회)
   </button>
   <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:#aaa;padding:7px 0;">
     ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
@@ -816,7 +816,7 @@ async function _manduFinishActivate(user) {
     const btn = document.getElementById('mandu-activate-btn');
     if (btn) btn.style.display = 'none';
     const done = document.getElementById('mandu-activate-done');
-    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
     return;
   }
   await db.collection('users').doc(user.uid).set({
@@ -832,12 +832,12 @@ async function _manduFinishActivate(user) {
   if (done) done.style.display = 'block';
 }
 async function activateMandu() {
-  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
   const btn = document.getElementById('mandu-activate-btn');
   if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
   const ready = await _manduWaitFirebase();
   if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 실패. 잠시 후 다시 시도해주세요.');
     return;
   }
@@ -855,7 +855,7 @@ async function activateMandu() {
     await _manduFinishActivate(result.user);
   } catch (e) {
     console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 중 오류가 발생했어요.');
   }
 }

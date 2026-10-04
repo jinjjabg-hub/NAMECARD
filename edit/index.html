@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>내 명함 수정하기 | DiCA</title>
+<title>내 비즈홈 수정하기 | DiCA</title>
 <meta name="robots" content="noindex">
-<meta property="og:title" content="내 명함 수정하기 | DiCA">
-<meta property="og:description" content="내 이름을 누르면 내 명함이 열리고, 맨 아래에 [✏️ 내 명함 수정] 버튼이 보여요.">
+<meta property="og:title" content="내 비즈홈 수정하기 | DiCA">
+<meta property="og:description" content="내 이름을 누르면 내 비즈홈이 열리고, 맨 아래에 [✏️ 내 비즈홈 수정] 버튼이 보여요.">
 <style>
   :root { --paper:#F5F6F8; --card:#fff; --ink:#17202B; --ink2:#5A6472; --line:#DDE1E7; --accent:#2F5BEA; --soft:#E8EEFD; --mark:#FFF6CC; }
   @media (prefers-color-scheme: dark) {
@@ -33,12 +33,12 @@
 <body>
 <div class="wrap">
   <header style="display:grid; gap:8px;">
-    <h1>✏️ 내 명함 수정하기</h1>
-    <p class="lead">아래에서 <b>내 이름</b>을 누르세요. 내 명함이 열리고, 맨 아래에 <b>[✏️ 내 명함 수정]</b> 버튼이 보입니다.</p>
+    <h1>✏️ 내 비즈홈 수정하기</h1>
+    <p class="lead">아래에서 <b>내 이름</b>을 누르세요. 내 비즈홈이 열리고, 맨 아래에 <b>[✏️ 내 비즈홈 수정]</b> 버튼이 보입니다.</p>
   </header>
 
   <div class="how">
-    <p>① 내 이름 누르기 → ② 명함 맨 아래 <b>✏️ 내 명함 수정</b></p>
+    <p>① 내 이름 누르기 → ② 비즈홈 맨 아래 <b>✏️ 내 비즈홈 수정</b></p>
     <p>③ 구글 로그인 → ④ 고칠 곳 모두 고치고 <b>저장</b> (한 달에 1번)</p>
   </div>
 
@@ -96,12 +96,12 @@
     });
     if (!list.children.length) {
       var p = document.createElement('p'); p.className = 'empty';
-      p.textContent = '"' + q + '" 이름의 명함이 없어요. 관리자에게 문의해주세요.';
+      p.textContent = '"' + q + '" 이름의 비즈홈이 없어요. 관리자에게 문의해주세요.';
       list.appendChild(p);
     }
   }
 
-  // 새로 만든 명함이 있으면 자동으로 목록에 추가 (셀프 수정 스크립트가 들어간 카드만)
+  // 새로 만든 비즈홈이 있으면 자동으로 목록에 추가 (셀프 수정 스크립트가 들어간 카드만)
   function discover() {
     GROUPS.forEach(function (g) {
       fetch('https://api.github.com/repos/jinjjabg-hub/' + g.repo + '/contents/')

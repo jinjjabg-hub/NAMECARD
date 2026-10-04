@@ -1,8 +1,8 @@
 # NAMECARD
 
-## ✏️ 명함 셀프 수정 (dica-edit.js)
+## ✏️ 비즈홈 셀프 수정 (dica-edit.js)
 
-카드 주인이 자기 명함의 **문구(텍스트)만** 직접 고칠 수 있는 공통 스크립트입니다.
+카드 주인이 자기 비즈홈의 **문구(텍스트)만** 직접 고칠 수 있는 공통 스크립트입니다.
 세 레포(NAMECARD · BNI-PIONEER-cards · bni-giants)의 모든 DiCA 카드가 이 파일 하나를 불러 씁니다.
 
 **카드에 붙이는 법** — `</body>` 바로 위에 한 줄:
@@ -47,4 +47,4 @@ curl -X POST https://dica-editor.jinjjabg.workers.dev/admin/premium \
 (설정: `worker/wrangler.toml`, 루트 폴더 `worker`, 변경 감지 경로 `worker/*`).
 연결 전이거나 급할 때: 대시보드 → Workers & Pages → dica-editor → Edit code → `worker/worker.js` 전체 붙여넣기 → Deploy.
 
-서버가 막는 것: 주인·관리자 외 저장, 월 1회 초과, 그 사이 바뀐 문구 덮어쓰기, 명함 레포 밖 파일 쓰기, 허용 외 HTML, 줄이 빠진 번역(재시도 후에도 빠지면 저장 안 함).
+서버가 막는 것: 주인·관리자 외 저장, 월 1회 초과, 그 사이 바뀐 문구 덮어쓰기, 비즈홈 레포 밖 파일 쓰기, 허용 외 HTML, 줄이 빠진 번역(재시도 후에도 빠지면 저장 안 함).

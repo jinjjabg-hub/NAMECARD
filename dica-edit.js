@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────
- * DiCA 명함 셀프 수정 (카드 주인 전용) — 공통 스크립트
+ * DiCA 비즈홈 셀프 수정 (카드 주인 전용) — 공통 스크립트
  *
  * 사용법 (카드 index.html 의 </body> 바로 위에 한 줄):
  *   <script src="https://jinjjabg-hub.github.io/NAMECARD/dica-edit.js"
@@ -233,7 +233,7 @@
     // 버튼: 카드에 #dica-edit-slot 이 있으면 그 자리, 없으면 만두 버튼 아래 → 푸터 위 → body 끝
     var wrap = document.createElement('div');
     wrap.id = 'dica-edit-wrap';
-    wrap.innerHTML = '<button id="dica-edit-btn" type="button">✏️ 내 명함 수정</button>' +
+    wrap.innerHTML = '<button id="dica-edit-btn" type="button">✏️ 내 비즈홈 수정</button>' +
       '<button id="dica-news-btn" class="dn-open" type="button" style="display:none;background:none;border:1px solid rgba(128,128,128,.35);color:#888;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:inherit;">📣 소식 올리기</button>';
     var slot = document.getElementById('dica-edit-slot');
     var mandu = document.getElementById('mandu-activate-btn');
@@ -253,7 +253,7 @@
     modal.id = 'dica-edit-modal';
     modal.innerHTML =
       '<div id="dica-edit-sheet">' +
-      '  <div id="dica-edit-head"><b>명함 문구 수정</b><button id="dica-edit-close" type="button">✕</button></div>' +
+      '  <div id="dica-edit-head"><b>비즈홈 문구 수정</b><button id="dica-edit-close" type="button">✕</button></div>' +
       '  <div id="dica-edit-info"></div>' +
       '  <div id="dica-edit-list"></div>' +
       '  <div id="dica-edit-foot">' +
@@ -386,8 +386,8 @@
       .then(function (check) {
         if (!check.ok) {
           alert(check.reason === 'not-registered'
-            ? '이 명함에 등록된 계정이 없습니다. 관리자(송승훈)에게 문의하세요.'
-            : '이 명함의 주인 계정으로 로그인해주세요.');
+            ? '이 비즈홈에 등록된 계정이 없습니다. 관리자(송승훈)에게 문의하세요.'
+            : '이 비즈홈의 주인 계정으로 로그인해주세요.');
           return null;
         }
         if (check.admin) state.isAdmin = true;
@@ -464,7 +464,7 @@
           var f = fresh.find(function (x) { return x.key === e.g.key; });
           return !f || f.langs.kr !== e.g.langs.kr;
         });
-        if (stale) throw new Error('그 사이 명함이 업데이트됐어요. 창을 닫고 다시 열어 수정해주세요. (수정 기회는 사용되지 않았어요)');
+        if (stale) throw new Error('그 사이 비즈홈이 업데이트됐어요. 창을 닫고 다시 열어 수정해주세요. (수정 기회는 사용되지 않았어요)');
         btn.textContent = '저장 중... (번역 포함, 몇 초 걸릴 수 있어요)';
         return fetch(CFG.workerUrl + '/save', {
           method: 'POST',
@@ -493,7 +493,7 @@
 
 
   /* ── 저장 직후 즉시 반영 ─────────────────────────────
-   * 명함 파일이 실제 사이트에 퍼지기까지 5~10분 걸린다. 그 사이 주인이 새로고침해도
+   * 비즈홈 파일이 실제 사이트에 퍼지기까지 5~10분 걸린다. 그 사이 주인이 새로고침해도
    * 옛 문구가 보이지 않도록, 방금 저장한 문구를 10분간 이 기기에 기억해 두었다가 다시 덮어 보여준다. */
   var PENDING_MS = 10 * 60 * 1000;
   function pendingKey() { return 'dica-pending:' + CFG.repo + '/' + CFG.slug; }
