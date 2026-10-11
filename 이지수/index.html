@@ -601,6 +601,7 @@ function savePhone({name, company, title, phone, email}) {
     `EMAIL:${email}`,
     'END:VCARD'
   ].join('\r\n');
+  if (window.cbSaveContact) return cbSaveContact(vcard);
   const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
@@ -621,7 +622,7 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
 <!-- ═══ 외부 스크립트 추가 (카드북 연동) ═══ -->
-<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 
 
 <script>
@@ -719,7 +720,8 @@ async function activateMandu() {
     var saveBtn = document.querySelector('.btn-primary');
     var cardBtn = document.querySelector('.btn-secondary');
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+    // 카드북 저장은 누른 순간이 아니라 실제로 저장에 성공했을 때만 센다
+    window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
     statBtn.textContent = '📊 카드 현황 보기';

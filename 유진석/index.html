@@ -908,7 +908,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="slogan-footer">Fair fees · Fast, accurate filings · An agent you can trust</div>
 </footer>
 
-<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -923,6 +923,7 @@ function setLang(lang) {
 
 function saveContact() {
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:유진석\nN:유;진석;;;\nORG:전북국제행정사사무소\nTITLE:대표\nTEL;TYPE=CELL:010-7671-5840\nEMAIL:jb5840@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/%EC%9C%A0%EC%A7%84%EC%84%9D/\nADR:;;전북특별자치도 군산시 검다메1길 14, 101호;;;;\nEND:VCARD`;
+  if (window.cbSaveContact) return cbSaveContact(vcard);
   const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -976,7 +977,8 @@ function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
     var saveBtn = document.querySelector('.btn-primary');
     var cardBtn = document.querySelector('.btn-secondary');
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+    // 카드북 저장은 누른 순간이 아니라 실제로 저장에 성공했을 때만 센다
+    window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
     statBtn.textContent = '📊 카드 현황 보기';

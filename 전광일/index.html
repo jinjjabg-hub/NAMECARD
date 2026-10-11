@@ -799,7 +799,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="slogan-footer">Beyond Documents, Building Trust.</div>
 </footer>
 
-<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -812,6 +812,7 @@ function setLang(lang) {
 }
 function saveContact() {
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:전광일\nORG:부경행정사사무소\nTITLE:대표 행정사\nTEL:010-5396-4416\nURL:https://blog.naver.com/pkminwon\nADR:;;부산시 사하구 낙동대로 398번길 5;;;;\nEND:VCARD`;
+  if (window.cbSaveContact) return cbSaveContact(vcard);
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -956,7 +957,8 @@ async function activateMandu() {
     var saveBtn = document.querySelector('.btn-primary');
     var cardBtn = document.querySelector('.btn-secondary');
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+    // 카드북 저장은 누른 순간이 아니라 실제로 저장에 성공했을 때만 센다
+    window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
     statBtn.textContent = '📊 카드 현황 보기';

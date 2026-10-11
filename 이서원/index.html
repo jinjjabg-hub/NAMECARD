@@ -751,7 +751,7 @@ span[data-lang].active{display:inline}
 
 <!-- 저장 버튼 -->
 <div class="save-section">
-  <a href="./이서원.vcf" download class="save-btn btn-primary">
+  <a href="#" onclick="saveContact();return false;" class="save-btn btn-primary">
     <span>📇</span>
     <span>
       <span data-lang="kr" class="active">연락처 저장하기</span>
@@ -873,7 +873,7 @@ span[data-lang].active{display:inline}
     <span class="icon">💬</span>
     <span data-lang="kr" class="active">카카오</span><span data-lang="en">Kakao</span><span data-lang="jp">カカオ</span><span data-lang="cn">Kakao</span>
   </a>
-  <a href="./이서원.vcf" download class="float-btn highlight">
+  <a href="#" onclick="saveContact();return false;" class="float-btn highlight">
     <span class="icon">📇</span>
     <span data-lang="kr" class="active">저장</span><span data-lang="en">Save</span><span data-lang="jp">保存</span><span data-lang="cn">保存</span>
   </a>
@@ -922,7 +922,7 @@ function showToast(msg) {
   setTimeout(()=>t.remove(), 2500);
 }
 </script>
-<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 
 <script>
 /* v8 표준 공유 */
@@ -939,6 +939,7 @@ if(typeof shareCard==='undefined'){
 if(typeof saveContact==='undefined'){
   window.saveContact=function(){
     var v='BEGIN:VCARD\nVERSION:3.0\nFN:이서원\nN:이;서원;;;\nORG:웰슨트서원 (Wealthent Seowon)\nTITLE:CEO\nTEL;TYPE=CELL:010-4732-5452\nURL:https://jinjjabg-hub.github.io/NAMECARD/이서원/\nEND:VCARD';
+    if (window.cbSaveContact) return cbSaveContact(v);
     var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download='LeeSeowon.vcf';a.click();
   };
 }
@@ -1029,7 +1030,8 @@ async function activateMandu() {
     var saveBtn = document.querySelector('.btn-primary');
     var cardBtn = document.querySelector('.btn-secondary');
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+    // 카드북 저장은 누른 순간이 아니라 실제로 저장에 성공했을 때만 센다
+    window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
     statBtn.textContent = '📊 카드 현황 보기';

@@ -1049,7 +1049,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="slogan-footer">Two decades of experience, designed for one person at a time.</div>
 </footer>
 
-<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -1062,6 +1062,7 @@ function setLang(lang) {
 }
 function saveContact() {
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:이화춘\nORG:(주)이화춘뷰티랩\nTITLE:대표\nTEL:010-3858-1534\nEMAIL:snpooy486@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/이화춘/\nADR:;;부산광역시 수영구 장대골로 7번길 50;;;;\nEND:VCARD`;
+  if (window.cbSaveContact) return cbSaveContact(vcard);
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
