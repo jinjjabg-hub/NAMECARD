@@ -716,7 +716,7 @@ footer {
 
 </div><!-- .app -->
 
-<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 // 언어
 function setLang(lang) {
@@ -732,6 +732,7 @@ function setLang(lang) {
 function saveContact() {
   const v = `BEGIN:VCARD\nVERSION:3.0\nFN:김정임\nORG:이음\nTITLE:대표 CEO\nTEL:010-7101-5929\nEND:VCARD`;
   const a = document.createElement('a');
+  if (window.cbSaveContact) return cbSaveContact(v);
   a.href = URL.createObjectURL(new Blob([v],{type:'text/vcard'}));
   a.download = 'KimJungIm_EUM.vcf';
   a.click();
@@ -883,7 +884,8 @@ async function activateMandu() {
     var saveBtn = document.querySelector('.btn-primary');
     var cardBtn = document.querySelector('.btn-secondary');
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+    // 카드북 저장은 누른 순간이 아니라 실제로 저장에 성공했을 때만 센다
+    window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
     statBtn.textContent = '📊 카드 현황 보기';

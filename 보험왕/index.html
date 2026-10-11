@@ -751,6 +751,7 @@ function setLang(lang) {
 }
 function saveContact() {
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:전미진\nORG:라이프가디언 자산리스크센터\nTITLE:종신·질병보장 설계 · 자산가 리스크 전문\nTEL:010-0000-0000\nEMAIL:mijin.jeon@example.com\nEND:VCARD`;
+  if (window.cbSaveContact) return cbSaveContact(vcard);
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -786,7 +787,8 @@ function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
     var saveBtn = document.querySelector('.btn-primary');
     var cardBtn = document.querySelector('.btn-secondary');
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+    // 카드북 저장은 누른 순간이 아니라 실제로 저장에 성공했을 때만 센다
+    window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
     statBtn.textContent = '📊 카드 현황 보기';
