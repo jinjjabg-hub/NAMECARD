@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>이주석 | 넥스트와이즈코칭</title>
 <meta property="og:title" content="이주석 | 대표코치 · 넥스트와이즈코칭">
-<meta property="og:description" content="CEO의 더 나은 의사결정과 지속 가능한 성장을 돕는 코칭 파트너, 이주석입니다.">
+<meta property="og:description" content="중요한 경영 결정, 혼자 고민하고 계십니까? 30년 경영한 CEO코치 이주석이 함께 생각합니다.">
 <meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EC%9D%B4%EC%A3%BC%EC%84%9D/og.png?v=20261013">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -319,13 +319,30 @@ footer {
 footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
 
-/* ── PHILOSOPHY / 추가 요소 ── */
-.philosophy { background: var(--navy2); }
-.philosophy .section-title { color: #fff; }
-.philo-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.88; }
+/* ── 비즈홈 확장 섹션 (이주석 원고) ── */
+.lead { font-size: 15px; font-weight: 700; line-height: 1.65; margin-bottom: 14px; }
+.about .lead, .difference .lead { color: var(--gold); }
+.why .lead, .referral .lead { color: var(--navy); }
+.body-text { font-size: 14px; line-height: 1.9; margin-bottom: 6px; }
+.about .body-text, .difference .body-text { color: var(--text-dark); opacity: 0.88; }
+.why .body-text { color: #444; }
+.subhead { font-size: 13px; font-weight: 700; letter-spacing: 0.3px; margin: 24px 0 12px; }
+.about .subhead, .difference .subhead { color: var(--gold); }
+.why .subhead, .referral .subhead { color: var(--navy); }
+.closing { margin-top: 20px; font-size: 14px; font-weight: 700; line-height: 1.8; }
+.about .closing, .difference .closing { color: #fff; }
+.why .closing, .referral .closing { color: var(--navy); }
+.step-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--gold2); margin-bottom: 6px; }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.75; }
+.info-table th, .info-table td { text-align: left; vertical-align: top; padding: 10px 10px; border-bottom: 1px solid rgba(186,209,227,0.22); }
+.info-table th { font-size: 11px; letter-spacing: 1px; color: var(--gold2); font-weight: 700; }
+.info-table td { color: var(--text-dark); opacity: 0.92; }
+.info-table td.info-key { font-weight: 700; color: var(--gold); white-space: nowrap; width: 30%; }
+.info-table [data-lang].active { display: inline; }
 .ref-quote { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--gold2); background: rgba(0,39,78,0.06); border-radius: 6px; font-size: 13px; line-height: 1.85; color: var(--text-light); font-style: italic; }
-.contact-intro { font-size: 13px; line-height: 1.85; color: #444; margin: -8px 0 18px; }
-.contact-intro strong { color: var(--navy); }
+.ref-note { margin-top: 12px; font-size: 13px; line-height: 1.8; color: var(--muted-light); }
+.contact-lead { font-size: 15px; font-weight: 700; line-height: 1.65; color: var(--navy); margin: -6px 0 10px; }
+.contact-intro { font-size: 13px; line-height: 1.85; color: #444; margin: 0 0 18px; }
 .diff-card p strong { color: var(--gold); }
 .career-item p strong { color: var(--navy); }
 </style>
@@ -375,162 +392,706 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <img src="profil.png" alt="이주석">
   </div>
   <div class="profile-info">
-    <h2>이주석 | LEE JOO SUK</h2>
+    <h2>
+      <span data-lang="kr" class="active">혼자 내려야 하는 결정 앞에서, 함께 생각하는 코칭 파트너</span>
+      <span data-lang="en">A coaching partner who thinks with you when facing a decision you must make alone</span>
+      <span data-lang="jp">一人で下さなければならない決断の前で、ともに考えるコーチングパートナー</span>
+      <span data-lang="cn">面对必须独自做出的决定时，与您一起思考的教练伙伴</span>
+    </h2>
     <p>
-      <span data-lang="kr" class="active">CEO의 더 나은 의사결정과 지속 가능한 성장을 돕는 코칭 파트너</span>
-      <span data-lang="en">Executive Coaching for Better Decisions and Sustainable Growth</span>
-      <span data-lang="jp">より良い意思決定と持続的な成長のためのCEOコーチング</span>
-      <span data-lang="cn">助力更优决策与可持续成长的CEO教练</span>
+      <span data-lang="kr" class="active">중요한 경영 결정, 혼자 고민하고 계십니까? 30년 경영한 CEO코치 이주석이 함께 생각합니다.</span>
+      <span data-lang="en">Struggling alone with an important management decision? Lee Joo Suk, a CEO coach with 30 years of management experience, will think it through with you.</span>
+      <span data-lang="jp">重要な経営判断を一人で悩んでいませんか？30年経営してきたCEOコーチ、イ・ジュソクがともに考えます。</span>
+      <span data-lang="cn">在为重要的经营决策独自烦恼吗？有30年经营经验的CEO教练李柱奭与您一起思考。</span>
     </p>
   </div>
 </div>
 
 <!-- ABOUT -->
-<section class="about">
+<section class="about" id="about">
   <div class="section-label">About</div>
-  <div class="slogan">
-    <span data-lang="kr" class="active">CEO의 성장을 설계하는 CEO코치</span>
-    <span data-lang="en">The CEO coach who designs the growth of CEOs</span>
-    <span data-lang="jp">CEOの成長を設計するCEOコーチ</span>
-    <span data-lang="cn">设计CEO成长的CEO教练</span>
-  </div>
-  <p class="about-text">
-    <span data-lang="kr" class="active">기업을 경영한다는 것은 끊임없이 선택하고, 그 결과에 책임지는 일입니다.<br>저는 30년간 기업을 경영하며 CEO의 고민과 의사결정의 무게를 경험했습니다.<br>이제 그 경험에 전문 코칭 역량을 더해 중소기업 CEO와 임원들이 더 넓은 시각으로 판단하고, 자신만의 해답을 찾아 실행하도록 돕고 있습니다.<br>CEO의 성장과 기업의 성장이 함께 이루어지도록 돕는 것, 그것이 제가 코칭을 하는 이유입니다.</span>
-    <span data-lang="en">Running a company means making choices endlessly and taking responsibility for the results.<br>For 30 years I ran companies and experienced the weight of a CEO's worries and decisions.<br>Now I add professional coaching skills to that experience, helping SME CEOs and executives judge with a wider view, find their own answers, and act on them.<br>Helping a CEO's growth and the company's growth happen together — that is why I coach.</span>
-    <span data-lang="jp">企業を経営するとは、絶えず選択し、その結果に責任を負うことです。<br>私は30年間企業を経営し、CEOの悩みと意思決定の重みを経験しました。<br>今はその経験に専門的なコーチング力を加え、中小企業のCEOや役員がより広い視野で判断し、自分なりの答えを見つけて実行できるよう支援しています。<br>CEOの成長と企業の成長がともに実現するよう支えること。それが私がコーチングを行う理由です。</span>
-    <span data-lang="cn">经营企业意味着不断做出选择，并为结果负责。<br>我经营企业30年，亲身体会过CEO的烦恼与决策之重。<br>如今我在这份经验之上加入专业教练能力，帮助中小企业CEO和高管以更开阔的视野判断，找到属于自己的答案并付诸实践。<br>帮助CEO与企业共同成长，这就是我做教练的原因。</span>
-  </p>
+    <div class="slogan">
+      <span data-lang="kr" class="active">CEO의 성장을 설계하는 CEO코치</span>
+      <span data-lang="en">The CEO coach who designs the growth of CEOs</span>
+      <span data-lang="jp">CEOの成長を設計するCEOコーチ</span>
+      <span data-lang="cn">设计CEO成长的CEO教练</span>
+    </div>
+    <div class="lead">
+      <span data-lang="kr" class="active">중요한 경영 결정, 혼자 고민하고 계십니까?</span>
+      <span data-lang="en">Are you struggling alone with an important management decision?</span>
+      <span data-lang="jp">重要な経営判断を、一人で悩んでいませんか？</span>
+      <span data-lang="cn">面对重要的经营决策，您是否在独自烦恼？</span>
+    </div>
+    <p class="body-text">
+      <span data-lang="kr" class="active">기업을 경영한다는 것은 끊임없이 선택하고, 그 결과에 책임지는 일입니다.<br><br>저는 30년을 반도체·전자부품 B2B 기업을 경영해 왔습니다. 거래처와의 관계, 성장과 정체, 직원과의 소통, 불확실한 미래. 결정의 무게와, 결정한 뒤에 남는 외로움을 압니다.<br><br>그 시간 동안 깨달았습니다. CEO에게 필요한 것은 더 많은 정보나 조언만이 아니었습니다. 생각을 정리하고, 놓친 관점을 발견하고, 결정을 객관적으로 돌아볼 대화 상대였습니다.<br><br>그래서 코치가 되었습니다. 정답을 대신 드리지 않습니다. 대표님이 스스로 더 나은 답을 찾아 실행하도록, 곁에서 생각을 함께 정리합니다.<br><br>CEO가 성장해야 회사도 성장합니다. 그것이 제가 코칭을 하는 이유입니다.</span>
+      <span data-lang="en">Running a company means making choices endlessly and taking responsibility for the results.<br><br>I have run semiconductor and electronic-components B2B companies for 30 years. Relationships with clients, growth and stagnation, communication with staff, an uncertain future. I know the weight of a decision, and the loneliness that remains after making it.<br><br>Over that time I realized that what a CEO needs is not only more information or advice. It is someone to talk with who helps organize thoughts, discover missed perspectives, and look back at decisions objectively.<br><br>That is why I became a coach. I do not hand over the answer. I stay beside you and organize thoughts together so that you can find a better answer yourself and act on it.<br><br>A company grows only when its CEO grows. That is why I coach.</span>
+      <span data-lang="jp">企業を経営するとは、絶えず選択し、その結果に責任を負うことです。<br><br>私は30年間、半導体・電子部品のB2B企業を経営してきました。取引先との関係、成長と停滞、社員とのコミュニケーション、不確実な未来。決断の重みと、決断した後に残る孤独を知っています。<br><br>その時間の中で気づきました。CEOに必要なのは、より多くの情報やアドバイスだけではありませんでした。考えを整理し、見落としていた視点に気づき、決断を客観的に振り返るための対話の相手でした。<br><br>だから、コーチになりました。正解を代わりに差し上げることはしません。代表が自らより良い答えを見つけて実行できるよう、そばで一緒に考えを整理します。<br><br>CEOが成長してこそ、会社も成長します。それが私がコーチングを行う理由です。</span>
+      <span data-lang="cn">经营企业意味着不断做出选择，并为结果负责。<br><br>我已经营半导体、电子元件B2B企业30年。与客户的关系、增长与停滞、与员工的沟通、不确定的未来。我了解决策的分量，也了解决策之后留下的孤独。<br><br>在这段时间里我意识到，CEO需要的不只是更多的信息或建议，而是一个能帮助整理思路、发现被忽略的视角、客观回顾决策的对话对象。<br><br>所以我成为了教练。我不会代替您给出标准答案。我会在您身边一起整理思路，让您自己找到更好的答案并付诸实践。<br><br>CEO成长，公司才能成长。这就是我做教练的原因。</span>
+    </p>
 </section>
 
-<!-- PHILOSOPHY -->
-<section class="philosophy">
-  <div class="section-label">Coaching Philosophy</div>
+<!-- CONCERNS -->
+<section class="why" id="concerns">
+  <div class="section-label">Concerns</div>
   <div class="section-title">
-    <span data-lang="kr" class="active">CEO에게도 생각을 나눌 파트너가 필요합니다.</span>
-    <span data-lang="en">CEOs need a partner to think with, too.</span>
-    <span data-lang="jp">CEOにも、考えを分かち合うパートナーが必要です。</span>
-    <span data-lang="cn">CEO也需要一个共同思考的伙伴。</span>
+    <span data-lang="kr" class="active">이런 고민을 가져오십니다</span>
+    <span data-lang="en">Concerns CEOs bring</span>
+    <span data-lang="jp">こんなお悩みをお持ちです</span>
+    <span data-lang="cn">CEO们常带来的烦恼</span>
   </div>
-  <p class="philo-text">
-    <span data-lang="kr" class="active">CEO는 많은 사람의 이야기를 듣지만, 정작 자신의 고민을 편하게 이야기할 기회는 많지 않습니다.<br>중요한 결정을 내려야 할 때, 자신의 생각을 객관적으로 돌아볼 수 있는 대화 상대가 필요합니다.<br>저는 CEO에게 정답을 제시하는 사람이 아니라, 스스로 더 나은 답을 발견하도록 돕는 코칭 파트너가 되고자 합니다.<br>경영의 경험과 코칭의 전문성을 바탕으로 CEO의 생각을 넓히고 실행을 돕겠습니다.</span>
-    <span data-lang="en">CEOs listen to many people, yet rarely get a chance to talk openly about their own worries.<br>When an important decision has to be made, a CEO needs someone to talk with who helps them look at their own thinking objectively.<br>I do not aim to hand CEOs the answer; I aim to be a coaching partner who helps them discover better answers on their own.<br>Drawing on management experience and coaching expertise, I will help broaden the CEO's thinking and support action.</span>
-    <span data-lang="jp">CEOは多くの人の話に耳を傾けますが、自分の悩みを気軽に話せる機会は多くありません。<br>重要な決断を下すとき、自分の考えを客観的に振り返れる対話の相手が必要です。<br>私はCEOに正解を示す人ではなく、自らより良い答えを見つけられるよう支えるコーチングパートナーでありたいと考えています。<br>経営の経験とコーチングの専門性をもとに、CEOの考えを広げ、実行を支えます。</span>
-    <span data-lang="cn">CEO倾听许多人的声音，却很少有机会轻松地说出自己的烦恼。<br>在做出重要决定时，需要一个能帮助自己客观审视想法的对话对象。<br>我不是给CEO提供标准答案的人，而是希望成为帮助他们自己找到更好答案的教练伙伴。<br>凭借经营经验和教练专业能力，我将帮助CEO拓宽思路并推动落实。</span>
-  </p>
+    <div class="lead">
+      <span data-lang="kr" class="active">CEO에게도 생각을 나눌 파트너가 필요합니다</span>
+      <span data-lang="en">CEOs need a partner to share their thoughts with, too</span>
+      <span data-lang="jp">CEOにも、考えを分かち合うパートナーが必要です</span>
+      <span data-lang="cn">CEO也需要可以分享想法的伙伴</span>
+    </div>
+    <p class="body-text">
+      <span data-lang="kr" class="active">CEO는 많은 사람의 이야기를 듣지만, 정작 자신의 고민은 직원에게도, 가족에게도 쉽게 꺼내지 못합니다. 코칭에서 CEO들이 자주 꺼내는 질문은 이런 것들입니다.</span>
+      <span data-lang="en">CEOs listen to many people, yet they cannot easily share their own worries with employees or family. These are the questions CEOs often raise in coaching.</span>
+      <span data-lang="jp">CEOは多くの人の話を聞きますが、自分の悩みは社員にも家族にも簡単には打ち明けられません。コーチングでCEOがよく口にする問いは、次のようなものです。</span>
+      <span data-lang="cn">CEO倾听许多人的声音，却很难向员工或家人说出自己的烦恼。在教练中，CEO们经常提出这样的问题。</span>
+    </p>
+  <div class="why-cards" style="margin-top:16px;">
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">“이 투자, 지금 해야 할까? 기다려야 할까?”</span>
+        <span data-lang="en">“Should I make this investment now, or wait?”</span>
+        <span data-lang="jp">「この投資、今やるべきか。待つべきか。」</span>
+        <span data-lang="cn">“这项投资，现在做还是再等等？”</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">- 확장·전환·투자를 앞둔 CEO</span>
+        <span data-lang="en">- CEOs facing expansion, transition or investment</span>
+        <span data-lang="jp">- 拡大・転換・投資を控えたCEO</span>
+        <span data-lang="cn">- 面临扩张、转型、投资的CEO</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">“상의할 사람은 많은데, 결정은 결국 내 몫이다.”</span>
+        <span data-lang="en">“Plenty of people to consult, but the decision is ultimately mine.”</span>
+        <span data-lang="jp">「相談できる人は多いが、決断は結局自分の役目だ。」</span>
+        <span data-lang="cn">“可以商量的人很多，但决定终究是我的事。”</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">- 판단을 객관적으로 점검하고 싶은 CEO</span>
+        <span data-lang="en">- CEOs who want to check their judgment objectively</span>
+        <span data-lang="jp">- 判断を客観的に点検したいCEO</span>
+        <span data-lang="cn">- 想客观检验自己判断的CEO</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">“믿고 맡길 사람이 없다. 언제까지 내가 다 해야 하나?”</span>
+        <span data-lang="en">“There is no one I can trust to hand things over to. How long must I do it all?”</span>
+        <span data-lang="jp">「安心して任せられる人がいない。いつまで私がすべてやるのか。」</span>
+        <span data-lang="cn">“没有可以放心托付的人。我还要事事亲力亲为到什么时候？”</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">- 위임·소통·조직 운영이 과제인 CEO</span>
+        <span data-lang="en">- CEOs for whom delegation, communication and organizational management are the challenge</span>
+        <span data-lang="jp">- 権限委譲・コミュニケーション・組織運営が課題のCEO</span>
+        <span data-lang="cn">- 以授权、沟通和组织运营为课题的CEO</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">“여기까지는 잘 왔는데, 다음 10년은?”</span>
+        <span data-lang="en">“We have come this far, but what about the next 10 years?”</span>
+        <span data-lang="jp">「ここまでは順調に来たが、次の10年は？」</span>
+        <span data-lang="cn">“走到这里很顺利，但下一个十年呢？”</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">- 다음 단계의 성장과 승계를 준비하는 CEO</span>
+        <span data-lang="en">- CEOs preparing for the next stage of growth and succession</span>
+        <span data-lang="jp">- 次の段階の成長と承継を準備するCEO</span>
+        <span data-lang="cn">- 筹备下一阶段成长与传承的CEO</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">“회사는 컸는데, 나를 위한 시간은 없다.”</span>
+        <span data-lang="en">“The company has grown, but there is no time left for me.”</span>
+        <span data-lang="jp">「会社は大きくなったが、自分のための時間がない。」</span>
+        <span data-lang="cn">“公司大了，却没有属于自己的时间。”</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">- 일과 삶을 함께 돌아보고 싶은 CEO</span>
+        <span data-lang="en">- CEOs who want to look at work and life together</span>
+        <span data-lang="jp">- 仕事と人生をともに振り返りたいCEO</span>
+        <span data-lang="cn">- 想一起回顾工作与人生的CEO</span>
+      </p>
+    </div>
+  </div>
+    <div class="closing">
+      <span data-lang="kr" class="active">하나라도 마음에 걸린다면, 더 이상 혼자 붙잡고 계시지 않아도 됩니다.</span>
+      <span data-lang="en">If even one of these weighs on you, you no longer have to hold it alone.</span>
+      <span data-lang="jp">ひとつでも心に引っかかるなら、もう一人で抱え込む必要はありません。</span>
+      <span data-lang="cn">只要其中有一条让您放不下，您就不必再独自承担了。</span>
+    </div>
 </section>
 
-<!-- WHY : why-card 3개 (①②③) -->
-<section class="why">
-  <div class="section-label">Why Us</div>
+<!-- VALUE -->
+<section class="difference" id="value">
+  <div class="section-label">Value</div>
   <div class="section-title">
-    <span data-lang="kr" class="active">왜 넥스트와이즈코칭인가</span>
-    <span data-lang="en">Why Nextwise Coaching?</span>
-    <span data-lang="jp">なぜネクストワイズコーチングなのか</span>
-    <span data-lang="cn">为什么选择Nextwise Coaching</span>
+    <span data-lang="kr" class="active">왜 CEO에게 코칭이 필요한가</span>
+    <span data-lang="en">Why do CEOs need coaching?</span>
+    <span data-lang="jp">なぜCEOにコーチングが必要なのか</span>
+    <span data-lang="cn">为什么CEO需要教练</span>
   </div>
+    <div class="lead">
+      <span data-lang="kr" class="active">코칭의 가치는 성과를 높이는 데만 있지 않습니다. 피할 수 있는 실수를 줄이는 데 있습니다.</span>
+      <span data-lang="en">The value of coaching lies not only in raising results. It lies in reducing mistakes that can be avoided.</span>
+      <span data-lang="jp">コーチングの価値は、成果を高めることだけにあるのではありません。避けられる失敗を減らすことにあります。</span>
+      <span data-lang="cn">教练的价值不仅在于提升业绩，更在于减少本可避免的失误。</span>
+    </div>
+    <p class="body-text">
+      <span data-lang="kr" class="active">CEO의 결정 하나가 회사의 방향을 바꿉니다. 사업 확장, 신규 투자, 채용, 거래처 선택은 되돌리기 어렵습니다. 경험이 많은 CEO일수록 익숙한 방식과 과거의 성공이 판단을 이끕니다. 그 익숙함이 가장 큰 사각지대가 되기도 합니다.</span>
+      <span data-lang="en">A single CEO decision can change the direction of a company. Business expansion, new investment, hiring and the choice of clients are hard to reverse. The more experienced a CEO is, the more familiar methods and past successes guide their judgment. That familiarity can become the biggest blind spot.</span>
+      <span data-lang="jp">CEOの決断ひとつが、会社の方向を変えます。事業拡大、新規投資、採用、取引先の選択は、元に戻すことが困難です。経験豊富なCEOほど、慣れた方法や過去の成功が判断を導きます。その慣れが、最大の死角になることもあります。</span>
+      <span data-lang="cn">CEO的一个决定就能改变公司的方向。业务扩张、新增投资、招聘、选择客户都难以挽回。越是经验丰富的CEO，越容易被熟悉的做法和过去的成功左右判断。这种熟悉有时反而成为最大的盲区。</span>
+    </p>
+    <div class="subhead">
+      <span data-lang="kr" class="active">■ 코칭에서 함께 점검하는 4가지</span>
+      <span data-lang="en">■ Four things we check together in coaching</span>
+      <span data-lang="jp">■ コーチングで一緒に点検する4つのこと</span>
+      <span data-lang="cn">■ 教练中一起检视的4件事</span>
+    </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">핵심 정리</span>
+        <span data-lang="en">Core summary</span>
+        <span data-lang="jp">核心の整理</span>
+        <span data-lang="cn">核心梳理</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">복잡한 문제의 핵심을 한 문장으로 정리합니다.</span>
+        <span data-lang="en">I summarize the core of a complex problem in one sentence.</span>
+        <span data-lang="jp">複雑な問題の核心を一文で整理します。</span>
+        <span data-lang="cn">把复杂问题的核心整理成一句话。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">가정 점검</span>
+        <span data-lang="en">Assumption check</span>
+        <span data-lang="jp">前提の点検</span>
+        <span data-lang="cn">假设检视</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">익숙한 판단과 숨은 가정을 다시 봅니다.</span>
+        <span data-lang="en">We re-examine familiar judgments and hidden assumptions.</span>
+        <span data-lang="jp">慣れた判断と隠れた前提をもう一度見直します。</span>
+        <span data-lang="cn">重新审视熟悉的判断和隐藏的假设。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">위험 검토</span>
+        <span data-lang="en">Risk review</span>
+        <span data-lang="jp">リスクの検討</span>
+        <span data-lang="cn">风险评估</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">선택의 위험요인과 대안을 미리 따져 봅니다.</span>
+        <span data-lang="en">We weigh the risk factors of a choice and the alternatives in advance.</span>
+        <span data-lang="jp">選択のリスク要因と代替案を事前に検討します。</span>
+        <span data-lang="cn">提前权衡选择的风险因素和替代方案。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="why" id="whyme">
+  <div class="section-label">Why Me</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 이주석 코치인가</span>
+    <span data-lang="en">Why coach Lee Joo Suk?</span>
+    <span data-lang="jp">なぜイ・ジュソクコーチなのか</span>
+    <span data-lang="cn">为什么选择李柱奭教练</span>
+  </div>
+    <div class="lead">
+      <span data-lang="kr" class="active">경영을 해 본 코치가 아니라, 지금도 경영하는 코치입니다.</span>
+      <span data-lang="en">Not a coach who once ran a company, but a coach who still runs one today.</span>
+      <span data-lang="jp">経営したことがあるコーチではなく、今も経営しているコーチです。</span>
+      <span data-lang="cn">不是曾经经营过的教练，而是现在仍在经营的教练。</span>
+    </div>
+    <div class="subhead">
+      <span data-lang="kr" class="active">■ 차별점 3가지</span>
+      <span data-lang="en">■ Three points of difference</span>
+      <span data-lang="jp">■ 差別化ポイント3つ</span>
+      <span data-lang="cn">■ 3个差异点</span>
+    </div>
   <div class="why-cards">
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">① 30년의 기업 경영 경험</span>
-        <span data-lang="en">① 30 years of running companies</span>
-        <span data-lang="jp">① 30年の企業経営の経験</span>
-        <span data-lang="cn">① 30年企业经营经验</span>
+        <span data-lang="kr" class="active">① 현장의 언어로 대화합니다</span>
+        <span data-lang="en">① I speak the language of the field</span>
+        <span data-lang="jp">① 現場の言葉で対話します</span>
+        <span data-lang="cn">① 用一线的语言交流</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active"><strong>경영 현장을 이해하는 CEO코치</strong><br>약 30년의 기업 경영과 35년의 B2B 영업 경험을 바탕으로 CEO가 마주하는 현실적인 고민과 의사결정의 무게를 이해합니다.</span>
-        <span data-lang="en"><strong>A CEO coach who understands the management front line</strong><br>Drawing on about 30 years of running companies and 35 years of B2B sales, I understand the real worries and the weight of decisions that CEOs face.</span>
-        <span data-lang="jp"><strong>経営の現場を理解するCEOコーチ</strong><br>約30年の企業経営と35年のB2B営業の経験をもとに、CEOが直面する現実的な悩みと意思決定の重みを理解しています。</span>
-        <span data-lang="cn"><strong>了解经营一线的CEO教练</strong><br>凭借约30年的企业经营和35年的B2B销售经验，我理解CEO面对的现实烦恼和决策之重。</span>
+        <span data-lang="kr" class="active">30년 경영과 38년 B2B 영업에서 겪은 성공과 시행착오가 코칭의 바탕입니다. 이론이 아니라 현장의 언어로 대표님의 고민을 듣습니다.</span>
+        <span data-lang="en">The successes and trial and error from 30 years of management and 38 years of B2B sales are the basis of my coaching. I listen to your concerns in the language of the field, not of theory.</span>
+        <span data-lang="jp">30年の経営と38年のB2B営業で経験した成功と試行錯誤が、コーチングの土台です。理論ではなく現場の言葉で、代表のお悩みを伺います。</span>
+        <span data-lang="cn">30年经营和38年B2B销售中经历的成功与试错，是我教练的基础。我用一线的语言，而不是理论，倾听您的烦恼。</span>
       </p>
     </div>
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">② 29년간 이어온 배움과 성찰</span>
-        <span data-lang="en">② 29 years of learning and reflection</span>
-        <span data-lang="jp">② 29年続く学びと内省</span>
-        <span data-lang="cn">② 持续29年的学习与反思</span>
+        <span data-lang="kr" class="active">② 답 대신 더 나은 판단을 돕습니다</span>
+        <span data-lang="en">② Instead of answers, I help you judge better</span>
+        <span data-lang="jp">② 答えの代わりに、より良い判断を支えます</span>
+        <span data-lang="cn">② 不代替给答案，而是帮助更好地判断</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active"><strong>배움을 멈추지 않는 CEO코치</strong><br>29년간 경영자 독서모임에 참여하며 경영의 지혜와 다양한 관점을 배워왔습니다.<br>지속적인 배움과 성찰은 코칭의 깊이를 더하는 중요한 자산입니다.</span>
-        <span data-lang="en"><strong>A CEO coach who never stops learning</strong><br>For 29 years I have joined an executive reading group, learning management wisdom and many perspectives.<br>Continuous learning and reflection are important assets that deepen my coaching.</span>
-        <span data-lang="jp"><strong>学びを止めないCEOコーチ</strong><br>29年間、経営者の読書会に参加し、経営の知恵と多様な視点を学んできました。<br>継続的な学びと内省は、コーチングの深みを増す大切な資産です。</span>
-        <span data-lang="cn"><strong>从不停止学习的CEO教练</strong><br>29年来我一直参加经营者读书会，学习经营智慧和多元视角。<br>持续的学习与反思，是加深教练深度的重要资产。</span>
+        <span data-lang="kr" class="active">질문으로 숨은 가정과 위험을 함께 점검합니다. 갤럽 강점 진단으로 대표님 자신의 판단 패턴까지 살펴봅니다. 결정에서 끝나지 않고 실행까지 함께합니다.</span>
+        <span data-lang="en">Through questions we examine hidden assumptions and risks together. With the Gallup strengths assessment we even look at your own patterns of judgment. We do not stop at the decision; we stay with you through execution.</span>
+        <span data-lang="jp">質問を通じて、隠れた前提とリスクを一緒に点検します。ギャラップ強み診断で、代表ご自身の判断パターンまで見つめます。決断で終わらず、実行までともにします。</span>
+        <span data-lang="cn">通过提问，一起检视隐藏的假设和风险。借助盖洛普优势测评，连您自己的判断模式也一并审视。不止于决定，更陪伴您走到执行。</span>
       </p>
     </div>
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">③ 검증된 코칭 전문성</span>
-        <span data-lang="en">③ Proven coaching expertise</span>
-        <span data-lang="jp">③ 裏付けのあるコーチングの専門性</span>
-        <span data-lang="cn">③ 经过验证的教练专业性</span>
+        <span data-lang="kr" class="active">③ 사업과 삶을 함께 봅니다</span>
+        <span data-lang="en">③ I look at business and life together</span>
+        <span data-lang="jp">③ 事業と人生をともに見つめます</span>
+        <span data-lang="cn">③ 兼顾事业与人生</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active"><strong>경험에 전문성을 더한 CEO코치</strong><br>한국코치협회 전문코치(KPC)<br>갤럽 클리프턴스트렝스 강점코치<br>국민대학교 리더십과 코칭 MBA<br>경영 경험에 전문 코칭 역량을 더해 CEO의 자기 인식, 의사결정, 리더십 성장을 지원합니다.</span>
-        <span data-lang="en"><strong>A CEO coach who adds expertise to experience</strong><br>Professional Coach (KPC), Korea Coaching Association<br>Gallup CliftonStrengths Coach<br>MBA in Leadership &amp; Coaching, Kookmin University<br>Adding professional coaching skills to management experience, I support a CEO's self-awareness, decision-making and leadership growth.</span>
-        <span data-lang="jp"><strong>経験に専門性を加えたCEOコーチ</strong><br>韓国コーチ協会 専門コーチ(KPC)<br>ギャラップ クリフトンストレングス・コーチ<br>国民大学 リーダーシップとコーチングMBA<br>経営経験に専門的なコーチング力を加え、CEOの自己認識、意思決定、リーダーシップの成長を支援します。</span>
-        <span data-lang="cn"><strong>在经验之上增添专业性的CEO教练</strong><br>韩国教练协会专业教练(KPC)<br>盖洛普克里夫顿优势教练<br>国民大学领导力与教练MBA<br>在经营经验之上加入专业教练能力，支持CEO的自我认知、决策与领导力成长。</span>
+        <span data-lang="kr" class="active">사업과 조직의 문제뿐 아니라 리더십, 관계, 삶의 균형까지 함께 살펴봅니다. CEO 자신의 성장이 조직의 변화로 이어지도록 돕습니다.</span>
+        <span data-lang="en">We look not only at business and organizational issues but also at leadership, relationships and work-life balance. I help the CEO's own growth lead to change in the organization.</span>
+        <span data-lang="jp">事業や組織の課題だけでなく、リーダーシップ、人間関係、人生のバランスまで一緒に見つめます。CEO自身の成長が組織の変化につながるよう支援します。</span>
+        <span data-lang="cn">不仅关注事业和组织问题，还一同审视领导力、人际关系和生活平衡。帮助CEO自身的成长带动组织的变化。</span>
       </p>
     </div>
   </div>
 </section>
 
-<!-- DIFFERENCE : diff-card 2~3개 -->
-<section class="difference">
-  <div class="section-label">Difference</div>
+<!-- PROCESS -->
+<section class="about process" id="process">
+  <div class="section-label">Process</div>
   <div class="section-title">
-    <span data-lang="kr" class="active">차별점</span>
-    <span data-lang="en">What Makes Us Different</span>
-    <span data-lang="jp">差別化ポイント</span>
-    <span data-lang="cn">差异化优势</span>
+    <span data-lang="kr" class="active">코칭은 이렇게 진행됩니다</span>
+    <span data-lang="en">How coaching works</span>
+    <span data-lang="jp">コーチングの進め方</span>
+    <span data-lang="cn">教练如何进行</span>
+  </div>
+    <div class="lead">
+      <span data-lang="kr" class="active">CEO의 고민에서 출발해 실행으로 연결합니다.</span>
+      <span data-lang="en">We start from the CEO's concern and connect it to action.</span>
+      <span data-lang="jp">CEOのお悩みから出発し、実行へとつなげます。</span>
+      <span data-lang="cn">从CEO的烦恼出发，连接到执行。</span>
+    </div>
+    <div class="subhead">
+      <span data-lang="kr" class="active">■ 4단계</span>
+      <span data-lang="en">■ Four steps</span>
+      <span data-lang="jp">■ 4つのステップ</span>
+      <span data-lang="cn">■ 4个步骤</span>
+    </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <div class="step-label">STEP 1</div>
+      <h3>
+        <span data-lang="kr" class="active">고민을 정리합니다</span>
+        <span data-lang="en">We organize your concern</span>
+        <span data-lang="jp">悩みを整理します</span>
+        <span data-lang="cn">梳理烦恼</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">지금 가장 중요한 이슈와 코칭으로 얻고 싶은 결과를 분명히 합니다.</span>
+        <span data-lang="en">We clarify the most important issue right now and the result you want from coaching.</span>
+        <span data-lang="jp">いま最も重要な課題と、コーチングで得たい成果を明確にします。</span>
+        <span data-lang="cn">明确当下最重要的议题，以及希望通过教练获得的结果。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <div class="step-label">STEP 2</div>
+      <h3>
+        <span data-lang="kr" class="active">다르게 봅니다</span>
+        <span data-lang="en">We look differently</span>
+        <span data-lang="jp">違う視点で見ます</span>
+        <span data-lang="cn">换个角度看</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">질문으로 숨은 가정, 놓친 기회와 위험을 찾습니다. 필요하면 갤럽 강점 진단으로 판단 패턴도 함께 봅니다.</span>
+        <span data-lang="en">Through questions we find hidden assumptions, missed opportunities and risks. If needed, we also look at your judgment patterns with the Gallup strengths assessment.</span>
+        <span data-lang="jp">質問を通じて、隠れた前提、見落としていた機会とリスクを探します。必要に応じて、ギャラップ強み診断で判断パターンも一緒に見ます。</span>
+        <span data-lang="cn">通过提问找出隐藏的假设、被忽略的机会与风险。如有需要，也借助盖洛普优势测评一同审视判断模式。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <div class="step-label">STEP 3</div>
+      <h3>
+        <span data-lang="kr" class="active">스스로 선택합니다</span>
+        <span data-lang="en">You choose for yourself</span>
+        <span data-lang="jp">自ら選びます</span>
+        <span data-lang="cn">自己做选择</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">CEO의 가치관과 회사 상황에 맞는 대안을 고릅니다.</span>
+        <span data-lang="en">You select the alternative that fits the CEO's values and the company's situation.</span>
+        <span data-lang="jp">CEOの価値観と会社の状況に合った代替案を選びます。</span>
+        <span data-lang="cn">选出符合CEO价值观和公司状况的方案。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <div class="step-label">STEP 4</div>
+      <h3>
+        <span data-lang="kr" class="active">실행하고 돌아봅니다</span>
+        <span data-lang="en">Act and reflect</span>
+        <span data-lang="jp">実行して振り返ります</span>
+        <span data-lang="cn">执行并回顾</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">실행 계획을 세우고, 다음 만남에서 변화를 점검합니다.</span>
+        <span data-lang="en">You make an action plan and we review the change at the next meeting.</span>
+        <span data-lang="jp">実行計画を立て、次回の面談で変化を点検します。</span>
+        <span data-lang="cn">制定执行计划，并在下次见面时检视变化。</span>
+      </p>
+    </div>
+  </div>
+    <div class="subhead">
+      <span data-lang="kr" class="active">■ 진행 안내</span>
+      <span data-lang="en">■ How it proceeds</span>
+      <span data-lang="jp">■ 進行のご案内</span>
+      <span data-lang="cn">■ 进行说明</span>
+    </div>
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>
+          <span data-lang="kr" class="active">구분</span>
+          <span data-lang="en">Item</span>
+          <span data-lang="jp">区分</span>
+          <span data-lang="cn">项目</span>
+        </th>
+        <th>
+          <span data-lang="kr" class="active">내용</span>
+          <span data-lang="en">Details</span>
+          <span data-lang="jp">内容</span>
+          <span data-lang="cn">内容</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="info-key">
+          <span data-lang="kr" class="active">첫 상담</span>
+          <span data-lang="en">First consultation</span>
+          <span data-lang="jp">初回相談</span>
+          <span data-lang="cn">首次咨询</span>
+        </td>
+        <td>
+          <span data-lang="kr" class="active">【60분 무료】 — 고민을 듣고, 코칭이 지금 필요한지 함께 생각합니다.</span>
+          <span data-lang="en">【60 minutes, free】 — We listen to your concern and think together about whether coaching is needed now.</span>
+          <span data-lang="jp">【60分無料】— お悩みを伺い、コーチングが今必要かをともに考えます。</span>
+          <span data-lang="cn">【60分钟免费】— 倾听您的烦恼，一起思考现在是否需要教练。</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="info-key">
+          <span data-lang="kr" class="active">정규 코칭</span>
+          <span data-lang="en">Regular coaching</span>
+          <span data-lang="jp">定期コーチング</span>
+          <span data-lang="cn">常规教练</span>
+        </td>
+        <td>
+          <span data-lang="kr" class="active">【월 2회 × 6개월(총 12회)】, 회당 【60~90분】</span>
+          <span data-lang="en">【Twice a month × 6 months (12 sessions in total)】, 【60–90 minutes】 per session</span>
+          <span data-lang="jp">【月2回×6か月（計12回）】、1回あたり【60～90分】</span>
+          <span data-lang="cn">【每月2次×6个月（共12次）】，每次【60~90分钟】</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="info-key">
+          <span data-lang="kr" class="active">방식</span>
+          <span data-lang="en">Format</span>
+          <span data-lang="jp">方式</span>
+          <span data-lang="cn">方式</span>
+        </td>
+        <td>
+          <span data-lang="kr" class="active">대면 또는 줌 화상(or 전화)</span>
+          <span data-lang="en">In person or Zoom video (or phone)</span>
+          <span data-lang="jp">対面またはZoomビデオ（または電話）</span>
+          <span data-lang="cn">面对面或Zoom视频（或电话）</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="info-key">
+          <span data-lang="kr" class="active">진단 도구</span>
+          <span data-lang="en">Assessment tools</span>
+          <span data-lang="jp">診断ツール</span>
+          <span data-lang="cn">测评工具</span>
+        </td>
+        <td>
+          <span data-lang="kr" class="active">필요 시 갤럽 강점 진단 및 기타 진단 도구</span>
+          <span data-lang="en">Gallup strengths assessment and other assessment tools when needed</span>
+          <span data-lang="jp">必要に応じてギャラップ強み診断およびその他の診断ツール</span>
+          <span data-lang="cn">必要时使用盖洛普优势测评及其他测评工具</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="info-key">
+          <span data-lang="kr" class="active">비밀 보장</span>
+          <span data-lang="en">Confidentiality</span>
+          <span data-lang="jp">秘密保持</span>
+          <span data-lang="cn">保密</span>
+        </td>
+        <td>
+          <span data-lang="kr" class="active">코칭 윤리와 사전에 합의한 비밀유지 원칙에 따라 보호합니다.</span>
+          <span data-lang="en">Protected in accordance with coaching ethics and a confidentiality principle agreed in advance.</span>
+          <span data-lang="jp">コーチング倫理と事前に合意した秘密保持の原則に従って保護します。</span>
+          <span data-lang="cn">依据教练伦理及事先约定的保密原则予以保护。</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    <div class="subhead">
+      <span data-lang="kr" class="active">■ 프로그램</span>
+      <span data-lang="en">■ Programs</span>
+      <span data-lang="jp">■ プログラム</span>
+      <span data-lang="cn">■ 项目</span>
+    </div>
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>
+          <span data-lang="kr" class="active">프로그램</span>
+          <span data-lang="en">Program</span>
+          <span data-lang="jp">プログラム</span>
+          <span data-lang="cn">项目</span>
+        </th>
+        <th>
+          <span data-lang="kr" class="active">내용</span>
+          <span data-lang="en">Details</span>
+          <span data-lang="jp">内容</span>
+          <span data-lang="cn">内容</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="info-key">
+          <span data-lang="kr" class="active">1:1 CEO 코칭</span>
+          <span data-lang="en">1:1 CEO Coaching</span>
+          <span data-lang="jp">1:1 CEOコーチング</span>
+          <span data-lang="cn">1对1 CEO教练</span>
+        </td>
+        <td>
+          <span data-lang="kr" class="active">경영 이슈와 리더십 전반을 다루는 정규 과정 【회기·기간 협의】</span>
+          <span data-lang="en">A regular course covering management issues and leadership overall 【sessions and period to be discussed】</span>
+          <span data-lang="jp">経営課題とリーダーシップ全般を扱う定期プログラム【回数・期間は協議】</span>
+          <span data-lang="cn">涵盖经营议题与领导力全局的常规课程【次数、期限另行协商】</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="info-key">
+          <span data-lang="kr" class="active">의사결정 집중 코칭</span>
+          <span data-lang="en">Intensive decision-making coaching</span>
+          <span data-lang="jp">意思決定集中コーチング</span>
+          <span data-lang="cn">决策集中教练</span>
+        </td>
+        <td>
+          <span data-lang="kr" class="active">투자·확장·승계 등 중요한 결정을 앞둔 CEO를 위한 단기 과정 【회기 협의】</span>
+          <span data-lang="en">A short course for CEOs facing important decisions such as investment, expansion or succession 【sessions to be discussed】</span>
+          <span data-lang="jp">投資・拡大・承継など重要な決断を控えたCEOのための短期プログラム【回数は協議】</span>
+          <span data-lang="cn">面向即将做出投资、扩张、传承等重要决定的CEO的短期课程【次数另行协商】</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="info-key">
+          <span data-lang="kr" class="active">강점 기반 리더십 코칭</span>
+          <span data-lang="en">Strengths-based leadership coaching</span>
+          <span data-lang="jp">強みを基盤としたリーダーシップコーチング</span>
+          <span data-lang="cn">基于优势的领导力教练</span>
+        </td>
+        <td>
+          <span data-lang="kr" class="active">갤럽 강점 진단 + 리더십 코칭 세션 【회기 협의】</span>
+          <span data-lang="en">Gallup strengths assessment + leadership coaching sessions 【sessions to be discussed】</span>
+          <span data-lang="jp">ギャラップ強み診断＋リーダーシップコーチングセッション【回数は協議】</span>
+          <span data-lang="cn">盖洛普优势测评＋领导力教练课程【次数另行协商】</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    <div class="closing">
+      <span data-lang="kr" class="active">결정은 CEO가 합니다. 코치는 그 결정이 더 단단해지도록 돕습니다.</span>
+      <span data-lang="en">The CEO makes the decision. The coach helps that decision become firmer.</span>
+      <span data-lang="jp">決断を下すのはCEOです。コーチは、その決断がより確かなものになるよう支えます。</span>
+      <span data-lang="cn">决定由CEO来做。教练帮助这个决定更加稳固。</span>
+    </div>
+</section>
+
+<!-- PROMISE -->
+<section class="referral promise" id="promise">
+  <div class="section-label">Promise</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">코치의 약속</span>
+    <span data-lang="en">The coach's promise</span>
+    <span data-lang="jp">コーチの約束</span>
+    <span data-lang="cn">教练的承诺</span>
+  </div>
+    <div class="lead">
+      <span data-lang="kr" class="active">CEO가 마음 놓고 이야기할 수 있는 파트너가 되겠습니다.</span>
+      <span data-lang="en">I will be a partner you can speak to freely.</span>
+      <span data-lang="jp">CEOが安心して話せるパートナーになります。</span>
+      <span data-lang="cn">我会成为让CEO可以放心倾诉的伙伴。</span>
+    </div>
+    <div class="subhead">
+      <span data-lang="kr" class="active">■ 약속 4가지</span>
+      <span data-lang="en">■ Four promises</span>
+      <span data-lang="jp">■ 4つの約束</span>
+      <span data-lang="cn">■ 4项承诺</span>
+    </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+        <span data-lang="kr" class="active">정답을 대신 내리지 않겠습니다.</span>
+        <span data-lang="en">I will not give the answer on your behalf.</span>
+        <span data-lang="jp">正解を代わりに出すことはしません。</span>
+        <span data-lang="cn">我不会代替您给出标准答案。</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+        <span data-lang="kr" class="active">판단하지 않고 끝까지 듣겠습니다.</span>
+        <span data-lang="en">I will listen to the end without judging.</span>
+        <span data-lang="jp">判断せず、最後まで聴きます。</span>
+        <span data-lang="cn">我会不加评判，倾听到底。</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+        <span data-lang="kr" class="active">나눈 이야기는 코칭 윤리와 비밀유지 원칙에 따라 지키겠습니다.</span>
+        <span data-lang="en">I will keep what we share in accordance with coaching ethics and the confidentiality principle.</span>
+        <span data-lang="jp">お話しいただいた内容は、コーチング倫理と秘密保持の原則に従って守ります。</span>
+        <span data-lang="cn">我会依据教练伦理和保密原则，保护我们交流的内容。</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">4</div>
+      <p>
+        <span data-lang="kr" class="active">효과를 과장하지 않겠습니다.</span>
+        <span data-lang="en">I will not exaggerate the effects.</span>
+        <span data-lang="jp">効果を誇張しません。</span>
+        <span data-lang="cn">我不会夸大效果。</span>
+      </p>
+    </div>
+  </div>
+    <div class="closing">
+      <span data-lang="kr" class="active">변화는 코치가 아니라 CEO의 선택과 실행에서 나옵니다. 저는 그 곁을 지키겠습니다.</span>
+      <span data-lang="en">Change comes not from the coach but from the CEO's choices and actions. I will stay by your side.</span>
+      <span data-lang="jp">変化はコーチからではなく、CEOの選択と実行から生まれます。私はその傍らにいます。</span>
+      <span data-lang="cn">改变不是来自教练，而是来自CEO的选择与执行。我会陪伴在您身边。</span>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="difference" id="faq">
+  <div class="section-label">FAQ</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">자주 묻는 질문</span>
+    <span data-lang="en">Frequently asked questions</span>
+    <span data-lang="jp">よくあるご質問</span>
+    <span data-lang="cn">常见问题</span>
   </div>
   <div class="diff-grid">
     <div class="diff-card">
       <h3>
-        <span data-lang="kr" class="active">① 경영 현장에 대한 깊은 이해</span>
-        <span data-lang="en">① Deep understanding of the management front line</span>
-        <span data-lang="jp">① 経営の現場への深い理解</span>
-        <span data-lang="cn">① 对经营一线的深刻理解</span>
+        <span data-lang="kr" class="active">Q. 컨설팅과 무엇이 다른가요?</span>
+        <span data-lang="en">Q. How is it different from consulting?</span>
+        <span data-lang="jp">Q. コンサルティングとは何が違いますか？</span>
+        <span data-lang="cn">Q. 与咨询有什么不同？</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active"><strong>이론보다 현실을 이해합니다.</strong><br>30년간 기업을 경영하며 경험한 성공과 시행착오는 CEO의 고민을 이해하는 바탕입니다.<br>경영 현장의 현실을 존중하며 함께 해답을 찾아갑니다.</span>
-        <span data-lang="en"><strong>I understand reality before theory.</strong><br>The successes and trial and error I experienced over 30 years of running companies are the basis for understanding a CEO's worries.<br>I respect the realities of the management front line and look for answers together.</span>
-        <span data-lang="jp"><strong>理論よりも現実を理解します。</strong><br>30年間企業を経営して経験した成功と試行錯誤が、CEOの悩みを理解する土台です。<br>経営現場の現実を尊重し、ともに答えを探していきます。</span>
-        <span data-lang="cn"><strong>比起理论，我更理解现实。</strong><br>经营企业30年所经历的成功与试错，是我理解CEO烦恼的基础。<br>我尊重经营一线的现实，与您一起寻找答案。</span>
+        <span data-lang="kr" class="active">컨설팅은 전문가가 답을 제시합니다. 코칭은 CEO가 자기 상황에 맞는 답을 스스로 찾고 실행하도록 돕습니다. 경영을 해 온 코치라 현장의 언어로 대화할 수 있습니다.</span>
+        <span data-lang="en">In consulting, the expert presents the answer. Coaching helps the CEO find and carry out the answer that fits their own situation. As a coach who has run a company, I can talk in the language of the field.</span>
+        <span data-lang="jp">コンサルティングでは専門家が答えを提示します。コーチングは、CEOが自分の状況に合った答えを自ら見つけて実行できるよう支援します。経営をしてきたコーチなので、現場の言葉で対話できます。</span>
+        <span data-lang="cn">咨询是专家给出答案。教练则帮助CEO自己找到适合自身情况的答案并付诸实践。我是有经营经验的教练，可以用一线的语言交流。</span>
       </p>
     </div>
     <div class="diff-card">
       <h3>
-        <span data-lang="kr" class="active">② 의사결정의 질을 높이는 코칭</span>
-        <span data-lang="en">② Coaching that raises the quality of decisions</span>
-        <span data-lang="jp">② 意思決定の質を高めるコーチング</span>
-        <span data-lang="cn">② 提升决策质量的教练</span>
+        <span data-lang="kr" class="active">Q. 이야기한 내용이 밖으로 나가지 않을까요?</span>
+        <span data-lang="en">Q. Will what I say stay confidential?</span>
+        <span data-lang="jp">Q. お話しした内容が外に漏れることはありませんか？</span>
+        <span data-lang="cn">Q. 我所说的内容会外泄吗？</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active"><strong>답을 대신 주기보다 더 나은 판단을 돕습니다.</strong><br>CEO가 자신의 생각과 판단을 객관적으로 바라보고, 놓치고 있던 관점과 가능성을 발견하도록 돕습니다.<br>중요한 결정을 더 명확하게 내릴 수 있도록 함께합니다.</span>
-        <span data-lang="en"><strong>Rather than giving the answer, I help you judge better.</strong><br>I help CEOs look at their own thinking and judgment objectively and discover perspectives and possibilities they have missed.<br>I work with them so they can make important decisions more clearly.</span>
-        <span data-lang="jp"><strong>答えを与えるのではなく、より良い判断を支えます。</strong><br>CEOが自分の考えや判断を客観的に見つめ、見落としていた視点や可能性を発見できるよう支援します。<br>重要な決断をより明確に下せるよう、ともに歩みます。</span>
-        <span data-lang="cn"><strong>与其代替给出答案，不如帮助您做出更好的判断。</strong><br>帮助CEO客观审视自己的想法与判断，发现被忽略的视角和可能性。<br>陪伴您更清晰地做出重要决定。</span>
+        <span data-lang="kr" class="active">코칭에서 나눈 이야기는 코칭 윤리와 사전에 합의한 비밀유지 원칙에 따라 보호합니다.</span>
+        <span data-lang="en">What is shared in coaching is protected in accordance with coaching ethics and a confidentiality principle agreed in advance.</span>
+        <span data-lang="jp">コーチングで交わしたお話は、コーチング倫理と事前に合意した秘密保持の原則に従って保護します。</span>
+        <span data-lang="cn">教练中交流的内容，依据教练伦理及事先约定的保密原则予以保护。</span>
       </p>
     </div>
     <div class="diff-card">
       <h3>
-        <span data-lang="kr" class="active">③ 비즈니스와 삶을 함께 바라보는 코칭</span>
-        <span data-lang="en">③ Coaching that looks at business and life together</span>
-        <span data-lang="jp">③ ビジネスと人生をともに見つめるコーチング</span>
-        <span data-lang="cn">③ 兼顾事业与人生的教练</span>
+        <span data-lang="kr" class="active">Q. 어떤 방식으로 만나나요?</span>
+        <span data-lang="en">Q. In what format do we meet?</span>
+        <span data-lang="jp">Q. どのような方法で会いますか？</span>
+        <span data-lang="cn">Q. 以什么方式见面？</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active"><strong>기업의 성장만큼 CEO 자신의 성장도 중요합니다.</strong><br>사업과 조직의 문제뿐 아니라 리더십, 관계, 삶의 균형까지 함께 살펴봅니다.<br>CEO가 스스로 성장하고, 그 성장이 조직의 변화로 이어지도록 돕습니다.</span>
-        <span data-lang="en"><strong>The CEO's own growth matters as much as the company's.</strong><br>We look not only at business and organizational issues but also at leadership, relationships and work-life balance.<br>I help CEOs grow on their own and let that growth lead to change in the organization.</span>
-        <span data-lang="jp"><strong>企業の成長と同じくらい、CEO自身の成長も大切です。</strong><br>事業や組織の課題だけでなく、リーダーシップ、人間関係、人生のバランスまで一緒に見つめます。<br>CEOが自ら成長し、その成長が組織の変化につながるよう支援します。</span>
-        <span data-lang="cn"><strong>CEO自身的成长与企业的成长同样重要。</strong><br>不仅关注事业和组织问题，还一同审视领导力、人际关系和生活平衡。<br>帮助CEO自我成长，并让这种成长带动组织的变化。</span>
+        <span data-lang="kr" class="active">대면 또는 줌 화상으로 만납니다. 【전화 코칭 가능】</span>
+        <span data-lang="en">We meet in person or by Zoom video. 【Phone coaching available】</span>
+        <span data-lang="jp">対面またはZoomビデオでお会いします。【電話コーチング可能】</span>
+        <span data-lang="cn">面对面或通过Zoom视频见面。【可电话教练】</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">Q. 몇 번 만나야 효과가 있나요?</span>
+        <span data-lang="en">Q. How many sessions are needed to see an effect?</span>
+        <span data-lang="jp">Q. 何回会えば効果がありますか？</span>
+        <span data-lang="cn">Q. 需要见几次才有效果？</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">보통 【6~12회】를 한 과정으로 진행합니다. 다만 효과는 개인과 상황에 따라 다르며, CEO의 실행이 가장 큰 변수입니다.</span>
+        <span data-lang="en">Usually 【6–12 sessions】 make up one course. However, the effect varies by person and situation, and the CEO's action is the biggest variable.</span>
+        <span data-lang="jp">通常【6～12回】を1つの課程として進めます。ただし効果は個人や状況によって異なり、CEOの実行が最も大きな変数です。</span>
+        <span data-lang="cn">通常以【6~12次】为一个课程。但效果因人和情况而异，CEO的执行是最大的变量。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">Q. 비용은 어떻게 되나요?</span>
+        <span data-lang="en">Q. What does it cost?</span>
+        <span data-lang="jp">Q. 費用はどのくらいですか？</span>
+        <span data-lang="cn">Q. 费用是多少？</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">【첫 상담에서 과정과 함께 안내드립니다.】</span>
+        <span data-lang="en">【We will explain this together with the course at the first consultation.】</span>
+        <span data-lang="jp">【初回相談で、課程とあわせてご案内します。】</span>
+        <span data-lang="cn">【首次咨询时会连同课程一并说明。】</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">Q. 첫 상담은 어떻게 진행되나요?</span>
+        <span data-lang="en">Q. How does the first consultation go?</span>
+        <span data-lang="jp">Q. 初回相談はどのように進みますか？</span>
+        <span data-lang="cn">Q. 首次咨询如何进行？</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">지금의 고민을 듣고, 코칭이 어떤 도움이 될지 함께 확인합니다. 【60분 · 무료】<br>코칭을 시작하지 않으셔도 괜찮습니다.</span>
+        <span data-lang="en">We listen to your current concern and check together how coaching could help. 【60 minutes · free】<br>You do not have to start coaching.</span>
+        <span data-lang="jp">いまのお悩みを伺い、コーチングがどのように役立つかをともに確認します。【60分・無料】<br>コーチングを始めなくても構いません。</span>
+        <span data-lang="cn">倾听您当下的烦恼，一起确认教练能带来怎样的帮助。【60分钟 · 免费】<br>即使不开始教练也没有关系。</span>
       </p>
     </div>
   </div>
 </section>
 
-<!-- REFERRAL : BNI 핵심 섹션. ref-item 2~3개 -->
-<section class="referral">
+<!-- REFERRAL -->
+<section class="referral" id="referral">
   <div class="section-label">Referral</div>
   <div class="section-title">
     <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
@@ -542,37 +1103,28 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="ref-item">
       <div class="ref-num">1</div>
       <p>
-        <span data-lang="kr" class="active"><strong>중소기업 CEO</strong><br>중요한 결정을 혼자 감당하고 있는 CEO<br>✔ 사업의 성장과 새로운 방향을 고민하는 CEO<br>✔ 투자·사업 확장 등 중요한 결정을 앞둔 CEO<br>✔ 직원의 역량과 조직의 성장을 고민하는 CEO</span>
-        <span data-lang="en"><strong>SME CEOs</strong><br>CEOs carrying important decisions alone<br>✔ CEOs thinking about business growth and a new direction<br>✔ CEOs facing important decisions such as investment or expansion<br>✔ CEOs concerned about their people's capability and the organization's growth</span>
-        <span data-lang="jp"><strong>中小企業のCEO</strong><br>重要な決断を一人で背負っているCEO<br>✔ 事業の成長と新しい方向性を悩んでいるCEO<br>✔ 投資や事業拡大など重要な決断を控えたCEO<br>✔ 社員の力量と組織の成長を考えているCEO</span>
-        <span data-lang="cn"><strong>中小企业CEO</strong><br>独自承担重要决策的CEO<br>✔ 思考业务增长与新方向的CEO<br>✔ 面临投资、业务扩张等重要决定的CEO<br>✔ 关心员工能力与组织成长的CEO</span>
+        <span data-lang="kr" class="active"><strong>중요한 결정을 혼자 감당하는 중소기업 CEO</strong><br>✔ 100인 이하 제조·유통 기업 대표<br>✔ 투자·사업 확장·승계 등 큰 결정을 앞둔 CEO<br>✔ 자신의 리더십을 객관적으로 돌아보고 싶은 CEO</span>
+        <span data-lang="en"><strong>SME CEOs who bear important decisions alone</strong><br>✔ Heads of manufacturing and distribution companies with 100 employees or fewer<br>✔ CEOs facing big decisions such as investment, business expansion or succession<br>✔ CEOs who want to look at their own leadership objectively</span>
+        <span data-lang="jp"><strong>重要な決断を一人で背負う中小企業のCEO</strong><br>✔ 従業員100人以下の製造・流通企業の代表<br>✔ 投資・事業拡大・承継など大きな決断を控えたCEO<br>✔ 自分のリーダーシップを客観的に振り返りたいCEO</span>
+        <span data-lang="cn"><strong>独自承担重要决策的中小企业CEO</strong><br>✔ 100人以下制造、流通企业的负责人<br>✔ 面临投资、业务扩张、传承等重大决定的CEO<br>✔ 想客观审视自己领导力的CEO</span>
       </p>
     </div>
     <div class="ref-item">
       <div class="ref-num">2</div>
       <p>
-        <span data-lang="kr" class="active"><strong>전문직 대표</strong><br>전문가에서 경영자로 성장하고 싶은 대표<br>✔ 병원장, 변호사, 법무사 등 전문직 대표<br>✔ 전문성과 경영 역량을 함께 키우고 싶은 분<br>✔ 혼자 판단해야 하는 부담을 나눌 파트너가 필요한 분</span>
-        <span data-lang="en"><strong>Heads of professional practices</strong><br>Professionals who want to grow into managers<br>✔ Hospital directors, lawyers, legal scriveners and other professionals<br>✔ Those who want to build expertise and management skills together<br>✔ Those who need a partner to share the burden of judging alone</span>
-        <span data-lang="jp"><strong>専門職の代表</strong><br>専門家から経営者へ成長したい代表<br>✔ 病院長、弁護士、司法書士などの専門職の代表<br>✔ 専門性と経営力をともに高めたい方<br>✔ 一人で判断する負担を分かち合うパートナーが必要な方</span>
-        <span data-lang="cn"><strong>专业人士的负责人</strong><br>想从专业人士成长为经营者的负责人<br>✔ 院长、律师、法务士等专业人士的负责人<br>✔ 想同时提升专业能力与经营能力的人<br>✔ 需要伙伴分担独自判断压力的人</span>
+        <span data-lang="kr" class="active"><strong>전문가에서 경영자로 성장하고 싶은 전문직 대표</strong><br>✔ 병원장, 변호사, 법무사 등 전문직 대표<br>✔ 전문성과 경영 역량을 함께 키우고 싶은 분<br>✔ 혼자 판단해야 하는 부담을 나눌 파트너가 필요한 분</span>
+        <span data-lang="en"><strong>Heads of professional practices who want to grow from expert to manager</strong><br>✔ Hospital directors, lawyers, legal scriveners and other professionals<br>✔ Those who want to build expertise and management skills together<br>✔ Those who need a partner to share the burden of judging alone</span>
+        <span data-lang="jp"><strong>専門家から経営者へ成長したい専門職の代表</strong><br>✔ 病院長、弁護士、司法書士などの専門職の代表<br>✔ 専門性と経営力をともに高めたい方<br>✔ 一人で判断する負担を分かち合うパートナーが必要な方</span>
+        <span data-lang="cn"><strong>想从专业人士成长为经营者的专业人士负责人</strong><br>✔ 院长、律师、法务士等专业人士的负责人<br>✔ 想同时提升专业能力与经营能力的人<br>✔ 需要伙伴分担独自判断压力的人</span>
       </p>
     </div>
     <div class="ref-item">
       <div class="ref-num">3</div>
       <p>
-        <span data-lang="kr" class="active"><strong>영업 조직의 리더</strong><br>사람을 통해 성과를 만들어야 하는 리더<br>✔ 보험회사 지점장 및 영업 조직 관리자<br>✔ 팀원의 자율성과 책임감을 높이고 싶은 리더<br>✔ 지시와 통제보다 코칭으로 조직을 이끌고 싶은 리더</span>
-        <span data-lang="en"><strong>Leaders of sales organizations</strong><br>Leaders who must create results through people<br>✔ Insurance branch managers and sales organization managers<br>✔ Leaders who want to raise their team's autonomy and sense of responsibility<br>✔ Leaders who want to lead with coaching rather than instruction and control</span>
-        <span data-lang="jp"><strong>営業組織のリーダー</strong><br>人を通じて成果を出すリーダー<br>✔ 保険会社の支店長および営業組織の管理者<br>✔ チームメンバーの自律性と責任感を高めたいリーダー<br>✔ 指示や統制よりもコーチングで組織を率いたいリーダー</span>
-        <span data-lang="cn"><strong>销售组织的领导者</strong><br>必须通过人创造业绩的领导者<br>✔ 保险公司分公司经理及销售组织管理者<br>✔ 想提升团队成员自主性与责任感的领导者<br>✔ 希望以教练而非指令与管控带领组织的领导者</span>
-      </p>
-    </div>
-    <div class="ref-item">
-      <div class="ref-num">4</div>
-      <p>
-        <span data-lang="kr" class="active"><strong>성장과 변화를 고민하는 경영자</strong><br>지금까지의 성공을 넘어 다음 성장을 준비하는 CEO<br>✔ 기존의 경영 방식에 변화를 주고 싶은 CEO<br>✔ 사업과 개인의 삶 사이에서 균형을 찾고 싶은 CEO<br>✔ 자신의 리더십을 객관적으로 돌아보고 싶은 CEO</span>
-        <span data-lang="en"><strong>Executives thinking about growth and change</strong><br>CEOs preparing for the next stage of growth beyond past success<br>✔ CEOs who want to change their existing way of managing<br>✔ CEOs who want to find balance between business and personal life<br>✔ CEOs who want to look at their own leadership objectively</span>
-        <span data-lang="jp"><strong>成長と変化を考える経営者</strong><br>これまでの成功を超えて次の成長に備えるCEO<br>✔ これまでの経営の方法に変化を加えたいCEO<br>✔ 事業と個人の生活のバランスを見つけたいCEO<br>✔ 自分のリーダーシップを客観的に振り返りたいCEO</span>
-        <span data-lang="cn"><strong>思考成长与变化的经营者</strong><br>超越以往成功、准备下一阶段成长的CEO<br>✔ 想改变现有经营方式的CEO<br>✔ 想在事业与个人生活之间找到平衡的CEO<br>✔ 想客观审视自己领导力的CEO</span>
+        <span data-lang="kr" class="active"><strong>사람을 통해 성과를 내야 하는 영업 조직의 리더</strong><br>✔ 보험회사 지점장 및 영업 조직 관리자<br>✔ 팀원의 자율성과 책임감을 높이고 싶은 리더<br>✔ 지시와 통제보다 코칭으로 조직을 이끌고 싶은 리더</span>
+        <span data-lang="en"><strong>Leaders of sales organizations who must create results through people</strong><br>✔ Insurance branch managers and sales organization managers<br>✔ Leaders who want to raise their team's autonomy and sense of responsibility<br>✔ Leaders who want to lead with coaching rather than instruction and control</span>
+        <span data-lang="jp"><strong>人を通じて成果を出さなければならない営業組織のリーダー</strong><br>✔ 保険会社の支店長および営業組織の管理者<br>✔ チームメンバーの自律性と責任感を高めたいリーダー<br>✔ 指示や統制よりもコーチングで組織を率いたいリーダー</span>
+        <span data-lang="cn"><strong>必须通过人创造业绩的销售组织领导者</strong><br>✔ 保险公司分公司经理及销售组织管理者<br>✔ 想提升团队成员自主性与责任感的领导者<br>✔ 希望以教练而非指令与管控带领组织的领导者</span>
       </p>
     </div>
   </div>
@@ -582,16 +1134,22 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="jp">「重要な経営判断を前に一人で悩んでいるCEOがいらっしゃれば、私をご紹介ください。」</span>
     <span data-lang="cn">“如果您认识正在为重要经营决策独自烦恼的CEO，请向他介绍我。”</span>
   </p>
+  <p class="ref-note">
+    <span data-lang="kr" class="active">소개해 주신 분께는 첫 상담을 더 세심하게 준비하겠습니다.</span>
+    <span data-lang="en">For anyone you introduce, I will prepare the first consultation with extra care.</span>
+    <span data-lang="jp">ご紹介いただいた方には、初回相談をより丁寧に準備いたします。</span>
+    <span data-lang="cn">对于您介绍的人，我会更用心地准备首次咨询。</span>
+  </p>
 </section>
 
-<!-- CAREER : career-item 2~3개. career-badge = 현재 / 경력 / 강점 / 자격 -->
-<section class="career">
+<!-- CAREER -->
+<section class="career" id="career">
   <div class="section-label">Career</div>
   <div class="section-title">
-    <span data-lang="kr" class="active">경력 및 전문 분야</span>
-    <span data-lang="en">Career &amp; Expertise</span>
-    <span data-lang="jp">経歴・専門分野</span>
-    <span data-lang="cn">经历与专业领域</span>
+    <span data-lang="kr" class="active">경력 및 자격</span>
+    <span data-lang="en">Career &amp; Credentials</span>
+    <span data-lang="jp">経歴・資格</span>
+    <span data-lang="cn">经历与资格</span>
   </div>
   <div class="career-list">
     <div class="career-item">
@@ -604,10 +1162,10 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
           <span data-lang="cn">Nextwise Coaching 代表教练</span>
         </h3>
         <p>
-          <span data-lang="kr" class="active"><strong>CEO 및 임원 전문 코칭</strong><br>중소기업 CEO와 임원의 의사결정, 코칭 리더십, 강점 개발, 조직 성장 및 개인의 성장을 지원합니다.</span>
-          <span data-lang="en"><strong>Specialized coaching for CEOs and executives</strong><br>I support SME CEOs and executives in decision-making, coaching leadership, strengths development, organizational growth and personal growth.</span>
-          <span data-lang="jp"><strong>CEO・役員向け専門コーチング</strong><br>中小企業のCEOや役員の意思決定、コーチング・リーダーシップ、強み開発、組織の成長および個人の成長を支援します。</span>
-          <span data-lang="cn"><strong>CEO及高管专业教练</strong><br>支持中小企业CEO和高管的决策、教练式领导力、优势开发、组织成长及个人成长。</span>
+          <span data-lang="kr" class="active">중소기업 CEO·임원 코칭 — 의사결정, 코칭 리더십, 강점 개발, 조직 성장</span>
+          <span data-lang="en">Coaching for SME CEOs and executives — decision-making, coaching leadership, strengths development, organizational growth</span>
+          <span data-lang="jp">中小企業のCEO・役員コーチング — 意思決定、コーチング・リーダーシップ、強み開発、組織の成長</span>
+          <span data-lang="cn">中小企业CEO、高管教练 — 决策、教练式领导力、优势开发、组织成长</span>
         </p>
       </div>
     </div>
@@ -615,16 +1173,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="career-badge">경영</div>
       <div class="career-content">
         <h3>
-          <span data-lang="kr" class="active">기업 경영 약 30년</span>
-          <span data-lang="en">About 30 years in company management</span>
-          <span data-lang="jp">企業経営 約30年</span>
-          <span data-lang="cn">企业经营约30年</span>
+          <span data-lang="kr" class="active">(주)에스제이인사이드 대표</span>
+          <span data-lang="en">CEO, SJ Inside Co., Ltd.</span>
+          <span data-lang="jp">(株)エスジェイインサイド 代表</span>
+          <span data-lang="cn">SJ Inside株式会社 代表</span>
         </h3>
         <p>
-          <span data-lang="kr" class="active"><strong>경영 현장에서 축적한 경험과 통찰</strong><br>중소기업 경영과 B2B 영업을 통해 사업 운영, 고객 관계, 조직 관리 및 경영 의사결정을 경험했습니다.</span>
-          <span data-lang="en"><strong>Experience and insight built on the management front line</strong><br>Through running SMEs and B2B sales, I have experienced business operations, customer relations, organizational management and management decision-making.</span>
-          <span data-lang="jp"><strong>経営の現場で積み重ねた経験と洞察</strong><br>中小企業の経営とB2B営業を通じて、事業運営、顧客関係、組織管理、経営の意思決定を経験しました。</span>
-          <span data-lang="cn"><strong>在经营一线积累的经验与洞察</strong><br>通过经营中小企业和B2B销售，我经历了业务运营、客户关系、组织管理及经营决策。</span>
+          <span data-lang="kr" class="active">반도체·전자부품 B2B 사업 30년 운영 중</span>
+          <span data-lang="en">Running a semiconductor and electronic-components B2B business for 30 years</span>
+          <span data-lang="jp">半導体・電子部品B2B事業を30年運営中</span>
+          <span data-lang="cn">运营半导体、电子元件B2B业务30年</span>
         </p>
       </div>
     </div>
@@ -632,16 +1190,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="career-badge">학습</div>
       <div class="career-content">
         <h3>
-          <span data-lang="kr" class="active">경영자 독서모임 29년</span>
-          <span data-lang="en">29 years in an executive reading group</span>
-          <span data-lang="jp">経営者の読書会 29年</span>
-          <span data-lang="cn">经营者读书会29年</span>
+          <span data-lang="kr" class="active">CEO 독서모임(MBS) 29년</span>
+          <span data-lang="en">29 years in a CEO reading group (MBS)</span>
+          <span data-lang="jp">CEO読書会（MBS）29年</span>
+          <span data-lang="cn">CEO读书会（MBS）29年</span>
         </h3>
         <p>
-          <span data-lang="kr" class="active"><strong>지속적인 학습과 경영 통찰</strong><br>29년간 경영자 독서모임에 참여하며 경영의 지혜와 리더십에 대한 배움을 이어오고 있습니다.</span>
-          <span data-lang="en"><strong>Continuous learning and management insight</strong><br>For 29 years I have joined an executive reading group and kept learning about management wisdom and leadership.</span>
-          <span data-lang="jp"><strong>継続的な学びと経営の洞察</strong><br>29年間、経営者の読書会に参加し、経営の知恵とリーダーシップについての学びを続けています。</span>
-          <span data-lang="cn"><strong>持续学习与经营洞察</strong><br>29年来我一直参加经营者读书会，持续学习经营智慧与领导力。</span>
+          <span data-lang="kr" class="active">매주 월요일, 경영의 지혜와 다양한 분야의 관점을 배우고 있습니다</span>
+          <span data-lang="en">Every Monday, I learn management wisdom and perspectives from many fields</span>
+          <span data-lang="jp">毎週月曜日、経営の知恵と多様な分野の視点を学んでいます</span>
+          <span data-lang="cn">每周一学习经营智慧和各领域的视角</span>
         </p>
       </div>
     </div>
@@ -649,54 +1207,60 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="career-badge">BNI</div>
       <div class="career-content">
         <h3>
-          <span data-lang="kr" class="active">BNI 비즈니스 네트워크 12년</span>
-          <span data-lang="en">12 years in the BNI business network</span>
-          <span data-lang="jp">BNIビジネスネットワーク 12年</span>
-          <span data-lang="cn">BNI商业网络12年</span>
+          <span data-lang="kr" class="active">BNI(글로벌비즈니스 네트워크) 12년</span>
+          <span data-lang="en">12 years in BNI (global business network)</span>
+          <span data-lang="jp">BNI（グローバルビジネスネットワーク）12年</span>
+          <span data-lang="cn">BNI（全球商业网络）12年</span>
         </h3>
         <p>
-          <span data-lang="kr" class="active"><strong>협업과 관계 중심 리더십 경험</strong><br>BNI 위너스챕터 의장, 교육코디네이터, 지역 트레이너, 디스트릭트 트레이너 등 다양한 역할을 수행하며 비즈니스 네트워킹과 리더십을 경험했습니다.</span>
-          <span data-lang="en"><strong>Leadership experience built on collaboration and relationships</strong><br>Through roles such as Winners Chapter Chair, Education Coordinator, regional trainer and District Trainer, I gained experience in business networking and leadership.</span>
-          <span data-lang="jp"><strong>協業と関係を軸にしたリーダーシップの経験</strong><br>BNIウィナーズチャプターの議長、教育コーディネーター、地域トレーナー、ディストリクトトレーナーなど、さまざまな役割を通じてビジネスネットワーキングとリーダーシップを経験しました。</span>
-          <span data-lang="cn"><strong>以协作与关系为核心的领导力经验</strong><br>担任BNI Winners分会主席、教育协调员、地区培训师、大区培训师等多种角色，积累了商务网络与领导力经验。</span>
+          <span data-lang="kr" class="active">위너스챕터 9기·27기 회장, BNI 강남 지역 그로스 디렉터, </span>
+          <span data-lang="en">Chair of Winners Chapter (9th and 27th terms), BNI Gangnam area Growth Director, </span>
+          <span data-lang="jp">ウィナーズチャプター9期・27期会長、BNI江南エリア グロースディレクター、</span>
+          <span data-lang="cn">Winners分会第9、27届会长、BNI江南地区增长总监，</span>
         </p>
       </div>
     </div>
     <div class="career-item">
-      <div class="career-badge">자격</div>
+      <div class="career-badge">자격·학력</div>
       <div class="career-content">
         <h3>
-          <span data-lang="kr" class="active">전문 자격 및 학력</span>
-          <span data-lang="en">Credentials and education</span>
-          <span data-lang="jp">専門資格・学歴</span>
-          <span data-lang="cn">专业资格与学历</span>
+          <span data-lang="kr" class="active">한국코치협회 전문코치(KPC)</span>
+          <span data-lang="en">Professional Coach (KPC), Korea Coaching Association</span>
+          <span data-lang="jp">韓国コーチ協会 専門コーチ(KPC)</span>
+          <span data-lang="cn">韩国教练协会专业教练(KPC)</span>
         </h3>
         <p>
-          <span data-lang="kr" class="active">한국코치협회 전문코치(KPC)<br>갤럽 클리프턴스트렝스 강점코치<br>국민대학교 리더십과 코칭 MBA</span>
-          <span data-lang="en">Professional Coach (KPC), Korea Coaching Association<br>Gallup CliftonStrengths Coach<br>MBA in Leadership &amp; Coaching, Kookmin University</span>
-          <span data-lang="jp">韓国コーチ協会 専門コーチ(KPC)<br>ギャラップ クリフトンストレングス・コーチ<br>国民大学 リーダーシップとコーチングMBA</span>
-          <span data-lang="cn">韩国教练协会专业教练(KPC)<br>盖洛普克里夫顿优势教练<br>国民大学领导力与教练MBA</span>
+          <span data-lang="kr" class="active">갤럽 인증 강점코치 (Gallup CliftonStrengths Coach) · 국민대학교 리더십과코칭 MBA</span>
+          <span data-lang="en">Gallup-certified Strengths Coach (Gallup CliftonStrengths Coach) · MBA in Leadership &amp; Coaching, Kookmin University</span>
+          <span data-lang="jp">ギャラップ認定ストレングス・コーチ (Gallup CliftonStrengths Coach) · 国民大学 リーダーシップとコーチングMBA</span>
+          <span data-lang="cn">盖洛普认证优势教练 (Gallup CliftonStrengths Coach) · 国民大学领导力与教练MBA</span>
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT : 2열 그리드. 없는 항목은 <a> 통째로 삭제 (빈칸 금지) -->
-<section class="contact">
+<!-- CONTACT -->
+<section class="contact" id="contact">
   <div class="section-label">Contact</div>
   <div class="section-title">
-    <span data-lang="kr" class="active">연락하기</span>
-    <span data-lang="en">Contact</span>
-    <span data-lang="jp">お問い合わせ</span>
-    <span data-lang="cn">联系方式</span>
+    <span data-lang="kr" class="active">첫 상담 안내</span>
+    <span data-lang="en">First consultation</span>
+    <span data-lang="jp">初回相談のご案内</span>
+    <span data-lang="cn">首次咨询说明</span>
   </div>
-  <p class="contact-intro">
-    <span data-lang="kr" class="active"><strong>상담 문의</strong><br>CEO의 성장과 의사결정에 관한 고민을 함께 나누고 싶으시다면 편하게 연락해 주세요.</span>
-    <span data-lang="en"><strong>Consultation</strong><br>If you would like to share your thoughts on CEO growth and decision-making, please feel free to get in touch.</span>
-    <span data-lang="jp"><strong>ご相談</strong><br>CEOの成長や意思決定に関するお悩みを一緒に考えたい方は、お気軽にご連絡ください。</span>
-    <span data-lang="cn"><strong>咨询</strong><br>如果您想一起探讨关于CEO成长与决策的烦恼，欢迎随时联系。</span>
-  </p>
+    <div class="contact-lead">
+      <span data-lang="kr" class="active">혼자 고민하던 결정이 있다면, 먼저 편하게 이야기 나눠 보십시오.</span>
+      <span data-lang="en">If there is a decision you have been struggling with alone, feel free to talk it over first.</span>
+      <span data-lang="jp">一人で悩んでいた決断があれば、まず気軽にお話しください。</span>
+      <span data-lang="cn">如果有您一直独自烦恼的决定，请先轻松地聊一聊。</span>
+    </div>
+    <p class="contact-intro">
+      <span data-lang="kr" class="active">한 번의 깊은 대화가 문제를 바라보는 관점을 바꿉니다.<br>사업의 방향, 조직과 사람, 중요한 결정, 또는 CEO 자신의 성장. 어떤 고민이든 괜찮습니다.</span>
+      <span data-lang="en">One deep conversation can change how you see the problem.<br>Business direction, organization and people, important decisions, or the CEO's own growth. Any concern is welcome.</span>
+      <span data-lang="jp">一度の深い対話が、問題を見る視点を変えます。<br>事業の方向性、組織と人、重要な決断、あるいはCEO自身の成長。どのようなお悩みでも構いません。</span>
+      <span data-lang="cn">一次深入的对话，能改变看待问题的视角。<br>业务方向、组织与人、重要决定，或CEO自身的成长。任何烦恼都可以。</span>
+    </p>
   <div class="contact-list">
     <a class="contact-item" href="tel:010-3714-1961">
       <div class="contact-icon">📞</div>
