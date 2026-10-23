@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>김화 | 위한무역 주식회사</title>
+<meta property="og:title" content="김화 | 대표 · 위한무역 주식회사">
+<meta property="og:description" content="수지아(秀芝雅)는 인체양수줄기세포배양액 추출물과 제주 용암해수를 쓴 바이오 화장품 브랜드입니다. 앰플부터 뿌리는 홈케어 기기까지, 복잡한 피부관리를 간편하게 바꿉니다. 2017년부터 약 10년간 이어 왔습니다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%ED%99%94/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/김화/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- 언어팩에 따라 폰트 추가: references/languages.md 참고 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #1b1722;
+  --navy2: #251d33;
+  --navy3: #34274a;
+  --gold: #ee8a3c;
+  --gold2: #f6b06f;
+  --light: #f6f1ee;
+  --text-dark: #f0ece0;
+  --text-light: #1a1a2e;
+  --muted-dark: #b8a3c2;
+  --muted-light: #5b4a6b;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang="si"] { font-family: 'Noto Sans Sinhala', sans-serif; }
+[data-lang="ur"] { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(27,23,34,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(238,138,60,0.25);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(238,138,60,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(27,23,34,0.1) 0%,
+    rgba(27,23,34,0.15) 40%,
+    rgba(27,23,34,0.75) 75%,
+    rgba(27,23,34,0.95) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-name [data-lang="ur"] { font-size: 26px; }
+.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(238,138,60,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+.about-text [data-lang="ur"] { font-size: 15px; line-height: 2.2; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(238,138,60,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+.why-card p strong { color: var(--navy); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(238,138,60,0.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.8; }
+.diff-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+.ref-item p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+
+/* ── CAREER ── */
+.career {
+  position: relative;
+  background-color: #f3eef7;
+}
+.career .section-label { position: relative; z-index:1; color: var(--muted-light); }
+.career .section-title { color: var(--text-light); position: relative; z-index:1; }
+.career-list { display: flex; flex-direction: column; gap:18px; position: relative; z-index:1; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── PORTFOLIO (선택 섹션 — portfolio1.jpg 이상 있을 때만 사용) ── */
+.portfolio { background: var(--navy); }
+.portfolio .section-title { color: #fff; }
+.portfolio-track-wrap { overflow: hidden; border-radius: 12px; }
+.portfolio-track { display: flex; transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94); }
+.portfolio-slide { min-width: 100%; aspect-ratio: 3/4; overflow: hidden; }
+.portfolio-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.portfolio-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px; }
+.portfolio-btn {
+  background: transparent; border: 1px solid rgba(238,138,60,0.35);
+  color: var(--gold); width: 30px; height: 30px; border-radius: 50%;
+  font-size: 15px; cursor: pointer; display:flex; align-items:center; justify-content:center;
+}
+.portfolio-dots { display:flex; gap:6px; }
+.portfolio-dot { width:6px; height:6px; border-radius:50%; background: rgba(238,138,60,0.3); transition: all 0.25s; }
+.portfolio-dot.active { background: var(--gold); width:18px; border-radius:3px; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(238,138,60,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">SUGIA 수지아</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<!-- HERO : hero.png = 세로 3:4 인물 사진 -->
+<div class="hero">
+  <img class="hero-img" src="hero.png" alt="김화">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">SUGIA 수지아</span>
+      <span data-lang="en">SUGIA</span>
+      <span data-lang="jp">SUGIA</span>
+      <span data-lang="cn">SUGIA 秀芝雅</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">김 화</span>
+      <span data-lang="en">KIM HWA</span>
+      <span data-lang="jp">キム・ファ</span>
+      <span data-lang="cn">金花</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 · 위한무역 주식회사</span>
+      <span data-lang="en">CEO · Wihan Trading Co., Ltd.</span>
+      <span data-lang="jp">代表 · ウィハン貿易株式会社</span>
+      <span data-lang="cn">代表 · Wihan Trading Co., Ltd.</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW : profil.png = 정사각 얼굴 사진 -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="김화">
+  </div>
+  <div class="profile-info">
+    <h2>김화 · KIM HWA</h2>
+    <p>
+      <span data-lang="kr" class="active">바이오 화장품 · 양수줄기세포 · 간편 홈케어</span>
+      <span data-lang="en">Biocosmetic · Amniotic stem cell · Easy home care</span>
+      <span data-lang="jp">バイオ化粧品 · 羊膜幹細胞 · 手軽なホームケア</span>
+      <span data-lang="cn">生物化妆品 · 羊膜干细胞 · 便捷居家护理</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">수지아(秀芝雅)는 인체양수줄기세포배양액 추출물과 제주 용암해수를 쓴 바이오 화장품 브랜드입니다. 앰플부터 뿌리는 홈케어 기기까지, 복잡한 피부관리를 간편하게 바꿉니다. 2017년부터 약 10년간 이어 왔습니다.</span>
+    <span data-lang="en">SUGIA (秀芝雅) is a biocosmetic brand made with human amniotic stem cell culture extract and Jeju lava seawater. From ampoules to a spray-type home care device, we make complicated skincare simple. We have been at it for about 10 years, since 2017.</span>
+    <span data-lang="jp">SUGIA（秀芝雅）は、ヒト羊膜幹細胞培養液抽出物と済州の溶岩海水を使ったバイオ化粧品ブランドです。アンプルからスプレー式ホームケア機器まで、複雑なスキンケアを手軽に変えます。2017年から約10年続けてきました。</span>
+    <span data-lang="cn">SUGIA（秀芝雅）是使用人体羊膜干细胞培养液提取物与济州熔岩海水的生物化妆品品牌。从安瓶到喷雾式居家护理仪器，让繁琐的护肤变得简单。自2017年起已坚持约10年。</span>
+  </p>
+</section>
+
+<!-- WHY : why-card 3개 (①②③) -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 수지아인가</span>
+    <span data-lang="en">Why SUGIA?</span>
+    <span data-lang="jp">なぜSUGIAなのか</span>
+    <span data-lang="cn">为什么选择SUGIA</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <h3>
+<span data-lang="kr" class="active">① 가장 어린 줄기세포 성분</span>
+<span data-lang="en">① The youngest stem cells</span>
+<span data-lang="jp">① 最も若い幹細胞成分</span>
+<span data-lang="cn">① 最年轻的干细胞成分</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">성체 줄기세포 중 가장 어린 <strong>양수줄기세포</strong> 배양액 추출물을 앰플에 <strong>30%</strong> 담았습니다.</span>
+<span data-lang="en">Our ampoule contains <strong>30%</strong> extract from the culture medium of <strong>amniotic stem cells</strong>, the youngest of adult stem cells.</span>
+<span data-lang="jp">成体幹細胞の中で最も若い<strong>羊膜幹細胞</strong>の培養液抽出物を、アンプルに<strong>30%</strong>配合しています。</span>
+<span data-lang="cn">安瓶中含有<strong>30%</strong>的<strong>羊膜干细胞</strong>培养液提取物，羊膜干细胞是成体干细胞中最年轻的。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+<span data-lang="kr" class="active">② 안전을 먼저 생각한 품질</span>
+<span data-lang="en">② Quality built on safety</span>
+<span data-lang="jp">② 安全を第一に考えた品質</span>
+<span data-lang="cn">② 以安全为先的品质</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">전 제품에 <strong>특허 받은 천연 방부제</strong>를 쓰고 향료는 넣지 않습니다. 화장품법에 따른 자가품질 위탁검사는 <strong>KCL(한국건설생활환경시험연구원)</strong>을 통해 진행합니다.</span>
+<span data-lang="en">Every product uses a <strong>patented natural preservative</strong> and no added fragrance. Self-quality tests required by the Cosmetics Act are commissioned to <strong>KCL (Korea Conformity Laboratories)</strong>.</span>
+<span data-lang="jp">全製品に<strong>特許取得の天然防腐剤</strong>を使用し、香料は無添加です。化粧品法に基づく自己品質委託検査は<strong>KCL（韓国建設生活環境試験研究院）</strong>を通じて行っています。</span>
+<span data-lang="cn">全线产品使用<strong>获得专利的天然防腐剂</strong>，不添加香料。依据化妆品法的自主品质委托检测由<strong>KCL（韩国建设生活环境试验研究院）</strong>进行。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+<span data-lang="kr" class="active">③ 바쁜 날에도 이어가는 간편함</span>
+<span data-lang="en">③ Simple enough for busy days</span>
+<span data-lang="jp">③ 忙しい日も続けられる手軽さ</span>
+<span data-lang="cn">③ 再忙也能坚持的便捷</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">스킨부터 립밤까지 <strong>한 라인</strong>으로 갖췄고, 뿌리고 진동·LED로 케어하는 <strong>4in1 기기</strong>까지 있습니다.</span>
+<span data-lang="en">From toner to lip balm, the <strong>whole routine in one line</strong>, plus a <strong>4-in-1 device</strong> that sprays and cares with vibration and LED.</span>
+<span data-lang="jp">スキンからリップバームまで<strong>ひとつのライン</strong>で揃い、スプレー・振動・LEDでケアできる<strong>4in1機器</strong>もあります。</span>
+<span data-lang="cn">从爽肤水到润唇膏<strong>一条产品线</strong>即可满足，还有可喷雾、振动、LED护理的<strong>4合1仪器</strong>。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE : diff-card 2~3개 -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">What Makes Us Different</span>
+    <span data-lang="jp">差別化ポイント</span>
+    <span data-lang="cn">差异化优势</span>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>
+<span data-lang="kr" class="active">MNT 공법</span>
+<span data-lang="en">MNT technology</span>
+<span data-lang="jp">MNT製法</span>
+<span data-lang="cn">MNT工艺</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">유효성분에 나노 처리를 2회 해, 머리카락 굵기의 10만분의 1 크기로 만들었습니다.</span>
+<span data-lang="en">Active ingredients go through two nano treatments, reaching about one 100,000th of a hair’s thickness.</span>
+<span data-lang="jp">有効成分にナノ処理を2回行い、髪の毛の太さの10万分の1の大きさに仕上げています。</span>
+<span data-lang="cn">有效成分经过2次纳米处理，细至头发粗细的十万分之一。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+<span data-lang="kr" class="active">제주 청정 용암해수</span>
+<span data-lang="en">Jeju lava seawater</span>
+<span data-lang="jp">済州の清浄な溶岩海水</span>
+<span data-lang="cn">济州清洁熔岩海水</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">바닷물이 화산암반층에 걸러져 스며든 물을 씁니다. 미네랄이 풍부하고 병원균 등이 거의 없는 제주만의 지하수 자원입니다.</span>
+<span data-lang="en">We use seawater naturally filtered through volcanic bedrock. It is a groundwater resource unique to Jeju, rich in minerals and nearly free of pathogens.</span>
+<span data-lang="jp">海水が火山岩盤層でろ過されて染み込んだ水を使用しています。ミネラルが豊富で病原菌などがほとんどない、済州ならではの地下水資源です。</span>
+<span data-lang="cn">使用经火山岩层过滤渗入地下的海水。这是济州独有的地下水资源，矿物质丰富，几乎不含病原菌。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL : BNI 핵심 섹션. ref-item 2~3개 -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的客户</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+<span data-lang="kr" class="active">피부관리가 복잡해서 번번이 미루는 바쁜 분</span>
+<span data-lang="en">Busy people who keep putting off skincare because it feels complicated</span>
+<span data-lang="jp">スキンケアが面倒でつい後回しにしてしまう忙しい方</span>
+<span data-lang="cn">因护肤步骤繁琐而总是拖延的忙碌人士</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+<span data-lang="kr" class="active">아기까지 가족이 함께 쓸 수 있는 안전한 제품을 찾는 분</span>
+<span data-lang="en">People looking for safe products the whole family, even babies, can use</span>
+<span data-lang="jp">赤ちゃんまで家族みんなで使える安全な製品を探している方</span>
+<span data-lang="cn">想为全家人（包括婴儿）找到安全产品的人</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+<span data-lang="kr" class="active">아토피·여드름·트러블 등 문제성 피부로 고민하는 분</span>
+<span data-lang="en">People struggling with problem skin such as atopy, acne or breakouts</span>
+<span data-lang="jp">アトピー・ニキビ・肌トラブルなどの悩みをお持ちの方</span>
+<span data-lang="cn">为特应性皮炎、痘痘、肌肤问题而烦恼的人</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER : career-item 2~3개. career-badge = 현재 / 경력 / 강점 / 자격 -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 전문 분야</span>
+    <span data-lang="en">Career &amp; Expertise</span>
+    <span data-lang="jp">経歴・専門分野</span>
+    <span data-lang="cn">经历与专业领域</span>
+  </div>
+  <div class="career-list">
+    <div class="career-item">
+      <div class="career-badge">현재</div>
+      <div class="career-content">
+        <h3>
+<span data-lang="kr" class="active">수지아 운영</span>
+<span data-lang="en">Running SUGIA</span>
+<span data-lang="jp">SUGIA運営</span>
+<span data-lang="cn">运营SUGIA</span>
+        </h3>
+        <p>
+<span data-lang="kr" class="active">2017년~현재 (약 10년)<br>바이오 화장품(Biocosmetic) 브랜드 · 인체양수세포배양액추출물 앰플 등 스킨케어 전 라인</span>
+<span data-lang="en">2017 – present (about 10 years)<br>Biocosmetic brand · full skincare line including the amniotic stem cell culture extract ampoule</span>
+<span data-lang="jp">2017年〜現在（約10年）<br>バイオ化粧品（Biocosmetic）ブランド・羊膜幹細胞培養液抽出物アンプルなどスキンケア全ライン</span>
+<span data-lang="cn">2017年至今（约10年）<br>生物化妆品（Biocosmetic）品牌 · 含羊膜干细胞培养液提取物安瓶的全系列护肤产品</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">강점</div>
+      <div class="career-content">
+        <h3>
+<span data-lang="kr" class="active">품질·기술</span>
+<span data-lang="en">Quality & technology</span>
+<span data-lang="jp">品質・技術</span>
+<span data-lang="cn">品质与技术</span>
+        </h3>
+        <p>
+<span data-lang="kr" class="active">KCL 자가품질 위탁검사<br>4in1 뷰티기기 기술특허 2종 등록, KC인증</span>
+<span data-lang="en">KCL-commissioned self-quality tests<br>4-in-1 beauty device: 2 technology patents registered, KC certified</span>
+<span data-lang="jp">KCLによる自己品質委託検査<br>4in1ビューティー機器：技術特許2件登録、KC認証</span>
+<span data-lang="cn">KCL自主品质委托检测<br>4合1美容仪：注册技术专利2项，通过KC认证</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO : 선택 섹션. portfolio1.jpg~N.jpg 없으면 이 <section> 통째로 삭제.
+     자동 3초 간격 슬라이드 + 터치 스와이프 + 수동 클릭 시 타이머 리셋 (표준 규칙) -->
+<section class="portfolio">
+  <div class="section-label">Products</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">제품 소개</span>
+    <span data-lang="en">Products</span>
+    <span data-lang="jp">製品紹介</span>
+    <span data-lang="cn">产品介绍</span>
+  </div>
+  <div class="portfolio-track-wrap">
+    <div class="portfolio-track" id="portfolio-track">
+      <div class="portfolio-slide"><img src="portfolio1.jpg" alt="SUGIA ampoule"></div>
+      <div class="portfolio-slide"><img src="portfolio2.jpg" alt="SUGIA beauty device"></div>
+    </div>
+  </div>
+  <div class="portfolio-nav">
+    <button class="portfolio-btn" onclick="portfolioSlide(-1)">‹</button>
+    <div class="portfolio-dots" id="portfolio-dots"></div>
+    <button class="portfolio-btn" onclick="portfolioSlide(1)">›</button>
+  </div>
+</section>
+
+<!-- CONTACT : 2열 그리드. 없는 항목은 <a> 통째로 삭제 (빈칸 금지) -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-7286-8799">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-7286-8799</div>
+    </a>
+    <a class="contact-item" href="mailto:kh7709@hanmail.net">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">kh7709@hanmail.net</div>
+    </a>
+    <!-- 선택 항목: 블로그 🌐 / 인스타 📷 / 페이스북 📘 / 홈페이지 💻 / 유튜브 ▶️ / 카카오채널 💛 -->
+    <a class="contact-item" href="http://www.sugia.kr" target="_blank">
+      <div class="contact-icon">💻</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">홈페이지</span>
+        <span data-lang="en">Website</span>
+        <span data-lang="jp">ホームページ</span>
+        <span data-lang="cn">官网</span>
+      </div>
+      <div class="contact-value">www.sugia.kr</div>
+    </a>
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=kim-hwa" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Live translation chat</span>
+        <span data-lang="jp">リアルタイム翻訳チャット</span>
+        <span data-lang="cn">实时翻译聊天</span>
+      </div>
+    </a>
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%84%9C%EA%B5%AC%20%EC%B2%AD%EC%82%AC%EB%A1%9C%20136" target="_blank">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
+        <span data-lang="en">Address (tap to open map)</span>
+        <span data-lang="jp">住所（タップで地図）</span>
+        <span data-lang="cn">地址（点击打开地图）</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">대전광역시 서구 청사로 136, 18층 A1828호 (대전무역회관)</span>
+        <span data-lang="en">Daejeon Trade Center, A1828, 18F, 136 Cheongsa-ro, Seo-gu, Daejeon</span>
+        <span data-lang="jp">대전광역시 서구 청사로 136, 18층 A1828호 (대전무역회관)</span>
+        <span data-lang="cn">대전광역시 서구 청사로 136, 18층 A1828호 (대전무역회관)</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'kim-hwa',name:'김화',nameEn:'KIM HWA',title:'대표',company:'위한무역 주식회사',phone:'010-7286-8799',email:'kh7709@hanmail.net',chapter:'',bni:'',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ 名刺を保存</span>
+      <span data-lang="cn">🗂️ 保存名片</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="jp">📤 名刺を共有</span>
+      <span data-lang="cn">📤 分享名片</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 (Web Share API 미지원 브라우저 폴백) -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#1b1722;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- 만두 연결 (카드 주인 전용, 방문자는 무시해도 되는 위치) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(238,138,60,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">위한무역 주식회사</span>
+    <span data-lang="en">Wihan Trading Co., Ltd.</span>
+    <span data-lang="jp">ウィハン貿易株式会社</span>
+    <span data-lang="cn">Wihan Trading Co., Ltd.</span>
+  </div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:김화\nORG:위한무역 주식회사\nTITLE:대표\nTEL:010-7286-8799\nEMAIL:kh7709@hanmail.net\nURL:https://jinjjabg-hub.github.io/NAMECARD/김화/\nADR:;;대전광역시 서구 청사로 136, 18층 A1828호 (대전무역회관);;;;\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '김화.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%ED%99%94/';
+const CARD_TITLE = '김화 | 위한무역 주식회사';
+const CARD_TEXT = '바이오 화장품 수지아, 김화 대표의 디지털 명함입니다.';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── PORTFOLIO 자동 슬라이드 (표준: 3초 간격, 터치 스와이프, 수동 조작 시 타이머 리셋) ──
+   portfolio 섹션이 없는 명함(HTML에서 <section class="portfolio"> 삭제한 경우)에는
+   아래 코드가 아무 일도 하지 않고 조용히 종료된다. */
+(function () {
+  const track = document.getElementById('portfolio-track');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.portfolio-slide');
+  const total = slides.length;
+  const dotsWrap = document.getElementById('portfolio-dots');
+  let idx = 0, timer = null;
+
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'portfolio-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => { go(i); reset(); };
+    dotsWrap.appendChild(dot);
+  }
+
+  function render() {
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dotsWrap.querySelectorAll('.portfolio-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  function go(i) { idx = (i + total) % total; render(); }
+  window.portfolioSlide = function (dir) { go(idx + dir); reset(); };
+  function auto() { timer = setTimeout(() => { go(idx + 1); auto(); }, 3000); }
+  function reset() { clearTimeout(timer); auto(); }
+
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; clearTimeout(timer); }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
+    auto();
+  }, { passive: true });
+
+  auto();
+})();
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ──────────────────────────
+   구글 로그인 1번 → manduid_index/kim-hwa 문서에 uid 자동 등록.
+   MANDU 링크(?u=kim-hwa)는 카드 제작 시점에 이미 고정돼 있으므로
+   *아무도(송승훈 포함) 링크를 중간에서 복사·전달·붙여넣기 할 필요가 없다.*
+   save-to-cardbook.js가 이미 firebase를 로드해두므로 그걸 재사용한다. */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'kim-hwa';
+  const db = firebase.firestore();
+
+  // 이미 다른 uid로 연결돼 있으면 덮어쓰지 않음 (실수·장난 클릭으로부터 카드 보호)
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'kim-hwa');
+      await auth.signInWithRedirect(provider);
+      return; // 리다이렉트 후 아래 즉시실행 블록에서 이어짐
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+// 모바일 리다이렉트 로그인 복귀 처리
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
+</script>
+</body>
+</html>
