@@ -247,6 +247,31 @@ section { padding: 40px 20px; }
 .portfolio-dot { width:6px; height:6px; border-radius:50%; background: rgba(186,209,227,0.3); transition: all 0.25s; }
 .portfolio-dot.active { background: var(--gold); width:18px; border-radius:3px; }
 
+/* ── YOUTUBE ── */
+.youtube { background: var(--navy2); }
+.youtube .section-title { color: #fff; }
+.yt-card {
+  display: block; text-decoration: none;
+  background: var(--navy3); border: 1px solid rgba(186,209,227,0.15);
+  border-radius: 12px; padding: 22px 18px; text-align: center;
+}
+.yt-card:active { transform: scale(0.98); }
+.yt-logo {
+  width: 64px; height: 44px; margin: 0 auto 14px;
+  background: #ff0000; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.yt-logo::after {
+  content: ''; border-style: solid; border-width: 10px 0 10px 17px;
+  border-color: transparent transparent transparent #fff; margin-left: 4px;
+}
+.yt-handle { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
+.yt-desc { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.85; margin-bottom: 18px; }
+.yt-btn {
+  display: block; background: #ff0000; color: #fff;
+  font-size: 15px; font-weight: 700; padding: 15px; border-radius: 10px;
+}
+
 /* ── CONTACT ── */
 .contact { background: var(--light); }
 .contact .section-label { color: var(--muted-light); }
@@ -619,6 +644,33 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   </div>
 </section>
 
+<!-- YOUTUBE : 채널 링크 카드 (외부 링크는 이 섹션에만, CONTACT에는 중복으로 넣지 않음) -->
+<section class="youtube">
+  <div class="section-label">YouTube</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">강의하는 안경사의 눈 이야기</span>
+    <span data-lang="en">Eye Talks from an Optician Who Teaches</span>
+    <span data-lang="jp">講義をする眼鏡士の目のお話</span>
+    <span data-lang="cn">授课验光配镜师的护眼讲堂</span>
+  </div>
+  <a class="yt-card" href="https://www.youtube.com/@ssong_fafa" target="_blank">
+    <div class="yt-logo"></div>
+    <div class="yt-handle">@ssong_fafa</div>
+    <p class="yt-desc">
+      <span data-lang="kr" class="active">눈에 대한 궁금증과 고민들을 영상으로 전달해 드립니다.</span>
+      <span data-lang="en">Videos answering your questions and concerns about your eyes.</span>
+      <span data-lang="jp">目に関する疑問や悩みを、動画でお伝えします。</span>
+      <span data-lang="cn">用视频为您解答关于眼睛的疑问和烦恼。</span>
+    </p>
+    <div class="yt-btn">
+      <span data-lang="kr" class="active">▶ 유튜브 채널 보기</span>
+      <span data-lang="en">▶ Visit YouTube channel</span>
+      <span data-lang="jp">▶ YouTubeチャンネルを見る</span>
+      <span data-lang="cn">▶ 观看YouTube频道</span>
+    </div>
+  </a>
+</section>
+
 <!-- CONTACT : 2열 그리드. 없는 항목은 <a> 통째로 삭제 (빈칸 금지) -->
 <section class="contact">
   <div class="section-label">Contact</div>
@@ -629,7 +681,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="cn">联系方式</span>
   </div>
   <div class="contact-list">
-    <a class="contact-item" href="tel:010-9720-2856">
+    <a class="contact-item" href="tel:010-4608-4007">
       <div class="contact-icon">📞</div>
       <div class="contact-label">
         <span data-lang="kr" class="active">전화</span>
@@ -637,7 +689,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="jp">電話</span>
         <span data-lang="cn">电话</span>
       </div>
-      <div class="contact-value">010-9720-2856</div>
+      <div class="contact-value">010-4608-4007</div>
     </a>
     <a class="contact-item" href="mailto:eye_collection@naver.com">
       <div class="contact-icon">✉️</div>
@@ -696,7 +748,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="jp">📞 連絡先を保存</span>
       <span data-lang="cn">📞 保存联系人</span>
     </button>
-    <button class="btn btn-secondary" onclick="saveToCardbook({id:'lim-dongki',name:'임동기',nameEn:'LIM DONG KI',title:'원장',company:'글라스온 위드렌즈 연제구청점',phone:'010-9720-2856',email:'eye_collection@naver.com',chapter:'',bni:'',url:window.location.href})">
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'lim-dongki',name:'임동기',nameEn:'LIM DONG KI',title:'원장',company:'글라스온 위드렌즈 연제구청점',phone:'010-4608-4007',email:'eye_collection@naver.com',chapter:'',bni:'',url:window.location.href})">
       <span data-lang="kr" class="active">🗂️ 카드북에 저장</span>
       <span data-lang="en">🗂️ Save to CardBook</span>
       <span data-lang="jp">🗂️ 名刺を保存</span>
@@ -770,7 +822,7 @@ function setLang(lang) {
   });
 }
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:임동기\nORG:글라스온 위드렌즈 연제구청점\nTITLE:원장\nTEL:010-9720-2856\nEMAIL:eye_collection@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/임동기/\nADR:;;부산 연제구 연수로 103, 101동 109호;;;;\nEND:VCARD`;
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:임동기\nORG:글라스온 위드렌즈 연제구청점\nTITLE:원장\nTEL:010-4608-4007\nEMAIL:eye_collection@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/임동기/\nADR:;;부산 연제구 연수로 103, 101동 109호;;;;\nEND:VCARD`;
   if (window.cbSaveContact) return cbSaveContact(vcard);
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
