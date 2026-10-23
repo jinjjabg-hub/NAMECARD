@@ -717,7 +717,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   </div>
 </footer>
 
-<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -729,10 +729,25 @@ function setLang(lang) {
   });
 }
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:김화\nORG:위한무역 주식회사\nTITLE:대표\nTEL:010-7286-8799\nEMAIL:kh7709@hanmail.net\nURL:https://jinjjabg-hub.github.io/NAMECARD/김화/\nADR:;;대전광역시 서구 청사로 136, 18층 A1828호 (대전무역회관);;;;\nEND:VCARD`;
-  const blob = new Blob([vcard], {type:'text/vcard'});
+  // 실제 저장 동작(안드로이드: 파일 받기 + '이름.vcf를 누르세요' 안내 / 아이폰: 연락처 카드)은
+  // 카드북 공통 스크립트의 cbSaveContact가 맡는다. 카드에는 연락처 내용만 둔다.
+  const vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:김;화;;;',
+    'FN:김화',
+    'ORG:위한무역 주식회사',
+    'TITLE:대표',
+    'TEL:010-7286-8799',
+    'EMAIL:kh7709@hanmail.net',
+    'URL:https://jinjjabg-hub.github.io/NAMECARD/김화/',
+    'ADR:;;대전광역시 서구 청사로 136, 18층 A1828호 (대전무역회관);;;;',
+    'END:VCARD'
+  ].join('\r\n');
+  if (window.cbSaveContact) return cbSaveContact(vcard);
+  // 공통 스크립트를 못 불러온 경우에만: 파일 내려받기
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
+  a.href = URL.createObjectURL(new Blob([vcard], {type:'text/vcard'}));
   a.download = '김화.vcf';
   a.click();
 }
