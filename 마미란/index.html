@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>마미란 | 유니시티코리아</title>
+<meta property="og:title" content="마미란 | 다이아몬드 · 유니시티코리아">
+<meta property="og:description" content="종합병원 물리치료실장 20년, 유니시티 25년 · 대한민국 19호 다이아몬드. 검사로 시작하고 숫자로 확인하는 건강 습관을 제안합니다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EB%A7%88%EB%AF%B8%EB%9E%80/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/마미란/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- 언어팩에 따라 폰트 추가: references/languages.md 참고 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #13291f;
+  --navy2: #1b3a2c;
+  --navy3: #25493a;
+  --gold: #f2a7b8;
+  --gold2: #f8c9d4;
+  --light: #eef6fa;
+  --text-dark: #f0ece0;
+  --text-light: #1a1a2e;
+  --muted-dark: #a9c7b8;
+  --muted-light: #3d6656;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang="si"] { font-family: 'Noto Sans Sinhala', sans-serif; }
+[data-lang="ur"] { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(19,41,31,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(242,167,184,0.25);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(242,167,184,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(19,41,31,0.1) 0%,
+    rgba(19,41,31,0.15) 40%,
+    rgba(19,41,31,0.75) 75%,
+    rgba(19,41,31,0.95) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-name [data-lang="ur"] { font-size: 26px; }
+.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(242,167,184,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+.about-text [data-lang="ur"] { font-size: 15px; line-height: 2.2; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(242,167,184,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+.why-card p strong { color: var(--navy); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(242,167,184,0.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.8; }
+.diff-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+.ref-item p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+
+/* ── CAREER ── */
+.career {
+  position: relative;
+  background-color: #e6f2f8;
+}
+.career .section-label { position: relative; z-index:1; color: var(--muted-light); }
+.career .section-title { color: var(--text-light); position: relative; z-index:1; }
+.career-list { display: flex; flex-direction: column; gap:18px; position: relative; z-index:1; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── PORTFOLIO (선택 섹션 — portfolio1.jpg 이상 있을 때만 사용) ── */
+.portfolio { background: var(--navy); }
+.portfolio .section-title { color: #fff; }
+.portfolio-track-wrap { overflow: hidden; border-radius: 12px; }
+.portfolio-track { display: flex; transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94); }
+.portfolio-slide { min-width: 100%; aspect-ratio: 3/4; overflow: hidden; }
+.portfolio-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.portfolio-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px; }
+.portfolio-btn {
+  background: transparent; border: 1px solid rgba(242,167,184,0.35);
+  color: var(--gold); width: 30px; height: 30px; border-radius: 50%;
+  font-size: 15px; cursor: pointer; display:flex; align-items:center; justify-content:center;
+}
+.portfolio-dots { display:flex; gap:6px; }
+.portfolio-dot { width:6px; height:6px; border-radius:50%; background: rgba(242,167,184,0.3); transition: all 0.25s; }
+.portfolio-dot.active { background: var(--gold); width:18px; border-radius:3px; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(242,167,184,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">UNICITY · MA MIRAN</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<!-- HERO : hero.jpg = 세로 3:4 인물 사진 -->
+<div class="hero">
+  <img class="hero-img" src="hero.jpg" alt="마미란">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">대한민국 19호 다이아몬드</span>
+      <span data-lang="en">Korea's 19th Diamond</span>
+      <span data-lang="jp">韓国19人目のダイヤモンド</span>
+      <span data-lang="cn">韩国第19位钻石</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">마 미 란</span>
+      <span data-lang="en">MA MIRAN</span>
+      <span data-lang="jp">馬 美蘭（マ・ミラン）</span>
+      <span data-lang="cn">马 美兰</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">다이아몬드 · 유니시티코리아</span>
+      <span data-lang="en">Diamond · Unicity Korea</span>
+      <span data-lang="jp">ダイヤモンド · ユニシティ・コリア</span>
+      <span data-lang="cn">钻石 · Unicity Korea</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW : profil.png = 정사각 얼굴 사진 -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="마미란">
+  </div>
+  <div class="profile-info">
+    <h2>마미란 · 馬美蘭 · MA MIRAN</h2>
+    <p>
+      <span data-lang="kr" class="active">건강 솔루션 · 물리치료 20년 · 글로벌 비즈니스</span>
+      <span data-lang="en">Health solutions · 20 years in physical therapy · Global business</span>
+      <span data-lang="jp">健康ソリューション · 理学療法20年 · グローバルビジネス</span>
+      <span data-lang="cn">健康解决方案 · 物理治疗20年 · 全球事业</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <p class="slogan">
+    <span data-lang="kr" class="active">검사로 시작하고, 숫자로 확인하는 건강 습관</span>
+    <span data-lang="en">Healthy habits that start with a checkup and are confirmed by the numbers</span>
+    <span data-lang="jp">検査から始めて、数値で確かめる健康習慣</span>
+    <span data-lang="cn">从检查开始，用数字确认的健康习惯</span>
+  </p>
+  <p class="about-text">
+    <span data-lang="kr" class="active">종합병원 물리치료실에서 20년간 수많은 만성 질환 환자분들을 만났습니다. 그 경험으로 '아프고 나서'보다 '평소 관리'가 더 중요하다는 걸 알게 됐고, 지금은 유니시티코리아에서 25년째 건강하고 생생한 일상을 위한 건강 솔루션을 제안하고 있습니다. 요즘은 나이 들수록 중요해지는 근육 건강에 관심이 많습니다(대표 제품 예: 스트롱홀드).</span>
+    <span data-lang="en">For 20 years in a general hospital's physical therapy department, I met countless patients living with chronic conditions. That taught me that everyday care matters more than what happens after you get sick. Now, in my 25th year with Unicity Korea, I offer health solutions for a healthy, vibrant daily life. Lately I focus on muscle health, which matters more with age (one example product: StrongHold).</span>
+    <span data-lang="jp">総合病院の理学療法室で20年間、数多くの慢性疾患の患者さんと向き合ってきました。その経験から「具合が悪くなってから」より「日頃のケア」が大切だと知り、現在はユニシティ・コリアで25年目、健康で生き生きとした毎日のための健康ソリューションをご提案しています。最近は、年齢とともに大切になる筋肉の健康に力を入れています（代表製品の例：ストロングホールド）。</span>
+    <span data-lang="cn">我在综合医院物理治疗室工作了20年，接触过无数慢性病患者。这段经历让我明白，比起"生病之后"，"平时的管理"更加重要。如今我在Unicity Korea已是第25年，为大家提供健康而充满活力的日常健康解决方案。最近我特别关注随着年龄增长愈发重要的肌肉健康（代表产品例：StrongHold）。</span>
+  </p>
+</section>
+
+<!-- WHY : why-card 3개 (①②③) -->
+<section class="why">
+  <div class="section-label">Why Me</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 마미란인가</span>
+    <span data-lang="en">Why Ma Miran?</span>
+    <span data-lang="jp">なぜマ・ミランなのか</span>
+    <span data-lang="cn">为什么选择MA MIRAN</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <h3>
+<span data-lang="kr" class="active">① 몸을 아는 사람</span>
+<span data-lang="en">① Someone who knows the body</span>
+<span data-lang="jp">① 体を知る人</span>
+<span data-lang="cn">① 了解身体的人</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">종합병원 물리치료실장으로 <strong>만 20년</strong> 근무했습니다. 몸을 아는 사람이 건강을 제안합니다.</span>
+<span data-lang="en">I worked <strong>20 full years</strong> as head of a general hospital's physical therapy department. Health advice from someone who knows the body.</span>
+<span data-lang="jp">総合病院の理学療法室長として<strong>満20年</strong>勤務しました。体を知る人が健康をご提案します。</span>
+<span data-lang="cn">曾担任综合医院物理治疗室室长<strong>整整20年</strong>。由了解身体的人为您提供健康建议。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+<span data-lang="kr" class="active">② 유니시티 25년, 19호 다이아몬드</span>
+<span data-lang="en">② 25 years with Unicity, 19th Diamond</span>
+<span data-lang="jp">② ユニシティ25年、19人目のダイヤモンド</span>
+<span data-lang="cn">② Unicity 25年，第19位钻石</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active"><strong>25년째</strong> 사업을 이어 오며 <strong>대한민국 19호 다이아몬드</strong>가 되었습니다. 함께 성장한 다이아몬드 후배도 <strong>6명</strong>입니다.</span>
+<span data-lang="en">In <strong>25 years</strong> of business I became <strong>Korea's 19th Diamond</strong>, and <strong>6</strong> people I've mentored have reached Diamond too.</span>
+<span data-lang="jp"><strong>25年</strong>事業を続け、<strong>韓国19人目のダイヤモンド</strong>になりました。共に成長したダイヤモンドの後輩も<strong>6人</strong>います。</span>
+<span data-lang="cn">坚持事业<strong>25年</strong>，成为<strong>韩国第19位钻石</strong>。一起成长的钻石后辈也有<strong>6位</strong>。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+<span data-lang="kr" class="active">③ 64개국 글로벌 무대</span>
+<span data-lang="en">③ A global stage in 64 countries</span>
+<span data-lang="jp">③ 64か国のグローバル舞台</span>
+<span data-lang="cn">③ 64个国家的全球舞台</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">유니시티는 <strong>64개국</strong>에서 사업 중입니다. 미국·일본·캐나다·호주·베트남·캄보디아·대만 등에서 글로벌 비즈니스를 함께 진행하고 있습니다.</span>
+<span data-lang="en">Unicity operates in <strong>64 countries</strong>. I run global business in the US, Japan, Canada, Australia, Vietnam, Cambodia, Taiwan and more.</span>
+<span data-lang="jp">ユニシティは<strong>64か国</strong>で事業を展開しています。アメリカ・日本・カナダ・オーストラリア・ベトナム・カンボジア・台湾などでグローバルビジネスを進めています。</span>
+<span data-lang="cn">Unicity在<strong>64个国家</strong>开展业务。我在美国、日本、加拿大、澳大利亚、越南、柬埔寨、台湾等地共同推进全球事业。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE : diff-card 3개 -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이렇게 다릅니다</span>
+    <span data-lang="en">What Makes Me Different</span>
+    <span data-lang="jp">ここが違います</span>
+    <span data-lang="cn">我的不同之处</span>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>
+<span data-lang="kr" class="active">먼저 검사, 나중에 비교</span>
+<span data-lang="en">Check first, compare later</span>
+<span data-lang="jp">まず検査、あとで比較</span>
+<span data-lang="cn">先检查，后对比</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">시작 전에 혈액검사·BMI를 확인하고, 정한 기간 뒤 다시 검사해 변화를 함께 확인합니다. 느낌이 아니라 기록으로 신뢰를 쌓습니다.</span>
+<span data-lang="en">Before starting, we check blood tests and BMI, then test again after a set period to review the changes together. Trust built on records, not feelings.</span>
+<span data-lang="jp">始める前に血液検査・BMIを確認し、決めた期間の後にもう一度検査して変化を一緒に確かめます。感覚ではなく記録で信頼を築きます。</span>
+<span data-lang="cn">开始前先确认血液检查和BMI，经过约定的期间后再次检查，一起确认变化。用记录而非感觉建立信任。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+<span data-lang="kr" class="active">이중 컨택 하지 않습니다</span>
+<span data-lang="en">No double contact</span>
+<span data-lang="jp">二重コンタクトはしません</span>
+<span data-lang="cn">绝不重复接触</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">이미 다른 분께 유니시티를 소개받은 분께는 연락하지 않습니다. 먼저 알리신 분의 기회를 지키는 것이 제 원칙입니다.</span>
+<span data-lang="en">I don't contact anyone who has already been introduced to Unicity by someone else. Protecting the opportunity of the person who reached them first is my rule.</span>
+<span data-lang="jp">すでに他の方からユニシティを紹介された方にはご連絡しません。先に伝えた方の機会を守ることが私の原則です。</span>
+<span data-lang="cn">已经由他人介绍过Unicity的人，我不会再联系。守护先介绍者的机会是我的原则。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+<span data-lang="kr" class="active">혼자 공부하지 않게 합니다</span>
+<span data-lang="en">You never learn alone</span>
+<span data-lang="jp">一人で学ばせません</span>
+<span data-lang="cn">不让您独自学习</span>
+      </h3>
+      <p>
+<span data-lang="kr" class="active">회사의 온라인 트레이닝(재방송 포함)으로 제품과 건강 지식을 언제든 배울 수 있고, 회원가입 후에는 회원 혜택과 사업 기회를 함께 안내합니다.</span>
+<span data-lang="en">With the company's online training (replays included), you can learn about products and health anytime. After you join as a member, I guide you through member benefits and the business opportunity.</span>
+<span data-lang="jp">会社のオンライントレーニング（再放送あり）で製品と健康の知識をいつでも学べます。会員登録後は、会員特典と事業機会も一緒にご案内します。</span>
+<span data-lang="cn">通过公司的线上培训（含重播），随时学习产品与健康知识。注册会员后，我会一起为您介绍会员福利与事业机会。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL : BNI 핵심 섹션 -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的朋友</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+<span data-lang="kr" class="active"><strong>나이·학벌·경력과 상관없이 새 일을 시작하고 싶은 분</strong> — 퇴직을 앞두었거나, 다시 일을 찾고 있거나, 평생 할 수 있는 일을 고민하는 분. 교육과 경험으로 처음부터 함께합니다.</span>
+<span data-lang="en"><strong>People who want to start something new, regardless of age, education or background</strong> — nearing retirement, looking to work again, or searching for lifelong work. I'll be with you from the start, with training and experience.</span>
+<span data-lang="jp"><strong>年齢・学歴・経歴に関係なく新しい仕事を始めたい方</strong> — 退職を控えている方、もう一度仕事を探している方、一生続けられる仕事を考えている方。教育と経験で最初から一緒に進みます。</span>
+<span data-lang="cn"><strong>无论年龄、学历、经历，想开始新事业的人</strong> — 即将退休、正在重新找工作，或在寻找能做一辈子的事业的人。我会用培训和经验从头陪伴。</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+<span data-lang="kr" class="active"><strong>건강검진 결과가 신경 쓰이는데, 어디서부터 관리할지 모르는 분</strong> — "건강관리를 하긴 하는데 애매하다"고 말하는 분. 특히 "예전보다 힘이 빠진다", "부모님 근력이 걱정된다"는 50·60대.</span>
+<span data-lang="en"><strong>People worried about their checkup results but unsure where to start</strong> — those who say "I take care of my health, sort of." Especially people in their 50s and 60s who feel weaker than before or worry about their parents' strength.</span>
+<span data-lang="jp"><strong>健康診断の結果が気になるのに、何から始めればいいか分からない方</strong> — 「健康管理はしているけど、なんとなく」とおっしゃる方。特に「以前より力が落ちた」「親の筋力が心配」という50〜60代の方。</span>
+<span data-lang="cn"><strong>在意体检结果，却不知从何管理的人</strong> — 常说"健康管理是有在做，但不太到位"的人。特别是觉得"力气不如从前"、"担心父母肌力"的50~60多岁人士。</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+<span data-lang="kr" class="active"><strong>미국·일본·캐나다·호주·베트남·캄보디아·대만에 가족이나 지인이 있는 분</strong> — 해외에서도 함께 사업할 수 있습니다.</span>
+<span data-lang="en"><strong>People with family or friends in the US, Japan, Canada, Australia, Vietnam, Cambodia or Taiwan</strong> — we can do business together overseas too.</span>
+<span data-lang="jp"><strong>アメリカ・日本・カナダ・オーストラリア・ベトナム・カンボジア・台湾に家族や知人がいる方</strong> — 海外でも一緒に事業ができます。</span>
+<span data-lang="cn"><strong>在美国、日本、加拿大、澳大利亚、越南、柬埔寨、台湾有家人或朋友的人</strong> — 在海外也能一起开展事业。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력</span>
+    <span data-lang="en">Career</span>
+    <span data-lang="jp">経歴</span>
+    <span data-lang="cn">经历</span>
+  </div>
+  <div class="career-list">
+    <div class="career-item">
+      <div class="career-badge">
+<span data-lang="kr" class="active">현재</span>
+<span data-lang="en">Now</span>
+<span data-lang="jp">現在</span>
+<span data-lang="cn">现在</span>
+      </div>
+      <div class="career-content">
+        <h3>
+<span data-lang="kr" class="active">유니시티코리아 다이아몬드</span>
+<span data-lang="en">Diamond, Unicity Korea</span>
+<span data-lang="jp">ユニシティ・コリア ダイヤモンド</span>
+<span data-lang="cn">Unicity Korea 钻石</span>
+        </h3>
+        <p>
+<span data-lang="kr" class="active">25년째 사업 진행 · 대한민국 19호 다이아몬드</span>
+<span data-lang="en">25th year in business · Korea's 19th Diamond</span>
+<span data-lang="jp">事業25年目 · 韓国19人目のダイヤモンド</span>
+<span data-lang="cn">事业第25年 · 韩国第19位钻石</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+<span data-lang="kr" class="active">경력</span>
+<span data-lang="en">Past</span>
+<span data-lang="jp">経歴</span>
+<span data-lang="cn">经历</span>
+      </div>
+      <div class="career-content">
+        <h3>
+<span data-lang="kr" class="active">종합병원 물리치료실장</span>
+<span data-lang="en">Head of Physical Therapy, General Hospital</span>
+<span data-lang="jp">総合病院 理学療法室長</span>
+<span data-lang="cn">综合医院物理治疗室室长</span>
+        </h3>
+        <p>
+<span data-lang="kr" class="active">만 20년 근무</span>
+<span data-lang="en">20 full years</span>
+<span data-lang="jp">満20年勤務</span>
+<span data-lang="cn">任职整整20年</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+<span data-lang="kr" class="active">학력</span>
+<span data-lang="en">Edu</span>
+<span data-lang="jp">学歴</span>
+<span data-lang="cn">学历</span>
+      </div>
+      <div class="career-content">
+        <h3>
+<span data-lang="kr" class="active">가톨릭대학교 물리치료 전공</span>
+<span data-lang="en">Catholic University, Physical Therapy</span>
+<span data-lang="jp">カトリック大学 理学療法専攻</span>
+<span data-lang="cn">天主教大学 物理治疗专业</span>
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT : 2열 그리드 -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-5577-8295">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-5577-8295</div>
+    </a>
+    <a class="contact-item" href="mailto:mami8295@hanmail.net">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">mami8295@hanmail.net</div>
+    </a>
+    <a class="contact-item" href="https://blog.naver.com/mami8295" target="_blank">
+      <div class="contact-icon">🌐</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">블로그</span>
+        <span data-lang="en">Blog</span>
+        <span data-lang="jp">ブログ</span>
+        <span data-lang="cn">博客</span>
+      </div>
+      <div class="contact-value">blog.naver.com/mami8295</div>
+    </a>
+    <a class="contact-item" href="https://www.instagram.com/miran8229/" target="_blank">
+      <div class="contact-icon">📷</div>
+      <div class="contact-label">Instagram</div>
+      <div class="contact-value">@miran8229</div>
+    </a>
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://jinjjabg-hub.github.io/MANDU/?u=ma-miran" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Live translation chat</span>
+        <span data-lang="jp">リアルタイム翻訳チャット</span>
+        <span data-lang="cn">实时翻译聊天</span>
+      </div>
+    </a>
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%97%B0%EC%A0%9C%EA%B5%AC%20%EC%A4%91%EC%95%99%EB%8C%80%EB%A1%9C%201125" target="_blank">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
+        <span data-lang="en">Address (tap to open map)</span>
+        <span data-lang="jp">住所（タップで地図）</span>
+        <span data-lang="cn">地址（点击打开地图）</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층)</span>
+        <span data-lang="en">2F City Tower (Mokhwa Wedding Hall), 1125 Jungang-daero, Yeonje-gu, Busan</span>
+        <span data-lang="jp">부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층)</span>
+        <span data-lang="cn">부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층)</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'ma-miran',name:'마미란',nameEn:'MA MIRAN',title:'다이아몬드',company:'유니시티코리아',phone:'010-5577-8295',email:'mami8295@hanmail.net',chapter:'',bni:'',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 카드북에 저장하기</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ カードブックに保存</span>
+      <span data-lang="cn">🗂️ 保存到CardBook</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 비즈홈 전달하기</span>
+      <span data-lang="en">📤 Share this BizHome</span>
+      <span data-lang="jp">📤 ビズホームを共有</span>
+      <span data-lang="cn">📤 分享BizHome</span>
+    </button>
+  </div>
+</div>
+
+
+<!-- 공유 바텀시트 (Web Share API 미지원 브라우저 폴백) -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">비즈홈 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#13291f;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- 만두 연결 (카드 주인 전용, 방문자는 무시해도 되는 위치) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(242,167,184,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 비즈홈이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">유니시티코리아</span>
+    <span data-lang="en">Unicity Korea</span>
+    <span data-lang="jp">ユニシティ・コリア</span>
+    <span data-lang="cn">Unicity Korea</span>
+  </div>
+</footer>
+
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  // 실제 저장 동작(안드로이드: 파일 받기 + '이름.vcf를 누르세요' 안내 / 아이폰: 연락처 카드)은
+  // 카드북 공통 스크립트의 cbSaveContact가 맡는다. 카드에는 연락처 내용만 둔다.
+  const vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:마;미란;;;',
+    'FN:마미란',
+    'ORG:유니시티코리아',
+    'TITLE:다이아몬드',
+    'TEL:010-5577-8295',
+    'EMAIL:mami8295@hanmail.net',
+    'URL:https://jinjjabg-hub.github.io/NAMECARD/마미란/',
+    'ADR:;;부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층);;;;',
+    'END:VCARD'
+  ].join('\r\n');
+  if (window.cbSaveContact) return cbSaveContact(vcard);
+  // 공통 스크립트를 못 불러온 경우에만: 파일 내려받기
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([vcard], {type:'text/vcard'}));
+  a.download = '마미란.vcf';
+  a.click();
+}
+
+/* ── 비즈홈 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EB%A7%88%EB%AF%B8%EB%9E%80/';
+const CARD_TITLE = '마미란 | 유니시티코리아';
+const CARD_TEXT = '유니시티코리아 다이아몬드, 마미란 님의 비즈홈입니다.';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── PORTFOLIO 자동 슬라이드 (표준: 3초 간격, 터치 스와이프, 수동 조작 시 타이머 리셋) ──
+   portfolio 섹션이 없는 명함(HTML에서 <section class="portfolio"> 삭제한 경우)에는
+   아래 코드가 아무 일도 하지 않고 조용히 종료된다. */
+(function () {
+  const track = document.getElementById('portfolio-track');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.portfolio-slide');
+  const total = slides.length;
+  const dotsWrap = document.getElementById('portfolio-dots');
+  let idx = 0, timer = null;
+
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'portfolio-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => { go(i); reset(); };
+    dotsWrap.appendChild(dot);
+  }
+
+  function render() {
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dotsWrap.querySelectorAll('.portfolio-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  function go(i) { idx = (i + total) % total; render(); }
+  window.portfolioSlide = function (dir) { go(idx + dir); reset(); };
+  function auto() { timer = setTimeout(() => { go(idx + 1); auto(); }, 3000); }
+  function reset() { clearTimeout(timer); auto(); }
+
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; clearTimeout(timer); }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
+    auto();
+  }, { passive: true });
+
+  auto();
+})();
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ──────────────────────────
+   구글 로그인 1번 → manduid_index/ma-miran 문서에 uid 자동 등록.
+   MANDU 링크(?u=ma-miran)는 카드 제작 시점에 이미 고정돼 있으므로
+   *아무도(송승훈 포함) 링크를 중간에서 복사·전달·붙여넣기 할 필요가 없다.*
+   save-to-cardbook.js가 이미 firebase를 로드해두므로 그걸 재사용한다. */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'ma-miran';
+  const db = firebase.firestore();
+
+  // 이미 다른 uid로 연결돼 있으면 덮어쓰지 않음 (실수·장난 클릭으로부터 카드 보호)
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'ma-miran');
+      await auth.signInWithRedirect(provider);
+      return; // 리다이렉트 후 아래 즉시실행 블록에서 이어짐
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+// 모바일 리다이렉트 로그인 복귀 처리
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
+</script>
+</body>
+</html>
