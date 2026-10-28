@@ -231,15 +231,15 @@ section { padding: 40px 20px; }
 .portfolio .section-title { color: #fff; }
 .portfolio-track-wrap { overflow: hidden; border-radius: 12px; }
 .portfolio-track { display: flex; transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94); }
-.portfolio-slide { min-width: 100%; aspect-ratio: 3/4; overflow: hidden; }
-.portfolio-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.portfolio-slide { min-width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #fff; }
+.portfolio-slide img { width:100%; height:100%; object-fit:contain; object-position:center; display:block; }
 .portfolio-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px; }
 .portfolio-btn {
   background: transparent; border: 1px solid rgba(242,167,184,0.35);
   color: var(--gold); width: 30px; height: 30px; border-radius: 50%;
   font-size: 15px; cursor: pointer; display:flex; align-items:center; justify-content:center;
 }
-.portfolio-dots { display:flex; gap:6px; }
+.portfolio-dots { display:flex; gap:5px; flex-wrap:wrap; justify-content:center; max-width:250px; }
 .portfolio-dot { width:6px; height:6px; border-radius:50%; background: rgba(242,167,184,0.3); transition: all 0.25s; }
 .portfolio-dot.active { background: var(--gold); width:18px; border-radius:3px; }
 
@@ -607,6 +607,39 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   </div>
 </section>
 
+<!-- PORTFOLIO : 제품 소개 13장. 제품 이미지 비율이 제각각이라 이 카드만 정사각 틀 + 잘림 없이(contain), 5초 간격 -->
+<section class="portfolio">
+  <div class="section-label">Products</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">제품 소개</span>
+    <span data-lang="en">Products</span>
+    <span data-lang="jp">製品紹介</span>
+    <span data-lang="cn">产品介绍</span>
+  </div>
+  <div class="portfolio-track-wrap">
+    <div class="portfolio-track" id="portfolio-track">
+      <div class="portfolio-slide"><img src="portfolio1.jpg" alt="오메가라이프-3 리졸브 기능성"></div>
+      <div class="portfolio-slide"><img src="portfolio2.jpg" alt="오메가라이프-3 리졸브"></div>
+      <div class="portfolio-slide"><img src="portfolio3.jpg" alt="오메가라이프-3 리졸브 부원료"></div>
+      <div class="portfolio-slide"><img src="portfolio4.jpg" alt="바이오스 라이프 C 플러스"></div>
+      <div class="portfolio-slide"><img src="portfolio5.jpg" alt="바이오스 라이프 C 플러스 섭취 대상"></div>
+      <div class="portfolio-slide"><img src="portfolio6.jpg" alt="프로스테이트 티엘씨"></div>
+      <div class="portfolio-slide"><img src="portfolio7.jpg" alt="엠에스엠·비타민D"></div>
+      <div class="portfolio-slide"><img src="portfolio8.jpg" alt="프로스테이트 티엘씨 주요 특징"></div>
+      <div class="portfolio-slide"><img src="portfolio9.jpg" alt="관절 건강 부원료·섭취 대상"></div>
+      <div class="portfolio-slide"><img src="portfolio10.jpg" alt="멘스 포뮬라"></div>
+      <div class="portfolio-slide"><img src="portfolio11.jpg" alt="우먼스 포뮬라 1"></div>
+      <div class="portfolio-slide"><img src="portfolio12.jpg" alt="우먼스 포뮬라 2"></div>
+      <div class="portfolio-slide"><img src="portfolio13.jpg" alt="프로바이오닉 플러스"></div>
+    </div>
+  </div>
+  <div class="portfolio-nav">
+    <button class="portfolio-btn" onclick="portfolioSlide(-1)">‹</button>
+    <div class="portfolio-dots" id="portfolio-dots"></div>
+    <button class="portfolio-btn" onclick="portfolioSlide(1)">›</button>
+  </div>
+</section>
+
 <!-- CONTACT : 2열 그리드 -->
 <section class="contact">
   <div class="section-label">Contact</div>
@@ -853,7 +886,7 @@ function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
   }
   function go(i) { idx = (i + total) % total; render(); }
   window.portfolioSlide = function (dir) { go(idx + dir); reset(); };
-  function auto() { timer = setTimeout(() => { go(idx + 1); auto(); }, 3000); }
+  function auto() { timer = setTimeout(() => { go(idx + 1); auto(); }, 5000); }
   function reset() { clearTimeout(timer); auto(); }
 
   let startX = 0;
