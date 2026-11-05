@@ -251,7 +251,7 @@
     [data-lang]:not(.active) { display: none; }
   
 /* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
-.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px auto; max-width:288px; }
 .link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
 .link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
 .link-tile:active { transform: scale(0.94); }
@@ -512,17 +512,17 @@
     <!-- saveToCardbook 버튼 (외부 스크립트 사용) -->
     <button onclick="shareCard()" class="save-btn btn-secondary" style="background: transparent; border-color: var(--blue2); color: var(--blue3);">
       <span>📤</span>
-      <span class="lang-inline on" data-lang="kr">비즈홈 공유</span>
-      <span class="lang-inline" data-lang="en">Share Card</span>
-      <span class="lang-inline" data-lang="jp">名刺をシェア</span>
-      <span class="lang-inline" data-lang="cn">分享名片</span>
+      <span class="lang-inline on" data-lang="kr">비즈홈 전달하기</span>
+      <span class="lang-inline" data-lang="en">Share this Biz Home</span>
+      <span class="lang-inline" data-lang="jp">ビズホームを共有</span>
+      <span class="lang-inline" data-lang="cn">分享商务主页</span>
     </button>
     <button onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/NAMECARD/이지수/',id:'lee-jisu-schweiss',name:'이지수',nameEn:'Jisu Lee',company:'SCHWEISS (스바이즈)',title:'대표',phone:'010-2169-7247',email:'schweiss0510@naver.com',chapter:'토파즈',bni:'BNI 토파즈 챕터 2기 부의장',url:'https://jinjjabg-hub.github.io/NAMECARD/이지수/'})" class="save-btn btn-secondary" style="background: transparent; border-color: var(--blue2); color: var(--blue3);">
       <span>🗂️</span>
-      <span class="lang-inline on" data-lang="kr">카드북에 저장하기</span>
-      <span class="lang-inline" data-lang="en">Save to Cardbook</span>
-      <span class="lang-inline" data-lang="jp">名刺帳に保存</span>
-      <span class="lang-inline" data-lang="cn">保存到名片册</span>
+      <span class="lang-inline on" data-lang="kr">카드북에 저장</span>
+      <span class="lang-inline" data-lang="en">Save to CardBook</span>
+      <span class="lang-inline" data-lang="jp">カードブックに保存</span>
+      <span class="lang-inline" data-lang="cn">保存到CardBook</span>
     </button>
   </div>
 </section>

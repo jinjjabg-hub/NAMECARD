@@ -308,7 +308,7 @@ footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
 
 /* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
-.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px auto; max-width:288px; }
 .link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
 .link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
 .link-tile:active { transform: scale(0.94); }
@@ -720,20 +720,20 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     </button>
     <button class="btn btn-secondary" onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/NAMECARD/전광일/',id:'jeon-kwangil',name:'전광일',nameEn:'JEON KWANGIL',title:'대표 행정사',company:'부경행정사사무소',phone:'010-5396-4416',email:'',chapter:'기타',bni:'',url:window.location.href})">
       <span data-lang="kr" class="active">🗂️ 카드북에 저장</span>
-      <span data-lang="en">🗂️ Save Card (CardBook)</span>
-      <span data-lang="cn">🗂️ 保存名片 (CardBook)</span>
-      <span data-lang="vi">🗂️ Lưu danh thiếp</span>
-      <span data-lang="ur">🗂️ کارڈ محفوظ کریں</span>
-      <span data-lang="si">🗂️ කාඩ් සුරකින්න</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="cn">🗂️ 保存到CardBook</span>
+      <span data-lang="vi">🗂️ Lưu vào CardBook</span>
+      <span data-lang="ur">🗂️ CardBook میں محفوظ کریں</span>
+      <span data-lang="si">🗂️ CardBook වෙත සුරකින්න</span>
     </button>
     <!-- MANDU 버튼 삭제됨 — CONTACT의 MANDU 링크와 중복이라 표준 규칙에 따라 제거 -->
     <button class="btn btn-share" onclick="shareCard()">
-      <span data-lang="kr" class="active">📤 비즈홈 공유</span>
-      <span data-lang="en">📤 Share This Card</span>
-      <span data-lang="cn">📤 转发名片</span>
-      <span data-lang="vi">📤 Chia sẻ danh thiếp</span>
-      <span data-lang="ur">📤 کارڈ شیئر کریں</span>
-      <span data-lang="si">📤 කාඩ්පත බෙදාගන්න</span>
+      <span data-lang="kr" class="active">📤 비즈홈 전달하기</span>
+      <span data-lang="en">📤 Share this Biz Home</span>
+      <span data-lang="cn">📤 分享商务主页</span>
+      <span data-lang="vi">📤 Chia sẻ Biz Home</span>
+      <span data-lang="ur">📤 Biz Home شیئر کریں</span>
+      <span data-lang="si">📤 Biz Home බෙදාගන්න</span>
     </button>
   </div>
 </div>
@@ -743,7 +743,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="share-backdrop" onclick="closeShare()"></div>
   <div class="share-panel">
     <div class="share-handle"></div>
-    <div class="share-title">비즈홈 공유</div>
+    <div class="share-title">비즈홈 전달하기</div>
     <div class="share-btns">
       <button class="share-btn" onclick="shareKakao()">
         <div class="share-btn-icon" style="background:#FEE500;">💬</div>

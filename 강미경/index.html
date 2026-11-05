@@ -325,7 +325,7 @@ footer .company { font-size: 14px; font-weight: 800; color: var(--gold-on-dark);
 footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-spacing: 0.5px; }
 
 /* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
-.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px auto; max-width:288px; }
 .link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
 .link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
 .link-tile:active { transform: scale(0.94); }
@@ -736,14 +736,14 @@ footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-sp
     <button class="btn btn-secondary" onclick="saveToCardbook({id:'kang-mikyung',name:'강미경',nameEn:'KANG MI-KYUNG',title:'대표',company:'숙성채',phone:'010-3753-4918',email:'fhfhfh0116@naver.com',chapter:'',bni:'',url:window.location.href})">
       <span data-lang="kr" class="active">🗂️ 카드북에 저장</span>
       <span data-lang="en">🗂️ Save to CardBook</span>
-      <span data-lang="jp">🗂️ 名刺を保存</span>
-      <span data-lang="cn">🗂️ 保存名片</span>
+      <span data-lang="jp">🗂️ カードブックに保存</span>
+      <span data-lang="cn">🗂️ 保存到CardBook</span>
     </button>
     <button class="btn btn-share" onclick="shareCard()">
-      <span data-lang="kr" class="active">📤 비즈홈 공유</span>
-      <span data-lang="en">📤 Share this card</span>
-      <span data-lang="jp">📤 名刺を共有</span>
-      <span data-lang="cn">📤 分享名片</span>
+      <span data-lang="kr" class="active">📤 비즈홈 전달하기</span>
+      <span data-lang="en">📤 Share this Biz Home</span>
+      <span data-lang="jp">📤 ビズホームを共有</span>
+      <span data-lang="cn">📤 分享商务主页</span>
     </button>
   </div>
 </div>
@@ -753,7 +753,7 @@ footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-sp
   <div class="share-backdrop" onclick="closeShare()"></div>
   <div class="share-panel">
     <div class="share-handle"></div>
-    <div class="share-title">비즈홈 공유</div>
+    <div class="share-title">비즈홈 전달하기</div>
     <div class="share-btns">
       <button class="share-btn" onclick="shareKakao()">
         <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
