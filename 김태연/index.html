@@ -295,6 +295,16 @@ footer {
 }
 footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -622,15 +632,10 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-label">Email</div>
       <div class="contact-value">taey3356@gmail.com</div>
     </a>
-    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=kim-taeyeon" target="_blank">
-      <div class="contact-icon">💬</div>
-      <div class="contact-label">MANDU</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">실시간 번역 메신저</span>
-        <span data-lang="en">Live translation chat</span>
-        <span data-lang="jp">リアルタイム翻訳チャット</span>
-        <span data-lang="cn">实时翻译聊天</span>
-      </div>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=kim-taeyeon" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
   </div>
 </section>

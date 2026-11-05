@@ -355,6 +355,16 @@ footer {
   height:1px;
   background:linear-gradient(to right,transparent,rgba(29,233,182,0.2),transparent);
 }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -654,22 +664,20 @@ footer {
       <div class="contact-icon">📞</div>
       <div><div class="contact-label">Phone</div><div class="contact-val"><a href="tel:01071015929">010-7101-5929</a></div></div>
     </div>
-    <div class="contact-item">
-      <div class="contact-icon">📸</div>
-      <div><div class="contact-label">Instagram</div><div class="contact-val"><a href="https://www.instagram.com/lucete_110" target="_blank">@lucete_110</a></div></div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-icon">🌿</div>
-      <div><div class="contact-label">Instagram (Wellness)</div><div class="contact-val"><a href="https://www.instagram.com/wellness_by_jungim" target="_blank">@wellness_by_jungim</a></div></div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-icon">🧵</div>
-      <div><div class="contact-label">Threads</div><div class="contact-val"><a href="https://www.threads.com/@lucete_110" target="_blank">@lucete_110</a></div></div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-icon">💬</div>
-      <div><div class="contact-label">MANDU</div><div class="contact-val"><a href="https://jinjjabg-hub.github.io/MANDU/?u=kimjungim" target="_blank">실시간 번역 메신저</a></div></div>
-    </div>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=kimjungim" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
+    </a>
+    <a class="link-tile" href="https://www.instagram.com/lucete_110" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://www.instagram.com/wellness_by_jungim" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://www.threads.com/@lucete_110" target="_blank" rel="noopener" aria-label="Threads">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#000"/><text x="32" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#fff">@</text></svg>
+    </a>
   </div>
 </div>
 

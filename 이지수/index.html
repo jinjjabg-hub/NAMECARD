@@ -249,7 +249,17 @@
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     [data-lang]:not(.active) { display: none; }
-  </style>
+  
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
+</style>
 </head>
 <body>
 
@@ -529,25 +539,23 @@
       <span class="c-icon">✉️</span>
       <span data-lang="kr" class="active">이메일</span><span data-lang="en">Email</span><span data-lang="jp">メール</span><span data-lang="cn">邮件</span>
     </a>
-    <a href="http://weld001.iptime.org/schweiss/" target="_blank" class="connect-btn sub">
-      <span class="c-icon">🌐</span>
-      <span data-lang="kr" class="active">홈페이지</span><span data-lang="en">Website</span><span data-lang="jp">サイト</span><span data-lang="cn">官网</span>
-    </a>
-    <a href="https://www.instagram.com/en_schweiss0510/" target="_blank" class="connect-btn sub">
-      <span class="c-icon">📸</span>
-      <span data-lang="kr" class="active">인스타그램</span><span data-lang="en">Instagram</span><span data-lang="jp">インスタ</span><span data-lang="cn">Instagram</span>
-    </a>
-    <a href="https://www.youtube.com/@%EC%8A%A4%EB%B0%94%EC%9D%B4%EC%A6%88_%EC%BD%94%EB%A6%AC%EC%95%84" target="_blank" class="connect-btn sub">
-      <span class="c-icon">▶️</span>
-      <span data-lang="kr" class="active">유튜브</span><span data-lang="en">YouTube</span><span data-lang="jp">YouTube</span><span data-lang="cn">YouTube</span>
-    </a>
     <a href="tel:05071322-2169" class="connect-btn sub">
       <span class="c-icon">📟</span>
       <span data-lang="kr" class="active">대표번호</span><span data-lang="en">Office</span><span data-lang="jp">代表番号</span><span data-lang="cn">总机</span>
     </a>
-    <a href="https://jinjjabg-hub.github.io/MANDU/?u=lee-jisu-schweiss" target="_blank" class="connect-btn sub">
-      <span class="c-icon">💬</span>
-      <span data-lang="kr" class="active">만두 · 실시간 번역</span><span data-lang="en">MANDU · Live Chat</span><span data-lang="jp">MANDU・翻訳チャット</span><span data-lang="cn">MANDU·实时翻译</span>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=lee-jisu-schweiss" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
+    </a>
+    <a class="link-tile" href="https://www.instagram.com/en_schweiss0510/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://www.youtube.com/@%EC%8A%A4%EB%B0%94%EC%9D%B4%EC%A6%88_%EC%BD%94%EB%A6%AC%EC%95%84" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#FF0000"/><path d="M26 22.5v19l16.5-9.5z" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="http://weld001.iptime.org/schweiss/" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
   </div>
   <div class="qr-wrap">

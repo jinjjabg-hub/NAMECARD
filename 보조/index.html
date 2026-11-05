@@ -332,6 +332,16 @@ footer { background: var(--navy); padding: 28px 20px 26px; text-align: center; b
 footer .logo-img { width: 150px; max-width: 60%; margin: 0 auto 14px; display: block; }
 footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -822,166 +832,78 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-value">snpooy486@naver.com</div>
       </div>
     </a>
-    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=lee-hwa-chun" target="_blank">
-      <div class="contact-icon">💬</div>
-      <div class="contact-text">
-        <div class="contact-label">MANDU</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">실시간 번역 메신저</span>
-        <span data-lang="en">Live translation chat</span>
-        <span data-lang="jp">リアルタイム翻訳チャット</span>
-        <span data-lang="cn">实时翻译聊天</span>
-      </div>
-      </div>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=lee-hwa-chun" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
-    <a class="contact-item" href="https://www.instagram.com/chunbeautylab/" target="_blank">
-      <div class="contact-icon">📷</div>
-      <div class="contact-text">
-        <div class="contact-label">Instagram</div>
-      <div class="contact-value">@chunbeautylab</div>
-      </div>
+    <a class="link-tile" href="https://www.instagram.com/chunbeautylab/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
     </a>
-    <a class="contact-item" href="https://www.youtube.com/@%EC%B6%98%ED%8B%B0%EB%B9%84" target="_blank">
-      <div class="contact-icon">▶️</div>
-      <div class="contact-text">
-        <div class="contact-label">YouTube</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">춘티비</span>
-        <span data-lang="en">Chun TV</span>
-        <span data-lang="jp">春TV</span>
-        <span data-lang="cn">春TV</span>
-      </div>
-      </div>
+    <a class="link-tile" href="https://www.youtube.com/@%EC%B6%98%ED%8B%B0%EB%B9%84" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#FF0000"/><path d="M26 22.5v19l16.5-9.5z" fill="#fff"/></svg>
     </a>
-    <a class="contact-item" href="https://share.google/G7cXOgqIvrpuMfTqL" target="_blank">
-      <div class="contact-icon">🧵</div>
-      <div class="contact-text">
-        <div class="contact-label">Threads</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">스레드</span>
-        <span data-lang="en">Threads</span>
-        <span data-lang="jp">スレッズ</span>
-        <span data-lang="cn">Threads</span>
-      </div>
-      </div>
+    <a class="link-tile" href="https://blog.naver.com/snpooy486" target="_blank" rel="noopener" aria-label="Blog">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#03C75A"/><text x="32" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="800" fill="#fff">blog</text></svg>
     </a>
-    <a class="contact-item" href="https://naver.me/FHVt2sGq" target="_blank">
-      <div class="contact-icon">📌</div>
-      <div class="contact-text">
-        <div class="contact-label">
-        <span data-lang="kr" class="active">네이버 플레이스</span>
-        <span data-lang="en">Naver Place</span>
-        <span data-lang="jp">ネイバープレイス</span>
-        <span data-lang="cn">Naver地图店铺</span>
-      </div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">매장 정보/리뷰</span>
-        <span data-lang="en">Store info &amp; reviews</span>
-        <span data-lang="jp">店舗情報・レビュー</span>
-        <span data-lang="cn">店铺信息与评价</span>
-      </div>
-      </div>
+    <a class="link-tile" href="https://pf.kakao.com/_xhxhxixbxj" target="_blank" rel="noopener" aria-label="KakaoTalk Channel">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#FEE500"/><path d="M32 16c-10.5 0-19 6.6-19 14.8 0 5.3 3.6 9.9 9 12.5l-2.2 8 9.1-6c1 .1 2 .2 3.1.2 10.5 0 19-6.6 19-14.7S42.5 16 32 16z" fill="#3C1E1E"/></svg>
     </a>
-    <a class="contact-item" href="https://blog.naver.com/snpooy486" target="_blank">
-      <div class="contact-icon">🌐</div>
-      <div class="contact-text">
-        <div class="contact-label">
-        <span data-lang="kr" class="active">네이버 블로그</span>
-        <span data-lang="en">Naver Blog</span>
-        <span data-lang="jp">ネイバーブログ</span>
-        <span data-lang="cn">Naver博客</span>
-      </div>
-      <div class="contact-value">snpooy486</div>
-      </div>
+    <a class="link-tile" href="https://share.google/G7cXOgqIvrpuMfTqL" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
-    <a class="contact-item" href="https://cafe.naver.com/leehwachunacademy" target="_blank">
-      <div class="contact-icon">☕</div>
-      <div class="contact-text">
-        <div class="contact-label">
-        <span data-lang="kr" class="active">네이버 카페</span>
-        <span data-lang="en">Naver Cafe</span>
-        <span data-lang="jp">ネイバーカフェ</span>
-        <span data-lang="cn">Naver社群</span>
-      </div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">아카데미 커뮤니티</span>
-        <span data-lang="en">Academy Community</span>
-        <span data-lang="jp">アカデミーコミュニティ</span>
-        <span data-lang="cn">学院社群</span>
-      </div>
-      </div>
+    <a class="link-tile" href="https://naver.me/FHVt2sGq" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
-    <a class="contact-item" href="https://smartstore.naver.com/pinkeyelashes" target="_blank">
-      <div class="contact-icon">🛍️</div>
-      <div class="contact-text">
-        <div class="contact-label">
-        <span data-lang="kr" class="active">스마트스토어</span>
-        <span data-lang="en">Smart Store</span>
-        <span data-lang="jp">スマートストア</span>
-        <span data-lang="cn">购物商城</span>
-      </div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">제품/재료 구매</span>
-        <span data-lang="en">Shop products</span>
-        <span data-lang="jp">商品購入</span>
-        <span data-lang="cn">购买产品</span>
-      </div>
-      </div>
+    <a class="link-tile" href="https://cafe.naver.com/leehwachunacademy" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
-    <a class="contact-item" href="https://pf.kakao.com/_xhxhxixbxj" target="_blank">
-      <div class="contact-icon">💛</div>
-      <div class="contact-text">
-        <div class="contact-label">
-        <span data-lang="kr" class="active">카카오 오픈채팅</span>
-        <span data-lang="en">KakaoTalk Channel</span>
-        <span data-lang="jp">カカオトークチャンネル</span>
-        <span data-lang="cn">Kakao频道</span>
-      </div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">상담 문의</span>
-        <span data-lang="en">Inquiries</span>
-        <span data-lang="jp">お問い合わせ</span>
-        <span data-lang="cn">咨询</span>
-      </div>
-      </div>
-    </a>
-    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%88%98%EC%98%81%EA%B5%AC%20%EC%9E%A5%EB%8C%80%EA%B3%A8%EB%A1%9C%207%EB%B2%88%EA%B8%B8%2050" target="_blank">
-      <div class="contact-icon">📍</div>
-      <div class="contact-text">
-        <div class="contact-label">
-        <span data-lang="kr" class="active">본점 (탭하면 지도 열림)</span>
-        <span data-lang="en">Main Branch (tap to open map)</span>
-        <span data-lang="jp">本店（タップで地図）</span>
-        <span data-lang="cn">总店（点击打开地图）</span>
-      </div>
-      <div class="contact-value">부산광역시 수영구 장대골로 7번길 50</div>
-      </div>
-    </a>
-    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC%20%EA%B0%80%EC%BC%80%EA%B0%80%EC%9E%84%EB%A6%84%EB%A7%88%EB%A6%88" target="_blank">
-      <div class="contact-icon">📍</div>
-      <div class="contact-text">
-        <div class="contact-label">
-        <span data-lang="kr" class="active">개금점 (탭하면 지도 열림)</span>
-        <span data-lang="en">Gaegeum Branch (tap to open map)</span>
-        <span data-lang="jp">開琴店（タップで地図）</span>
-        <span data-lang="cn">开琴店（点击打开地图）</span>
-      </div>
-      <div class="contact-value">부산광역시 부산진구 가야대로 450 상가동 112호</div>
-      </div>
-    </a>
-    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EC%96%91%EC%82%B0%EC%8B%9C%20%EB%AC%BC%EA%B7%88%EC%9D%8D%20%EC%A6%9D%EC%82%B0%EC%97%AD%EB%A1%9C%20146" target="_blank">
-      <div class="contact-icon">📍</div>
-      <div class="contact-text">
-        <div class="contact-label">
-        <span data-lang="kr" class="active">양산점 (탭하면 지도 열림)</span>
-        <span data-lang="en">Yangsan Branch (tap to open map)</span>
-        <span data-lang="jp">梁山店（タップで地図）</span>
-        <span data-lang="cn">梁山店（点击打开地图）</span>
-      </div>
-      <div class="contact-value">양산시 물금읍 증산역로 146</div>
-      </div>
+    <a class="link-tile" href="https://smartstore.naver.com/pinkeyelashes" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
   </div>
+  <a class="addr-line" href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%88%98%EC%98%81%EA%B5%AC%20%EC%9E%A5%EB%8C%80%EA%B3%A8%EB%A1%9C%207%EB%B2%88%EA%B8%B8%2050" target="_blank" rel="noopener">
+    <span class="addr-pin">📍</span>
+    <span class="addr-text">
+      <span data-lang="kr" class="active">부산광역시 수영구 장대골로 7번길 50</span><span data-lang="en">부산광역시 수영구 장대골로 7번길 50</span><span data-lang="jp">부산광역시 수영구 장대골로 7번길 50</span><span data-lang="cn">부산광역시 수영구 장대골로 7번길 50</span><span data-lang="si">부산광역시 수영구 장대골로 7번길 50</span><span data-lang="ur">부산광역시 수영구 장대골로 7번길 50</span>
+    </span>
+    <span class="addr-map">
+      <span data-lang="kr" class="active">지도 ›</span>
+      <span data-lang="en">Map ›</span>
+      <span data-lang="jp">地図 ›</span>
+      <span data-lang="cn">地图 ›</span>
+      <span data-lang="si">Map ›</span>
+      <span data-lang="ur">Map ›</span>
+    </span>
+  </a>
+  <a class="addr-line" href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC%20%EA%B0%80%EC%BC%80%EA%B0%80%EC%9E%84%EB%A6%84%EB%A7%88%EB%A6%88" target="_blank" rel="noopener">
+    <span class="addr-pin">📍</span>
+    <span class="addr-text">
+      <span data-lang="kr" class="active">부산광역시 부산진구 가야대로 450 상가동 112호</span><span data-lang="en">부산광역시 부산진구 가야대로 450 상가동 112호</span><span data-lang="jp">부산광역시 부산진구 가야대로 450 상가동 112호</span><span data-lang="cn">부산광역시 부산진구 가야대로 450 상가동 112호</span><span data-lang="si">부산광역시 부산진구 가야대로 450 상가동 112호</span><span data-lang="ur">부산광역시 부산진구 가야대로 450 상가동 112호</span>
+    </span>
+    <span class="addr-map">
+      <span data-lang="kr" class="active">지도 ›</span>
+      <span data-lang="en">Map ›</span>
+      <span data-lang="jp">地図 ›</span>
+      <span data-lang="cn">地图 ›</span>
+      <span data-lang="si">Map ›</span>
+      <span data-lang="ur">Map ›</span>
+    </span>
+  </a>
+  <a class="addr-line" href="https://map.naver.com/p/search/%EC%96%91%EC%82%B0%EC%8B%9C%20%EB%AC%BC%EA%B7%88%EC%9D%8D%20%EC%A6%9D%EC%82%B0%EC%97%AD%EB%A1%9C%20146" target="_blank" rel="noopener">
+    <span class="addr-pin">📍</span>
+    <span class="addr-text">
+      <span data-lang="kr" class="active">양산시 물금읍 증산역로 146</span><span data-lang="en">양산시 물금읍 증산역로 146</span><span data-lang="jp">양산시 물금읍 증산역로 146</span><span data-lang="cn">양산시 물금읍 증산역로 146</span><span data-lang="si">양산시 물금읍 증산역로 146</span><span data-lang="ur">양산시 물금읍 증산역로 146</span>
+    </span>
+    <span class="addr-map">
+      <span data-lang="kr" class="active">지도 ›</span>
+      <span data-lang="en">Map ›</span>
+      <span data-lang="jp">地図 ›</span>
+      <span data-lang="cn">地图 ›</span>
+      <span data-lang="si">Map ›</span>
+      <span data-lang="ur">Map ›</span>
+    </span>
+  </a>
 </section>
 
 <!-- ACTION -->

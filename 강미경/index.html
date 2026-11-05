@@ -323,6 +323,16 @@ footer {
 }
 footer .company { font-size: 14px; font-weight: 800; color: var(--gold-on-dark); margin-bottom: 5px; }
 footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-spacing: 0.5px; }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -668,7 +678,6 @@ footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-sp
     <span data-lang="cn">联系方式</span>
   </div>
   <div class="contact-list">
-
     <a class="contact-item" href="tel:010-3753-4918">
       <div class="contact-icon">📞</div>
       <div class="contact-label">
@@ -679,58 +688,40 @@ footer .slogan-footer { font-size: 11px; color: rgba(237,235,221,0.6); letter-sp
       </div>
       <div class="contact-value">010-3753-4918</div>
     </a>
-
     <a class="contact-item" href="mailto:fhfhfh0116@naver.com">
       <div class="contact-icon">✉️</div>
       <div class="contact-label">Email</div>
       <div class="contact-value">fhfhfh0116@naver.com</div>
     </a>
-
-    <a class="contact-item" href="https://instagram.com/suksungsalad" target="_blank">
-      <div class="contact-icon">📷</div>
-      <div class="contact-label">Instagram</div>
-      <div class="contact-value">@suksungsalad</div>
-    </a>
-
-    <a class="contact-item" href="https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=%EC%88%99%EC%84%B1%EC%B1%84" target="_blank">
-      <div class="contact-icon">🛒</div>
-      <div class="contact-label">Shop</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">네이버쇼핑 주문</span>
-        <span data-lang="en">Order online</span>
-        <span data-lang="jp">オンライン注文</span>
-        <span data-lang="cn">在线订购</span>
-      </div>
-    </a>
-
-    <a class="contact-item" style="grid-column: 1 / -1;" href="https://jinjjabg-hub.github.io/MANDU/?u=kang-mikyung" target="_blank">
-      <div class="contact-icon">💬</div>
-      <div class="contact-label">MANDU</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">실시간 번역 메신저</span>
-        <span data-lang="en">Live translation chat</span>
-        <span data-lang="jp">リアルタイム翻訳チャット</span>
-        <span data-lang="cn">实时翻译聊天</span>
-      </div>
-    </a>
-
-    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EA%B2%BD%EB%82%A8%20%EA%B9%80%ED%95%B4%EC%8B%9C%20%EB%82%B4%EC%99%B8%EB%A1%9C11%EB%B2%88%EA%B8%B8%204-15" target="_blank">
-      <div class="contact-icon">📍</div>
-      <div class="contact-label">
-        <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
-        <span data-lang="en">Address (tap to open map)</span>
-        <span data-lang="jp">住所（タップで地図）</span>
-        <span data-lang="cn">地址（点击打开地图）</span>
-      </div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">경남 김해시 내외로11번길 4-15 1층</span>
-        <span data-lang="en">4-15 1F, Naeoe-ro 11beon-gil, Gimhae-si, Gyeongnam, Korea</span>
-        <span data-lang="jp">慶尚南道 金海市 内外路11番ギル 4-15 1階</span>
-        <span data-lang="cn">庆尚南道 金海市 内外路11番街 4-15 1层</span>
-      </div>
-    </a>
-
   </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=kang-mikyung" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
+    </a>
+    <a class="link-tile" href="https://instagram.com/suksungsalad" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=%EC%88%99%EC%84%B1%EC%B1%84" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
+    </a>
+  </div>
+  <a class="addr-line" href="https://map.naver.com/p/search/%EA%B2%BD%EB%82%A8%20%EA%B9%80%ED%95%B4%EC%8B%9C%20%EB%82%B4%EC%99%B8%EB%A1%9C11%EB%B2%88%EA%B8%B8%204-15" target="_blank" rel="noopener">
+    <span class="addr-pin">📍</span>
+    <span class="addr-text">
+      <span data-lang="kr" class="active">경남 김해시 내외로11번길 4-15 1층</span>
+      <span data-lang="en">4-15 1F, Naeoe-ro 11beon-gil, Gimhae-si, Gyeongnam, Korea</span>
+      <span data-lang="jp">慶尚南道 金海市 内外路11番ギル 4-15 1階</span>
+      <span data-lang="cn">庆尚南道 金海市 内外路11番街 4-15 1层</span>
+    </span>
+    <span class="addr-map">
+      <span data-lang="kr" class="active">지도 ›</span>
+      <span data-lang="en">Map ›</span>
+      <span data-lang="jp">地図 ›</span>
+      <span data-lang="cn">地图 ›</span>
+      <span data-lang="si">Map ›</span>
+      <span data-lang="ur">Map ›</span>
+    </span>
+  </a>
 </section>
 
 <!-- ACTION -->

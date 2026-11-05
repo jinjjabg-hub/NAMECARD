@@ -310,6 +310,16 @@ footer {
 }
 footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -667,62 +677,38 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-label">Email</div>
       <div class="contact-value">mami8295@hanmail.net</div>
     </a>
-    <a class="contact-item" style="grid-column: 1 / -1;" href="https://mlf.makelifebetter.co.kr/" target="_blank">
-      <div class="contact-icon">💻</div>
-      <div class="contact-label">
-        <span data-lang="kr" class="active">유니시티 공식 홈페이지</span>
-        <span data-lang="en">Unicity official website</span>
-        <span data-lang="jp">ユニシティ公式サイト</span>
-        <span data-lang="cn">Unicity官方网站</span>
-      </div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">회원가입 바로가기 →</span>
-        <span data-lang="en">Join as a member →</span>
-        <span data-lang="jp">会員登録はこちら →</span>
-        <span data-lang="cn">立即注册会员 →</span>
-      </div>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=ma-miran" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
-    <a class="contact-item" href="https://blog.naver.com/mami8295" target="_blank">
-      <div class="contact-icon">🌐</div>
-      <div class="contact-label">
-        <span data-lang="kr" class="active">블로그</span>
-        <span data-lang="en">Blog</span>
-        <span data-lang="jp">ブログ</span>
-        <span data-lang="cn">博客</span>
-      </div>
-      <div class="contact-value">blog.naver.com/mami8295</div>
+    <a class="link-tile" href="https://www.instagram.com/miran8229/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
     </a>
-    <a class="contact-item" href="https://www.instagram.com/miran8229/" target="_blank">
-      <div class="contact-icon">📷</div>
-      <div class="contact-label">Instagram</div>
-      <div class="contact-value">@miran8229</div>
+    <a class="link-tile" href="https://blog.naver.com/mami8295" target="_blank" rel="noopener" aria-label="Blog">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#03C75A"/><text x="32" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="800" fill="#fff">blog</text></svg>
     </a>
-    <a class="contact-item" style="grid-column: 1 / -1;" href="https://jinjjabg-hub.github.io/MANDU/?u=ma-miran" target="_blank">
-      <div class="contact-icon">💬</div>
-      <div class="contact-label">MANDU</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">실시간 번역 메신저</span>
-        <span data-lang="en">Live translation chat</span>
-        <span data-lang="jp">リアルタイム翻訳チャット</span>
-        <span data-lang="cn">实时翻译聊天</span>
-      </div>
-    </a>
-    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%97%B0%EC%A0%9C%EA%B5%AC%20%EC%A4%91%EC%95%99%EB%8C%80%EB%A1%9C%201125" target="_blank">
-      <div class="contact-icon">📍</div>
-      <div class="contact-label">
-        <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
-        <span data-lang="en">Address (tap to open map)</span>
-        <span data-lang="jp">住所（タップで地図）</span>
-        <span data-lang="cn">地址（点击打开地图）</span>
-      </div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층)</span>
-        <span data-lang="en">2F City Tower (Mokhwa Wedding Hall), 1125 Jungang-daero, Yeonje-gu, Busan</span>
-        <span data-lang="jp">부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층)</span>
-        <span data-lang="cn">부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층)</span>
-      </div>
+    <a class="link-tile" href="https://mlf.makelifebetter.co.kr/" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
   </div>
+  <a class="addr-line" href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%97%B0%EC%A0%9C%EA%B5%AC%20%EC%A4%91%EC%95%99%EB%8C%80%EB%A1%9C%201125" target="_blank" rel="noopener">
+    <span class="addr-pin">📍</span>
+    <span class="addr-text">
+      <span data-lang="kr" class="active">부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층)</span>
+      <span data-lang="en">2F City Tower (Mokhwa Wedding Hall), 1125 Jungang-daero, Yeonje-gu, Busan</span>
+      <span data-lang="jp">부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층)</span>
+      <span data-lang="cn">부산광역시 연제구 중앙대로 1125 시티타워 2층 (목화예식장 2층)</span>
+    </span>
+    <span class="addr-map">
+      <span data-lang="kr" class="active">지도 ›</span>
+      <span data-lang="en">Map ›</span>
+      <span data-lang="jp">地図 ›</span>
+      <span data-lang="cn">地图 ›</span>
+      <span data-lang="si">Map ›</span>
+      <span data-lang="ur">Map ›</span>
+    </span>
+  </a>
 </section>
 
 <!-- ACTION -->

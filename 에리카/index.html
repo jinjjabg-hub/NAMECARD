@@ -299,6 +299,16 @@ footer {
 }
 footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -689,35 +699,19 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-label">Email</div>
       <div class="contact-value">cg1523@naver.com</div>
     </a>
-    <a class="contact-item" href="https://m.blog.naver.com/cg1523" target="_blank">
-      <div class="contact-icon">🌐</div>
-      <div class="contact-label">
-        <span data-lang="kr" class="active">블로그</span>
-        <span data-lang="en">Blog</span>
-        <span data-lang="jp">ブログ</span>
-        <span data-lang="cn">博客</span>
-      </div>
-      <div class="contact-value">Naver Blog</div>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=erica" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
-    <a class="contact-item" href="https://www.instagram.com/deuk_boon" target="_blank">
-      <div class="contact-icon">📷</div>
-      <div class="contact-label">Instagram</div>
-      <div class="contact-value">@deuk_boon</div>
+    <a class="link-tile" href="https://www.instagram.com/deuk_boon" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
     </a>
-    <a class="contact-item" href="https://www.threads.com/@deuk_boon" target="_blank">
-      <div class="contact-icon">🧵</div>
-      <div class="contact-label">Threads</div>
-      <div class="contact-value">@deuk_boon</div>
+    <a class="link-tile" href="https://m.blog.naver.com/cg1523" target="_blank" rel="noopener" aria-label="Blog">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#03C75A"/><text x="32" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="800" fill="#fff">blog</text></svg>
     </a>
-    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=erica" target="_blank">
-      <div class="contact-icon">💬</div>
-      <div class="contact-label">MANDU</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">실시간 번역 메신저</span>
-        <span data-lang="en">Live translation chat</span>
-        <span data-lang="jp">リアルタイム翻訳チャット</span>
-        <span data-lang="cn">实时翻译聊天</span>
-      </div>
+    <a class="link-tile" href="https://www.threads.com/@deuk_boon" target="_blank" rel="noopener" aria-label="Threads">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#000"/><text x="32" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#fff">@</text></svg>
     </a>
   </div>
 </section>
