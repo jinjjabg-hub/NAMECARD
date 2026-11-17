@@ -15,7 +15,7 @@
   <meta name="apple-mobile-web-app-title" content="SCHWEISS">
 
   <meta property="og:title" content="SCHWEISS | 이지수 대표 · 용접전문회사">
-  <meta property="og:description" content="검증된 기술력과 책임감으로, 가치를 증명해드립니다. 반도체 설비·H빔·특수구조물 | 토파즈 챕터">
+  <meta property="og:description" content="검증된 기술력과 책임감으로, 가치를 증명해드립니다. 반도체 설비·H빔·특수구조물">
   <meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/이지수/og_final.jpg">
   <meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/이지수/">
   <meta property="og:type" content="website">
@@ -92,16 +92,6 @@
         rgba(6,14,30,1.0)  100%
       );
     }
-    .bni-badge-top {
-      position: absolute; top: 50px; left: 20px;
-      display: flex; align-items: center; gap: 8px;
-      padding: 7px 16px 7px 12px;
-      background: var(--red); border-radius: 30px;
-      z-index: 10;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    }
-    .bni-badge-top span { font-size: 12px; font-weight: 800; color: #fff; letter-spacing: 1px; }
-    .bni-dot-badge { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.7); flex-shrink: 0; }
     .hero-logo-wrap {
       position: absolute; top: 46%; left: 22px; transform: translateY(-50%);
     }
@@ -141,16 +131,17 @@
     .sec-title { font-size: 22px; font-weight: 900; color: var(--dark2); line-height: 1.4; margin-bottom: 28px; }
     .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 28px; }
     .why-card { background: var(--blue); border-radius: 18px; padding: 18px 12px 16px; text-align: center; }
-    .why-icon { font-size: 24px; margin-bottom: 10px; }
+    .why-icon { display: flex; justify-content: center; margin-bottom: 10px; color: var(--pale); }
+    .why-icon .ico { width: 26px; height: 26px; }
     .why-title { font-size: 11px; font-weight: 800; color: #fff; line-height: 1.5; }
     .quote-box { border-left: 3px solid var(--blue2); padding: 14px 18px; background: rgba(27,58,107,0.06); border-radius: 0 12px 12px 0; }
     .quote-text { font-size: 14px; font-weight: 700; color: var(--dark2); line-height: 1.7; }
 
     /* ── 통계 ── */
     .stat-sec { background: var(--dark2); padding: 48px 20px; }
-    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
-    .stat-item { background: var(--dark2); padding: 28px 20px; text-align: center; }
-    .stat-num { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 900; color: var(--blue3); line-height: 1; margin-bottom: 6px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); }
+    .stat-item { background: var(--dark2); padding: 26px 8px; text-align: center; }
+    .stat-num { font-family: 'Montserrat', sans-serif; font-size: 34px; font-weight: 900; color: var(--blue3); line-height: 1; margin-bottom: 6px; }
     .stat-unit { font-size: 16px; font-weight: 700; color: var(--pale); }
     .stat-label { font-size: 11px; color: var(--gray); margin-top: 6px; font-weight: 500; }
 
@@ -162,25 +153,18 @@
     .diff-title { font-size: 14px; font-weight: 800; color: var(--dark2); margin-bottom: 6px; }
     .diff-desc { font-size: 12.5px; color: #556; line-height: 1.7; }
 
-    /* ── BNI ── */
-    .bni-sec { background: var(--dark3); padding: 48px 20px; }
-    .bni-profile-row { display: flex; gap: 20px; align-items: center; margin-bottom: 24px; }
-    .bni-avatar {
+    /* ── PROFILE ── */
+    .profile-sec { background: var(--dark3); padding: 48px 20px; }
+    .profile-row { display: flex; gap: 20px; align-items: center; }
+    .profile-avatar {
       width: 96px; height: 96px; border-radius: 50%;
       border: 2px solid var(--blue2); overflow: hidden; flex-shrink: 0;
     }
-    .bni-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-    .bni-name { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 4px; }
-    .bni-role-txt { font-size: 12px; color: var(--gray); font-weight: 500; margin-bottom: 10px; }
-    .bni-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .bni-tag { padding: 4px 12px; border: 1px solid var(--blue2); border-radius: 20px; font-size: 10px; color: var(--pale); font-weight: 700; }
-    .bni-timeline { display: flex; margin-bottom: 20px; }
-    .tl-node { flex:1; display:flex; flex-direction:column; align-items:center; position:relative; }
-    .tl-node:not(:last-child)::after { content:''; position:absolute; top:14px; left:50%; right:-50%; height:1px; background:linear-gradient(to right, var(--blue2), var(--blue3)); }
-    .tl-dot { width:28px; height:28px; border-radius:50%; background:var(--blue); color:#fff; font-size:10px; font-weight:800; display:flex; align-items:center; justify-content:center; position:relative; z-index:1; margin-bottom:8px; }
-    .tl-dot.now { background:linear-gradient(135deg, var(--blue3), var(--blue2)); box-shadow:0 0 0 3px rgba(74,144,217,0.3); }
-    .tl-label { font-size:10px; font-weight:700; color:rgba(255,255,255,0.7); text-align:center; line-height:1.4; }
-    .bni-history { padding:16px 18px; background:rgba(27,58,107,0.3); border-radius:14px; border-left:3px solid var(--blue2); font-size:12px; color:rgba(255,255,255,0.72); line-height:1.7; }
+    .profile-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .profile-name { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 4px; }
+    .profile-role { font-size: 12px; color: var(--gray); font-weight: 500; margin-bottom: 10px; }
+    .profile-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .profile-tag { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border: 1px solid var(--blue2); border-radius: 20px; font-size: 10px; color: var(--pale); font-weight: 700; }
 
     /* ── 철학 ── */
     .philo-sec { background: var(--dark); padding: 48px 24px; text-align: center; }
@@ -192,7 +176,8 @@
     .ref-list { display: flex; flex-direction: column; gap: 12px; }
     .ref-item { background: #fff; border-radius: 16px; padding: 16px 18px; border-left: 4px solid var(--blue); box-shadow: 0 2px 12px rgba(27,58,107,0.08); }
     .ref-header { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
-    .ref-icon { font-size: 18px; }
+    .ref-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 9px; background: rgba(27,58,107,0.08); color: var(--blue); flex-shrink: 0; }
+    .ref-icon .ico { width: 18px; height: 18px; }
     .ref-title { font-size: 13px; font-weight: 800; color: var(--blue); }
     .ref-desc { font-size: 12px; color: #667; line-height: 1.65; }
 
@@ -204,8 +189,10 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .save-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .save-wrap .save-btn:first-child { grid-column: 1 / -1; justify-content: center; }
     .save-btn {
-      display: flex; align-items: center; gap: 12px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 13px; font-weight: 800;
       background: rgba(46,109,164,0.12);
       border: 1.5px solid rgba(74,144,217,0.35);
       border-radius: 14px; padding: 14px 16px;
@@ -233,22 +220,41 @@
     .connect-btn.main-call { background: var(--blue); grid-column: 1 / -1; font-size: 15px; font-weight: 900; padding: 20px; }
     .connect-btn.sub { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); }
     .connect-btn:hover { opacity: 0.82; transform: translateY(-2px); }
-    .c-icon { font-size: 18px; }
+    .c-icon { width: 19px; height: 19px; }
     .qr-wrap { margin-top: 36px; padding: 24px 20px; background: var(--cream); border-radius: 20px; text-align: center; }
     .qr-wrap img { width: 140px; height: 140px; border-radius: 8px; }
-    .qr-label { font-size: 11px; color: var(--blue); font-weight: 700; margin-top: 10px; }
+    .qr-label { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 11px; color: var(--blue); font-weight: 700; margin-top: 10px; }
 
     /* ── FOOTER ── */
     .footer { background: var(--dark); border-top: 1px solid var(--line); padding: 24px 20px; display: flex; align-items: center; justify-content: space-between; }
     .footer-co { font-size: 16px; font-weight: 900; letter-spacing: 2px; color: #fff; }
     .footer-sub { font-size: 10px; color: var(--gray); margin-top: 3px; }
-    .footer-bni { padding: 5px 12px; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7); }
 
     /* ── 페이드인 ── */
     .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.55s, transform 0.55s; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     [data-lang]:not(.active) { display: none; }
+    /* 한국어는 단어 중간에서 줄이 끊기지 않게 */
+    [data-lang="kr"] { word-break: keep-all; overflow-wrap: break-word; }
+
+    /* ── 아이콘 (이모지 대신 라인 아이콘) ── */
+    .ico { width: 1.2em; height: 1.2em; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; vertical-align: -0.22em; }
+    .link-tile { position: relative; }
+    .link-tile .tile-glyph { position: absolute; inset: 0; margin: auto; width: 30px; height: 30px; background: none; color: #fff; }
+    .link-tile .tile-glyph.yt { width: 38px; height: 38px; color: #FF0000; }
+
+    /* ── 히어로 등장 모션 (1회) ── */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-bg { animation: heroIn 2.2s cubic-bezier(.2,.7,.2,1) both; }
+      .hero-label > * { animation: heroRise .9s cubic-bezier(.2,.7,.2,1) both; }
+      .hero-tag { animation-delay: .9s !important; }
+      .hero-company { animation-delay: 1.05s !important; }
+      .hero-name { animation-delay: 1.2s !important; }
+      .hero-slogan { animation-delay: 1.35s !important; }
+    }
+    @keyframes heroIn { from { opacity: 0; transform: scale(1.08); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
+    @keyframes heroRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   
 /* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
 .link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px auto; max-width:288px; }
@@ -262,6 +268,28 @@
 </style>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/> <circle cx="12" cy="12" r="6"/> <circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></symbol>
+<symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/> <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/> <path d="m21 3 1 11h-2"/> <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/> <path d="M3 4h8"/></symbol>
+<symbol id="i-factory" viewBox="0 0 24 24"><path d="M12 16h.01"/> <path d="M16 16h.01"/> <path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/> <path d="M8 16h.01"/></symbol>
+<symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/> <path d="M12 22V12"/> <polyline points="3.29 7 12 12 20.71 7"/> <path d="m7.5 4.27 9 5.15"/></symbol>
+<symbol id="i-hard-hat" viewBox="0 0 24 24"><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/> <path d="M14 6a6 6 0 0 1 6 6v3"/> <path d="M4 15v-3a6 6 0 0 1 6-6"/> <rect x="2" y="15" width="20" height="4" rx="1"/></symbol>
+<symbol id="i-microscope" viewBox="0 0 24 24"><path d="M6 18h8"/> <path d="M3 22h18"/> <path d="M14 22a7 7 0 1 0 0-14h-1"/> <path d="M9 14h2"/> <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/> <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></symbol>
+<symbol id="i-landmark" viewBox="0 0 24 24"><path d="M10 18v-7"/> <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/> <path d="M14 18v-7"/> <path d="M18 18v-7"/> <path d="M3 22h18"/> <path d="M6 18v-7"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/> <rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+<symbol id="i-office" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/> <path d="M13 6a5 5 0 0 1 5 5"/> <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/> <path d="m21.854 2.147-10.94 10.939"/></symbol>
+<symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/> <circle cx="9" cy="7" r="4"/> <line x1="19" x2="19" y1="8" y2="14"/> <line x1="22" x2="16" y1="11" y2="11"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M15 13a3 3 0 1 0-6 0"/> <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/> <circle cx="12" cy="8" r="2"/></symbol>
+<symbol id="i-qr" viewBox="0 0 24 24"><rect width="5" height="5" x="3" y="3" rx="1"/> <rect width="5" height="5" x="16" y="3" rx="1"/> <rect width="5" height="5" x="3" y="16" rx="1"/> <path d="M21 16h-3a2 2 0 0 0-2 2v3"/> <path d="M21 21v.01"/> <path d="M12 7v3a2 2 0 0 1-2 2H7"/> <path d="M3 12h.01"/> <path d="M12 3h.01"/> <path d="M12 16v.01"/> <path d="M16 12h1"/> <path d="M21 12v.01"/> <path d="M12 21v-1"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 21v-6"/> <path d="M12 21V3"/> <path d="M19 21V9"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/> <circle cx="12" cy="8" r="6"/></symbol>
+<symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="b-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" fill="currentColor" stroke="none"/></symbol>
+<symbol id="b-youtube" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor" stroke="none"/></symbol>
+</svg>
 
 <!-- 언어바 -->
 <div class="lang-bar">
@@ -273,38 +301,8 @@
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <img class="hero-bg" src="hero.jpg" alt="SCHWEISS 이지수 대표">
+  <img class="hero-bg" src="hero.jpg" alt="SCHWEISS 이지수 대표" fetchpriority="high">
   <div class="hero-overlay"></div>
-
-  <div class="bni-badge-top">
-    <div class="bni-dot-badge"></div>
-    <span>TOPAZ CHAPTER</span>
-  </div>
-
-
-
-  <div class="hero-label">
-    <div class="hero-tag">
-      <span data-lang="kr" class="active">용접전문회사</span>
-      <span data-lang="en">WELDING SPECIALIST</span>
-      <span data-lang="jp">溶接専門会社</span>
-      <span data-lang="cn">焊接专业公司</span>
-    </div>
-    <div class="hero-company">SCHWEISS</div>
-    <div class="hero-name">
-      <span data-lang="kr" class="active">이지수</span>
-      <span data-lang="en">Jisu Lee</span>
-      <span data-lang="jp">イ・ジス</span>
-      <span data-lang="cn">李智樹</span>
-      <small><span data-lang="kr" class="active">대표</span><span data-lang="en">CEO</span><span data-lang="jp">代表</span><span data-lang="cn">代表</span></small>
-    </div>
-    <div class="hero-slogan">
-      <span data-lang="kr" class="active">검증된 기술력과 책임감으로,<br>가치를 증명해드립니다.</span>
-      <span data-lang="en">Proving value through verified expertise and accountability.</span>
-      <span data-lang="jp">実証された技術力と責任感で、価値を証明します。</span>
-      <span data-lang="cn">凭借经过验证的技术实力与责任感，为您证明价值。</span>
-    </div>
-  </div>
   <div class="scroll-hint"><span class="scroll-arrow">↓</span></div>
 </section>
 
@@ -319,7 +317,7 @@
   </div>
   <div class="why-grid">
     <div class="why-card">
-      <div class="why-icon">🎯</div>
+      <div class="why-icon"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg></div>
       <div class="why-title">
         <span data-lang="kr" class="active">결과 중심<br>전문성</span>
         <span data-lang="en">Results-Driven<br>Expertise</span>
@@ -328,7 +326,7 @@
       </div>
     </div>
     <div class="why-card">
-      <div class="why-icon">🔩</div>
+      <div class="why-icon"><svg class="ico" aria-hidden="true"><use href="#i-wrench"/></svg></div>
       <div class="why-title">
         <span data-lang="kr" class="active">맞춤형<br>솔루션</span>
         <span data-lang="en">Tailored<br>Solutions</span>
@@ -337,7 +335,7 @@
       </div>
     </div>
     <div class="why-card">
-      <div class="why-icon">🤝</div>
+      <div class="why-icon"><svg class="ico" aria-hidden="true"><use href="#i-handshake"/></svg></div>
       <div class="why-title">
         <span data-lang="kr" class="active">신뢰 기반<br>지속 케어</span>
         <span data-lang="en">Trust &<br>Ongoing Care</span>
@@ -367,10 +365,6 @@
     <div class="stat-item">
       <div class="stat-num">5<span class="stat-unit">개</span></div>
       <div class="stat-label"><span data-lang="kr" class="active">전문 분야</span><span data-lang="en">Specialties</span><span data-lang="jp">専門分野</span><span data-lang="cn">专业领域</span></div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">2<span class="stat-unit">기</span></div>
-      <div class="stat-label"><span data-lang="kr" class="active">BNI 부의장</span><span data-lang="en">VP</span><span data-lang="jp">BNI 副議長</span><span data-lang="cn">BNI副主席</span></div>
     </div>
     <div class="stat-item">
       <div class="stat-num">100<span class="stat-unit">%</span></div>
@@ -420,37 +414,21 @@
   </div>
 </section>
 
-<!-- ═══ BNI ═══ -->
-<section class="bni-sec fade-in">
-  <div class="sec-label" style="color:var(--blue3);">Topaz Chapter</div>
-  <div class="bni-profile-row">
-    <div class="bni-avatar">
+<!-- ═══ PROFILE ═══ -->
+<section class="profile-sec fade-in">
+  <div class="sec-label" style="color:var(--blue3);">Profile</div>
+  <div class="profile-row">
+    <div class="profile-avatar">
       <img src="이지수.png" alt="이지수 대표">
     </div>
     <div>
-      <div class="bni-name"><span data-lang="kr" class="active">이지수</span><span data-lang="en">Jisu Lee</span><span data-lang="jp">イ・ジス</span><span data-lang="cn">李智秀</span></div>
-      <div class="bni-role-txt"><span data-lang="kr" class="active">SCHWEISS 대표 · 토파즈 챕터</span><span data-lang="en">CEO, SCHWEISS · Topaz Chapter</span><span data-lang="jp">SCHWEISS 代表 · トパーズ支部</span><span data-lang="cn">SCHWEISS 代表 · 托帕兹分会</span></div>
-      <div class="bni-tags">
-        <span class="bni-tag"><span data-lang="kr" class="active">🏆 2기 부의장</span><span data-lang="en">🏆 2nd VP</span><span data-lang="jp">🏆 2期 副議長</span><span data-lang="cn">🏆 2期 副主席</span></span>
-        <span class="bni-tag"><span data-lang="kr" class="active">용접전문</span><span data-lang="en">Welding Expert</span><span data-lang="jp">溶接専門</span><span data-lang="cn">焊接专家</span></span>
+      <div class="profile-name"><span data-lang="kr" class="active">이지수</span><span data-lang="en">Jisu Lee</span><span data-lang="jp">イ・ジス</span><span data-lang="cn">李智秀</span></div>
+      <div class="profile-role"><span data-lang="kr" class="active">SCHWEISS 대표</span><span data-lang="en">CEO, SCHWEISS</span><span data-lang="jp">SCHWEISS 代表</span><span data-lang="cn">SCHWEISS 代表</span></div>
+      <div class="profile-tags">
+        <span class="profile-tag"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg><span data-lang="kr" class="active">기능장</span><span data-lang="en">Master Craftsman</span><span data-lang="jp">技能長</span><span data-lang="cn">技能长</span></span>
+        <span class="profile-tag"><span data-lang="kr" class="active">용접전문</span><span data-lang="en">Welding Expert</span><span data-lang="jp">溶接専門</span><span data-lang="cn">焊接专家</span></span>
       </div>
     </div>
-  </div>
-  <div class="bni-timeline">
-    <div class="tl-node">
-      <div class="tl-dot">1기</div>
-      <div class="tl-label"><span data-lang="kr" class="active">비지터호스트<br>리더</span><span data-lang="en">Visitor Host<br>Leader</span><span data-lang="jp">ビジターホスト<br>リーダー</span><span data-lang="cn">访客主持<br>领袖</span></div>
-    </div>
-    <div class="tl-node">
-      <div class="tl-dot now">2기</div>
-      <div class="tl-label"><span data-lang="kr" class="active">부의장 ⭐<br>현재</span><span data-lang="en">VP ⭐<br>Current</span><span data-lang="jp">副議長 ⭐<br>現職</span><span data-lang="cn">副主席 ⭐<br>现任</span></div>
-    </div>
-  </div>
-  <div class="bni-history">
-    <span data-lang="kr" class="active">🏆 Givers Gain — 먼저 주는 사람이 결국 얻는다.<br>토파즈 챕터에서 꾸준한 신뢰와 레퍼럴로 함께 성장하고 있습니다.</span>
-    <span data-lang="en">🏆 Givers Gain — Those who give first ultimately receive.<br>Growing through consistent trust and referrals in Topaz Chapter.</span>
-    <span data-lang="jp">🏆 Givers Gain — 先に与える者が最終的に得る。<br>トパーズ支部で継続的な信頼とリファーラルを通じて共に成長しています。</span>
-    <span data-lang="cn">🏆 Givers Gain — 先给予者终将获得。<br>在托帕兹分会通过持续的信任与推介共同成长。</span>
   </div>
 </section>
 
@@ -467,32 +445,32 @@
 
 <!-- ═══ 리퍼럴 ═══ -->
 <section class="ref-sec fade-in">
-  <div class="sec-label">Ideal Referrals</div>
+  <div class="sec-label">Clients</div>
   <div class="sec-title">
-    <span data-lang="kr" class="active">이런 분을 소개해주세요</span>
-    <span data-lang="en">Who to Refer</span>
-    <span data-lang="jp">こんな方をご紹介ください</span>
-    <span data-lang="cn">欢迎介绍以下类型客户</span>
+    <span data-lang="kr" class="active">이런 곳과 함께합니다</span>
+    <span data-lang="en">Who We Work With</span>
+    <span data-lang="jp">このようなお客様と共に</span>
+    <span data-lang="cn">我们的主要客户</span>
   </div>
   <div class="ref-list">
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">🏭</span><span class="ref-title"><span data-lang="kr" class="active">공장 증축·신축 제조업체</span><span data-lang="en">Factory Expansion Manufacturers</span><span data-lang="jp">工場増設・新築の製造業者</span><span data-lang="cn">工厂扩建·新建制造商</span></span></div>
+      <div class="ref-header"><span class="ref-icon"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></span><span class="ref-title"><span data-lang="kr" class="active">공장 증축·신축 제조업체</span><span data-lang="en">Factory Expansion Manufacturers</span><span data-lang="jp">工場増設・新築の製造業者</span><span data-lang="cn">工厂扩建·新建制造商</span></span></div>
       <div class="ref-desc"><span data-lang="kr" class="active">공장 내부 계단·난간·H빔·작업대·구조물 제작. 철골 구조 신축 또는 증설을 검토 중인 제조사.</span><span data-lang="en">Stairs, railings, H-beams, workbenches, and structures. Manufacturers planning new or expanded steel-frame buildings.</span><span data-lang="jp">工場内部の階段・手すり・H鋼・作業台・構造物製作。鉄骨構造の新築または増設を検討中の製造業者。</span><span data-lang="cn">制作工厂内部楼梯、栏杆、H型钢、工作台、结构件，适合考虑新建或扩建钢结构的制造商。</span></div>
     </div>
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">📦</span><span class="ref-title"><span data-lang="kr" class="active">물류창고·공장 시공사</span><span data-lang="en">Warehouse & Factory Contractors</span><span data-lang="jp">物流倉庫・工場施工会社</span><span data-lang="cn">物流仓库·工厂施工商</span></span></div>
+      <div class="ref-header"><span class="ref-icon"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg></span><span class="ref-title"><span data-lang="kr" class="active">물류창고·공장 시공사</span><span data-lang="en">Warehouse & Factory Contractors</span><span data-lang="jp">物流倉庫・工場施工会社</span><span data-lang="cn">物流仓库·工厂施工商</span></span></div>
       <div class="ref-desc"><span data-lang="kr" class="active">철골 구조·보강·캐노피·안전구조물 제작. 대형 물류센터 또는 창고 신축·리모델링이 필요한 업체.</span><span data-lang="en">Steel structures, reinforcements, canopies, and safety frames. Logistics companies needing new or renovated warehouses.</span><span data-lang="jp">鉄骨構造・補強・キャノピー・安全構造物製作。大型物流センターや倉庫の新築・リモデリングが必要な企業。</span><span data-lang="cn">钢结构、加固件、雨篷及安全构件，适合需要新建或改造大型仓储设施的物流企业。</span></div>
     </div>
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">🏗️</span><span class="ref-title"><span data-lang="kr" class="active">건설사 및 전문건설업체</span><span data-lang="en">Construction & Specialty Firms</span><span data-lang="jp">建設会社・専門建設業者</span><span data-lang="cn">建设公司及专业施工企业</span></span></div>
+      <div class="ref-header"><span class="ref-icon"><svg class="ico" aria-hidden="true"><use href="#i-hard-hat"/></svg></span><span class="ref-title"><span data-lang="kr" class="active">건설사 및 전문건설업체</span><span data-lang="en">Construction & Specialty Firms</span><span data-lang="jp">建設会社・専門建設業者</span><span data-lang="cn">建设公司及专业施工企业</span></span></div>
       <div class="ref-desc"><span data-lang="kr" class="active">철골·계단·난간·데크·구조 보강. 도면 기반 정밀 제작과 현장 설치를 외주로 필요로 하는 건설사.</span><span data-lang="en">Steel, stairs, railings, decks, structural reinforcement. General contractors needing outsourced precision fabrication and on-site installation.</span><span data-lang="jp">鉄骨・階段・手すり・デッキ・構造補強。図面ベースの精密製作と現場設置を外注する建設会社。</span><span data-lang="cn">钢结构、楼梯、栏杆、甲板及结构加固，适合需要外包精密制造和现场安装的建设公司。</span></div>
     </div>
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">🔬</span><span class="ref-title"><span data-lang="kr" class="active">식품·제약·반도체 공장</span><span data-lang="en">Food / Pharma / Semiconductor</span><span data-lang="jp">食品・製薬・半導体工場</span><span data-lang="cn">食品·制药·半导体工厂</span></span></div>
+      <div class="ref-header"><span class="ref-icon"><svg class="ico" aria-hidden="true"><use href="#i-microscope"/></svg></span><span class="ref-title"><span data-lang="kr" class="active">식품·제약·반도체 공장</span><span data-lang="en">Food / Pharma / Semiconductor</span><span data-lang="jp">食品・製薬・半導体工場</span><span data-lang="cn">食品·制药·半导体工厂</span></span></div>
       <div class="ref-desc"><span data-lang="kr" class="active">스테인리스 작업대·구조물·설비 보강. 위생 기준이 엄격한 공장이나 반도체 장비 프레임 제작이 필요한 업체.</span><span data-lang="en">Stainless workbenches, structures, equipment reinforcement. Facilities with strict hygiene standards or needing semiconductor equipment frames.</span><span data-lang="jp">ステンレス作業台・構造物・設備補強。衛生基準が厳しい工場や半導体装置フレームが必要な企業。</span><span data-lang="cn">不锈钢工作台、结构件及设备加固，适合卫生标准严格的工厂或需要半导体设备框架的企业。</span></div>
     </div>
     <div class="ref-item">
-      <div class="ref-header"><span class="ref-icon">🏛️</span><span class="ref-title"><span data-lang="kr" class="active">군부대·관공서·학교 유지보수</span><span data-lang="en">Gov / Military / School Maintenance</span><span data-lang="jp">軍・官公庁・学校メンテナンス</span><span data-lang="cn">军队·政府·学校维保</span></span></div>
+      <div class="ref-header"><span class="ref-icon"><svg class="ico" aria-hidden="true"><use href="#i-landmark"/></svg></span><span class="ref-title"><span data-lang="kr" class="active">군부대·관공서·학교 유지보수</span><span data-lang="en">Gov / Military / School Maintenance</span><span data-lang="jp">軍・官公庁・学校メンテナンス</span><span data-lang="cn">军队·政府·学校维保</span></span></div>
       <div class="ref-desc"><span data-lang="kr" class="active">울타리·캐노피·계단·안전시설 보수. 공공기관 철제 구조물의 교체·보수 담당자. 공공 입찰 경험 보유.</span><span data-lang="en">Fences, canopies, stairs, safety facility repairs. Public institution managers handling steel structure maintenance. Experienced in public procurement.</span><span data-lang="jp">フェンス・キャノピー・階段・安全施設補修。公共機関の鉄製構造物担当者。公共入札の経験あり。</span><span data-lang="cn">围栏、雨篷、楼梯及安全设施修缮，适合公共机构构造物负责人，具有公共招标经验。</span></div>
     </div>
   </div>
@@ -503,26 +481,26 @@
   <div class="save-wrap">
     <!-- vcf 다운로드 버튼 (savePhone 스타일) -->
     <button onclick="savePhone({name:'이지수',company:'SCHWEISS (스바이즈)',title:'대표',phone:'010-2169-7247',email:'schweiss0510@naver.com'})" class="save-btn btn-primary" style="background: var(--blue2); color:#fff;">
-      <span>📞</span>
-      <span class="lang-inline on" data-lang="kr">전화번호 저장하기</span>
-      <span class="lang-inline" data-lang="en">Save Contact</span>
-      <span class="lang-inline" data-lang="jp">連絡先を保存</span>
-      <span class="lang-inline" data-lang="cn">保存联系人</span>
+      <svg class="ico" aria-hidden="true"><use href="#i-user-plus"/></svg>
+      <span data-lang="kr" class="active">전화번호 저장하기</span>
+      <span data-lang="en">Save Contact</span>
+      <span data-lang="jp">連絡先を保存</span>
+      <span data-lang="cn">保存联系人</span>
     </button>
     <!-- saveToCardbook 버튼 (외부 스크립트 사용) -->
     <button onclick="shareCard()" class="save-btn btn-secondary" style="background: transparent; border-color: var(--blue2); color: var(--blue3);">
-      <span>📤</span>
-      <span class="lang-inline on" data-lang="kr">비즈홈 전달하기</span>
-      <span class="lang-inline" data-lang="en">Share this Biz Home</span>
-      <span class="lang-inline" data-lang="jp">ビズホームを共有</span>
-      <span class="lang-inline" data-lang="cn">分享商务主页</span>
+      <svg class="ico" aria-hidden="true"><use href="#i-send"/></svg>
+      <span data-lang="kr" class="active">비즈홈 전달하기</span>
+      <span data-lang="en">Share this Biz Home</span>
+      <span data-lang="jp">ビズホームを共有</span>
+      <span data-lang="cn">分享商务主页</span>
     </button>
-    <button onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/NAMECARD/이지수/',id:'lee-jisu-schweiss',name:'이지수',nameEn:'Jisu Lee',company:'SCHWEISS (스바이즈)',title:'대표',phone:'010-2169-7247',email:'schweiss0510@naver.com',chapter:'토파즈',bni:'BNI 토파즈 챕터 2기 부의장',url:'https://jinjjabg-hub.github.io/NAMECARD/이지수/'})" class="save-btn btn-secondary" style="background: transparent; border-color: var(--blue2); color: var(--blue3);">
-      <span>🗂️</span>
-      <span class="lang-inline on" data-lang="kr">카드북에 저장</span>
-      <span class="lang-inline" data-lang="en">Save to CardBook</span>
-      <span class="lang-inline" data-lang="jp">カードブックに保存</span>
-      <span class="lang-inline" data-lang="cn">保存到CardBook</span>
+    <button onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/NAMECARD/이지수/',id:'lee-jisu-schweiss',name:'이지수',nameEn:'Jisu Lee',company:'SCHWEISS (스바이즈)',title:'대표',phone:'010-2169-7247',email:'schweiss0510@naver.com',url:'https://jinjjabg-hub.github.io/NAMECARD/이지수/'})" class="save-btn btn-secondary" style="background: transparent; border-color: var(--blue2); color: var(--blue3);">
+      <svg class="ico" aria-hidden="true"><use href="#i-book"/></svg>
+      <span data-lang="kr" class="active">카드북에 저장</span>
+      <span data-lang="en">Save to CardBook</span>
+      <span data-lang="jp">カードブックに保存</span>
+      <span data-lang="cn">保存到CardBook</span>
     </button>
   </div>
 </section>
@@ -532,15 +510,15 @@
   <div class="sec-label" style="color:var(--blue3);margin-bottom:20px;">Connect</div>
   <div class="connect-grid">
     <a href="tel:01021697247" class="connect-btn main-call">
-      <span class="c-icon" style="filter:brightness(0) invert(1);">📞</span>
+      <svg class="ico c-icon" aria-hidden="true"><use href="#i-phone"/></svg>
       <span data-lang="kr" class="active">010-2169-7247</span><span data-lang="en">Call Now</span><span data-lang="jp">電話する</span><span data-lang="cn">立即致电</span>
     </a>
     <a href="mailto:schweiss0510@naver.com" class="connect-btn sub">
-      <span class="c-icon">✉️</span>
+      <svg class="ico c-icon" aria-hidden="true"><use href="#i-mail"/></svg>
       <span data-lang="kr" class="active">이메일</span><span data-lang="en">Email</span><span data-lang="jp">メール</span><span data-lang="cn">邮件</span>
     </a>
     <a href="tel:05071322-2169" class="connect-btn sub">
-      <span class="c-icon">📟</span>
+      <svg class="ico c-icon" aria-hidden="true"><use href="#i-office"/></svg>
       <span data-lang="kr" class="active">대표번호</span><span data-lang="en">Office</span><span data-lang="jp">代表番号</span><span data-lang="cn">总机</span>
     </a>
   </div>
@@ -549,24 +527,24 @@
       <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
     <a class="link-tile" href="https://www.instagram.com/en_schweiss0510/" target="_blank" rel="noopener" aria-label="Instagram">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" fill="url(#igGrad)"/></svg><svg class="tile-glyph" aria-hidden="true"><use href="#b-instagram"/></svg>
     </a>
     <a class="link-tile" href="https://www.youtube.com/@%EC%8A%A4%EB%B0%94%EC%9D%B4%EC%A6%88_%EC%BD%94%EB%A6%AC%EC%95%84" target="_blank" rel="noopener" aria-label="YouTube">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#FF0000"/><path d="M26 22.5v19l16.5-9.5z" fill="#fff"/></svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#fff"/></svg><svg class="tile-glyph yt" aria-hidden="true"><use href="#b-youtube"/></svg>
     </a>
     <a class="link-tile" href="http://weld001.iptime.org/schweiss/" target="_blank" rel="noopener" aria-label="Homepage">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#1B3A6B"/></svg><svg class="ico tile-glyph" aria-hidden="true"><use href="#i-house"/></svg>
     </a>
   </div>
   <div class="qr-wrap">
     <img src="qr.png" alt="QR코드">
-    <div class="qr-label"><span data-lang="kr" class="active">📱 QR 스캔으로 이 비즈홈 바로 열기</span><span data-lang="en">📱 Scan QR to open this card</span><span data-lang="jp">📱 QRスキャンでこの名刺を開く</span><span data-lang="cn">📱 扫描QR码直接打开此名片</span></div>
+    <div class="qr-label"><svg class="ico" aria-hidden="true"><use href="#i-qr"/></svg><span data-lang="kr" class="active">QR 스캔으로 이 비즈홈 바로 열기</span><span data-lang="en">Scan QR to open this card</span><span data-lang="jp">QRスキャンでこの名刺を開く</span><span data-lang="cn">扫描QR码直接打开此名片</span></div>
   </div>
 </section>
 
 <div style="padding:14px 20px 4px;text-align:center;">
-  <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(255,255,255,0.2);color:#aaa;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;">
-    💬 본인 비즈홈이신가요? 만두 연결하기 (1회)
+  <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(255,255,255,0.2);color:#aaa;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:inherit;">
+    본인 비즈홈이신가요? 만두 연결하기 (1회)
   </button>
   <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:#aaa;padding:7px 0;">
     ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
@@ -584,7 +562,6 @@
       <span data-lang="cn">金属加工 · 半导体 · 建设 | 京畿道 华城市</span>
     </div>
   </div>
-  <div class="footer-bni">Topaz</div>
 </footer>
 
 <script>
@@ -682,7 +659,7 @@ async function activateMandu() {
   if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
   const ready = await _manduWaitFirebase();
   if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 실패. 잠시 후 다시 시도해주세요.');
     return;
   }
@@ -700,7 +677,7 @@ async function activateMandu() {
     await _manduFinishActivate(result.user);
   } catch (e) {
     console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 중 오류가 발생했어요.');
   }
 }
@@ -732,8 +709,8 @@ async function activateMandu() {
     window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
-    statBtn.textContent = '📊 카드 현황 보기';
-    statBtn.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.65);color:#fff;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;z-index:9999;font-family:sans-serif;box-shadow:0 2px 10px rgba(0,0,0,0.3);';
+    statBtn.innerHTML = '<svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg> 카드 현황 보기';
+    statBtn.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.65);color:#fff;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;z-index:9999;font-family:inherit;display:flex;align-items:center;gap:6px;box-shadow:0 2px 10px rgba(0,0,0,0.3);';
     statBtn.onclick = function(){
       statBtn.style.cursor = 'default';
       statBtn.textContent = '불러오는 중...';
