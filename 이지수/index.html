@@ -631,7 +631,7 @@ async function _manduWaitFirebase(maxTries) {
   return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
 }
 async function _manduFinishActivate(user) {
-  const slug = 'lee-jisu-schweiss';
+  const slug = 'cnpz1010';
   const db = firebase.firestore();
   const existing = await db.collection('manduid_index').doc(slug).get();
   if (existing.exists && existing.data().uid !== user.uid) {
@@ -669,7 +669,7 @@ async function activateMandu() {
     const provider = new firebase.auth.GoogleAuthProvider();
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (isMobile) {
-      sessionStorage.setItem('_manduPendingSlug', 'lee-jisu-schweiss');
+      sessionStorage.setItem('_manduPendingSlug', 'cnpz1010');
       await auth.signInWithRedirect(provider);
       return;
     }
